@@ -13,8 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    @component('components.who')
 
-                    You are logged in as <strong>USER</strong>!
+                    @endcomponent
                 </div>
             </div>
         </div>
