@@ -39,7 +39,7 @@
                         <a class="nav-link" href="fb.com"><i class="fa fa-question-circle"></i> FAQ</a>
                     </li>
                     <li class="nav-item"> 
-                        <a class="nav-link" href="fb.com"><i class="fa fa-user"></i> Login</a>
+                        <a class="nav-link" href="/login"><i class="fa fa-user"></i> Login</a>
                     </li>
                 </ul>
                 
@@ -53,14 +53,33 @@
                 <p>Silahkan Login untuk masuk ke dalam sistem.</p>
             </div>
         </div>
+
         <div class="kotakputih">
-            
+            <div class="isikotakputih">  
+                <h1><i class="fa fa-rss"></i> Selamat Datang</h1>
+                <hr>
+                <p>SIMAK ASRAMA SCB adalah portal akademik asrama bagi civitas SMP Cendekia Baznaz. Jika terdapat masalah atau kendala dalam penggunaan SIMAK ASRAMA SCB, silakan baca FAQ (Frequently Asked Questions). Atau bisa menghubungi Pembina Asrama.                   
+                </p>
+            </div>
         </div>
     </div>
-    
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    <footer>
+        <div class="isifooter">
+        <p>
+
+            Copyright © SMP Cendekia Baznaz 2020
+        </p>
+        <p>
+
+            Kp. Cirangkong, Ds. Cemplang - Cibungbulang - Kab. Bogor
+        </p>
+        </div>
+        <!-- Copyright -->
+        <!-- Copyright -->
+    </footer>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 </body>
 </html>
