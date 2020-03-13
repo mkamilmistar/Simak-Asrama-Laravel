@@ -24,8 +24,8 @@
             </div>
 
             <div class="user-area dropdown float-right">
-                <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="user-avatar rounded-circle" src="{{asset('sites/images/admin.jpg')}}" alt="User Avatar">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Kucing
                 </a>
 
                 <div class="user-menu dropdown-menu">

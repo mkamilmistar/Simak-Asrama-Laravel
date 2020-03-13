@@ -982,6 +982,9 @@ header .form-inline {
 .header-left.open .form-inline {
   display: block; }
 
+  .dropdown-toggle:hover{
+    color:#FFDE59;
+  }
 .header-left .dropdown {
   display: inline-block; }
   .header-left .dropdown .dropdown-toggle {
@@ -1069,11 +1072,11 @@ header .form-inline {
     position: absolute;
     right: -3px;
     bottom: 10px;
-    background: #868e96;
+    
     width: 11px;
     height: 11px;
     border-radius: 100%;
-    border: 2px  solid white;
+    
     z-index: 1; }
   .user-area .dropdown-toggle.active:before {
     background: #49a342; }
