@@ -1273,6 +1273,9 @@ header .form-inline {
       font-size: 14px; }
       .card.weather-box .nextdays .days span {
         display: block; }
+  .card-footer{
+    height: 10% !important;
+  }
   .card .card-top,
   .card .card-footer {
     background: #fafafa;
@@ -2096,13 +2099,13 @@ header .form-inline {
 
 /* Footer */
 footer.site-footer {
-  padding: 0 1.875em; }
+  padding: 0 0.875em; }
   footer.site-footer .footer-inner {
     color: #78909c;
     font-family: 'Open Sans';
     font-size: 14px;
-    line-height: 1.5;
-    padding: 2.45em 1.125em; }
+    line-height: 0.5;
+    padding: 0.45em 0.125em; }
     footer.site-footer .footer-inner a {
       color: #6a7074; }
 
