@@ -358,7 +358,7 @@ a, button {
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #000; 
+  color: #FFFFFF; 
 }
 
 h1,
@@ -367,7 +367,9 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0; }
+  margin: 0; 
+  font-family: "Lato", sans-serif;
+}
 
 h5 {
   font-size: 1em; }
@@ -597,17 +599,17 @@ aside.left-panel {
       padding-left: 30px;
       padding-right: 30px; }
       .navbar .navbar-nav > li.active {
-        background: #fafafa; }
+        background: #9EC8BA; }
     .navbar .navbar-nav li {
       width: 100%; }
       .navbar .navbar-nav li.active .menu-icon, .navbar .navbar-nav li:hover .toggle_nav_button:before,
       .navbar .navbar-nav li .toggle_nav_button.nav-open:before {
-        color: #03a9f3; }
+        color: #FFDE59; }
       .navbar .navbar-nav li .dropdown-toggle:after {
         display: none; }
       .navbar .navbar-nav li > a {
         background: none !important;
-        color: #607d8b;
+        color: #000000;
         display: inline-block;
         font-size: 14px;
         line-height: 26px;
@@ -615,7 +617,7 @@ aside.left-panel {
         position: relative;
         width: 100%; }
         .navbar .navbar-nav li > a:hover, .navbar .navbar-nav li > a:hover .menu-icon {
-          color: #03a9f3; }
+          color: #FFDE59; }
         .navbar .navbar-nav li > a .menu-icon {
           color: #607d8b;
           float: left;
@@ -691,7 +693,7 @@ aside.left-panel {
 .navbar .navbar-nav > .active > a,
 .navbar .navbar-nav > .active > a:focus,
 .navbar .navbar-nav > .active > a:hover {
-  color: #03a9f3; }
+  color: #000000; }
 
 .navbar-nav li span.count {
   background: #a9d86e;
@@ -846,7 +848,7 @@ aside.left-panel {
 
 .right-panel header.header {
   background: #057650;
-  border-bottom: 1px solid #e8e9ed;
+  /* border-bottom: 1px solid #e8e9ed; */
   -webkit-box-shadow: none;
           box-shadow: none;
   clear: both;
@@ -909,21 +911,23 @@ header.fixed-top {
 .icon-navbar{
   display: flex;
   flex-wrap: wrap;
+  
   position: absolute;
-  width: 160px;
   height: 55px;
-  left: 858px;
+  left:55%;
   background: transparent;
   border: none;
   color: #FFFFFF;
-  font-size: 12px;
-  line-height: 55px;
-  padding: 0;
-  width: 100%; }
-  .jarak{
-    padding-right: 100px;
-  }
-
+  font-size: 15px;
+  line-height: 56px;
+  padding-right: 0;
+  width: 100%; 
+  
+}
+.icon-navbar div{
+  display:block;
+    margin-right: 25px;
+}
 header .form-inline {
   background: #131c21;
   display: none;
@@ -1207,12 +1211,24 @@ header .form-inline {
   padding: 1.875em;
   width: 100%; }
 .box-title-2{
-  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-top: 30px;
+  font-weight: 600;
 }
 .box-title-3{
   color:#757575;
 }
 
+.content .dekorjudulutama{
+  position: relative;
+  top: -30px;
+  left: -30px;
+  width: 105%;
+  height: 86px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
 .samping{
   display: flex;
   color: #757575;
@@ -1399,7 +1415,14 @@ header .form-inline {
     .card .nav-tabs .active a {
       border-color: #e8e9ef;
       color: #868e96 !important; }
-
+.card .dekorjudul{
+  width: 100%;
+  min-height: 7px;
+  background-color: #FFDE59;
+}
+.card .judul{
+  padding: 10px;
+}
 .action-menu .dropdown-toggle i {
   font-size: 12px; }
 .action-menu .dropdown-toggle::after {
@@ -2111,7 +2134,8 @@ header .form-inline {
 
 /* Footer */
 footer.site-footer {
-  /* padding: 0 1.875em;  */
+  
+  padding-top: 200px; 
 }
   footer.site-footer .footer-inner {
     color: #78909c;
@@ -2460,7 +2484,7 @@ footer.site-footer {
   .right-panel .top-left, .right-panel .top-right {
     width: 100%;
     float: none;
-    background: white; }
+    background: #057650; }
   .right-panel .menutoggle {
     float: right; }
   .right-panel .navbar-header {

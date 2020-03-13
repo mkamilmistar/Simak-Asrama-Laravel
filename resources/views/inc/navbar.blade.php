@@ -14,7 +14,7 @@
                     </div>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a href="#">Beranda </a>
                 </li>
                 <li class="nav-item">

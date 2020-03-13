@@ -39,7 +39,7 @@
                         <a class="nav-link" href="fb.com"><i class="fa fa-question-circle"></i> FAQ</a>
                     </li>
                     <li class="nav-item"> 
-                        <a class="nav-link" href="/login"><i class="fa fa-user"></i> Login</a>
+                        <a class="nav-link" href="/home"><i class="fa fa-user"></i> Login</a>
                     </li>
                 </ul>
                 

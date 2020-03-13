@@ -4,28 +4,27 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="./"><img src="{{asset('sites/images/logo.png')}}" alt="Logo"></a>
             <a class="navbar-brand hidden" href="./"><img src="{{asset('sites/images/logo2.png')}}" alt="Logo"></a>
-            <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+            <!-- <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a> -->
         </div>
     </div>
     <div class="top-right">
         <div class="header-menu">
             <div class="header-left">
                 <div class="icon-navbar">
-                    <div class="jarak">
+                    <div class="col-md-2">
                         <a class="fa fa-calendar-o"></a>
-                        Minggu, 13 Maret 2020
+                         Minggu, 13 Maret 2020
                     </div>
-                    <div>
+                    <div class="col-md-2">
                         <a class="fa fa-clock-o"></a>
-                        21:16:30
+                         21:16:30
                     </div>
                 </div>
-                
             </div>
 
             <div class="user-area dropdown float-right">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Kucing
+                    Budi Arianto Kucing
                 </a>
 
                 <div class="user-menu dropdown-menu">
