@@ -2523,4 +2523,20 @@ footer.site-footer {
     left: inherit !important;
     right: 20px !important; }
 
+.profile-pic{
+  height: 180px;
+  background-color: #FFDE59;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+}
+
+.profile-item{
+  color: #000;
+  align-items: center;
+}
+
+.profile-item p{
+  line-height: 0px;
+}
 /*# sourceMappingURL=style.css.map */
