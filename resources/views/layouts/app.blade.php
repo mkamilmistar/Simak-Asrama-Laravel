@@ -40,8 +40,8 @@
             <!-- Content -->
             <div class="content">
                 @yield('content')
+                @include('inc.footer')
             </div>
-            @include('inc.footer')
         </div>
         <!-- /#right-panel -->
 
