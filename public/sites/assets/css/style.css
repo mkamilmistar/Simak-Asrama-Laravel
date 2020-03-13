@@ -1,10 +1,10 @@
 /* 
 Googel Fonts  */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap");
 /* Googel Fonts End  
 
 */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap");
 .bg-flat-color-1 {
   background: #00c292; }
 
@@ -333,13 +333,13 @@ Googel Fonts  */
 
 body {
   display: table;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   width: 100%; }
 
 p {
   font-size: 16px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 24px;
   color: #878787; }
@@ -583,7 +583,7 @@ aside.left-panel {
     color: #41434d;
     clear: both;
     display: block;
-    font-family: 'Open Sans';
+    font-family: 'Lato';
     font-size: 14px;
     font-weight: 700;
     line-height: 50px;
@@ -697,7 +697,7 @@ aside.left-panel {
   background: #a9d86e;
   border-radius: 50%;
   color: #fff;
-  font-family: 'Open Sans';
+  font-family: 'Lato';
   font-size: 9px;
   font-weight: 700;
   float: right;
@@ -1136,7 +1136,7 @@ header .form-inline {
     background: #d9534f;
     border-radius: 50%;
     color: #fff;
-    font-family: 'Open Sans';
+    font-family: 'Lato';
     font-size: 9px;
     font-weight: 700;
     float: right;
@@ -1283,7 +1283,7 @@ header .form-inline {
     margin-right: -20px;
     border-top: 1px solid #ededed;
     background: #fff;
-    font-family: "Open Sans", sans-serif; }
+    font-family: "Lato", sans-serif; }
     .card.weather-box .nextdays .days {
       display: inline-block;
       width: 20%;
@@ -1454,12 +1454,12 @@ header .form-inline {
       border: none !important; }
   #flotPie1 .legendLabel {
     color: #868e96;
-    font-family: 'Open Sans';
+    font-family: 'Lato';
     font-size: 12px; }
 
 /* Stats Table */
 .table-stats table {
-  font-family: 'Open Sans'; }
+  font-family: 'Lato'; }
   .table-stats table th,
   .table-stats table td {
     border: none;
@@ -1487,7 +1487,7 @@ header .form-inline {
 
 /* Timeline */
 .timeline li {
-  font-family: 'Open Sans';
+  font-family: 'Lato';
   list-style: none;
   padding: 5px 0;
   position: relative; }
@@ -2111,7 +2111,7 @@ footer.site-footer {
 }
   footer.site-footer .footer-inner {
     color: #78909c;
-    font-family: 'Open Sans';
+    font-family: 'Lato';
     font-size: 14px;
     line-height: 2.5;
     padding: 2.45em 1.125em; 

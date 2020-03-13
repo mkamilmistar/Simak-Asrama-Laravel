@@ -1,0 +1,28 @@
+/* 
+Googel Fonts  */
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap");
+/* Googel Fonts End  
+
+*/
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap");
+
+.right-panel {
+    background: #f1f2f7;
+    margin-left: 280px;
+    margin-top: 55px;
+}
+
+.right-panel .header.header{
+    background: #057650;
+  border-bottom: 1px solid #e8e9ed;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  clear: both;
+  padding: 0 30px;
+  height: 55px;
+  position: fixed;
+  left: 280px;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999; }

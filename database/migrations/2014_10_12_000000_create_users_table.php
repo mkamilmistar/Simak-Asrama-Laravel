@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('jenis_kelamin')->nullable();
             $table->string('tempat_lahir')->nullable();
             $table->date('tanggal_lahir')->nullable();
-            $table->text('alamat');
+            $table->text('alamat')->nullable();
             $table->string('user_image')->default('default.jpg');
             $table->timestamps();
         });
