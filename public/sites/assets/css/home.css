@@ -6,13 +6,13 @@ Googel Fonts  */
 */
 @import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap");
 
-.right-panel {
+.top-panel {
     background: #f1f2f7;
     margin-left: 280px;
     margin-top: 55px;
 }
 
-.right-panel .header.header{
+.top-panel .header.header{
     background: #057650;
   border-bottom: 1px solid #e8e9ed;
   -webkit-box-shadow: none;
@@ -26,3 +26,20 @@ Googel Fonts  */
   right: 0;
   top: 0;
   z-index: 999; }
+  .right-panel .navbar-brand {
+    width: 250px;
+    display: inline-block; }
+  .right-panel .menutoggle {
+    padding-top: 7px; }
+  .right-panel .navbar-header {
+    width: 100%;
+    background-color: #057650;
+    padding: 0 1.25em 0 0; }
+    .right-panel .navbar-header > a {
+      display: inline-block; }
+  .right-panel .navbar-brand {
+    line-height: 42px; }
+    .right-panel .navbar-brand img {
+      max-width: 300px; }
+    .right-panel .navbar-brand.hidden {
+      display: none; }

@@ -12,9 +12,15 @@
     <link rel="stylesheet" href="{{asset('sites/assets/css/home.css')}}">
 </head>
 <body>
-    <div id="right-panel" class="right-panel">
+    <div id="top-panel" class="top-panel">
         <header class="header" id="header">
-
+            <div class="top-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="./"><img src="{{asset('sites/images/logo.png')}}" alt="Logo">SIMAK ASRAMA SCB</a>
+                    <a class="navbar-brand hidden" href="./"><img src="{{asset('sites/images/logo2.png')}}" alt="Logo"></a>
+                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                </div>
+            </div>
         </header>
     </div>
 </body>
