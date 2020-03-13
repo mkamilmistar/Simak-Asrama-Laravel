@@ -872,7 +872,7 @@ aside.left-panel {
 .right-panel .navbar-brand {
   line-height: 42px; }
   .right-panel .navbar-brand img {
-    max-width: 40px; }
+    max-width: 300px; }
   .right-panel .navbar-brand.hidden {
     display: none; }
 
