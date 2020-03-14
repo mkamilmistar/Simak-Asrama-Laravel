@@ -819,12 +819,15 @@ aside.left-panel {
   .right-panel .top-rigth {
     float: left; }
   .right-panel .breadcrumbs {
-    float: left;
-    margin-top: 30px;
-    padding: 0 1.875em;
+    /* float: left; */
+    /* margin-top: 30px; */
+    height: 50px;
+    /* padding: 0 1.875em; */
     width: 100%; }
     .right-panel .breadcrumbs .breadcrumbs-inner {
-      background-color: #fff; }
+      background-color: #fff;
+      
+     }
     .right-panel .breadcrumbs .col-lg-8 .page-header {
       float: left; }
   .right-panel .page-header {
@@ -834,7 +837,8 @@ aside.left-panel {
     background: #ffffff;
     border-bottom: 0px; }
     .right-panel .page-header h1 {
-      font-size: 18px;
+      font-size: 24px;
+      font-weight: 700;
       padding: 15px 0; }
     .right-panel .page-header .breadcrumb {
       margin: 0px;
@@ -845,7 +849,9 @@ aside.left-panel {
       padding: 0 5px;
       color: #ccc;
       content: "/\00a0"; }
-
+.breadcrumbs a {
+  color: #000000;
+}
 .right-panel header.header {
   background: #057650;
   /* border-bottom: 1px solid #e8e9ed; */
@@ -1236,6 +1242,9 @@ header .form-inline {
 .samping .jarak{
   padding-left: 10px;
 }
+.tableku{
+  width: 100%;
+}
 .card {
   margin-bottom: 1.875em;
   border-radius: 5px;
@@ -1381,6 +1390,9 @@ header .form-inline {
     border: 5px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     -webkit-border-radius: 50%; }
+  .card-header{
+    background-color: #FFDE59;
+  }
   .card .card-header .card-actions button {
     display: block;
     float: left;
@@ -1512,6 +1524,17 @@ header .form-inline {
     text-transform: capitalize;
     vertical-align: middle; }
 
+    .dataTables_wrapper .dataTables_length label{
+      float: left;
+      display: flex;
+      }
+      .dataTables_wrapper .dataTables_filter label{
+        float:right;
+        display: flex;
+        left:0;
+        margin-left:10px;
+      }
+
 /* Timeline */
 .timeline li {
   font-family: 'Lato';
@@ -1605,7 +1628,7 @@ header .form-inline {
   float: right; }
   .card .card-header .card-actions [class*="btn"] {
     border-left: 1px solid rgba(120, 130, 140, 0.4);
-    color: #878787;
+    color: #FFDE59;
     display: inline-block;
     font-size: 16px;
     float: left;

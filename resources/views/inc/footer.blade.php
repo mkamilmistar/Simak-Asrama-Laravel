@@ -3,10 +3,10 @@
     <div class="footer-inner bg-white">
         <div class="row">
             <div class="col-sm-6">
-                Copyright © 2020 SCB
+            © 2020 <strong> SIMAS SCB </strong>
             </div>
             <div class="col-sm-6 text-right">
-                Designed by <a href="https:://kucing.com">Kucing</a>
+            <strong>SCB | Versi </strong>1.0
             </div>
         </div>
     </div>

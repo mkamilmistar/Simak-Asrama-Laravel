@@ -14,8 +14,8 @@
                     </div>
                 </li>
 
-                <li class="nav-item active">
-                    <a href="#">Beranda </a>
+                <li class="{{ 'home' == request()->path() ? 'nav-item active' : 'nav-item' }}">
+                    <a href="/home">Beranda </a>
                 </li>
                 <li class="nav-item">
                     <a href="#">Biodata</a>
@@ -23,8 +23,8 @@
                 <li class="nav-item">
                     <a href="#">Hafalan Al-Qur'an dan Hadits</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#">Catatan Amalan Yaumiah</a>
+                <li class="{{ 'catatan-yaumiyah' == request()->path() ? 'nav-item active' : 'nav-item' }}">
+                    <a href="/catatan-yaumiyah">Catatan Amalan Yaumiah</a>
                 </li>
                 <li class="nav-item">
                     <a href="#">Poin Pelanggaran dan Kebaikan</a>
