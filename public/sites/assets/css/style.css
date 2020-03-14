@@ -1534,6 +1534,18 @@ header .form-inline {
         left:0;
         margin-left:10px;
       }
+      .dataTables_paginate .pagination{
+        float:right;
+        display: flex;
+        left:0;
+        margin-left:10px;
+      }
+      .table-tengah th,td{
+        text-align: center;
+      }
+      .table-bio td{
+        text-align: left;
+      }
 
 /* Timeline */
 .timeline li {

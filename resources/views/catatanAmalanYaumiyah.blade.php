@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="breadcrumbs">
                 <div class="breadcrumbs-inner">
                     <div class="row m-0">
@@ -16,8 +15,8 @@
                             <div class="page-header float-right">
                                 <div class="page-title">
                                     <ol class="breadcrumb text-right">
-                                        <li><a href="#">Dashboard</a></li>
-                                        <li><a href="#">Table</a></li>
+                                        <li><a href="/catatan-yaumiyah">Catatan Amalan Yaumiyah</a></li>
+                                        <li><a href="catatan-yaumiyah">Catatan Amalan Yaumiyah Siswa</a></li>
                                         <li class="active">Data table</li>
                                     </ol>
                                 </div>
@@ -36,7 +35,7 @@
                                 <strong class="card-title">Catatan Amalan Amaliyah Siswa</strong>
                             </div>
                             <div class="card-body">
-                                <table>
+                                <table class="table-bio">
                                     <tr >
                                         <th style="width: 200px">Nomor Induk Siswa</th>
                                         <td>000000</td>
@@ -57,7 +56,7 @@
                                 <br>
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
-                                        <tr>
+                                        <tr class="table-tengah">
                                             <th>No</th>
                                             <th>Tanggal</th>
                                             <th>Jenis Amalan</th>
@@ -71,7 +70,7 @@
                                             <td>1</td>
                                             <td>Minggu, 12 Maret 2020</td>
                                             <td>Sholat Tahajud</td>
-                                            <td style="text-align: center">5</td>
+                                            <td>5</td>
                                             <td>Hanya hari senin</td>
                                             <td>
                                                 <button type="button" class="btn btn-warning">Edit</button>
@@ -82,7 +81,7 @@
                                             <td>2</td>
                                             <td>Minggu, 12 Maret 2020</td>
                                             <td>Sholat Dhuha</td>
-                                            <td style="text-align: center">3</td>
+                                            <td>3</td>
                                             <td>Hanyar sabtu</td>
                                             <td>
                                                 <button type="button" class="btn btn-warning">Edit</button>
