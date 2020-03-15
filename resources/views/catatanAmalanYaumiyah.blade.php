@@ -73,8 +73,12 @@
                                             <td>5</td>
                                             <td>Hanya hari senin</td>
                                             <td>
-                                                <button type="button" class="btn btn-warning">Edit</button>
-                                                <button type="button" class="btn btn-danger">Hapus</button>
+                                                <a href="#">
+                                                    <button type="button" class="btn btn-warning">Edit</button>
+                                                </a>
+                                                <a href="#">
+                                                    <button type="button" class="btn btn-danger">Hapus</button>
+                                                </a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -84,8 +88,12 @@
                                             <td>3</td>
                                             <td>Hanyar sabtu</td>
                                             <td>
-                                                <button type="button" class="btn btn-warning">Edit</button>
-                                                <button type="button" class="btn btn-danger">Hapus</button>
+                                                <a href="#">
+                                                    <button type="button" class="btn btn-warning">Edit</button>
+                                                </a>
+                                                <a href="#">
+                                                    <button type="button" class="btn btn-danger">Hapus</button>
+                                                </a>
                                             </td>
                                         </tr>
                                     </tbody>

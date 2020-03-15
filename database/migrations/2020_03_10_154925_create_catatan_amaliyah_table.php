@@ -16,7 +16,7 @@ class CreateCatatanAmaliyahTable extends Migration
         Schema::create('catatanAmaliyah', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('catatanAmaliyah_id')->unsigned();
-            $table->foreign('catatanAmaliyah_id')->references('id')->on('catatan')->onDelete('CASCADE');
+            $table->foreign('catatanAmaliyah_id')->references('id')->on('users')->onDelete('CASCADE');
             $table->string('jenis_amalan');
             $table->integer('bobot_amalan');
             $table->string('keterangan');

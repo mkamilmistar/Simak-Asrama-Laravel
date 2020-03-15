@@ -15,8 +15,8 @@ class CreateCatatanKebaikanTable extends Migration
     {
         Schema::create('catatanKebaikan', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('catatanKebaikan_id')->unsigned();
-            $table->foreign('catatanKebaikan_id')->references('id')->on('catatan')->onDelete('CASCADE');
+            $table->integer('catatan_id')->unsigned();
+            $table->foreign('catatan_id')->references('id')->on('catatan')->onDelete('CASCADE');
             $table->string('catatan_kebaikan');
             $table->string('catatan_keburukan');
             $table->timestamps();

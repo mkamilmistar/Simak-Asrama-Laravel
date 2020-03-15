@@ -7,4 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class PembinaAsrama extends Model
 {
     protected $table = 'pembinaAsrama';
+
+    protected $fillable = [
+        'NIP', 'role',
+    ];
 }

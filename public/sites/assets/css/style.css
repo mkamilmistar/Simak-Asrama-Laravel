@@ -2600,6 +2600,9 @@ footer.site-footer {
 }
 
 .profile-item p{
+  position: relative;
+  top: 7px;
   line-height: 0px;
+  color: #000;
 }
 /*# sourceMappingURL=style.css.map */

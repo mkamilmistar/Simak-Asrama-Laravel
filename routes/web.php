@@ -15,14 +15,16 @@ Route::get('/', function () {
     return view('home');
 });
 
-// Auth::routes();
+Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPage')->name('catatan-yaumiyah');
+});
+
 Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
-
 // Catatan Amalan Yaumiyah
-Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPage')->name('catatan-yaumiyah');
 
 
 
