@@ -17,7 +17,8 @@ Route::get('/', 'LandingPageController@home');
 //DASHBOARD PAGE
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPage')->name('catatan-yaumiyah');
+Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPageSiswa')->name('viewCatatanAmalanSiswa');
+Route::get('/tambah-catatan-yaumiyah', 'CatatanYaumiyahController@viewPageTambahCatatanAmalanSiswa')->name('tambahCatatanAmalanSiswa');
 
 // Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
 // });

@@ -1,7 +1,6 @@
 @extends('landings.layouts.app')
 
 @section('content')
-
         <div class="kotakputih">
             <div class="isikotakputih">  
                 <h1><i class="fa fa-rss"></i> Selamat Datang</h1>
@@ -11,6 +10,4 @@
             </div>
         </div>
     </div>
-    
-
 @endsection

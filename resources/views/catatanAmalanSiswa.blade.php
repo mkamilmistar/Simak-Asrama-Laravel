@@ -7,7 +7,7 @@
                         <div class="col-sm-4">
                             <div class="page-header float-left">
                                 <div class="page-title">
-                                    <h1>Catatan Amalan Amaliyah</h1>
+                                    <h1>Catatan Amalan Yaumiyah</h1>
                                 </div>
                             </div>
                         </div>
@@ -16,7 +16,7 @@
                                 <div class="page-title">
                                     <ol class="breadcrumb text-right">
                                         <li><a href="/catatan-yaumiyah">Catatan Amalan Yaumiyah</a></li>
-                                        <li><a href="catatan-yaumiyah">Catatan Amalan Yaumiyah Siswa</a></li>
+                                        <li><a href="/catatan-yaumiyah">Catatan Amalan Yaumiyah Siswa</a></li>
                                         <li class="active">Data table</li>
                                     </ol>
                                 </div>
@@ -28,13 +28,14 @@
     <div class="content">
             <div class="animated fadeIn">
                 <div class="row">
-
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Catatan Amalan Amaliyah Siswa</strong>
+                                <strong class="card-title">Catatan Amalan Yaumiyah Siswa</strong>
+                                <a href="/tambah-catatan-yaumiyah" class="btn btn-primary">+ Tambah Catatan</a>
                             </div>
                             <div class="card-body">
+                                <!-- Data Siswa -->
                                 <table class="table-bio">
                                     <tr >
                                         <th style="width: 200px">Nomor Induk Siswa</th>
@@ -53,7 +54,9 @@
                                         <td>IX-B</td>
                                     </tr>
                                 </table>
+                                <!-- END OF DATA SISWA -->
                                 <br>
+                                <!-- DATA AMALAN -->
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
                                         <tr class="table-tengah">
@@ -98,6 +101,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <!-- END OF DATA SISWA -->
                             </div>
                         </div>
                     </div>

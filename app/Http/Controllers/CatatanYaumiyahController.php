@@ -6,8 +6,13 @@ use Illuminate\Http\Request;
 
 class CatatanYaumiyahController extends Controller
 {
-    public function viewPage()
+    public function viewPageSiswa()
     {
-        return view('catatanAmalanYaumiyah');
+        return view('catatanAmalanSiswa');
+    }
+    
+    public function viewPageTambahCatatanAmalanSiswa()
+    {
+        return view('tambahCatatanAmalanSiswa');
     }
 }

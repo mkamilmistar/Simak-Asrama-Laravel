@@ -90,7 +90,7 @@ p {
 .kotakputih {
     position: absolute;
     width: 77%;
-    min-height: 40%;
+    min-height: 30%;
     left: 154px;
     top: 162px;
     background-color: #FFFFFF;
@@ -103,7 +103,8 @@ p {
 
 .isikotakputih h1 {
     font-family: "Lato", sans-serif;
-    font-weight: 400;
+    font-weight: 600;
+    font-size: 24px;
     color: black;
 }
 
