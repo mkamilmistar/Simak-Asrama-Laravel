@@ -13,11 +13,14 @@
                 <div class="icon-navbar">
                     <div class="col-md-2">
                         <a class="fa fa-calendar-o"></a>
-                         Minggu, 13 Maret 2020
+                        <span id="date"></span>
                     </div>
                     <div class="col-md-2">
-                        <a class="fa fa-clock-o"></a>
-                         21:16:30
+                        <a class="fa fa-clock-o">
+                            &nbsp
+                            <a id="jam"> </a>
+                        </a>
+                        
                     </div>
                 </div>
             </div>

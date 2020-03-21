@@ -44,22 +44,24 @@
                                             <tr class="table-tengah">
                                                 <th>No</th>
                                                 <th>Jenis Amalan</th>
-                                                <th colspan="2">Kondisi</th>
+                                                <th style="width: 13%">Kondisi</th>
                                                 <th style="width: 15%">Jumlah (kali)</th>
                                                 <th>Keterangan</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
+                                                <td>
+                                                    1
+                                                </td>
                                                 <td>
                                                     Sholat Tahajud
                                                 </td>
                                                 <td>
-                                                    <label><input type="radio" value="1">Iya</label>
-                                                </td>
-                                                <td>
-                                                <label><input type="radio" value="0">Tidak</label>
+                                                    <select class="form-control" id="kondisi">
+                                                        <option value="1">Ya</option>
+                                                        <option value="0">Tidak</option>
+                                                    </select>
                                                 </td>
                                                 <td>
                                                     <input name="jumlah" class="form-control" placeholder="Jumlah kegiatan" type="number" min=0 value=0>
@@ -74,10 +76,10 @@
                                                     Sholat Dhuha
                                                 </td>
                                                 <td>
-                                                    <label><input type="radio" value="1">Iya</label>
-                                                </td>
-                                                <td>
-                                                <label><input type="radio" value="0">Tidak</label> 
+                                                    <select class="form-control" id="kondisi">
+                                                        <option>Ya</option>
+                                                        <option>Tidak</option>
+                                                    </select>
                                                 </td>
                                                 <td>
                                                     <input name="jumlah" class="form-control" placeholder="Jumlah kegiatan" type="number" min=0 value=0>

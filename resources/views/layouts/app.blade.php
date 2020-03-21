@@ -27,7 +27,7 @@
     
     </head>
 
-    <body>
+    <body onload="startTime()">
         @include('layouts.components.navbar')
         
         <!-- Right Panel -->
@@ -62,6 +62,36 @@
             $(document).ready(function() {
             $('#bootstrap-data-table-export').DataTable();
         } );
-    </script>
+        </script>
+
+        <!-- JAM SCRIPT -->
+        <script>
+            function startTime() {
+                var today = new Date();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                var s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('jam').innerHTML =
+                h + ":" + m + ":" + s;
+                var t = setTimeout(startTime, 500);
+            }
+            function checkTime(i) {
+                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                return i;
+            }
+        </script>
+
+        <!-- DATE SCRIPT -->
+        <script>
+            document.getElementById("date").innerHTML = formatAMPM();
+            function formatAMPM() {
+            var d = new Date(),
+                months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'],
+                days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+                return days[d.getDay()]+', '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();
+            }
+        </script>
     </body>
 </html>
