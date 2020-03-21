@@ -15,11 +15,8 @@ class CreateCatatanTable extends Migration
     {
         Schema::create('catatan', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('jenis_catatan');
             $table->date('waktu')->nullable();
-            $table->integer('catatan_id')->unsigned();
-            $table->foreign('catatan_id')->references('id')->on('siswa')->onDelete('CASCADE');
-            $table->integer('laporan_id')->unsigned();
-            $table->foreign('laporan_id')->references('id')->on('pembinaAsrama')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

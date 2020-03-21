@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Catatan extends Model
 {
     protected $table = 'catatan';
+
+    protected $fillable = 
+    [
+        'jenis_catatan',
+    ];
 }

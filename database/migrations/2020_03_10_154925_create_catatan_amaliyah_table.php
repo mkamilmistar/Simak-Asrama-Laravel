@@ -14,12 +14,16 @@ class CreateCatatanAmaliyahTable extends Migration
     public function up()
     {
         Schema::create('catatanAmaliyah', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('catatanAmaliyah_id')->unsigned();
-            $table->foreign('catatanAmaliyah_id')->references('id')->on('users')->onDelete('CASCADE');
+            $table->Increments('id');
+
+            $table->integer('catatan_id')->unsigned();
+            $table->foreign('catatan_id')->references('id')->on('catatan')->onDelete('CASCADE');
+            $table->integer('siswa_id')->unsigned();
+            $table->foreign('siswa_id')->references('id')->on('siswa')->onDelete('CASCADE');
+            
             $table->string('jenis_amalan');
             $table->integer('bobot_amalan');
-            $table->string('keterangan');
+            $table->string('keterangan')->nullable();
             $table->timestamps();
         });
     }

@@ -28,15 +28,15 @@
     </head>
 
     <body>
-        @include('inc.navbar')
+        @include('layouts.components.navbar')
         
         <!-- Right Panel -->
         <div id="right-panel" class="right-panel">
-            @include('inc.header')
+            @include('layouts.components.header')
             <!-- Content -->
             
                 @yield('content')
-                @include('inc.footer')
+                @include('layouts.components.footer')
            
         </div>
         <!-- /#right-panel -->
