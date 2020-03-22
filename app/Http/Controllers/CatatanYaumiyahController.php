@@ -15,4 +15,24 @@ class CatatanYaumiyahController extends Controller
     {
         return view('tambahCatatanAmalanSiswa');
     }
+
+    public function viewPagePembina()
+    {
+        return view('catatanAmalanPembina');
+    }
+
+    public function viewPageTambahJenisAmalan()
+    {
+        return view('tambahJenisAmalan');
+    }
+
+    public function viewPageCatatanAmalanSiswa()
+    {
+        return view('catatanAmalanSiswa');
+    }
+
+    public function viewPageJenisAmalan()
+    {
+        return view('jenisAmalanSiswa');
+    }
 }

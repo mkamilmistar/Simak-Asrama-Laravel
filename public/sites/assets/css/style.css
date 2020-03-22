@@ -767,6 +767,14 @@ aside.left-panel:hover {
   margin-left: 83px;
 }
 
+.warna {
+  position: absolute;
+  top: 100px;
+  height: 100px;
+  width: 100px;
+  color: #ff2e44;
+}
+
 .navbar {
   background: #fff;
   border-radius: 0;
@@ -866,7 +874,7 @@ aside.left-panel:hover {
 }
 
 .navbar .navbar-nav li.menu-item-has-children a {
-  line-height: 30px;
+  position: relative;
 }
 
 .navbar .navbar-nav li.menu-item-has-children a:before {
@@ -886,7 +894,7 @@ aside.left-panel:hover {
 }
 
 .navbar .navbar-nav li.menu-item-has-children a:hover:before {
-  border-color: #03a9f3 #03a9f3 transparent transparent;
+  border-color: #057650 #057650 transparent transparent;
 }
 
 .navbar .navbar-nav li.menu-item-has-children .sub-menu {
@@ -895,7 +903,7 @@ aside.left-panel:hover {
   -webkit-box-shadow: none;
   box-shadow: none;
   overflow-y: hidden;
-  padding: 0 0 0 35px;
+  /* padding: 0 0 0 35px; */
 }
 
 .navbar .navbar-nav li.menu-item-has-children .sub-menu li {
@@ -917,7 +925,7 @@ aside.left-panel:hover {
 }
 
 .navbar .navbar-nav li.menu-item-has-children .sub-menu a:before {
-  content: '';
+  content: ' ';
   display: none;
 }
 
@@ -934,7 +942,7 @@ aside.left-panel:hover {
 }
 
 .navbar .navbar-nav li.menu-item-has-children.show a:hover:before {
-  border-color: transparent #03a9f3 #03a9f3 transparent;
+  border-color: transparent #057650 #057650 transparent;
 }
 
 .navbar .navbar-nav li.menu-item-has-children.show .sub-menu {
@@ -969,7 +977,7 @@ aside.left-panel:hover {
 }
 
 .open .sub-menu .subtitle {
-  display: block;
+  /* display: block; */
   font-size: 15px;
   line-height: 35px;
   color: #607d8b;
@@ -2136,6 +2144,14 @@ td {
 
 .table-bio td {
   text-align: left;
+}
+
+.table a {
+  color: #000;
+}
+
+.table a:hover {
+  color: #057650;
 }
 
 /* Timeline */
@@ -3606,6 +3622,63 @@ footer.site-footer .footer-inner a {
   top: 7px;
   line-height: 0px;
   color: #000;
+}
+
+.card-body .kotaktambah {
+
+  width: 60%;
+  height: auto;
+  position: relative;
+
+
+  background: #FFFFFF;
+  border: 1px solid #C8C8C8;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 30px;
+  margin: auto;
+}
+
+.headertambah h4 {
+  font-weight: 800;
+  padding-bottom: 20px;
+
+}
+
+.headertambah .garis {
+  position: relative;
+  top: -20px;
+  width: 356px;
+  border: 1px solid #057650;
+}
+
+.headertambah .garis2 {
+  position: relative;
+  top: -20px;
+  width: 320px;
+  border: 1px solid #057650;
+}
+
+.isitambah table,
+tr {
+  font-weight: 400;
+  width: 100%;
+}
+
+.ini {
+  width: 25%;
+}
+
+.isitambah input[type=text] {
+  width: 100%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.isitambah .form-group {
+  padding-top: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

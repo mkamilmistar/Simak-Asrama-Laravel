@@ -38,8 +38,9 @@
                                 <br>
                                 
                                 <!--TAMBAH DATA AMALAN -->
-                                <form method="GET" id="my_form"></form>
+                                <form method="GET" id="my_form">
                                     <table class="table table-striped table-bordered">
+                                    @csrf
                                         <thead>
                                             <tr class="table-tengah">
                                                 <th>No</th>
@@ -59,8 +60,8 @@
                                                 </td>
                                                 <td>
                                                     <select class="form-control" id="kondisi">
-                                                        <option value="1">Ya</option>
                                                         <option value="0">Tidak</option>
+                                                        <option value="1">Ya</option>
                                                     </select>
                                                 </td>
                                                 <td>
@@ -77,8 +78,8 @@
                                                 </td>
                                                 <td>
                                                     <select class="form-control" id="kondisi">
-                                                        <option>Ya</option>
                                                         <option>Tidak</option>
+                                                        <option>Ya</option>
                                                     </select>
                                                 </td>
                                                 <td>

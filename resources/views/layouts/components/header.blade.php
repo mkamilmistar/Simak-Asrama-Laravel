@@ -13,6 +13,7 @@
                 <div class="icon-navbar">
                     <div class="col-md-2">
                         <a class="fa fa-calendar-o"></a>
+                        &nbsp
                         <span id="date"></span>
                     </div>
                     <div class="col-md-2">
@@ -37,7 +38,7 @@
 
                     <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
 
-                    <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                    <a class="nav-link" href="/logout"><i class="fa fa-power -off"></i>Logout</a>
                 </div>
             </div>
 
