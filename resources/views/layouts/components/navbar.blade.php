@@ -13,6 +13,7 @@
                         <p>000000000</p>
                     </div>
                 </li>
+                @auth
                 @if(auth()->user()->role=='siswa')
                 <li class="{{ 'home' == request()->path() ? 'nav-item active' : 'nav-item' }}">
                     <a href="/home">Beranda </a>
@@ -64,6 +65,18 @@
                     <a href="#">Catatan Harian</a>
                 </li>
                 @endif
+                @endauth
+                @guest
+                <li class="{{ 'home' == request()->path() ? 'nav-item active' : 'nav-item' }}">
+                    <a href="/home"></i>Beranda </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Login</a>
+                </li>
+                @endguest
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
