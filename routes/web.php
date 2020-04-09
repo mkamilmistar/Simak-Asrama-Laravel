@@ -36,3 +36,5 @@ Route::get('/tambah-catatan-kebaikan', 'CatatanKebaikanController@viewPageTambah
 
 //AUTH
 Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+
+Auth::routes();
