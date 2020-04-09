@@ -17,7 +17,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                                 </div>
-                                <input name="nama" class="form-control" placeholder="nama" type="text">
+                                <input name="name" class="form-control" placeholder="nama" type="text">
                             </div> <!-- input-group.// -->
                         </div> <!-- form-group// -->
                         <div class="form-group">
@@ -41,7 +41,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                                 </div>
-                                <input name="password-confirm" class="form-control" placeholder="confirm password" type="password">
+                                <input name="password_confirmation" class="form-control" placeholder="confirm password" type="password">
                             </div> <!-- input-group.// -->
                         </div> <!-- form-group// -->
                         <div class="form-group">
