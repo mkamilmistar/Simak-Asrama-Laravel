@@ -55,6 +55,10 @@
                                             <td> <input name="jenis_amalan"class="form-control" type="text"></td>
                                         </tr>
                                         <tr>
+                                            <th>NIP Pengajar</th>
+                                            <td> <input name="jenis_amalan"class="form-control" type="text"></td>
+                                        </tr>
+                                        <tr>
                                             <th>Kategori</th>
                                             <td><input type='radio' name='kategori' value='prestasi' />Prestasi &nbsp &nbsp &nbsp
                                             &nbsp &nbsp &nbsp<input type='radio' name='kategori' value='indisipliner' />Indisipliner</td>

@@ -8,7 +8,8 @@ class CatatanHarianController extends Controller
 {
     public function viewPageCatatan()
     {
-        return view('catatanHarian');
+        //$catHarian = \App\CatatanHarian::all();
+    return view('catatanHarian'/*, ['catHarian' -> $catHarian]*/);
     }
 
     public function viewPageTambahCatatan()

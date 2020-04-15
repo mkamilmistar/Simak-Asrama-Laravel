@@ -82,6 +82,7 @@
                                                 <button type="button" class="btn btn-danger">Hapus</button>
                                             </td>
                                         </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>
