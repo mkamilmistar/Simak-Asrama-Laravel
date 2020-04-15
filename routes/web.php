@@ -31,6 +31,9 @@ Route::get('/budi-arianto', 'CatatanYaumiyahController@viewPageCatatanAmalanSisw
 Route::get('/catatan-kebaikan', 'CatatanKebaikanController@viewPageCatatanKebaikanSiswa')->name('viewCatatanKebaikanSiswa');
 Route::get('/tambah-catatan-kebaikan', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('tambahCatatanKebaikanSiswa');
 
+//Catatan Harian
+Route::get('/catatan-harian', 'CatatanHarianController@viewPage')->name('catatan-harian');
+
 // Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
 // });
 

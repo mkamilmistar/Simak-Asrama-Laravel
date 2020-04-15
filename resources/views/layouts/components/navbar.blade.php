@@ -61,8 +61,8 @@
                 <li class="{{ 'catatan-kebaikan' == request()->path() ? 'nav-item active' : 'nav-item' }}">
                     <a href="/catatan-kebaikan">Catatan Kebaikan & Keburukan</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#">Catatan Harian</a>
+                <li class="{{ 'catatan-harian' == request()->path() ? 'nav-item active' : 'nav-item' }}">
+                    <a href="/catatan-harian">Catatan Harian</a>
                 </li>
                 @endif
                 @endauth
