@@ -32,7 +32,8 @@ Route::get('/catatan-kebaikan', 'CatatanKebaikanController@viewPageCatatanKebaik
 Route::get('/tambah-catatan-kebaikan', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('tambahCatatanKebaikanSiswa');
 
 //Catatan Harian
-Route::get('/catatan-harian', 'CatatanHarianController@viewPage')->name('catatan-harian');
+Route::get('/catatan-harian', 'CatatanHarianController@viewPageCatatan')->name('catatan-harian');
+Route::get('/tambah-catatan-harian', 'CatatanHarianController@viewPageTambahCatatan')->name('tambah-catatan-harian');
 
 // Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
 // });

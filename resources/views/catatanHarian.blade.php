@@ -15,9 +15,7 @@
                             <div class="page-header float-right">
                                 <div class="page-title">
                                     <ol class="breadcrumb text-right">
-                                        <li><a href="/catatan-yaumiyah">Catatan Harian</a></li>
-                                        <li><a href="catatan-yaumiyah">Catatan Harian Siswa</a></li>
-                                        <li class="active">Data table</li>
+                                        <li><a href="/catatan-harian">Catatan Harian</a></li>
                                     </ol>
                                 </div>
                             </div>
@@ -33,6 +31,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Catatan Harian Siswa</strong>
+                                <a href="/tambah-catatan-harian" class="btn btn-primary">+ Tambah Catatan</a>
                             </div>
                             <div class="card-body">
                                 <table class="table-bio">
