@@ -10,9 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//LANDING PAGE VIEW
-Route::get('/', 'LandingPageController@home');
 
+Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
+    //LANDING PAGE VIEW
+    Route::get('/', 'LandingPageController@home');
+});
 
 //DASHBOARD PAGE
 Auth::routes();
@@ -31,12 +33,15 @@ Route::get('/budi-arianto', 'CatatanYaumiyahController@viewPageCatatanAmalanSisw
 Route::get('/catatan-kebaikan', 'CatatanKebaikanController@viewPageCatatanKebaikanSiswa')->name('viewCatatanKebaikanSiswa');
 Route::get('/tambah-catatan-kebaikan', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('tambahCatatanKebaikanSiswa');
 
-//Catatan Harian
-Route::get('/catatan-harian', 'CatatanHarianController@viewPageCatatan')->name('catatan-harian');
-Route::get('/tambah-catatan-harian', 'CatatanHarianController@viewPageTambahCatatan')->name('tambah-catatan-harian');
-
-// Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
-// });
+Route::group(['middleware' => ['auth', 'checkRole:pembina']], function(){
+    //Catatan Harian
+    Route::get('/catatan-harian', 'CatatanHarianController@viewPageCatatan');
+    Route::post('/catatan-harian/create', 'CatatanHarianController@create');
+    //Route::get('/siswa/{id}/edit','SiswaController@edit');
+    //Route::post('/siswa/{id}/update','SiswaController@update');
+    //Route::get('/siswa/{id}/delete','SiswaController@delete');
+    //Route::get('/siswa/{id}/profile','SiswaController@profile');
+});
 
 //AUTH
 Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
