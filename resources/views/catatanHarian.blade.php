@@ -24,6 +24,11 @@
                 </div>
     </div>    
     <div class="content">
+        @if(session('sukses'))
+        <div class="alert alert-warning" role="alert">
+            {{session('sukses')}}
+        </div>
+        @endif
             <div class="animated fadeIn">
                 <div class="row">
 

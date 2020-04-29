@@ -43,4 +43,25 @@ class CatatanHarianController extends Controller
         $catHarian = \App\CatatanHarian::create($request->all());
         return redirect('/catatan-harian')->with('sukses','Berhasil ditambahkan!');
     }
+
+    public function edit($id)
+    {
+        $catHarian = \App\CatatanHarian::find($id);
+        return view('editCatatanHarian', ['catHarian' => $catHarian]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        //dd($request->all());
+        $catHarian = \App\CatatanHarian::find($id);
+        $catHarian->update($request->all());
+        return redirect('/catatan-harian')->with('sukses', 'Data berhasil diubah!');
+    }
+
+    public function delete($id)
+    {
+        $catHarian = \App\CatatanHarian::find($id);
+        $catHarian->delete($catHarian);
+        return redirect('/catatan-harian')->with('sukses', 'Data berhasil dihapus!');
+    }
 }

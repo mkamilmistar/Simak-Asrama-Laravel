@@ -37,9 +37,9 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function(){
     //Catatan Harian
     Route::get('/catatan-harian', 'CatatanHarianController@viewPageCatatan');
     Route::post('/catatan-harian/create', 'CatatanHarianController@create');
-    //Route::get('/siswa/{id}/edit','SiswaController@edit');
-    //Route::post('/siswa/{id}/update','SiswaController@update');
-    //Route::get('/siswa/{id}/delete','SiswaController@delete');
+    Route::get('/catatan-harian/{id}/edit','CatatanHarianController@edit');
+    Route::post('/catatan-harian/{id}/update','CatatanHarianController@update');
+    Route::get('/catatan-harian/{id}/delete','CatatanHarianController@delete');
     //Route::get('/siswa/{id}/profile','SiswaController@profile');
 });
 
