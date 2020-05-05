@@ -17,8 +17,9 @@ class CreateCatatanKebaikanTable extends Migration
             $table->increments('id');
             // $table->integer('catatan_id')->unsigned();
             // $table->foreign('catatan_id')->references('id')->on('catatan')->onDelete('CASCADE');
-            $table->string('catatan_kebaikan');
-            $table->string('catatan_keburukan');
+            $table->integer('jenis')->unsigned();
+            $table->string('kegiatan')->nullable();
+            $table->string('deskripsi')->nullable();
             $table->timestamps();
         });
     }

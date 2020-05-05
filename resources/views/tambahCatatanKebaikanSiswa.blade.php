@@ -39,28 +39,41 @@
                                         <div class="garis2"></div>
                                     </div>
                                     <div class="isitambah">
-                                        <form method="GET" id="my_form">
+                                        @if ($catatanKebaikan->id ?? '')
+                                        <form method="POST" action="{{ route('tambahEntriCatatanKebaikanSiswa') }}" id="my_form">
+                                        @else
+                                        <form method="POST" action="{{ route('updateEntriCatatanKebaikanSiswa') }}" id="my_form">
+                                        @endif
                                             @csrf
+                                            @if ($catatanKebaikan->id ?? '')
+                                            <input type="hidden" name="id" value="{{ $catatanKebaikan->id }}"></input>
+                                            @endif
                                             <table class="table-bio">
-                                                <tr >
+                                                <!-- <tr >
                                                     <th style="width: 200px">Hari/Tanggal</th>
                                                     <td><input name="jenis_amalan"class="form-control" type="text"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Jam</th>
                                                     <td> <input name="jenis_amalan"class="form-control" type="text"></td>
-                                                </tr>
+                                                </tr> -->
                                                 <tr>
                                                     <th>Jenis Amalan</th>
-                                                    <td> <input name="jenis_amalan"class="form-control" type="text"></td>
+                                                    <td>
+                                                    <select class="form-control" name="jenis">
+                                                        <option value="" selected disabled hidden>Pilih disini</option>
+                                                        <option value="0">Catatan Keburukan</option>
+                                                        <option value="1">Catatan Kebaikan</option>
+                                                    </select>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <th>Jenis Kegiatan</th>
-                                                    <td> <input name="jenis_amalan"class="form-control" type="text"></td>
+                                                    <td> <input name="kegiatan"class="form-control" type="text" value="{{ $catatanKebaikan->kegiatan ?? '' }}"/></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Deskripsi Kegiatan</th>
-                                                    <td> <textarea name="bobot_amalan" class="form-control ini" >Kucing</textarea></td>
+                                                    <td><textarea name="deskripsi" class="form-control ini" style="min-width:100%;" placeholder="Contoh: Pada pagi itu saya melihat kelas berantakan dan banyak sampah, jadi saya membereskannya">{{ $catatanKebaikan->deskripsi ?? "" }}</textarea></td>
                                                 </tr>
                                             </table>
                                             <div class="form-group">

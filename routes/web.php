@@ -30,6 +30,10 @@ Route::get('/budi-arianto', 'CatatanYaumiyahController@viewPageCatatanAmalanSisw
 //ROUTE CATATAN KEBAIKAN DAN KEBURUKAN
 Route::get('/catatan-kebaikan', 'CatatanKebaikanController@viewPageCatatanKebaikanSiswa')->name('viewCatatanKebaikanSiswa');
 Route::get('/tambah-catatan-kebaikan', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('tambahCatatanKebaikanSiswa');
+Route::get('/edit-catatan-kebaikan', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('updateCatatanKebaikanSiswa');
+Route::post('/tambah-catatan-kebaikan', 'CatatanKebaikanController@tambahCatataKebaikan')->name('tambahEntriCatatanKebaikanSiswa');
+Route::get('/hapus-catatan-kebaikan', 'CatatanKebaikanController@hapusCatatanKebaikan')->name('hapusEntriCatatanKebaikanSiswa');
+Route::post('/edit-catatan-kebaikan', 'CatatanKebaikanController@updateCatataKebaikan')->name('updateCatatanKebaikanSiswa');
 
 // Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
 // });

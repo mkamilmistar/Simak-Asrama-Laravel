@@ -68,34 +68,22 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($catatan_kebaikan as $index => $p)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Minggu, 12 Maret 2020</td>
-                                            <td>Membereskan sampah dikelas</td>
-                                            <td>Pada pagi itu saya melihat kelas berantakan dan banyak sampah, jadi saya membereskannya</td>
+                                            <td>{{ $index+1 }}</td>
+                                            <td>{{ $p->created_at }}</td>
+                                            <td>{{ $p->kegiatan }}</td>
+                                            <td>{{ $p->deskripsi }}</td>
                                             <td>
-                                                <a href="#">
+                                                <a href="{{ route('updateCatatanKebaikanSiswa', ['id' => $p->id]) }}">
                                                     <button type="button" class="btn btn-warning">Edit</button>
                                                 </a>
-                                                <a href="#">
+                                                <a href="{{ route('hapusEntriCatatanKebaikanSiswa', ['id' => $p->id]) }}">
                                                     <button type="button" class="btn btn-danger">Hapus</button>
                                                 </a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Minggu, 12 Maret 2020</td>
-                                            <td>Membereskan sampah dikelas</td>
-                                            <td>Pada pagi itu saya melihat kelas berantakan dan banyak sampah, jadi saya membereskannya</td>
-                                            <td>
-                                                <a href="#">
-                                                    <button type="button" class="btn btn-warning">Edit</button>
-                                                </a>
-                                                <a href="#">
-                                                    <button type="button" class="btn btn-danger">Hapus</button>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                                 <!-- END OF DATA SISWA -->
@@ -112,34 +100,22 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($catatan_keburukan as $index => $p)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Minggu, 12 Maret 2020</td>
-                                            <td>Berbohong</td>
-                                            <td>Pada pagi itu saya berbohong agar tidak dibuli teman</td>
+                                            <td>{{ $index+1 }}</td>
+                                            <td>{{ $p->created_at }}</td>
+                                            <td>{{ $p->kegiatan }}</td>
+                                            <td>{{ $p->deskripsi }}</td>
                                             <td>
-                                                <a href="#">
+                                                <a href="{{ route('updateCatatanKebaikanSiswa', ['id' => $p->id]) }}">
                                                     <button type="button" class="btn btn-warning">Edit</button>
                                                 </a>
-                                                <a href="#">
+                                                <a href="{{ route('hapusEntriCatatanKebaikanSiswa', ['id' => $p->id]) }}">
                                                     <button type="button" class="btn btn-danger">Hapus</button>
                                                 </a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Minggu, 12 Maret 2020</td>
-                                            <td>Berbohong</td>
-                                            <td>Pada pagi itu saya berbohong agar tidak dibuli teman</td>
-                                            <td>
-                                                <a href="#">
-                                                    <button type="button" class="btn btn-warning">Edit</button>
-                                                </a>
-                                                <a href="#">
-                                                    <button type="button" class="btn btn-danger">Hapus</button>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                                 <!-- END OF DATA SISWA -->
