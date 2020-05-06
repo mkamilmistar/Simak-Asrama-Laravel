@@ -18,11 +18,11 @@ class CreateCatatanHarianTable extends Migration
             $table->increments('id');
             // $table->integer('catatanHarian_id')->unsigned();
             // $table->foreign('catatanHarian_id')->references('id')->on('catatan')->onDelete('CASCADE');
-            $table->text('deskripsi');
+            $table->text('deskripsi')->nullable();
             $table->string('kategori');
             $table->timestamp('waktu');
-            $table->integer('siswa_id')->nullable();
-            $table->integer('guru_id')->nullable();
+            $table->integer('siswa_id');
+            $table->integer('guru_id');
             $table->timestamps();
         });
     }

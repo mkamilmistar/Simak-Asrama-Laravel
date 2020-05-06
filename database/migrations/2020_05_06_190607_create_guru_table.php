@@ -17,10 +17,10 @@ class CreateGuruTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
-            $table->string('nama')->nullable();
-            $table->integer('NIP')->nullable();
+            $table->string('nama');
+            $table->string('NIP');
             $table->text('alamat')->nullable();
-            $table->string('noHP')->nullable();
+            $table->string('noHP');
             $table->timestamps();
         });
     }

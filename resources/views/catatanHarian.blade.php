@@ -41,13 +41,7 @@
                                 </button>
                             </div>
                             <div class="card-body">
-                                <table class="table-bio">
-                                    <tr >
-                                        <th style="width: 200px">Tanggal</th>
-                                        <td><input type="text" placeholder="12 Maret 2020"></td>
-                                    
-                                    </tr>
-                                </table>
+                                <div class="table-wrapper-scroll-y my-custom-scrollbar">
                                 <br>
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
@@ -64,26 +58,27 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            
+                                            <?php $no = 1; ?>
                                             @foreach ($catHarian as $cat)
-                                                <td>{{$cat->id}}</td>
-                                                <td>{{$cat->siswa_id}}</td>
-                                                <td>{{$cat->guru_id}}</td>
+                                                <td>{{$no}}</td>
+                                                <td>{{$cat->siswa->nama}}</td>
+                                                <td>{{$cat->guru->NIP}}</td>
                                                 <td>{{$cat->kategori}}</td>
                                                 <td>{{$cat->deskripsi}}</td>
 
-                                                <td>{{$cat->waktu}}</td>
+                                                <td>{{Str::limit($cat->waktu, 10, "")}}</td>
                                                 <td>
                                                 <a href="/catatan-harian/{{$cat->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
                                                 <a href="/catatan-harian/{{$cat->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau dihapus?')">Delete</a>
                                                 </td>
-                                            
+                                                <?php $no++; ?>
                                             </tr>    
                                             @endforeach
                                         </tr>
                                         
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
                         </div>
                     </div>

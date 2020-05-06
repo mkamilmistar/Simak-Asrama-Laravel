@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CatatanHarianController extends Controller
 {
@@ -41,6 +42,7 @@ class CatatanHarianController extends Controller
         //Insert Table Siswa
         //$request->request->add(['user_id'=>$user->id]);
         $catHarian = \App\CatatanHarian::create($request->all());
+
         return redirect('/catatan-harian')->with('sukses','Berhasil ditambahkan!');
     }
 
