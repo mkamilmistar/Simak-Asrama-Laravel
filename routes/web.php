@@ -29,6 +29,11 @@ Route::get('/jenis-amalan-siswa', 'CatatanYaumiyahController@viewPageJenisAmalan
 Route::get('/tambah-jenis-amalan', 'CatatanYaumiyahController@viewPageTambahJenisAmalan')->name('tambahJenisAmalan');
 Route::get('/budi-arianto', 'CatatanYaumiyahController@viewPageCatatanAmalanSiswa')->name('viewCatatanSiswa');
 
+//ROUTE HAFALAN AL-QUR'AN
+Route::get('/hafalan-siswa',function (){
+    return view('hafalanSiswa');
+});
+
 //ROUTE CATATAN KEBAIKAN DAN KEBURUKAN
 Route::get('/catatan-kebaikan', 'CatatanKebaikanController@viewPageCatatanKebaikanSiswa')->name('viewCatatanKebaikanSiswa');
 Route::get('/tambah-catatan-kebaikan', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('tambahCatatanKebaikanSiswa');
