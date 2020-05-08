@@ -21,7 +21,7 @@
                 <li class="nav-item">
                     <a href="#">Biodata</a>
                 </li>
-                <li class="nav-item">
+                <li class="{{ 'hafalan-siswa' == request()->path() ? 'nav-item active' : 'nav-item' }}">
                     <a href="/hafalan-siswa">Hafalan Al-Qur'an dan Hadits</a>
                 </li>
                 <li class="{{ 'catatan-yaumiyah' == request()->path() ? 'nav-item active' : 'nav-item' }}">

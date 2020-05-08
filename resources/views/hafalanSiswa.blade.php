@@ -61,21 +61,33 @@
                                     <thead>
                                         <tr class="table-tengah">
                                             <th rowspan = "2">No</th>
-                                            <th>Tanggal</th>
-                                            <th>Jenis</th>
+                                            <th rowspan = "2">Tanggal</th>
+                                            <th rowspan = "2">P/M</th>
+                                            <th rowspan = "2">Q/H</th>
+                                            <th colspan = "2">Tahfidz</th>
+                                            <th colspan = "2">Muroja'ah</th>
+                                            <th rowspan = "2">Nilai</th>
+                                            <th rowspan = "2">Pemeriksa</th>
+                                        </tr>
+                                        <tr class="table-tengah">
+                                            <th>Surat</th>
                                             <th>Ayat</th>
-                                            <th>Keterangan</th>
-                                            <th>Nilai</th>
+                                            <th>Surat</th>
+                                            <th>Ayat</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>1</td>
                                             <td>Minggu, 12 Maret 2020</td>
-                                            <td>Hadist</td>
-                                            <td>5</td>
-                                            <td>Baik</td>
-                                            <td>8</td>
+                                            <td>P</td>
+                                            <td>Q</td>
+                                            <td>Contoh</td>
+                                            <td>Contoh</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>9</td>
+                                            <td>Alif Hanif P</td>
                                         </tr>
                                     </tbody>
                                 </table>
