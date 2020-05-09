@@ -16,6 +16,9 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
     Route::get('/', 'LandingPageController@home');
 });
 
+//AUTH
+Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+
 //DASHBOARD PAGE
 Auth::routes();
 
@@ -38,7 +41,7 @@ Route::get('/hafalan-siswa',function (){
 Route::get('/catatan-kebaikan', 'CatatanKebaikanController@viewPageCatatanKebaikanSiswa')->name('viewCatatanKebaikanSiswa');
 Route::get('/tambah-catatan-kebaikan', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('tambahCatatanKebaikanSiswa');
 
-Route::group(['middleware' => ['auth', 'checkRole:pembina']], function(){
+Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
     //Catatan Harian
     Route::get('/catatan-harian', 'CatatanHarianController@viewPageCatatan');
     Route::post('/catatan-harian/create', 'CatatanHarianController@create');
@@ -47,8 +50,3 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function(){
     Route::get('/catatan-harian/{id}/delete','CatatanHarianController@delete');
     //Route::get('/siswa/{id}/profile','SiswaController@profile');
 });
-
-//AUTH
-Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
-
-Auth::routes();
