@@ -19,7 +19,7 @@ class CatatanYaumiyahController extends Controller
     public function viewPagePembina()
     {
         // $dataAmalanSiswa = 
-        treturn view('catatanAmalanPembina');
+        return view('catatanAmalanPembina');
     }
 
     public function viewPageTambahJenisAmalan()
