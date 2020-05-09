@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
     //ROUTE CATATAN AMALAN YAUMIYAH
     Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPageSiswa')->name('viewCatatanAmalanSiswa');
     Route::get('/tambah-catatan-yaumiyah', 'CatatanYaumiyahController@viewPageTambahCatatanAmalanSiswa')->name('tambahCatatanAmalanSiswa');
+});
 
 //ROUTE HAFALAN AL-QUR'AN
 Route::get('/hafalan-siswa',function (){
