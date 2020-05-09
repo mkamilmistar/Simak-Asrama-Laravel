@@ -27,6 +27,7 @@
     
     </head>
 
+
     <body onload="startTime()">
         @include('layouts.components.navbar')
         
@@ -34,8 +35,9 @@
         <div id="right-panel" class="right-panel">
             @include('layouts.components.header')
             <!-- Content -->
-            
+
                 @yield('content')
+
                 @include('layouts.components.footer')
            
         </div>

@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\catatanHarian;
+use App\User;
 
 class Siswa extends Model
 {
@@ -14,5 +16,10 @@ class Siswa extends Model
     
     public function catatanHarian(){
         return $this->hasMany(CatatanHarian::class);
+    }
+
+    public function User()
+    {
+        return $this->belongsTo(User::class);
     }
 }

@@ -43,8 +43,8 @@
                 <li class="{{ 'home' == request()->path() ? 'nav-item active' : 'nav-item' }}">
                     <a href="/home"></i>Beranda </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#">Biodata</a>
+                <li class="{{ 'profile' == request()->path() ? 'nav-item active' : 'nav-item' }}">
+                    <a href="/profile">Biodata</a>
                 </li>
                 <li class="nav-item">
                     <a href="#">Hafalan Al-Qur'an dan Hadits</a>
