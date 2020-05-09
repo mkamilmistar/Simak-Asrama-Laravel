@@ -39,7 +39,7 @@
                                 <!-- Data Siswa -->
                                 
                                 <br>
-                                <form action="/profile/{{$user->id}}/update" method="POST">
+                                <form action="/profile/{{$user->id}}/update" method="POST" enctype="multipart/form-data">
                                     {{csrf_field()}}
                                     <div class="form-group">
                                         <label for="nama">Nama</label>
@@ -60,9 +60,15 @@
                                         <label for="email">Email</label>
                                         <input name="email" type="email" class="form-control" id="email" aria-describedby="email" placeholder="Masukkan Email" value="{{$user->email}}">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="user_image">Avatar</label>
+                                        <input type="file" name="user_image" class="form-control">
+                                    </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                        <a href="/profile">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                        </a>
                                         <button type="submit" class="btn btn-warning">Update</button> 
                                     </div>
                                 </form>

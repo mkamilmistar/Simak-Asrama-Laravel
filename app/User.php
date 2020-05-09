@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nama', 'email', 'password', 'username', 'jenis_kelamin', 'role', 'tempat_lahir', 'alamat'
+        'nama', 'email', 'password', 'username', 'jenis_kelamin', 'role', 'tempat_lahir', 'alamat', 'user_image'
     ];
 
     /**
@@ -37,6 +37,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getAvatar()
+    {
+        if($this->avatar){
+            return asset('images/default.jpg');
+        }
+
+        return asset('images/user/'.$this->user_image);
+    }
 
     public function siswa(){
         $this->hasMany(User::class);

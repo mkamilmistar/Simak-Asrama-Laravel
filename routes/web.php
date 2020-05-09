@@ -57,3 +57,4 @@ Route::post('/profile/create', 'UserController@createProfile');
 Route::get('/profile/{id}/edit', 'UserController@editProfile');
 Route::post('/profile/{id}/update', 'UserController@updateProfile');
 Route::get('/profile/{id}/delete', 'UserController@deleteProfile');
+Route::get('/profile/{id}/view', 'UserController@viewProfile');

@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function index(){
         $data_user = User::all();
-        return view('Profile.profile', compact('data_user'));
+        return view('Profile.indexProfile', compact('data_user'));
     }
 
     public function createProfile(Request $request)
@@ -29,6 +29,12 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user -> update($request->all());
+        //buat upload gambar
+        if($request->hasFile('user_image')){
+            $request->file('user_image')->move('images/user/',$request->file('user_image')->getClientOriginalName());
+            $user->user_image = $request->file('user_image')->getClientOriginalName();
+            $user->save();
+        }
         return redirect('/profile')->with('sukses', 'Data Berhasil diUpdate');
     }
 
@@ -37,6 +43,12 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
         return redirect('/profile')->with('sukses', 'Data Berhasil Dihapus!');
+    }
+
+    public function viewProfile($id)
+    {
+        $user = User::find($id);
+        return view('Profile.profile', compact('user'));
     }
 
 }
