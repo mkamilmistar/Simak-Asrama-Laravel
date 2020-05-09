@@ -11,6 +11,10 @@
 |
 */
 
+Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
+    //LANDING PAGE VIEW
+    Route::get('/', 'LandingPageController@home');
+});
 
 //DASHBOARD PAGE
 Auth::routes();
@@ -25,11 +29,27 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
     Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPageSiswa')->name('viewCatatanAmalanSiswa');
     Route::get('/tambah-catatan-yaumiyah', 'CatatanYaumiyahController@viewPageTambahCatatanAmalanSiswa')->name('tambahCatatanAmalanSiswa');
 
+<<<<<<< HEAD
     Route::get('/catatan-pembina', 'CatatanYaumiyahController@viewPagePembina')->name('viewCatatanAmalanPembina');
     Route::get('/jenis-amalan-siswa', 'CatatanYaumiyahController@viewPageJenisAmalan')->name('jenisAmalanSiswa');
     Route::get('/tambah-jenis-amalan', 'CatatanYaumiyahController@viewPageTambahJenisAmalan')->name('tambahJenisAmalan');
     Route::get('/budi-arianto', 'CatatanYaumiyahController@viewPageCatatanAmalanSiswa')->name('viewCatatanSiswa');
+||||||| merged common ancestors
+//ROUTE CATATAN KEBAIKAN DAN KEBURUKAN
+Route::get('/catatan-kebaikan', 'CatatanKebaikanController@viewPageCatatanKebaikanSiswa')->name('viewCatatanKebaikanSiswa');
+Route::get('/tambah-catatan-kebaikan', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('tambahCatatanKebaikanSiswa');
+=======
+//ROUTE HAFALAN AL-QUR'AN
+Route::get('/hafalan-siswa',function (){
+    return view('hafalanSiswa');
+});
 
+//ROUTE CATATAN KEBAIKAN DAN KEBURUKAN
+Route::get('/catatan-kebaikan', 'CatatanKebaikanController@viewPageCatatanKebaikanSiswa')->name('viewCatatanKebaikanSiswa');
+Route::get('/tambah-catatan-kebaikan', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('tambahCatatanKebaikanSiswa');
+>>>>>>> 5fe4e6601e5d1fe8143ecb325554fba33b516e18
+
+<<<<<<< HEAD
     //ROUTE CATATAN KEBAIKAN DAN KEBURUKAN
     Route::get('/catatan-kebaikan', 'CatatanKebaikanController@viewPageCatatanKebaikanSiswa')->name('viewCatatanKebaikanSiswa');
     Route::get('/tambah-catatan-kebaikan', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('tambahCatatanKebaikanSiswa');
@@ -38,6 +58,24 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
     Route::get('/catatan-harian', 'CatatanHarianController@viewPageCatatan')->name('catatan-harian');
     Route::get('/tambah-catatan-harian', 'CatatanHarianController@viewPageTambahCatatan')->name('tambah-catatan-harian');
 });
+||||||| merged common ancestors
+//Catatan Harian
+Route::get('/catatan-harian', 'CatatanHarianController@viewPageCatatan')->name('catatan-harian');
+Route::get('/tambah-catatan-harian', 'CatatanHarianController@viewPageTambahCatatan')->name('tambah-catatan-harian');
+
+// Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
+// });
+=======
+Route::group(['middleware' => ['auth', 'checkRole:pembina']], function(){
+    //Catatan Harian
+    Route::get('/catatan-harian', 'CatatanHarianController@viewPageCatatan');
+    Route::post('/catatan-harian/create', 'CatatanHarianController@create');
+    Route::get('/catatan-harian/{id}/edit','CatatanHarianController@edit');
+    Route::post('/catatan-harian/{id}/update','CatatanHarianController@update');
+    Route::get('/catatan-harian/{id}/delete','CatatanHarianController@delete');
+    //Route::get('/siswa/{id}/profile','SiswaController@profile');
+});
+>>>>>>> 5fe4e6601e5d1fe8143ecb325554fba33b516e18
 
 //AUTH
 Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');

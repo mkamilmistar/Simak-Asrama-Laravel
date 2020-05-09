@@ -12,7 +12,7 @@ class Siswa extends Model
         'NIS', 'role', 'siswa_id', 'gedung_asrama', 'kamar_id'
     ];
     
-    /*public function catatanHarian(){
+    public function catatanHarian(){
         return $this->hasMany(CatatanHarian::class);
-    }*/
+    }
 }
