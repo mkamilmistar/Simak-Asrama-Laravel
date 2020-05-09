@@ -23,7 +23,8 @@
                         </div>
                     </div>
                 </div>
-    </div>    
+    </div>   
+    @include('layouts.allert') 
     <div class="content">
             <div class="animated fadeIn">
                 <div class="row">
@@ -31,7 +32,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Catatan Kebaikan & Keburukan Siswa</strong>
-                                <a href="/tambah-catatan-kebaikan" class="btn btn-primary">+ Tambah Catatan</a>
+                                <a href="/catatan-kebaikan/create" class="btn btn-primary">+ Tambah Catatan</a>
                             </div>
                             <div class="card-body">
                                 <!-- Data Siswa -->
@@ -42,11 +43,11 @@
                                     </tr>
                                     <tr>
                                         <th>Nama</th>
-                                        <td>Budi Arianto Kucing</td>
+                                        <td>{{$user->nama}}</td>
                                     </tr>
                                     <tr>
                                         <th>Jenis Kelamin</th>
-                                        <td>Laki-laki</td>
+                                        <td>{{$user->jenis_kelamin}}</td>
                                     </tr>
                                     <tr>
                                         <th>Kelas</th>
@@ -68,34 +69,22 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($catatanKebaikan as $index => $baik)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Minggu, 12 Maret 2020</td>
-                                            <td>Membereskan sampah dikelas</td>
-                                            <td>Pada pagi itu saya melihat kelas berantakan dan banyak sampah, jadi saya membereskannya</td>
+                                            <td>{{$index + 1}}</td>
+                                            <td>{{$baik->created_at->format('d/m/Y')}}</td>
+                                            <td>{{$baik->kegiatan}}</td>
+                                            <td>{{$baik->keterangan}}</td>
                                             <td>
-                                                <a href="#">
+                                                <a href="/catatan-kebaikan/{{$baik->id}}/edit">
                                                     <button type="button" class="btn btn-warning">Edit</button>
                                                 </a>
-                                                <a href="#">
+                                                <a href="/catatan-kebaikan/{{$baik->id}}/delete" onClick="return confirm('Yakin untuk menghapus?')">
                                                     <button type="button" class="btn btn-danger">Hapus</button>
                                                 </a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Minggu, 12 Maret 2020</td>
-                                            <td>Membereskan sampah dikelas</td>
-                                            <td>Pada pagi itu saya melihat kelas berantakan dan banyak sampah, jadi saya membereskannya</td>
-                                            <td>
-                                                <a href="#">
-                                                    <button type="button" class="btn btn-warning">Edit</button>
-                                                </a>
-                                                <a href="#">
-                                                    <button type="button" class="btn btn-danger">Hapus</button>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                                 <!-- END OF DATA SISWA -->
@@ -112,11 +101,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($catatanKeburukan as $index => $buruk)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Minggu, 12 Maret 2020</td>
-                                            <td>Berbohong</td>
-                                            <td>Pada pagi itu saya berbohong agar tidak dibuli teman</td>
+                                            <td>{{$index + 1}}</td>
+                                            <td>{{$buruk->created_at->format('d/m/Y')}}</td>
+                                            <td>{{$buruk->kegiatan}}</td>
+                                            <td>{{$buruk->keterangan}}</td>
                                             <td>
                                                 <a href="#">
                                                     <button type="button" class="btn btn-warning">Edit</button>
@@ -126,20 +116,7 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Minggu, 12 Maret 2020</td>
-                                            <td>Berbohong</td>
-                                            <td>Pada pagi itu saya berbohong agar tidak dibuli teman</td>
-                                            <td>
-                                                <a href="#">
-                                                    <button type="button" class="btn btn-warning">Edit</button>
-                                                </a>
-                                                <a href="#">
-                                                    <button type="button" class="btn btn-danger">Hapus</button>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                                 <!-- END OF DATA SISWA -->

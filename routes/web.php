@@ -38,9 +38,7 @@ Route::get('/hafalan-siswa',function (){
     return view('hafalanSiswa');
 });
 
-//ROUTE CATATAN KEBAIKAN DAN KEBURUKAN
-Route::get('/catatan-kebaikan', 'CatatanKebaikanController@viewPageCatatanKebaikanSiswa')->name('viewCatatanKebaikanSiswa');
-Route::get('/tambah-catatan-kebaikan', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('tambahCatatanKebaikanSiswa');
+
 
 Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
     //Catatan Harian
@@ -58,3 +56,11 @@ Route::get('/profile/{id}/edit', 'UserController@editProfile');
 Route::post('/profile/{id}/update', 'UserController@updateProfile');
 Route::get('/profile/{id}/delete', 'UserController@deleteProfile');
 Route::get('/profile/{id}/view', 'UserController@viewProfile');
+
+//ROUTE CATATAN KEBAIKAN DAN KEBURUKAN
+Route::get('/catatan-kebaikan', 'CatatanKebaikanController@viewPageCatatanKebaikanSiswa')->name('viewCatatanKebaikanSiswa');
+Route::get('/catatan-kebaikan/create', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('tambahCatatanKebaikanSiswa');
+Route::post('/catatan-kebaikan/create', 'CatatanKebaikanController@postCatatanKebaikanSiswa')->name('postCatatanKebaikanSiswa');
+Route::get('/catatan-kebaikan/{id}/edit', 'CatatanKebaikanController@viewUpdateCatatan')->name('viewEditCatatanKebaikanSiswa');
+Route::post('/catatan-kebaikan/{id}/update', 'CatatanKebaikanController@updateCatatan')->name('updateCatatanKebaikanSiswa');
+Route::get('/catatan-kebaikan/{id}/delete', 'CatatanKebaikanController@hapusCatatan')->name('hapusCatatanKebaikanSiswa');

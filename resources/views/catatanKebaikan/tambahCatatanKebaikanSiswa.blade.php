@@ -24,6 +24,7 @@
                     </div>
                 </div>
     </div>    
+    @include('layouts.allert')
     <div class="content">
             <div class="animated fadeIn">
                 <div class="row">
@@ -38,29 +39,35 @@
                                         <h4>Masukan Catatan Kebaikan/Kuburukan </h4>
                                         <div class="garis2"></div>
                                     </div>
+                                    
                                     <div class="isitambah">
-                                        <form method="GET" id="my_form">
+                                         <form action="/catatan-kebaikan/create" method="POST">
                                             @csrf
                                             <table class="table-bio">
-                                                <tr >
+                                                <!-- <tr >
                                                     <th style="width: 200px">Hari/Tanggal</th>
                                                     <td><input name="jenis_amalan"class="form-control" type="text"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Jam</th>
                                                     <td> <input name="jenis_amalan"class="form-control" type="text"></td>
-                                                </tr>
+                                                </tr> -->
                                                 <tr>
                                                     <th>Jenis Amalan</th>
-                                                    <td> <input name="jenis_amalan"class="form-control" type="text"></td>
+                                                    <td> 
+                                                        <select name="jenis" class="form-control" id="jenis">
+                                                            <option value="Baik">Baik</option>
+                                                            <option value="Buruk">Buruk</option>
+                                                        </select>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <th>Jenis Kegiatan</th>
-                                                    <td> <input name="jenis_amalan"class="form-control" type="text"></td>
+                                                    <td> <input name="kegiatan"class="form-control" type="text"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Deskripsi Kegiatan</th>
-                                                    <td> <textarea name="bobot_amalan" class="form-control ini" >Kucing</textarea></td>
+                                                    <td> <textarea name="keterangan" class="form-control ini" >Kucing</textarea></td>
                                                 </tr>
                                             </table>
                                             <div class="form-group">
