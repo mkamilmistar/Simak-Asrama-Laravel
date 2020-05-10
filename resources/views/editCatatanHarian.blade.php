@@ -39,30 +39,30 @@
                     <div class="card-body">
                         <div class="panel">
                             <div class="panel-body">
-                                <form action="/catatan-harian/{{$catHarian->id}}/update" method="POST" enctype="multipart/form-data">
+                                <form action="/catatan-harian/{{$catatanHarian->id}}/update" method="POST" enctype="multipart/form-data">
                                     {{csrf_field()}}
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">ID Siswa</label>
-                                        <input name="siswa_id" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Id siswa" value="{{$catHarian->siswa_id}}">
+                                        <input name="siswa_id" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Id siswa" value="{{$catatanHarian->siswa_id}}">
                                       </div>
                                       <div class="form-group">
                                           <label for="exampleInputEmail1">ID Pembina atau Guru</label>
-                                          <input name="guru_id" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Id pembina/guru" value="{{$catHarian->guru_id}}">
+                                          <input name="guru_id" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Id pembina/guru" value="{{$catatanHarian->guru_id}}">
                                         </div>
                                       <div class="form-group">
                                           <label for="exampleInputEmail1">Tanggal dan Waktu</label>
-                                          <input name="waktu" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="YY-MM-DD Hours:Minute:Second" value="{{$catHarian->waktu}}">
+                                          <input name="waktu" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="YY-MM-DD Hours:Minute:Second" value="{{$catatanHarian->waktu}}">
                                       </div>
                                       <div class="form-group">
                                           <label for="exampleFormControlSelect1">Kategori Catatan</label>
                                           <select name="kategori" class="form-control" id="exampleFormControlSelect1">
-                                            <option value="Prestasi" @if($catHarian->kategori == 'Prestasi') selected @endif>Prestasi</option>
-                                            <option value="Indisipliner" @if($catHarian->kategori == 'Indisipliner') selected @endif>Indisipliner</option>
+                                            <option value="Prestasi" @if($catatanHarian->kategori == 'Prestasi') selected @endif>Prestasi</option>
+                                            <option value="Indisipliner" @if($catatanHarian->kategori == 'Indisipliner') selected @endif>Indisipliner</option>
                                           </select>
                                       </div>
                                       <div class="form-group">
                                           <label for="exampleFormControlTextarea1">Keterangan</label>
-                                          <textarea name="deskripsi" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Keterangan tindakan/kejadian">{{$catHarian->deskripsi}}</textarea>
+                                          <textarea name="deskripsi" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Keterangan tindakan/kejadian">{{$catatanHarian->deskripsi}}</textarea>
                                       </div>
                                     <button type="submit" class="btn btn-warning btn-sm">Update</button> 
                                 </form>

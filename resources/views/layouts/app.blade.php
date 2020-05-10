@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="{{asset('sites/assets/css/cs-skin-elastic.css')}}">
         <link rel="stylesheet" href="{{asset('sites/assets/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/lib/datatable/dataTables.bootstrap.min.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
 
 
     
@@ -57,6 +58,8 @@
         <script src="{{asset('sites/assets/js/lib/data-table/buttons.print.min.js')}}"></script>
         <script src="{{asset('sites/assets/js/lib/data-table/buttons.colVis.min.js')}}"></script>
         <script src="{{asset('sites/assets/js/init/datatables-init.js')}}"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 
         <script type="text/javascript">
             $(document).ready(function() {

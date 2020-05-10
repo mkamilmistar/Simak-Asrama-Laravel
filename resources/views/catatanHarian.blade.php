@@ -59,7 +59,7 @@
                                     <tbody>
                                         <tr>
                                             <?php $no = 1; ?>
-                                            @foreach ($catHarian as $cat)
+                                            @foreach ($catatanHarian as $cat)
                                                 <td>{{$no}}</td>
                                                 <td>{{$cat->siswa->nama}}</td>
                                                 <td>{{$cat->guru->NIP}}</td>
@@ -100,16 +100,24 @@
                     <form action="/catatan-harian/create" method="POST">
                         {{csrf_field()}}
                         <div class="form-group">
-                          <label for="exampleInputEmail1">ID Siswa</label>
-                          <input name="siswa_id" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Id siswa">
+                          <label for="exampleInputEmail1">Nama Siswa</label>
+                          <select name="siswa_id" class="form-control" id="siswa_id" >
+                            @foreach($siswa as $siswa)
+                              <option value="{{$siswa->id}}">{{$siswa->nama}}</option>
+                            @endforeach
+                          </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">ID Pembina atau Guru</label>
-                            <input name="guru_id" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Id pembina/guru">
+                            <label for="exampleInputEmail1">NIP Pembina atau Guru</label>
+                            <select name="guru_id" class="form-control" id="guru_id" >
+                                @foreach($guru as $guru)
+                                  <option value="{{$guru->id}}">{{$guru->NIP}}</option>
+                                @endforeach
+                              </select>
                           </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tanggal dan Waktu</label>
-                            <input name="waktu" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="YY-MM-DD Hours:Minute:Second">
+                            <input name="waktu" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="YYYY-MM-DD Hours:Minute:Second">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Kategori Catatan</label>

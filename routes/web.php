@@ -41,6 +41,8 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function(){
     Route::post('/catatan-harian/{id}/update','CatatanHarianController@update');
     Route::get('/catatan-harian/{id}/delete','CatatanHarianController@delete');
     //Route::get('/siswa/{id}/profile','SiswaController@profile');
+    Route::get('search', 'SearchController@index')->name('search');
+    Route::get('autocomplete', 'SearchController@fetch')->name('autocomplete');
 });
 
 //AUTH
