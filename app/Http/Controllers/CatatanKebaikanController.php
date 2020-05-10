@@ -75,25 +75,28 @@ class CatatanKebaikanController extends Controller
         return redirect('/catatan-kebaikan/{id}')->with('sukses', 'Catatan Kebaikan Berhasil ditambahkan!');
     }
 
-    public function viewUpdateCatatan($id)
+    public function viewUpdateCatatan($userId, $id)
     {
+       $user = User::find($userId);
        $catatan = CatatanKebaikan::find($id);
        return view('catatanKebaikan.editCatatanKebaikanSiswa', compact('catatan'));
     }
 
-    public function updateCatatan(Request $request, $id)
+    public function updateCatatan(Request $request, $userId, $id)
     {
+        $user = User::find($userId);
         $catatan = CatatanKebaikan::find($id);
         $catatan->update([
-            'jenis'     => request('jenis'),
+            'jenis'      => request('jenis'),
             'kegiatan'     => request('kegiatan'),
             'keterangan'     => request('keterangan'),
         ]);
-        return redirect('/catatan-kebaikan/{id}')->with('sukses', 'Catatan Kebaikan Berhasil diupdate!');
+        return redirect('/catatan-kebaikan/{userId}/{id}')->with('sukses', 'Catatan Kebaikan Berhasil diupdate!');
     }
 
-    public function hapusCatatan($id)
+    public function hapusCatatan($userId, $id)
     {
+        $user = User::find($userId);
         $catatan = CatatanKebaikan::find($id);
         $catatan->delete();
         return redirect('/catatan-kebaikan/{id}')->with('sukses', 'Data Berhasil Dihapus!');

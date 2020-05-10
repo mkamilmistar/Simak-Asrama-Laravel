@@ -76,10 +76,10 @@
                                             <td>{{$baik->kegiatan}}</td>
                                             <td>{{$baik->keterangan}}</td>
                                             <td>
-                                                <a href="/catatan-kebaikan/{{$baik->id}}/edit">
+                                                <a href="/catatan-kebaikan/{{$user->id}}/{{$baik->id}}/edit">
                                                     <button type="button" class="btn btn-warning">Edit</button>
                                                 </a>
-                                                <a href="/catatan-kebaikan/{{$baik->id}}/delete" onClick="return confirm('Yakin untuk menghapus?')">
+                                                <a href="/catatan-kebaikan/{{$user->id}}/{{$baik->id}}/delete" onClick="return confirm('Yakin untuk menghapus?')">
                                                     <button type="button" class="btn btn-danger">Hapus</button>
                                                 </a>
                                             </td>
@@ -108,10 +108,10 @@
                                             <td>{{$buruk->kegiatan}}</td>
                                             <td>{{$buruk->keterangan}}</td>
                                             <td>
-                                                <a href="#">
+                                                <a href="/catatan-kebaikan/{{$user->id}}/{{$baik->id}}/edit">
                                                     <button type="button" class="btn btn-warning">Edit</button>
                                                 </a>
-                                                <a href="#">
+                                                <a href="/catatan-kebaikan/{{$user->id}}/{{$baik->id}}/delete">
                                                     <button type="button" class="btn btn-danger">Hapus</button>
                                                 </a>
                                             </td>
