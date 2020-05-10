@@ -19,6 +19,7 @@ class CatatanKebaikanSeeder extends Seeder
                 'jenis'                 => 'Baik',
                 'kegiatan'              => 'Membereskan sampah dikelas',
                 'keterangan'            => 'Pada pagi itu saya melihat kelas berantakan dan banyak sampah, jadi saya membereskannya',
+                'tanggal'               => '01/05/2020',
                 'created_at' => \Carbon\Carbon::createFromDate(2020,01,01)->toDateTimeString()
             ],
             [
@@ -26,6 +27,7 @@ class CatatanKebaikanSeeder extends Seeder
                 'jenis'                 => 'Buruk',
                 'kegiatan'              => 'Menyerakkah sampah dikelas',
                 'keterangan'            => 'Pada pagi itu saya melihat kelas berantakan dan banyak sampah, jadi saya membiarkannya' ,
+                'tanggal'               => '01/05/2020',
                 'created_at' => \Carbon\Carbon::createFromDate(2020 ,01,01)->toDateTimeString()
             ],
             [
@@ -33,6 +35,7 @@ class CatatanKebaikanSeeder extends Seeder
                 'jenis'                 => 'Buruk',
                 'kegiatan'              => 'tit',
                 'keterangan'            => 'Pada pagi itu saya melihat kelas berantakan dan banyak sampah, jadi saya membiarkannya' ,
+                'tanggal'               => '01/05/2020',
                 'created_at' => \Carbon\Carbon::createFromDate(2020 ,01,01)->toDateTimeString()
             ],
             [
@@ -40,6 +43,7 @@ class CatatanKebaikanSeeder extends Seeder
                 'jenis'                 => 'Baik',
                 'kegiatan'              => 'tot',
                 'keterangan'            => 'Pada pagi itu saya melihat kelas berantakan dan banyak sampah, jadi saya membiarkannya' ,
+                'tanggal'               => '01/05/2020',
                 'created_at' => \Carbon\Carbon::createFromDate(2020 ,01,01)->toDateTimeString()
             ],
             [
@@ -47,6 +51,7 @@ class CatatanKebaikanSeeder extends Seeder
                 'jenis'                 => 'Baik',
                 'kegiatan'              => 'ohok',
                 'keterangan'            => 'Pada pagi itu saya melihat kelas berantakan dan banyak sampah, jadi saya membiarkannya' ,
+                'tanggal'               => '01/05/2020',
                 'created_at' => \Carbon\Carbon::createFromDate(2020 ,01,01)->toDateTimeString()
             ],
         ]);

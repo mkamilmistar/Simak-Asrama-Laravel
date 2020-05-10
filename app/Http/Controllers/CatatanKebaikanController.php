@@ -60,6 +60,7 @@ class CatatanKebaikanController extends Controller
         $catatan->jenis = $request->input('jenis');
         $catatan->kegiatan = $request->input('kegiatan');
         $catatan->keterangan = $request->input('keterangan');
+        $catatan->tanggal = $request->input('tanggal');
         $catatan->save();
         $user = User::find($id);
 
@@ -81,6 +82,7 @@ class CatatanKebaikanController extends Controller
             'jenis'      => request('jenis'),
             'kegiatan'     => request('kegiatan'),
             'keterangan'     => request('keterangan'),
+            'tanggal'       => request('tanggal'),
         ]);
         
         return redirect()->route('viewCatatanKebaikanSiswa', [Auth::user()->id])->with('sukses', 'Catatan Kebaikan Berhasil diupdate!');

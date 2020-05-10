@@ -72,7 +72,7 @@
                                         @foreach($catatanKebaikan as $index => $baik)
                                         <tr>
                                             <td>{{$index + 1}}</td>
-                                            <td>{{$baik->created_at->format('d/m/Y')}}</td>
+                                            <td>{{$baik->tanggal}}</td>
                                             <td>{{$baik->kegiatan}}</td>
                                             <td>{{$baik->keterangan}}</td>
                                             <td>
@@ -104,7 +104,7 @@
                                     @foreach($catatanKeburukan as $index => $buruk)
                                         <tr>
                                             <td>{{$index + 1}}</td>
-                                            <td>{{$buruk->created_at->format('d/m/Y')}}</td>
+                                            <td>{{$buruk->tanggal}}</td>
                                             <td>{{$buruk->kegiatan}}</td>
                                             <td>{{$buruk->keterangan}}</td>
                                             <td>

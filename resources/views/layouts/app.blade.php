@@ -12,7 +12,10 @@
 
         <link rel="apple-touch-icon" href="{{asset('sites/images/favicon.png')}}">
         <link rel="shortcut icon" href="{{asset('sites/images/favicon.png')}}">
-
+        <!-- Date Picker -->
+        <link rel="stylesheet" href="{{asset('sites/assets/air-datepicker/dist/css/datepicker.css')}}">
+        <link rel="stylesheet" href="{{asset('sites/assets/air-datepicker/dist/css/datepicker.min.css')}}">
+        <!-- Date Picker -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
@@ -23,6 +26,9 @@
         <link rel="stylesheet" href="{{asset('sites/assets/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/lib/datatable/dataTables.bootstrap.min.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+
+        <!-- Date Picker -->
+
 
 
     
@@ -50,6 +56,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
         <script src="{{asset('sites/assets/js/main.js')}}"></script>
+         <!-- DatePicker -->
+        <script src="{{asset('sites/assets/air-datepicker/dist/js/datepicker.js')}}"></script>
+        <script src="{{asset('sites/assets/air-datepicker/dist/js/datepicker.min.js')}}"></script>
+        <script src="{{asset('sites/assets/air-datepicker/dist/js/i18n/datepicker.en.js')}}"></script>
+         <!-- DatePicker -->
         <script src="{{asset('sites/assets/js/lib/data-table/datatables.min.js')}}"></script>
         <script src="{{asset('sites/assets/js/lib/data-table/dataTables.bootstrap.min.js')}}"></script>
         <script src="{{asset('sites/assets/js/lib/data-table/dataTables.buttons.min.js')}}"></script>
@@ -62,6 +73,12 @@
         <script src="{{asset('sites/assets/js/init/datatables-init.js')}}"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+
+       
+        <script type="text/javascript">
+            $('.my-datepicker').datepicker([options])
+        </script>
+        
 
         <script type="text/javascript">
             $(document).ready(function() {

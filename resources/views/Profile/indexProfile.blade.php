@@ -120,7 +120,6 @@
                 <label for="user_image">Avatar</label>
                 <input type="file" name="user_image" class="form-control">
             </div>
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

@@ -9,7 +9,7 @@ class CatatanKebaikan extends Model
     protected $table = 'catatanKebaikan';
 
     protected $fillable = [
-        'jenis', 'kegiatan', 'keterangan', 'user_id', 'created_at'
+        'jenis', 'kegiatan', 'keterangan', 'user_id', 'created_at', 'tanggal'
     ];
 
     public function user(){

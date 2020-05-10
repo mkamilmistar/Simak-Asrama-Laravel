@@ -69,6 +69,12 @@
                                                     <th>Deskripsi Kegiatan</th>
                                                     <td> <textarea name="keterangan" class="form-control ini" >{{$catatan->keterangan}}</textarea></td>
                                                 </tr>
+                                                <tr>
+                                                    <th>Tanggal Kegiatan</th>
+                                                    <td>
+                                                        <input name="tanggal" type='text' class='datepicker-here form-control' data-language='en' value="{{$catatan->tanggal}}"/>
+                                                    </td>
+                                                </tr>
                                             </table>
                                             <div class="form-group">
                                                 <a href="/catatan-kebaikan/{{auth()->user()->id}}" class="btn btn-danger">Batal</a>    
