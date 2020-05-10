@@ -11,7 +11,7 @@ class Siswa extends Model
     protected $table = 'siswa';
 
     protected $fillable = [
-        'NIS', 'role', 'siswa_id', 'gedung_asrama', 'kamar_id'
+        'nama_depan', 'NIS', 'user_id', 'gedung_asrama', 'kamar_id'
     ];
     
     public function catatanHarian(){
