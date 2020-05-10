@@ -5,7 +5,8 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Role;
+use App\Siswa;
+use App\CatatanKebaikan;
 
 class User extends Authenticatable
 {
@@ -17,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nama', 'email', 'password', 'username', 'jenis_kelamin', 'role', 'tempat_lahir', 'alamat'
+        'nama', 'email', 'password', 'username', 'jenis_kelamin', 'role', 'tempat_lahir', 'alamat', 'user_image'
     ];
 
     /**
@@ -38,8 +39,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function roles()
+    public function getAvatar()
     {
-        return $this->belongsToMany(Role::class);
+        if($this->avatar){
+            return asset('images/default.jpg');
+        }
+
+        return asset('images/user/'.$this->user_image);
+    }
+
+    public function siswa(){
+        $this->hasMany(User::class);
+    }
+
+    public function CatatanKebaikan(){
+        $this->hasMany(CatatanKebaikan::class);
     }
 }

@@ -9,7 +9,7 @@
                         <i style="font-size: 80px;" class="fa fa-user fa-xs"></i> 
                     </div>
                     <div class="profile-item">
-                        <p>Nama User</p>
+                        <p>{{auth()->user()->nama}}</p>
                         <p>000000000</p>
                     </div>
                 </li>
@@ -18,11 +18,11 @@
                 <li class="{{ 'home' == request()->path() ? 'nav-item active' : 'nav-item' }}">
                     <a href="/home">Beranda </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#">Biodata</a>
+                <li class="{{ '/profile' == request()->path() ? 'nav-item active' : 'nav-item' }}">
+                    <a href="/profile/{{auth()->user()->id}}/view">Biodata</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#">Hafalan Al-Qur'an dan Hadits</a>
+                <li class="{{ 'hafalan-siswa' == request()->path() ? 'nav-item active' : 'nav-item' }}">
+                    <a href="/hafalan-siswa">Hafalan Al-Qur'an dan Hadits</a>
                 </li>
                 <li class="{{ 'catatan-yaumiyah' == request()->path() ? 'nav-item active' : 'nav-item' }}">
                     <a href="/catatan-yaumiyah">Catatan Amalan Yaumiah</a>
@@ -34,7 +34,7 @@
                     <a href="#">Catatan Shalat</a>
                 </li>
                 <li class="{{ 'catatan-kebaikan' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                    <a href="/catatan-kebaikan">Catatan Kebaikan & Keburukan</a>
+                    <a href="/catatan-kebaikan/{{auth()->user()->id}}">Catatan Kebaikan & Keburukan</a>
                 </li>
                 <li class="nav-item">
                     <a href="#">Catatan Harian</a>
@@ -43,8 +43,8 @@
                 <li class="{{ 'home' == request()->path() ? 'nav-item active' : 'nav-item' }}">
                     <a href="/home"></i>Beranda </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#">Biodata</a>
+                <li class="{{ 'profile' == request()->path() ? 'nav-item active' : 'nav-item' }}">
+                    <a href="/profile">Biodata</a>
                 </li>
                 <li class="nav-item">
                     <a href="#">Hafalan Al-Qur'an dan Hadits</a>

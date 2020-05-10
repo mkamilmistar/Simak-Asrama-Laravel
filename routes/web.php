@@ -16,24 +16,38 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
     Route::get('/', 'LandingPageController@home');
 });
 
+//AUTH
+Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+
 //DASHBOARD PAGE
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
 
-//ROUTE CATATAN AMALAN YAUMIYAH
-Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPageSiswa')->name('viewCatatanAmalanSiswa');
-Route::get('/tambah-catatan-yaumiyah', 'CatatanYaumiyahController@viewPageTambahCatatanAmalanSiswa')->name('tambahCatatanAmalanSiswa');
+//LANDING PAGE VIEW
+Route::get('/', 'LandingPageController@home');
 
-Route::get('/catatan-pembina', 'CatatanYaumiyahController@viewPagePembina')->name('viewCatatanAmalanPembina');
-Route::get('/jenis-amalan-siswa', 'CatatanYaumiyahController@viewPageJenisAmalan')->name('jenisAmalanSiswa');
-Route::get('/tambah-jenis-amalan', 'CatatanYaumiyahController@viewPageTambahJenisAmalan')->name('tambahJenisAmalan');
-Route::get('/budi-arianto', 'CatatanYaumiyahController@viewPageCatatanAmalanSiswa')->name('viewCatatanSiswa');
+Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
+    Route::get('/home', 'HomeController@index')->name('home');
 
-//ROUTE CATATAN KEBAIKAN DAN KEBURUKAN
-Route::get('/catatan-kebaikan', 'CatatanKebaikanController@viewPageCatatanKebaikanSiswa')->name('viewCatatanKebaikanSiswa');
-Route::get('/tambah-catatan-kebaikan', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('tambahCatatanKebaikanSiswa');
+    //ROUTE CATATAN AMALAN YAUMIYAH
+    Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPageSiswa')->name('viewCatatanAmalanSiswa');
+    Route::get('/tambah-catatan-yaumiyah', 'CatatanYaumiyahController@viewPageTambahCatatanAmalanSiswa')->name('tambahCatatanAmalanSiswa');
 
-Route::group(['middleware' => ['auth', 'checkRole:pembina']], function(){
+    Route::get('/profile', 'UserController@index');
+    Route::post('/profile/create', 'UserController@createProfile');
+    Route::get('/profile/{id}/edit', 'UserController@editProfile');
+    Route::post('/profile/{id}/update', 'UserController@updateProfile');
+    Route::get('/profile/{id}/delete', 'UserController@deleteProfile');
+    Route::get('/profile/{id}/view', 'UserController@viewProfile');
+});
+
+//ROUTE HAFALAN AL-QUR'AN
+Route::get('/hafalan-siswa',function (){
+    return view('hafalanSiswa');
+});
+
+
+
+Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
     //Catatan Harian
     Route::get('/catatan-harian', 'CatatanHarianController@viewPageCatatan');
     Route::post('/catatan-harian/create', 'CatatanHarianController@create');
@@ -45,7 +59,12 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function(){
     Route::get('autocomplete', 'SearchController@fetch')->name('autocomplete');
 });
 
-//AUTH
-Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
-Auth::routes();
+
+//ROUTE CATATAN KEBAIKAN DAN KEBURUKAN
+Route::get('/catatan-kebaikan/{id}', 'CatatanKebaikanController@viewPageCatatanKebaikanSiswa')->name('viewCatatanKebaikanSiswa');
+Route::get('/catatan-kebaikan/{id}/create', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('tambahCatatanKebaikanSiswa');
+Route::post('/catatan-kebaikan/{id}/create', 'CatatanKebaikanController@postCatatanKebaikanSiswa')->name('postCatatanKebaikanSiswa');
+Route::get('/catatan-kebaikan/{userId}/{id}/edit', 'CatatanKebaikanController@viewUpdateCatatan')->name('viewEditCatatanKebaikanSiswa');
+Route::post('/catatan-kebaikan/{userId}/{id}/update', 'CatatanKebaikanController@updateCatatan')->name('updateCatatanKebaikanSiswa');
+Route::get('/catatan-kebaikan/{userId}/{id}/delete', 'CatatanKebaikanController@hapusCatatan')->name('hapusCatatanKebaikanSiswa');

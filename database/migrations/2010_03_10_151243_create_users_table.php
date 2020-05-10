@@ -19,8 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('role')->default('siswa');
             $table->string('username')->nullable();
             $table->string('email')->unique();
+            $table->string('password')->default('12345');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
             $table->rememberToken();
             //profile
             $table->string('jenis_kelamin')->nullable();
