@@ -40,34 +40,56 @@
                                 <!-- END OF DATA SISWA -->
                                 <br>
                                 <!-- DATA AMALAN -->
+                                <table class="table-bio">
+                                    <tr >
+                                        <th style="width: 200px">Nomor Induk Siswa</th>
+                                        <td>000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nama</th>
+                                        <td>{{$data_user->nama}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Jenis Kelamin</th>
+                                        <td>{{$data_user->jenis_kelamin}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Kelas</th>
+                                        <td>IX-B</td>
+                                    </tr>
+                                </table>
+                                <!-- END OF DATA SISWA -->
+                                <br>
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                <h4><strong>Catatan Kebaikan</strong> </h4>
                                     <thead>
                                         <tr class="table-tengah">
-                                            <th>Nama</th>
-                                            <th>Role</th>
-                                            <th>Username</th>
-                                            <th>Email</th>
-                                            <th>Action</th>
+                                            <th>No</th>
+                                            <th>Tanggal</th>
+                                            <th>Jenis Kebaikan</th>
+                                            <th style="width: 200px">Keterangan</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($catatanKebaikan as $index => $baik)
                                         <tr>
-                                        @foreach($data_user as $user)
-                                            <td><a href="/profile/{{$user->id}}/view">{{$user -> nama}}</a></td>
-                                            <td>{{$user -> role}}</td>
-                                            <td>{{$user -> username}}</td>
-                                            <td>{{$user -> email}}</td>
+                                            <td>{{$index + 1}}</td>
+                                            <td>{{$baik->created_at->format('d/m/Y')}}</td>
+                                            <td>{{$baik->kegiatan}}</td>
+                                            <td>{{$baik->keterangan}}</td>
                                             <td>
-                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                                <a href="#" class="btn btn-warning btn-sm">Edit</a>
-                                                <a href="#" class="btn btn-danger btn-sm" onClick="return confirm('Yakin untuk menghapus?')">Hapus</a>
+                                                <a href="/catatan-kebaikan/{{$data_user->id}}/{{$baik->id}}/edit">
+                                                    <button type="button" class="btn btn-warning">Edit</button>
+                                                </a>
+                                                <a href="/catatan-kebaikan/{{$data_user->id}}/{{$baik->id}}/delete">
+                                                    <button type="button" class="btn btn-danger">Hapus</button>
+                                                </a>
                                             </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
-                                <!-- END OF DATA SISWA -->
-                                <br>
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                 <h4><strong>Catatan Keburukan</strong> </h4>
                                     <thead>
@@ -87,10 +109,10 @@
                                             <td>{{$buruk->kegiatan}}</td>
                                             <td>{{$buruk->keterangan}}</td>
                                             <td>
-                                                <a href="#">
+                                                <a href="/catatan-kebaikan/{{$data_user->id}}/{{$buruk->id}}/edit">
                                                     <button type="button" class="btn btn-warning">Edit</button>
                                                 </a>
-                                                <a href="#">
+                                                <a href="/catatan-kebaikan/{{$data_user->id}}/{{$buruk->id}}/delete">
                                                     <button type="button" class="btn btn-danger">Hapus</button>
                                                 </a>
                                             </td>

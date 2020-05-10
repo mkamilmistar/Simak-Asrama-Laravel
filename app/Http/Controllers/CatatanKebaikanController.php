@@ -37,36 +37,6 @@ class CatatanKebaikanController extends Controller
         return view('catatanKebaikan.catatanKebaikanSiswa', compact(['catatanKebaikan', 'catatanKeburukan', 'user']));
     }
 
-    public function viewPageCatatanKebaikanPembina($id){
-            
-            $userId = User::find($id);
-            $catatanKebaikan = CatatanKebaikan::where([
-                ['jenis', 'Baik'],
-                ['user_id', $id]
-            ])->get();
-            $catatanKeburukan = CatatanKebaikan::where([
-                ['jenis', 'Buruk'],
-                ['user_id', $id]
-            ])->get();
-         
-            // dd($catatanKebaikan);
-
-        return view('catatanKebaikan.catatanKebaikanPembina', compact(['catatanKebaikan', 'catatanKeburukan']));
-        
-    }
-
-    public function viewPageCatatanKebaikan()
-    {
-        if(Auth::user()->role=='pembina'){
-            $data_user = User::all();
-        }else{
-            $data_user = Auth::user();
-            return redirect()->back();
-        }
-
-        return view('catatanKebaikan.catatanKebaikan', compact(['data_user']));
-    }
-
     public function viewPageTambahCatatanKebaikanSiswa($userId)
     {
         $user = User::find($userId);
@@ -119,4 +89,47 @@ class CatatanKebaikanController extends Controller
         $catatan->delete();
         return redirect()->route('viewCatatanKebaikanSiswa', [Auth::user()->id])->with('sukses', 'Data Berhasil Dihapus!');
     }
+
+
+    //PEMBINA Version
+    public function viewPageCatatanKebaikanPembina($id){
+        $data_user = User::find($id);
+        $userId = User::find($id);
+        $catatanKebaikan = CatatanKebaikan::where([
+            ['jenis', 'Baik'],
+            ['user_id', $id]
+        ])->get();
+        $catatanKeburukan = CatatanKebaikan::where([
+            ['jenis', 'Buruk'],
+            ['user_id', $id]
+        ])->get();
+     
+        // dd($catatanKebaikan);
+
+    return view('catatanKebaikan.catatanKebaikanPembina', compact(['data_user','catatanKebaikan', 'catatanKeburukan']));
+    
+    }   
+
+    public function viewPageCatatanKebaikan(){
+        $userId = Auth::user()->id;
+        $catatanKebaikan = CatatanKebaikan::where([
+            ['user_id', Auth::user()->id],
+            ['jenis', 'Baik'],
+        ])->get();
+        
+        $catatanKeburukan = CatatanKebaikan::where([
+            ['user_id', $userId],
+            ['jenis', 'Buruk'],
+        ])->get();
+
+        if(Auth::user()->role=='pembina'){
+            $data_user = User::all();
+        }else{
+            $data_user = Auth::user();
+            return redirect()->back();
+        }
+        
+        return view('catatanKebaikan.catatanKebaikan', compact(['data_user','catatanKebaikan','catatanKeburukan']));
+    }
+
 }
