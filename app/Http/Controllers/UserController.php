@@ -56,12 +56,17 @@ class UserController extends Controller
     {
         if(Auth::user()->role=='pembina'){
             $user = User::find($id);
-        }elseif(Auth::id() == $id){
+        }
+        
+        elseif(Auth::id() == $id){
             $user = Auth::user();
             return view('Profile.profile', compact('user'));
-        }else{
+        }
+        
+        else{
             return redirect()->back();
         }
+        
         return view('Profile.profile', compact('user'));
     }
 

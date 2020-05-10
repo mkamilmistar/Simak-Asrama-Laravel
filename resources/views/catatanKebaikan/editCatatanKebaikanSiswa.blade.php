@@ -71,7 +71,7 @@
                                                 </tr>
                                             </table>
                                             <div class="form-group">
-                                                <a href="/catatan-kebaikan" class="btn btn-danger">Batal</a>    
+                                                <a href="/catatan-kebaikan/{{auth()->user()->id}}" class="btn btn-danger">Batal</a>    
                                                 <button type="submit" class="btn btn-primary">Simpan</button>
                                             </div> <!-- form-group// -->
                                         </form>

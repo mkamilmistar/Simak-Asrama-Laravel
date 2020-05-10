@@ -60,6 +60,7 @@
                                             <td>{{$user -> username}}</td>
                                             <td>{{$user -> email}}</td>
                                             <td>
+                                                <a href="/profile/{{$user -> id}}/edit" class="btn btn-primary btn-sm">Edit</a>
                                                 <a href="/profile/{{$user -> id}}/edit" class="btn btn-warning btn-sm">Edit</a>
                                                 <a href="/profile/{{$user -> id}}/delete" class="btn btn-danger btn-sm" onClick="return confirm('Yakin untuk menghapus?')">Hapus</a>
                                             </td>

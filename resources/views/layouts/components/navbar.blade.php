@@ -34,7 +34,7 @@
                     <a href="#">Catatan Shalat</a>
                 </li>
                 <li class="{{ 'catatan-kebaikan' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                    <a href="/catatan-kebaikan">Catatan Kebaikan & Keburukan</a>
+                    <a href="/catatan-kebaikan/{{auth()->user()->id}}">Catatan Kebaikan & Keburukan</a>
                 </li>
                 <li class="nav-item">
                     <a href="#">Catatan Harian</a>
