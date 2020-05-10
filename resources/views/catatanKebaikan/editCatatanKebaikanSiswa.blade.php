@@ -41,7 +41,7 @@
                                     </div>
                                     @include('layouts.allert')
                                     <div class="isitambah">
-                                         <form action="/catatan-kebaikan/{{$catatan->id}}/update" method="POST">
+                                         <form action="/catatan-kebaikan/{auth()->user()->id}}/{{$catatan->id}}/update" method="POST">
                                             @csrf
                                             <table class="table-bio">
                                                 <!-- <tr >

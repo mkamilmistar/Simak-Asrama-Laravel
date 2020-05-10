@@ -53,13 +53,15 @@ class CatatanKebaikanController extends Controller
         return view('catatanKebaikan.catatanKebaikanSiswa', compact(['catatanKebaikan', 'catatanKeburukan', 'user']));
     }
 
-    public function viewPageTambahCatatanKebaikanSiswa()
+    public function viewPageTambahCatatanKebaikanSiswa($userId)
     {
+        $user = User::find($userId);
         return view('catatanKebaikan.tambahCatatanKebaikanSiswa');
     }
 
-    public function postCatatanKebaikanSiswa(Request $request)
+    public function postCatatanKebaikanSiswa($id, Request $request)
     {
+        
         $this->validate($request, [
             'jenis' => 'max:25',
             'kegiatan' => 'max:40',
@@ -71,8 +73,9 @@ class CatatanKebaikanController extends Controller
         $catatan->kegiatan = $request->input('kegiatan');
         $catatan->keterangan = $request->input('keterangan');
         $catatan->save();
+        $user = User::find($id);
 
-        return redirect('/catatan-kebaikan/{id}')->with('sukses', 'Catatan Kebaikan Berhasil ditambahkan!');
+        return redirect()->route('viewCatatanKebaikanSiswa', [Auth::user()->id])->with('sukses', 'Catatan Kebaikan Berhasil ditambahkan!');
     }
 
     public function viewUpdateCatatan($userId, $id)
@@ -91,7 +94,8 @@ class CatatanKebaikanController extends Controller
             'kegiatan'     => request('kegiatan'),
             'keterangan'     => request('keterangan'),
         ]);
-        return redirect('/catatan-kebaikan/{userId}/{id}')->with('sukses', 'Catatan Kebaikan Berhasil diupdate!');
+        
+        return redirect()->route('viewCatatanKebaikanSiswa', [Auth::user()->id])->with('sukses', 'Catatan Kebaikan Berhasil diupdate!');
     }
 
     public function hapusCatatan($userId, $id)
@@ -99,6 +103,6 @@ class CatatanKebaikanController extends Controller
         $user = User::find($userId);
         $catatan = CatatanKebaikan::find($id);
         $catatan->delete();
-        return redirect('/catatan-kebaikan/{id}')->with('sukses', 'Data Berhasil Dihapus!');
+        return redirect()->route('viewCatatanKebaikanSiswa', [Auth::user()->id])->with('sukses', 'Data Berhasil Dihapus!');
     }
 }
