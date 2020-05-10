@@ -28,6 +28,27 @@ class CatatanKebaikanSeeder extends Seeder
                 'keterangan'            => 'Pada pagi itu saya melihat kelas berantakan dan banyak sampah, jadi saya membiarkannya' ,
                 'created_at' => \Carbon\Carbon::createFromDate(2020 ,01,01)->toDateTimeString()
             ],
+            [
+                'user_id'               => '1',
+                'jenis'                 => 'Buruk',
+                'kegiatan'              => 'tit',
+                'keterangan'            => 'Pada pagi itu saya melihat kelas berantakan dan banyak sampah, jadi saya membiarkannya' ,
+                'created_at' => \Carbon\Carbon::createFromDate(2020 ,01,01)->toDateTimeString()
+            ],
+            [
+                'user_id'               => '1',
+                'jenis'                 => 'Baik',
+                'kegiatan'              => 'tot',
+                'keterangan'            => 'Pada pagi itu saya melihat kelas berantakan dan banyak sampah, jadi saya membiarkannya' ,
+                'created_at' => \Carbon\Carbon::createFromDate(2020 ,01,01)->toDateTimeString()
+            ],
+            [
+                'user_id'               => '3',
+                'jenis'                 => 'Baik',
+                'kegiatan'              => 'ohok',
+                'keterangan'            => 'Pada pagi itu saya melihat kelas berantakan dan banyak sampah, jadi saya membiarkannya' ,
+                'created_at' => \Carbon\Carbon::createFromDate(2020 ,01,01)->toDateTimeString()
+            ],
         ]);
     }
 }

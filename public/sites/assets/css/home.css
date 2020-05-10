@@ -132,3 +132,7 @@ footer {
     font-size: 12px;
     line-height: 1px;
 }
+
+.textprofile a {
+    color: #000000;
+}

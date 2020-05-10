@@ -57,9 +57,8 @@
            
             <div class="profile-stat">
                 <div class="row justify-content-center">
-                    <div class="row justify-content-center">
-                        totot
-                    </div>
+                    
+    
                 </div>
                 <div class="row justify-content-center">
                    
@@ -73,6 +72,10 @@
             <div id="main" class="col-md-12">
                 <div class="col-12 col-lg-12">
                     <h4>Basic Info</h4>
+                    <div class="textprofile">
+                        <a href="/catatan-kebaikan-siswa/{{$user->id}}">Lihat Catatan Kebaikan & Keburukan</a>
+        
+                    </div>
                     <ul class="contact-list">
                      
                         <li>

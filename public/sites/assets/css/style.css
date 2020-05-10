@@ -3624,6 +3624,14 @@ footer.site-footer .footer-inner a {
   color: #000;
 }
 
+.textprofile a {
+  color: #000000;
+}
+
+.textprofile a:hover {
+  color: #fb9678;
+}
+
 .card-body .kotaktambah {
 
   width: 60%;

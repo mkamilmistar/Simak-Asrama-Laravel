@@ -66,3 +66,6 @@ Route::post('/catatan-kebaikan/{id}/create', 'CatatanKebaikanController@postCata
 Route::get('/catatan-kebaikan/{userId}/{id}/edit', 'CatatanKebaikanController@viewUpdateCatatan')->name('viewEditCatatanKebaikanSiswa');
 Route::post('/catatan-kebaikan/{userId}/{id}/update', 'CatatanKebaikanController@updateCatatan')->name('updateCatatanKebaikanSiswa');
 Route::get('/catatan-kebaikan/{userId}/{id}/delete', 'CatatanKebaikanController@hapusCatatan')->name('hapusCatatanKebaikanSiswa');
+
+Route::get('/catatan-kebaikan-siswa', 'CatatanKebaikanController@viewPageCatatanKebaikan')->name('viewCatatanKebaikan');
+Route::get('/catatan-kebaikan-siswa/{id}', 'CatatanKebaikanController@viewPageCatatanKebaikanPembina')->name('viewCatatanKebaikanSiswa');
