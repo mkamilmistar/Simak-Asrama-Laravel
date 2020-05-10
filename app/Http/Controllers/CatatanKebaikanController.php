@@ -9,11 +9,11 @@ use App\User;
 
 class CatatanKebaikanController extends Controller
 {
+    //SISWA
     public function viewPageCatatanKebaikanSiswa()
     {
-
         $userId = Auth::user()->id;
-        
+    
         $user = Auth::user();
 
         $catatanKebaikan = CatatanKebaikan::where([
@@ -24,7 +24,11 @@ class CatatanKebaikanController extends Controller
             ['user_id',$userId],
             ['jenis', '=', 'Buruk']
             ])->get();
-        return view('catatanKebaikan.catatanKebaikanSiswa', compact(['catatanKebaikan', 'catatanKeburukan', 'user']));
+        
+        
+        $catatanPembina = CatatanKebaikan::all();
+
+        return view('catatanKebaikan.catatanKebaikanSiswa', compact(['catatanKebaikan', 'catatanKeburukan', 'user', 'catatanPembina']));
     }
 
     public function viewPageTambahCatatanKebaikanSiswa()

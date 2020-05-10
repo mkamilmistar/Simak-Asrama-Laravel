@@ -28,7 +28,7 @@
 
             <div class="user-area dropdown float-right">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Budi Arianto Kucing
+                {{auth()->user()->nama}}
                 </a>
 
                 <div class="user-menu dropdown-menu">

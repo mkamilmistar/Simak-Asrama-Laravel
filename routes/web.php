@@ -31,6 +31,13 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
     //ROUTE CATATAN AMALAN YAUMIYAH
     Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPageSiswa')->name('viewCatatanAmalanSiswa');
     Route::get('/tambah-catatan-yaumiyah', 'CatatanYaumiyahController@viewPageTambahCatatanAmalanSiswa')->name('tambahCatatanAmalanSiswa');
+
+    Route::get('/profile', 'UserController@index');
+    Route::post('/profile/create', 'UserController@createProfile');
+    Route::get('/profile/{id}/edit', 'UserController@editProfile');
+    Route::post('/profile/{id}/update', 'UserController@updateProfile');
+    Route::get('/profile/{id}/delete', 'UserController@deleteProfile');
+    Route::get('/profile/{id}/view', 'UserController@viewProfile');
 });
 
 //ROUTE HAFALAN AL-QUR'AN
@@ -50,12 +57,7 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
     //Route::get('/siswa/{id}/profile','SiswaController@profile');
 });
 
-Route::get('/profile', 'UserController@index');
-Route::post('/profile/create', 'UserController@createProfile');
-Route::get('/profile/{id}/edit', 'UserController@editProfile');
-Route::post('/profile/{id}/update', 'UserController@updateProfile');
-Route::get('/profile/{id}/delete', 'UserController@deleteProfile');
-Route::get('/profile/{id}/view', 'UserController@viewProfile');
+
 
 //ROUTE CATATAN KEBAIKAN DAN KEBURUKAN
 Route::get('/catatan-kebaikan', 'CatatanKebaikanController@viewPageCatatanKebaikanSiswa')->name('viewCatatanKebaikanSiswa');

@@ -5,11 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Siswa;
 use App\User;
+use Auth;
 
 class UserController extends Controller
 {
     public function index(){
-        $data_user = User::all();
+
+        if(Auth::user()->role=='pembina'){
+            $data_user = User::all();
+        }else{
+            $data_user = Auth::user();
+            return redirect()->back();
+        }
         return view('Profile.indexProfile', compact('data_user'));
     }
 
@@ -47,7 +54,14 @@ class UserController extends Controller
 
     public function viewProfile($id)
     {
-        $user = User::find($id);
+        if(Auth::user()->role=='pembina'){
+            $user = User::find($id);
+        }elseif(Auth::id() == $id){
+            $user = Auth::user();
+            return view('Profile.profile', compact('user'));
+        }else{
+            return redirect()->back();
+        }
         return view('Profile.profile', compact('user'));
     }
 
