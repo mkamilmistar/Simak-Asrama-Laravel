@@ -32,12 +32,12 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
     Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPageSiswa')->name('viewCatatanAmalanSiswa');
     Route::get('/tambah-catatan-yaumiyah', 'CatatanYaumiyahController@viewPageTambahCatatanAmalanSiswa')->name('tambahCatatanAmalanSiswa');
 
-    Route::get('/profile', 'UserController@index');
+    Route::get('/profile', 'UserController@index')->name('viewAllProfile');
     Route::post('/profile/create', 'UserController@createProfile');
     Route::get('/profile/{id}/edit', 'UserController@editProfile');
     Route::post('/profile/{id}/update', 'UserController@updateProfile');
-    Route::get('/profile/{id}/delete', 'UserController@deleteProfile');
-    Route::get('/profile/{id}/view', 'UserController@viewProfile');
+    Route::get('/profile/{id}/delete', 'UserController@deleteProfile')->name('deleteProfile');
+    Route::get('/profile/{id}/view', 'UserController@viewProfile')->name('viewProfile');
 });
 
 //ROUTE HAFALAN AL-QUR'AN
