@@ -39,7 +39,7 @@
                                 <table class="table-bio">
                                     <tr >
                                         <th style="width: 200px">Nomor Induk Siswa</th>
-                                        <td>000000</td>
+                                        <td>{{$siswa->NIS}}</td>
                                     </tr>
                                     <tr>
                                         <th>Nama</th>
@@ -51,7 +51,7 @@
                                     </tr>
                                     <tr>
                                         <th>Kelas</th>
-                                        <td>IX-B</td>
+                                        <td>{{$siswa->kelas}}</td>
                                     </tr>
                                 </table>
                                 <!-- END OF DATA SISWA -->

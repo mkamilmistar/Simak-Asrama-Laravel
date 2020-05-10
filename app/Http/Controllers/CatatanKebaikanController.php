@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\CatatanKebaikan;
 use Auth;
 use App\User;
+use App\Siswa;
 
 class CatatanKebaikanController extends Controller
 {
@@ -26,15 +27,18 @@ class CatatanKebaikanController extends Controller
                 ['user_id',$userId],
                 ['jenis', '=', 'Buruk']
             ])->get();
+
+            $siswa = Siswa::where('user_id', $userId)->get()->first();
             
             // dd($catatanKebaikan);
+            //dd($data_siswa);
         }
         else{
            //back 
             return redirect()->back();
         }
 
-        return view('catatanKebaikan.catatanKebaikanSiswa', compact(['catatanKebaikan', 'catatanKeburukan', 'user']));
+        return view('catatanKebaikan.catatanKebaikanSiswa', compact(['catatanKebaikan', 'catatanKeburukan', 'user', 'siswa']));
     }
 
     public function viewPageTambahCatatanKebaikanSiswa($userId)

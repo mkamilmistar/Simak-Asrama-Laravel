@@ -49,7 +49,7 @@ class User extends Authenticatable
     }
 
     public function siswa(){
-        $this->hasMany(User::class);
+        $this->hasMany(Siswa::class);
     }
 
     public function CatatanKebaikan(){
