@@ -53,10 +53,10 @@
                                         <tr>
                                         @foreach($data_user as $user)
                                             <td><a href="/profile/{{$user->id}}/view">{{$user -> nama}}</a></td>
-                                            <td>tot</td>
-                                            <td>tot</td>
+                                            <td>{{$catatanKebaikan->count()}}</td>
+                                            <td>{{$catatanKeburukan->count()}}</td>
                                             <td>
-                                                <a href="#" class="btn btn-primary btn-sm">View</a>
+                                                <a href="/catatan-kebaikan-siswa/{{$user->id}}" class="btn btn-primary btn-sm">View</a>
                                             </td>
                                         </tr>
                                         @endforeach

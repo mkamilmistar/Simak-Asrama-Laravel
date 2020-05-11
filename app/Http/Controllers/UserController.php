@@ -42,14 +42,14 @@ class UserController extends Controller
             $user->user_image = $request->file('user_image')->getClientOriginalName();
             $user->save();
         }
-        return redirect('/profile')->with('sukses', 'Data Berhasil diUpdate');
+        return redirect()->route('viewProfile', User::find($id))->with('sukses', 'Data Berhasil diUpdate');
     }
 
     public function deleteProfile($id)
     {
         $user = User::find($id);
         $user->delete();
-        return redirect('/profile')->with('sukses', 'Data Berhasil Dihapus!');
+        return redirect()->route('deleteProfile', User::find($id))->with('sukses', 'Data Berhasil Dihapus!');
     }
 
     public function viewProfile($id)

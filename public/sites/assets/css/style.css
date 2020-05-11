@@ -1493,6 +1493,15 @@ header .form-inline .search-form.close {
   z-index: 0;
 }
 
+.user-area a {
+  color: #ffffff;
+}
+
+.user-area a:hover {
+  color: #FFDE59;
+  text-decoration: none;
+}
+
 .user-area .dropdown-toggle:before {
   content: "";
   position: absolute;
@@ -1545,8 +1554,8 @@ header .form-inline .search-form.close {
   background: #fff;
   border: none;
   left: inherit !important;
-  right: 0;
-  top: 54px !important;
+  right: 0 !important;
+  top: 55px !important;
   margin: 0;
   max-width: 150px;
   padding: 5px 10px;
@@ -1564,6 +1573,7 @@ header .form-inline .search-form.close {
   font-size: 13px;
   line-height: 22px;
   padding: 5px 0;
+  right: 400px;
 }
 
 .user-area .user-menu .nav-link>i {
@@ -1596,9 +1606,11 @@ header .form-inline .search-form.close {
   text-align: center;
 }
 
+
 .user-area .dropdown-toggle {
   line-height: 55px;
   height: 55px;
+  right: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

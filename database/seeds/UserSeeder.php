@@ -73,28 +73,24 @@ class UserSeeder extends Seeder
             [
                 'user_id'          => '2',
                 'NIS'               => '11111',
+                'kelas'             => 'IX-A',
                 'gedung_asrama'     => 'Putra',
                 'kamar_id'          => '227',
             ],
             [
                 'user_id'          => '3',
                 'NIS'               => '12345',
+                'kelas'             => 'IX-B',
                 'gedung_asrama'     => 'Putra',
                 'kamar_id'          => '220',
             ],
             [
                 'user_id'          => '4',
                 'NIS'               => '12341',
+                'kelas'             => 'X-C',
                 'gedung_asrama'     => 'Putri',
                 'kamar_id'          => '223',
-            ],
-            [
-                'user_id'          => '2',
-                'NIS'               => '12342',
-                'gedung_asrama'     => 'Putra',
-                'kamar_id'          => '221',
-            ],
-            
+            ],            
         ]);
 
         pembinaAsrama::insert([

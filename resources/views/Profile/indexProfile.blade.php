@@ -34,7 +34,7 @@
                                 <strong class="card-title">Data Siswa</strong>
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                Tambah Data Siswa
+                                + Tambah Data User
                                 </button>
                             </div>
                             <div class="card-body">
@@ -60,7 +60,7 @@
                                             <td>{{$user -> username}}</td>
                                             <td>{{$user -> email}}</td>
                                             <td>
-                                                <a href="/profile/{{$user -> id}}/edit" class="btn btn-primary btn-sm">Edit</a>
+                                                <!-- <a href="/profile/{{$user -> id}}/edit" class="btn btn-primary btn-sm">Edit</a> -->
                                                 <a href="/profile/{{$user -> id}}/edit" class="btn btn-warning btn-sm">Edit</a>
                                                 <a href="/profile/{{$user -> id}}/delete" class="btn btn-danger btn-sm" onClick="return confirm('Yakin untuk menghapus?')">Hapus</a>
                                             </td>
@@ -120,7 +120,6 @@
                 <label for="user_image">Avatar</label>
                 <input type="file" name="user_image" class="form-control">
             </div>
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
