@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\User;
 use App\Siswa;
-use App\PembinaAsrama;
+use App\Guru;
 use App\Catatan;
 use App\CatatanAmaliyah;
 
@@ -71,21 +71,21 @@ class UserSeeder extends Seeder
 
         Siswa::insert([
             [
-                'user_id'          => '2',
+                'user_id'           => '2',
                 'NIS'               => '11111',
                 'kelas'             => 'IX-A',
                 'gedung_asrama'     => 'Putra',
                 'kamar_id'          => '227',
             ],
             [
-                'user_id'          => '3',
+                'user_id'           => '3',
                 'NIS'               => '12345',
                 'kelas'             => 'IX-B',
                 'gedung_asrama'     => 'Putra',
                 'kamar_id'          => '220',
             ],
             [
-                'user_id'          => '4',
+                'user_id'           => '4',
                 'NIS'               => '12341',
                 'kelas'             => 'X-C',
                 'gedung_asrama'     => 'Putri',
@@ -93,32 +93,14 @@ class UserSeeder extends Seeder
             ],            
         ]);
 
-        pembinaAsrama::insert([
+        Guru::insert([
             [
-                'user_id'          => '1',
+                'user_id'           => '1',
                 'NIP'               => '11111',
+                'noHP'              => '089674851231',
             ],
         ]);
 
-        Catatan::insert([
-            [
-                'jenis_catatan'     => 'catatanAmaliyah'
-            ],
-        ]);
-
-        CatatanAmaliyah::insert([
-            [
-                'catatan_id'        => '1',
-                'siswa_id'          => '1',
-                'jenis_amalan'      => 'Sholat Tahajud',
-                'bobot_amalan'      => 10,
-            ],
-            [
-                'catatan_id'        => '1',
-                'siswa_id'          => '1',
-                'jenis_amalan'      => 'Sholat Dhuha',
-                'bobot_amalan'      => 20,
-            ],
-        ]);
+      
     }
 }

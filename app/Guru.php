@@ -9,10 +9,11 @@ class Guru extends Model
     protected $table = 'guru';
 
     protected $fillable = [
-        'NIP', 'nama', 'guru_id', 'alamat', 'noHP'
+        'NIP', 'role', 'alamat', 'noHP'
     ];
-    
-    public function catatanHarian(){
-        return $this->hasMany(CatatanHarian::class);
+
+    public function User()
+    {
+        return $this->belongsTo(User::class);
     }
 }
