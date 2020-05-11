@@ -63,16 +63,31 @@
                                                 </tr>
                                                 <tr>
                                                     <th>Jenis Kegiatan</th>
-                                                    <td> <input name="kegiatan"class="form-control" type="text"></td>
+                                                    <td> 
+                                                        <input name="kegiatan"class="form-control @error('kegiatan') is-invalid @enderror" type="text" value="{{ old('kegiatan') }}">
+                                                        @error('kegiatan')
+                                                            <span class="invalid-feedback d-block"><strong>{{ $message }}</strong></span>
+                                                        @enderror
+                                                    </td>
                                                 </tr>
+                                                <td>
+                                                    
+                                                </td>
                                                 <tr>
                                                     <th>Deskripsi Kegiatan</th>
-                                                    <td> <textarea name="keterangan" class="form-control ini" >Kucing</textarea></td>
+                                                    <td> <textarea name="keterangan" class="form-control ini @error('keterangan') is-invalid @enderror" placeholder="Masukan Keterangan Kegiatan Anda" >{{ old('keterangan') }}</textarea>
+                                                        @error('keterangan')
+                                                                <span class="invalid-feedback d-block"><strong>{{ $message }}</strong></span>
+                                                        @enderror
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <th>Tanggal Kegiatan</th>
                                                     <td>
-                                                        <input name="tanggal" type='text' class='datepicker-here form-control' data-language='en' />
+                                                        <input name="tanggal" type='text' class='datepicker-here form-control' data-language='en' value="{{ old('tanggal') }}" />
+                                                        @error('tanggal')
+                                                            <span class="invalid-feedback d-block"><strong>{{ $message }}</strong></span>
+                                                        @enderror
                                                     </td>
                                                 </tr>
                                             </table>
