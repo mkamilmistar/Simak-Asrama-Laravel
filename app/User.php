@@ -55,4 +55,8 @@ class User extends Authenticatable
     public function CatatanKebaikan(){
         $this->hasMany(CatatanKebaikan::class);
     }
+
+    public function catatanHarian(){
+        return $this->hasMany(CatatanHarian::class);
+    }
 }

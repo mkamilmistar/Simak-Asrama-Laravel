@@ -21,8 +21,10 @@ class CreateCatatanHarianTable extends Migration
             $table->text('deskripsi')->nullable();
             $table->string('kategori');
             $table->timestamp('waktu');
-            $table->integer('siswa_id');
-            $table->integer('guru_id');
+            $table->integer('siswa_id')->unsigned();
+            $table->foreign('siswa_id')->references('id')->on('users')->onDelete('CASCADE');
+            $table->integer('pembina_id')->unsigned();
+            $table->foreign('pembina_id')->references('id')->on('users')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

@@ -42,12 +42,20 @@
                                 <form action="/catatan-harian/{{$catatanHarian->id}}/update" method="POST" enctype="multipart/form-data">
                                     {{csrf_field()}}
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">ID Siswa</label>
-                                        <input name="siswa_id" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Id siswa" value="{{$catatanHarian->siswa_id}}">
+                                        <label for="exampleInputEmail1">Nama Siswa</label>
+                                        <select name="siswa_id" class="form-control" id="siswa_id" >
+                                            @foreach($data_siswa as $siswa)
+                                              <option value="{{$siswa->id}}" @if($siswa->id == $catatanHarian->siswa_id) selected @endif>{{$siswa->nama}}</option>
+                                            @endforeach
+                                          </select>
                                       </div>
                                       <div class="form-group">
-                                          <label for="exampleInputEmail1">ID Pembina atau Guru</label>
-                                          <input name="guru_id" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Id pembina/guru" value="{{$catatanHarian->guru_id}}">
+                                          <label for="exampleInputEmail1">Nama Pembina atau Guru</label>
+                                          <select name="pembina_id" class="form-control" id="pembina_id" >
+                                            @foreach($data_guru as $guru)
+                                              <option value="{{$guru->id}}" @if($guru->id == $catatanHarian->guru_id) selected @endif>{{$guru->nama}}</option>
+                                            @endforeach
+                                          </select>
                                         </div>
                                       <div class="form-group">
                                           <label for="exampleInputEmail1">Tanggal dan Waktu</label>

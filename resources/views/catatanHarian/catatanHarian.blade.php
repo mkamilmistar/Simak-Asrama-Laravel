@@ -48,11 +48,11 @@
                                         <tr class="table-tengah">
                                             <th>No</th>
                                             <th>Nama Siswa</th>
-                                            <th>NIP Pencatat</th>
+                                            <th>Nama Pencatat</th>
                                             <th>Kategori</th>
                                             <th>Keterangan</th>
 
-                                            <th>Waktu</th>
+                                            <th>Tanggal</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -61,8 +61,8 @@
                                             <?php $no = 1; ?>
                                             @foreach ($catatanHarian as $cat)
                                                 <td>{{$no}}</td>
-                                                <td>{{$cat->siswa->nama}}</td>
-                                                <td>{{$cat->guru->NIP}}</td>
+                                                <td>{{App\User::find($cat->siswa_id)->nama }}</td>
+                                                <td>{{App\User::find($cat->pembina_id)->nama }}</td>
                                                 <td>{{$cat->kategori}}</td>
                                                 <td>{{$cat->deskripsi}}</td>
 
@@ -100,24 +100,25 @@
                     <form action="/catatan-harian/create" method="POST">
                         {{csrf_field()}}
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Nama/NIS Siswa</label>
+                          <label for="exampleInputEmail1">Nama Siswa</label>
                           <select name="siswa_id" class="form-control" id="siswa_id" >
-                            @foreach($siswa as $siswa)
-                              <option value="{{$siswa->id}}">{{$siswa->nama.'/'.$siswa->NIS}}</option>
+                            @foreach($data_siswa as $siswa)
+                              <option value="{{$siswa->id}}">{{$siswa->nama}}</option>
                             @endforeach
                           </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nama/NIP Pembina atau Guru</label>
-                            <select name="guru_id" class="form-control" id="guru_id" >
-                                @foreach($guru as $guru)
-                                  <option value="{{$guru->id}}">{{$guru->nama.'/'.$guru->NIP}}</option>
+                            <label for="exampleInputEmail1">Nama Pembina atau Guru</label>
+                            <select name="pembina_id" class="form-control" id="pembina_id" >
+                                @foreach($data_guru as $guru)
+                                  <option value="{{$guru->id}}">{{$guru->nama}}</option>
                                 @endforeach
                               </select>
                           </div>
                         <div class="form-group ">
                             <label for="exampleInputEmail1">Tanggal dan Waktu</label>
                             <input name="waktu" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="YYYY-MM-DD Hours:Minute:Second">
+
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Kategori Catatan</label>
