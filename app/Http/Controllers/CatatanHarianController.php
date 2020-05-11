@@ -16,11 +16,13 @@ class CatatanHarianController extends Controller
     public function viewPageCatatan(Request $request)
     {
         $catatanHarian = CatatanHarian::all();
+        $siswa = Siswa::all();
+        $guru = Guru::all();
         $data_siswa = User::where([['role', '=', 'siswa']])->orderBy('nama')->get();
         //$data_siswa = collect([$data_siswa])->sortBy('nama', SORT_REGULAR, false);
         $data_guru = User::where([['role', '=', 'pembina']])->orderBy('nama')->get();
         //dd($catatanHarian);
-        return view('catatanHarian.catatanHarian', ['catatanHarian' => $catatanHarian, 'data_siswa' => $data_siswa, 'data_guru' => $data_guru]);
+        return view('catatanHarian.catatanHarian', ['catatanHarian' => $catatanHarian, 'data_siswa' => $data_siswa, 'data_guru' => $data_guru, 'siswa'=>$siswa, 'guru'=>$guru]);
     }
 
     public function create(Request $request)

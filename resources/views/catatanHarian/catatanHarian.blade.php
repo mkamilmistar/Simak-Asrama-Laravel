@@ -61,8 +61,8 @@
                                             <?php $no = 1; ?>
                                             @foreach ($catatanHarian as $cat)
                                                 <td>{{$no}}</td>
-                                                <td>{{App\User::find($cat->siswa_id)->nama }}</td>
-                                                <td>{{App\User::find($cat->pembina_id)->nama }}</td>
+                                                <td><a href="/profile/{{$cat->siswa_id}}/view">{{App\User::find($cat->siswa_id)->nama }}</td>
+                                                <td><a href="/profile/{{$cat->pembina_id}}/view">{{App\User::find($cat->pembina_id)->nama }}</td>
                                                 <td>{{$cat->kategori}}</td>
                                                 <td>{{$cat->deskripsi}}</td>
 
@@ -102,16 +102,16 @@
                         <div class="form-group">
                           <label for="exampleInputEmail1">Nama Siswa</label>
                           <select name="siswa_id" class="form-control" id="siswa_id" >
-                            @foreach($data_siswa as $siswa)
-                              <option value="{{$siswa->id}}">{{$siswa->nama}}</option>
+                            @foreach($data_siswa as $data_siswa)
+                              <option value="{{$data_siswa->id}}">{{$data_siswa->nama}}</option>
                             @endforeach
                           </select>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nama Pembina atau Guru</label>
                             <select name="pembina_id" class="form-control" id="pembina_id" >
-                                @foreach($data_guru as $guru)
-                                  <option value="{{$guru->id}}">{{$guru->nama}}</option>
+                                @foreach($data_guru as $data_guru)
+                                  <option value="{{$data_guru->id}}">{{$data_guru->nama}}</option>
                                 @endforeach
                               </select>
                           </div>
