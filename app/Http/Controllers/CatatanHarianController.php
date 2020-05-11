@@ -13,7 +13,9 @@ class CatatanHarianController extends Controller
     {
         $catatanHarian = \App\CatatanHarian::all();
         $siswa = Siswa::all();
+        $siswa = $siswa->sortBy('nama', SORT_REGULAR, false);
         $guru = Guru::all();
+        $guru = $guru->sortBy('nama', SORT_REGULAR, false);
         return view('catatanHarian', ['catatanHarian' => $catatanHarian, 'siswa' => $siswa, 'guru' => $guru]);
     }
 

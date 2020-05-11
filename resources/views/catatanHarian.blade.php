@@ -100,18 +100,18 @@
                     <form action="/catatan-harian/create" method="POST">
                         {{csrf_field()}}
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Nama Siswa</label>
+                          <label for="exampleInputEmail1">Nama/NIS Siswa</label>
                           <select name="siswa_id" class="form-control" id="siswa_id" >
                             @foreach($siswa as $siswa)
-                              <option value="{{$siswa->id}}">{{$siswa->nama}}</option>
+                              <option value="{{$siswa->id}}">{{$siswa->nama.'/'.$siswa->NIS}}</option>
                             @endforeach
                           </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">NIP Pembina atau Guru</label>
+                            <label for="exampleInputEmail1">Nama/NIP Pembina atau Guru</label>
                             <select name="guru_id" class="form-control" id="guru_id" >
                                 @foreach($guru as $guru)
-                                  <option value="{{$guru->id}}">{{$guru->NIP}}</option>
+                                  <option value="{{$guru->id}}">{{$guru->nama.'/'.$guru->NIP}}</option>
                                 @endforeach
                               </select>
                           </div>
