@@ -97,6 +97,7 @@ class UserSeeder extends Seeder
             [
                 'user_id'          => '1',
                 'NIP'               => '11111',
+                'noHP'              => '089674851231',
             ],
         ]);
 

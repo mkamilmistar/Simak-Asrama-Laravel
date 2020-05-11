@@ -115,7 +115,7 @@
                                 @endforeach
                               </select>
                           </div>
-                        <div class="form-group">
+                        <div class="form-group ">
                             <label for="exampleInputEmail1">Tanggal dan Waktu</label>
                             <input name="waktu" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="YYYY-MM-DD Hours:Minute:Second">
                         </div>

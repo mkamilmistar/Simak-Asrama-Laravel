@@ -21,6 +21,7 @@ class CatatanHarianController extends Controller
 
     public function create(Request $request)
     {
+
         //Insert Table User
         //$user = new \App\User;
         //$user->role = 'siswa';

@@ -9,6 +9,6 @@ class PembinaAsrama extends Model
     protected $table = 'pembinaAsrama';
 
     protected $fillable = [
-        'NIP', 'role',
+        'NIP', 'role', 'alamat', 'noHP'
     ];
 }

@@ -18,6 +18,7 @@ class CreatePembinaAsramaTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
             $table->integer('NIP')->nullable();
+            $table->string('noHP');
             $table->timestamps();
         });
     }

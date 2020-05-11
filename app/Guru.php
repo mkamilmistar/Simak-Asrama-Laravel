@@ -9,7 +9,7 @@ class Guru extends Model
     protected $table = 'guru';
 
     protected $fillable = [
-        'NIP', 'nama', 'guru_id', 'alamat', 'noHP'
+        'NIP', 'nama', 'user_id', 'alamat', 'noHP'
     ];
     
     public function catatanHarian(){
