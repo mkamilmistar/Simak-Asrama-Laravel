@@ -11,15 +11,17 @@ class Siswa extends Model
     protected $table = 'siswa';
 
     protected $fillable = [
-        'nama_depan', 'NIS', 'user_id', 'gedung_asrama', 'kamar_id'
+        'nama_depan', 'NIS', 'user_id', 'gedung_asrama', 'kamar_id', 'kelas'
     ];
     
     public function catatanHarian(){
         return $this->hasMany(CatatanHarian::class);
     }
 
-    public function User()
+    public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
+
+    
 }

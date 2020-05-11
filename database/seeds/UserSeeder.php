@@ -26,6 +26,7 @@ class UserSeeder extends Seeder
                 'tempat_lahir'      => 'Jonggol',
                 'alamat'            => 'Jonggol',
                 'role'              => 'pembina',
+                'tanggal_lahir'     => '01/02/1999'
             ],
             [
                 'username'          => 'siswa',
@@ -36,6 +37,7 @@ class UserSeeder extends Seeder
                 'tempat_lahir'      => 'Jonggol',
                 'alamat'            => 'Jonggol',
                 'role'              => 'siswa',
+                'tanggal_lahir'     => '12/03/1998'
             ],
             [
                 'username'          => 'siswa1',
@@ -46,6 +48,7 @@ class UserSeeder extends Seeder
                 'tempat_lahir'      => 'Jonggol',
                 'alamat'            => 'Jonggol',
                 'role'              => 'siswa',
+                'tanggal_lahir'     => '01/02/1999'
             ],
             [
                 'username'          => 'siswa2',
@@ -56,6 +59,7 @@ class UserSeeder extends Seeder
                 'tempat_lahir'      => 'Jonggol',
                 'alamat'            => 'Jonggol',
                 'role'              => 'siswa',
+                'tanggal_lahir'     => '01/02/1999'
             ],
             [
                 'username'          => 'siswa3',
@@ -66,6 +70,7 @@ class UserSeeder extends Seeder
                 'tempat_lahir'      => 'Jonggol',
                 'alamat'            => 'Jonggol',
                 'role'              => 'siswa',
+                'tanggal_lahir'     => '01/02/1999'
             ],
         ]);
 
@@ -90,7 +95,14 @@ class UserSeeder extends Seeder
                 'kelas'             => 'X-C',
                 'gedung_asrama'     => 'Putri',
                 'kamar_id'          => '223',
-            ],            
+            ],
+            [
+                'user_id'           => '5',
+                'NIS'               => '22341',
+                'kelas'             => 'X-C',
+                'gedung_asrama'     => 'Putra',
+                'kamar_id'          => '225',
+            ],                  
         ]);
 
         Guru::insert([

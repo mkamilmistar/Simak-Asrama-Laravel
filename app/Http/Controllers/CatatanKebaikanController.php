@@ -62,6 +62,7 @@ class CatatanKebaikanController extends Controller
         $catatan->keterangan = $request->input('keterangan');
         $catatan->tanggal = $request->input('tanggal');
         $catatan->save();
+        
         $user = User::find($id);
 
         return redirect()->route('viewCatatanKebaikanSiswa', [Auth::user()->id])->with('sukses', 'Catatan Kebaikan Berhasil ditambahkan!');

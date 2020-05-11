@@ -8,6 +8,6 @@ class JenisAmalanYaumiyah extends Model
 {
     protected $table = 'jenisAmalanYaumiyah';
     protected $fillable = [
-        'jenisAmalan', 'bobotAmalan'
+        'jenisAmalan', 'bobotAmalan',
     ];
 }

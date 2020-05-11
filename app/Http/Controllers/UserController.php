@@ -12,17 +12,46 @@ class UserController extends Controller
     public function index(){
 
         if(Auth::user()->role=='pembina'){
-            $data_user = User::all();
+            $data_siswa = User::with('siswa')->where('role', 'siswa')->get();
+            $data_guru = User::where('role', 'pembina')->get();
         }else{
-            $data_user = Auth::user();
+            $data_siswa = Auth::user();
             return redirect()->back();
         }
-        return view('Profile.indexProfile', compact('data_user'));
+        return view('Profile.indexProfile', compact(['data_siswa', 'data_guru']));
     }
 
     public function createProfile(Request $request)
     {
-        User::create($request->all());
+        $user = new User();
+        $user->nama = $request->input('nama');
+        $user->username = $request->input('username');
+        $user->email = $request->input('email');
+        $user->role = $request->input('role');
+        $user->jenis_kelamin = $request->input('jenis_kelamin');
+        $user->tempat_lahir = $request->input('tempat_lahir');
+        $user->tanggal_lahir = $request->input('tanggal_lahir');
+        $user->alamat = $request->input('alamat');
+        if($request->hasFile('user_image')){
+            $request->file('user_image')->move('images/user/',$request->file('user_image')->getClientOriginalName());
+            $user->user_image = $request->file('user_image')->getClientOriginalName();
+        }
+        $user->save();
+
+        $data_siswa = new Siswa([
+            'NIS' => $request->input('NIS'),
+            'kelas' => $request->input('kelas'),
+            'gedung_asrama' => $request->input('gedung_asrama'),
+            'kamar_id' => $request->input('kamar_id'),  
+        ]);
+        // $user->siswa = new Siswa();
+
+        $user->siswa()->save($data_siswa);
+
+        // $user = User::create(request()->all());
+        // $user->siswa()->create(request()->all());
+
+        
         return redirect ('/profile')->with('sukses', 'Data Berhasil diinput!');
     }
 
@@ -49,7 +78,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-        return redirect()->route('deleteProfile', User::find($id))->with('sukses', 'Data Berhasil Dihapus!');
+        return redirect('/profile')->with('sukses', 'Data Berhasil Dihapus!');
     }
 
     public function viewProfile($id)

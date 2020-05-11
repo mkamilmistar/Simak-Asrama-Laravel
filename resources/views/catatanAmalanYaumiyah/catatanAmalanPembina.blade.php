@@ -36,29 +36,7 @@
                             </div>
                             <div class="card-body">
                                 <!-- Data Siswa -->
-                                <table class="table-bio">
-                                    <tr >
-                                        <th style="width: 200px">Nomor Induk Siswa</th>
-                                        <td><input class="form-control"  type="text"></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Nama</th>
-                                        <td><input class="form-control"  type="text"></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Kelas</th>
-                                        <td>
-                                        <select class="form-control" id="kondisi">
-                                            <option>IX-A</option>
-                                            <option>IX-B</option>
-                                        </select>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td><button class="btn btn-primary">Cari</button></td>
-                                    </tr>
-                                </table>
+                                
                                 <!-- END OF DATA SISWA -->
                                 <br>
                                 <!-- DATA AMALAN -->
@@ -66,37 +44,23 @@
                                     <thead>
                                         <tr class="table-tengah">
                                             <th>No</th>
-                                            <th>NIM</th>
                                             <th>Nama</th>
                                             <th>Kelas</th>
-                                            <th>Jumlah Bobot</th>
+                                            <th>NIM</th>
+                                            <!-- <th>Jumlah Bobot</th> -->
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($data_user as $user)
                                         <tr>
                                             <td>1</td>
-                                            <td>1111111</td>
                                             <td>
-                                                <a href="/budi-arianto">Budi Arianto Kucing</a> 
+                                                <a href="#">{{$user->nama}}</a> 
                                             </td>
-                                            <td>IX-A</td>
-                                            <td>250</td>
-                                            <td>
-                                                <a href="#">
-                                                    <button type="button" class="btn btn-warning">Edit</button>
-                                                </a>
-                                                <a href="#">
-                                                    <button type="button" class="btn btn-danger">Hapus</button>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>0000000</td>
-                                            <td>Budi Arianto Kucing</td>
-                                            <td>IX-B</td>
-                                            <td>250</td>
+                                            <td>{{$user->siswa['kelas']}}</td>
+                                            <td>{{$user->siswa['NIS']}}</td>
+                                            <!-- <td>250</td> -->
                                             <td>
                                                 <a href="#">
                                                     <button type="button" class="btn btn-warning">Edit</button>
@@ -106,6 +70,8 @@
                                                 </a>
                                             </td>
                                         </tr>
+                                        @endforeach
+                                        
                                     </tbody>
                                 </table>
                                 <!-- END OF DATA SISWA -->

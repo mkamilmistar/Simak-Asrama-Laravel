@@ -29,8 +29,7 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
     Route::get('/home', 'HomeController@index')->name('home');
 
     //ROUTE CATATAN AMALAN YAUMIYAH
-    Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPageSiswa')->name('viewCatatanAmalanSiswa');
-    Route::get('/tambah-catatan-yaumiyah', 'CatatanYaumiyahController@viewPageTambahCatatanAmalanSiswa')->name('tambahCatatanAmalanSiswa');
+    
 
     Route::get('/profile', 'UserController@index')->name('viewAllProfile');
     Route::post('/profile/create', 'UserController@createProfile');
@@ -72,3 +71,10 @@ Route::get('/catatan-kebaikan/{userId}/{id}/delete', 'CatatanKebaikanController@
 //Catatan Kebaikan Pembina
 Route::get('/catatan-kebaikan-siswa', 'CatatanKebaikanController@viewPageCatatanKebaikan')->name('viewCatatanKebaikan');
 Route::get('/catatan-kebaikan-siswa/{id}', 'CatatanKebaikanController@viewPageCatatanKebaikanPembina')->name('viewCatatanKebaikanPembina');
+
+
+//Catatan Amalan Yaumiyah
+Route::get('/jenis-amalan', 'JenisAmalanController@viewPageJenisAmalan');
+
+Route::get('/catatan-yaumiyah-siswa', 'CatatanYaumiyahController@viewPagePembina')->name('viewCatatanAmalanSiswa');
+Route::get('/tambah-catatan-yaumiyah', 'CatatanYaumiyahController@viewPageTambahCatatanAmalanSiswa')->name('tambahCatatanAmalanSiswa');

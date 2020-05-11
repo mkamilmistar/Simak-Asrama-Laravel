@@ -31,7 +31,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Data Siswa</strong>
+                                <strong class="card-title">Data User</strong>
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                                 + Tambah Data User
@@ -43,10 +43,13 @@
                                 <br>
                                 <!-- DATA AMALAN -->
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                <h4><strong>Data Siswa</strong> </h4>
                                     <thead>
                                         <tr class="table-tengah">
+                                            <th>No</th>
                                             <th>Nama</th>
-                                            <th>Role</th>
+                                            <th>NIS</th>
+                                            <th>Kelas</th>
                                             <th>Username</th>
                                             <th>Email</th>
                                             <th>Action</th>
@@ -54,9 +57,39 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                        @foreach($data_user as $user)
+                                        @foreach($data_siswa as $index => $user)
+                                            <td>{{$index + 1}}</td>
                                             <td><a href="/profile/{{$user->id}}/view">{{$user -> nama}}</a></td>
-                                            <td>{{$user -> role}}</td>
+                                            <td>{{$user -> siswa['NIS']}}</td>
+                                            <td>{{$user -> siswa['kelas']}}</td>
+                                            <td>{{$user -> username}}</td>
+                                            <td>{{$user -> email}}</td>
+                                            <td>
+                                                <!-- <a href="/profile/{{$user -> id}}/edit" class="btn btn-primary btn-sm">Edit</a> -->
+                                                <a href="/profile/{{$user -> id}}/edit" class="btn btn-warning btn-sm">Edit</a>
+                                                <a href="/profile/{{$user -> id}}/delete" class="btn btn-danger btn-sm" onClick="return confirm('Yakin untuk menghapus?')">Hapus</a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                                <br>
+                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                <h4><strong>Data Guru</strong> </h4>
+                                    <thead>
+                                        <tr class="table-tengah">
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Username</th>
+                                            <th>Email</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        @foreach($data_guru as $index => $user)
+                                            <td>{{$index + 1}}</td>
+                                            <td><a href="/profile/{{$user->id}}/view">{{$user -> nama}}</a></td>
                                             <td>{{$user -> username}}</td>
                                             <td>{{$user -> email}}</td>
                                             <td>
@@ -103,7 +136,7 @@
             </div>
             <div class="form-group">
                 <label for="Role">Role</label>
-                <select class="form-control" id="role">
+                <select name="role" class="form-control" id="role">
                     <option value="pembina">Pembina</option>
                     <option value="siswa">Siswa</option>
                 </select>
@@ -115,6 +148,41 @@
             <div class="form-group">
                 <label for="email">Email</label>
                 <input name="email" type="email" class="form-control" id="email" aria-describedby="email" placeholder="Masukkan Email">
+            </div>
+            <div class="form-group">
+                <label for="NIS">NIS</label>
+                <input name="NIS" type="text" class="form-control" id="email" aria-describedby="email" placeholder="Masukkan Email">
+            </div>
+            <div class="form-group">
+                <label for="jenis_kelamin">Jenis Kelamin</label>
+                <select name="jenis_kelamin" class="form-control" id="jenis_kelamin">
+                    <option value="Laki-Laki">Laki-Laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tempat_lahir">Tempat Lahir</label>
+                <input name="tempat_lahir" type="text" class="form-control" id="email" aria-describedby="email" placeholder="Masukkan Email">
+            </div>
+            <div class="form-group">
+                <label for="tanggal_lahir">Tanggal Lahir</label>
+                <input name="tanggal_lahir" type='text' class='datepicker-here form-control' data-language='en' />
+            </div>
+            <div class="form-group">
+                <label for="alamat">Alamat</label>
+                <textarea name="alamat" class="form-control" aria-label="With textarea"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="Kelas">Kelas</label>
+                <input name="kelas" type="text" class="form-control" id="email" aria-describedby="email" placeholder="Masukkan Email">
+            </div>
+            <div class="form-group">
+                <label for="email">Gedung asrama</label>
+                <input name="gedung_asrama" type="text" class="form-control" id="email" aria-describedby="email" placeholder="Masukkan Email">
+            </div>
+            <div class="form-group">
+                <label for="email">Kamar ID</label>
+                <input name="kamar_id" type="text" class="form-control" id="email" aria-describedby="email" placeholder="Masukkan Email">
             </div>
             <div class="form-group">
                 <label for="user_image">Avatar</label>
