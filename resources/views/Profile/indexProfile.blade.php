@@ -34,7 +34,7 @@
                                 <strong class="card-title">Data Siswa</strong>
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                Tambah Data Siswa
+                                + Tambah Data User
                                 </button>
                             </div>
                             <div class="card-body">
