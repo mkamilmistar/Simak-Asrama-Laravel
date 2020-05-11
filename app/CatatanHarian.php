@@ -10,18 +10,17 @@ class CatatanHarian extends Model
 {
     protected $table = 'catatanHarian';
 
-    protected $fillable = ['guru_id', 'siswa_id', 'kategori', 'deskripsi', 'waktu'];
+    protected $fillable = ['pembina_id', 'siswa_id', 'kategori', 'deskripsi', 'waktu'];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'user_id', 'id');
+    public function user(){
+        $this->belongsTo(User::class);
     }
 
     public function siswa(){
         return $this->belongsTo(Siswa::class);
     }
-    public function guru(){
-        return $this->belongsTo(Guru::class);
+    public function pembinaAsrama(){
+        return $this->belongsTo(PembinaAsrama::class);
     }
 
 }

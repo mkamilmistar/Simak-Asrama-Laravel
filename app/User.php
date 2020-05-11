@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Siswa;
+use App\Guru;
 use App\CatatanKebaikan;
 
 class User extends Authenticatable
@@ -56,7 +57,15 @@ class User extends Authenticatable
         return $this->hasOne(Guru::class);
     }
 
+    public function guru(){
+        $this->hasMany(Guru::class);
+    }
+
     public function CatatanKebaikan(){
         return $this->hasMany(CatatanKebaikan::class);
+    }
+
+    public function catatanHarian(){
+        return $this->hasMany(CatatanHarian::class);
     }
 }

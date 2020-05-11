@@ -51,9 +51,10 @@ class CatatanKebaikanController extends Controller
     {
         
         $this->validate($request, [
-            'jenis' => 'max:25',
-            'kegiatan' => 'max:40',
-            'keterangan' => 'max:100',
+            'jenis' => 'required|max:25',
+            'kegiatan' => 'required|max:40',
+            'keterangan' => 'required|max:100',
+            'tanggal' => 'required'
         ]);
         $catatan = new CatatanKebaikan();
         $catatan->user_id = Auth::user()->id;
@@ -77,6 +78,13 @@ class CatatanKebaikanController extends Controller
 
     public function updateCatatan(Request $request, $userId, $id)
     {
+        $this->validate($request, [
+            'jenis' => 'required|max:25',
+            'kegiatan' => 'required|max:40',
+            'keterangan' => 'required|max:100',
+            'tanggal' => 'required'
+        ]);
+        
         $user = User::find($userId);
         $catatan = CatatanKebaikan::find($id);
         $catatan->update([
