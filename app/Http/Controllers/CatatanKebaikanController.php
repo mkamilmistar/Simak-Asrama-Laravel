@@ -99,20 +99,30 @@ class CatatanKebaikanController extends Controller
 
     //PEMBINA Version
     public function viewPageCatatanKebaikanPembina($id){
+        $siswa = Siswa::where('user_id', $id)->get()->first();
+        // dd($siswa);
+
         $data_user = User::find($id);
-        $userId = User::find($id);
-        $catatanKebaikan = CatatanKebaikan::where([
-            ['jenis', 'Baik'],
-            ['user_id', $id]
-        ])->get();
-        $catatanKeburukan = CatatanKebaikan::where([
-            ['jenis', 'Buruk'],
-            ['user_id', $id]
-        ])->get();
+        if($data_user->role==="siswa"){
+            $catatanKebaikan = CatatanKebaikan::where([
+                ['jenis', 'Baik'],
+                ['user_id', $id]
+            ])->get();
+            $catatanKeburukan = CatatanKebaikan::where([
+                ['jenis', 'Buruk'],
+                ['user_id', $id]
+            ])->get();
+
+            
+        }else{
+            return redirect()->route('viewCatatanKebaikan');
+        }
+        // $userId = User::find($id);
+        
      
         // dd($catatanKebaikan);
 
-    return view('catatanKebaikan.catatanKebaikanPembina', compact(['data_user','catatanKebaikan', 'catatanKeburukan']));
+    return view('catatanKebaikan.catatanKebaikanPembina', compact(['data_user','siswa','catatanKebaikan', 'catatanKeburukan']));
     
     }   
 
@@ -129,7 +139,7 @@ class CatatanKebaikanController extends Controller
         ])->get();
 
         if(Auth::user()->role=='pembina'){
-            $data_user = User::all();
+            $data_user = User::where('role', 'siswa')->get();
         }else{
             $data_user = Auth::user();
             return redirect()->back();

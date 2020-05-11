@@ -21,6 +21,10 @@ class JenisAmalanSeeder extends Seeder
                 'jenisAmalan'          => 'Sholat Tahajud',
                 'bobotAmalan'          =>  20,
             ],
+            [
+                'jenisAmalan'          => 'Membaca Yasin di Malam Jumat',
+                'bobotAmalan'          =>  15,
+            ],
             
         ]);
     }
