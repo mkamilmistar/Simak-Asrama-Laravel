@@ -9,7 +9,8 @@
         <title>Beranda</title>
         <meta name="description" content="IPB University">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        
+        <link rel="stylesheet" href="{{asset('sites/assets/css/style.css')}}">
         <link rel="apple-touch-icon" href="{{asset('sites/images/favicon.png')}}">
         <link rel="shortcut icon" href="{{asset('sites/images/favicon.png')}}">
         <!-- Date Picker -->
@@ -23,7 +24,6 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
         <link rel="stylesheet" href="{{asset('sites/assets/css/cs-skin-elastic.css')}}">
-        <link rel="stylesheet" href="{{asset('sites/assets/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/lib/datatable/dataTables.bootstrap.min.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
 

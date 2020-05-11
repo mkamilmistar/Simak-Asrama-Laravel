@@ -43,7 +43,6 @@
                                 <br>
                                 <!-- DATA AMALAN -->
                                 <div class="container">
-    <!-- Row -->
                                 <!-- Section header -->
                                 <div class="page-content content">
                                     <div class="section-header text-center">
@@ -90,8 +89,6 @@
                                                     <li>
                                                         <h6><i class="fa fa-user" aria-hidden="true"></i>Nama : {{$user->role}}</h6>                          
                                                     </li>
-                                                
-                                                    
                                                 </ul>
                                                 <div class="row justify-content-center">
                                                     <a href="/profile/{{$user -> id}}/edit" class="btn btn-warning">Edit</a>
@@ -99,11 +96,9 @@
                                             </div>
                                         </div>
                                     </div>
-
-
                                     <!-- END PROFILE HEADER -->
                                 </div>
-</div>
+                            </div>
                                 <!-- END OF DATA SISWA -->
                             </div>
                         </div>
