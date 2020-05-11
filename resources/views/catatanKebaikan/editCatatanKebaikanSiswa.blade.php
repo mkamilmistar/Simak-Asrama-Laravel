@@ -31,7 +31,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Tambah Catatan Kebaikan & Keburukan</strong>
+                                <strong class="card-title">Edit Catatan Kebaikan & Keburukan</strong>
                             </div>
                             <div class="card-body">
                                 <div class="kotaktambah">
@@ -88,7 +88,7 @@
                                                 </tr>
                                             </table>
                                             <div class="form-group">
-                                                <a href="/catatan-kebaikan/{{auth()->user()->id}}" class="btn btn-danger">Batal</a>    
+                                                <a href="/catatan-kebaikan-siswa/{{auth()->user()->id}}" class="btn btn-danger">Batal</a>    
                                                 <button type="submit" class="btn btn-primary">Simpan</button>
                                             </div> <!-- form-group// -->
                                         </form>

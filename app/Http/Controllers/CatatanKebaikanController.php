@@ -94,7 +94,7 @@ class CatatanKebaikanController extends Controller
             'tanggal'       => request('tanggal'),
         ]);
         
-        return redirect()->route('viewCatatanKebaikanSiswa', [Auth::user()->id])->with('sukses', 'Catatan Kebaikan Berhasil diupdate!');
+        return redirect()->route('viewCatatanKebaikan')->with('sukses', 'Catatan Kebaikan Berhasil diupdate!');
     }
 
     public function hapusCatatan($userId, $id)

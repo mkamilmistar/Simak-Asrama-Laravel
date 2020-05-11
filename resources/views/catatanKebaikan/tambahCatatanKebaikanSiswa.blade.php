@@ -44,15 +44,6 @@
                                          <form action="/catatan-kebaikan/{auth()->user()->id}}/create" method="POST">
                                             @csrf
                                             <table class="table-bio">
-                                                <!-- <tr >
-                                                    <th style="width: 200px">Hari/Tanggal</th>
-                                                    <td><input name="jenis_amalan"class="form-control" type="text"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Jam</th>
-                                                    <td> <input name="jenis_amalan"class="form-control" type="text"></td>
-                                                </tr> -->
-                                                <tr>
                                                     <th>Jenis Amalan</th>
                                                     <td> 
                                                         <select name="jenis" class="form-control" id="jenis">
