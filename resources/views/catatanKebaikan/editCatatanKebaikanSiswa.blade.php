@@ -63,16 +63,27 @@
                                                 </tr>
                                                 <tr>
                                                     <th>Jenis Kegiatan</th>
-                                                    <td> <input value="{{$catatan->kegiatan}}"name="kegiatan"class="form-control" type="text"></td>
+                                                    <td> <input value="{{$catatan->kegiatan}}"name="kegiatan"class="form-control @error('kegiatan') is-invalid @enderror" type="text">
+                                                        @error('kegiatan')
+                                                                <span class="invalid-feedback d-block"><strong>{{ $message }}</strong></span>
+                                                        @enderror
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <th>Deskripsi Kegiatan</th>
-                                                    <td> <textarea name="keterangan" class="form-control ini" >{{$catatan->keterangan}}</textarea></td>
+                                                    <td> <textarea name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" >{{$catatan->keterangan}}</textarea>
+                                                        @error('keterangan')
+                                                                <span class="invalid-feedback d-block"><strong>{{ $message }}</strong></span>
+                                                        @enderror
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <th>Tanggal Kegiatan</th>
                                                     <td>
                                                         <input name="tanggal" type='text' class='datepicker-here form-control' data-language='en' value="{{$catatan->tanggal}}"/>
+                                                        @error('tanggal')
+                                                                <span class="invalid-feedback d-block"><strong>{{ $message }}</strong></span>
+                                                        @enderror
                                                     </td>
                                                 </tr>
                                             </table>
