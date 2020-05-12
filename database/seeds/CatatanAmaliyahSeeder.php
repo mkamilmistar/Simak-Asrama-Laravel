@@ -15,16 +15,28 @@ class CatatanAmaliyahSeeder extends Seeder
     {
         CatatanAmaliyah::insert([
             [
-                'catatanAmaliyah_id'    => 1,
-                'jenis_amalan'          => 'Sholat dhuha',
-                'bobot_amalan'          =>  10,
-                'keterangan'            => 'tiap malan'
+                'jenisAmalan_id'        => 1,
+                'user_id'               => 2,
+                'tanggal'               => '10/10/2020',
+                'keterangan'            => 'tiap malan',
             ],
             [
-                'catatanAmaliyah_id'    => 1,
-                'jenis_amalan'          => 'Sholat tahajud',
-                'bobot_amalan'          =>  20,
-                'keterangan'            => 'tiap malan'
+                'jenisAmalan_id'        => 2,
+                'user_id'               => 2,
+                'tanggal'               => '10/10/2020',
+                'keterangan'            => 'tiap malan',
+            ],
+            [
+                'jenisAmalan_id'        => 2,
+                'user_id'               => 3,
+                'tanggal'               => '10/10/2020',
+                'keterangan'            => 'tiap malan',
+            ],
+            [
+                'jenisAmalan_id'        => 1,
+                'user_id'               => 3,
+                'tanggal'               => '10/10/2020',
+                'keterangan'            => 'tiap malan',
             ],
             
         ]);

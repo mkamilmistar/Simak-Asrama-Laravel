@@ -14,7 +14,7 @@ class CreateJenisAmalanYaumiyahTable extends Migration
     public function up()
     {
         Schema::create('jenisAmalanYaumiyah', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('jenisAmalan');
             $table->string('keterangan');
             $table->string('bobotAmalan');
