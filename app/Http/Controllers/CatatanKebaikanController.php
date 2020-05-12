@@ -49,7 +49,6 @@ class CatatanKebaikanController extends Controller
 
     public function postCatatanKebaikanSiswa($id, Request $request)
     {
-        
         $this->validate($request, [
             'jenis' => 'required|max:25',
             'kegiatan' => 'required|max:40',

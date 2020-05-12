@@ -74,6 +74,8 @@ Route::get('/catatan-kebaikan-siswa/{id}', 'CatatanKebaikanController@viewPageCa
 
 //Catatan Amalan Yaumiyah
 Route::get('/jenis-amalan', 'JenisAmalanController@viewPageJenisAmalan');
+Route::get('/jenis-amalan/create', 'JenisAmalanController@createJenisAmalan');
+Route::post('/jenis-amalan/create', 'JenisAmalanController@postJenisAmalan');
 Route::get('/jenis-amalan/{id}/edit', 'JenisAmalanController@viewEditJenisAmalan');
 Route::post('/jenis-amalan/{id}/update', 'JenisAmalanController@updateJenisAmalan');
 Route::get('/jenis-amalan/{id}/delete', 'JenisAmalanController@deleteJenisAmalan');

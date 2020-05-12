@@ -16,8 +16,8 @@
                             <div class="page-header float-right">
                                 <div class="page-title">
                                     <ol class="breadcrumb text-right">
-                                        <li><a href="/catatan-yaumiyah">Catatan Kebaikan & Keburukan</a></li>
-                                        <li class="active">Tambah Catatan Kebaikan & Keburukan Siswa</li>
+                                        <li><a href="/catatan-yaumiyah">Catatan Amalan Yaumiyah</a></li>
+                                        <li class="active">Tambah Jenis Amalan Yaumiyah</li>
                                     </ol>
                                 </div>
                             </div>
@@ -31,12 +31,12 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Edit Catatan Kebaikan & Keburukan</strong>
+                                <strong class="card-title">Edit Jenis Amalan Yaumiyah</strong>
                             </div>
                             <div class="card-body">
                                 <div class="kotaktambah">
                                     <div class="headertambah">
-                                        <h4>Masukan Catatan Kebaikan/Kuburukan </h4>
+                                        <h4>Edit Jenis Amalan Yaumiyah</h4>
                                         <div class="garis2"></div>
                                     </div>
                                     @include('layouts.allert')
