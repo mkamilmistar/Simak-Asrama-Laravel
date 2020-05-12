@@ -16,6 +16,7 @@ class CreateJenisAmalanYaumiyahTable extends Migration
         Schema::create('jenisAmalanYaumiyah', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('jenisAmalan');
+            $table->string('keterangan');
             $table->string('bobotAmalan');
             $table->timestamps();
         });

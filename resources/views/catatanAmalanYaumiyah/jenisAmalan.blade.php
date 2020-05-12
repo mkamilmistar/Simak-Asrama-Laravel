@@ -45,6 +45,7 @@
                                         <tr class="table-tengah">
                                             <th>No</th>
                                             <th>Jenis Amalan</th>
+                                            <th>Keterangan</th>
                                             <th>Bobot</th>
                                             <th>Action</th>
                                         </tr>
@@ -54,12 +55,14 @@
                                         @foreach($jenisAmalan as $index => $jenis)
                                             <td>{{$index + 1}}</td>
                                             <td>{{$jenis->jenisAmalan}}</td>
+                                            <td>{{$jenis->keterangan}}</td>
                                             <td>{{$jenis->bobotAmalan}}</td>
                                             <td>
-                                                <a href="#">
+                                                <a href="/jenis-amalan/{{$jenis->id}}/edit">
+                                                
                                                     <button type="button" class="btn btn-warning">Edit</button>
                                                 </a>
-                                                <a href="#" onClick="return confirm('Yakin untuk menghapus?')">
+                                                <a href="/jenis-amalan/{{$jenis->id}}/delete" onClick="return confirm('Yakin untuk menghapus?')">
                                                     <button type="button" class="btn btn-danger">Hapus</button>
                                                 </a>
                                             </td>

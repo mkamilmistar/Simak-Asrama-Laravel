@@ -32,7 +32,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Catatan Amalan Yaumiyah Pembina</strong>
-                                <a href="/jenis-amalan-siswa" class="btn btn-primary">Jenis Amalan</a>
+                                <a href="/jenis-amalan" class="btn btn-primary">Jenis Amalan</a>
                             </div>
                             <div class="card-body">
                                 <!-- Data Siswa -->
@@ -47,8 +47,9 @@
                                             <th>Nama</th>
                                             <th>Kelas</th>
                                             <th>NIM</th>
-                                            <!-- <th>Jumlah Bobot</th> -->
+                                            <th>Jumlah Bobot</th>
                                             <th>Aksi</th>
+                                            <!-- <th>Aksi</th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -56,19 +57,22 @@
                                         <tr>
                                             <td>1</td>
                                             <td>
-                                                <a href="#">{{$user->nama}}</a> 
+                                                <a href="/profile/{{$user->id}}/view">{{$user->nama}}</a> 
                                             </td>
                                             <td>{{$user->siswa['kelas']}}</td>
                                             <td>{{$user->siswa['NIS']}}</td>
-                                            <!-- <td>250</td> -->
+                                            <td>250</td>
                                             <td>
+                                                <button type="button" class="btn btn-primary">Lihat Catatan</button>
+                                            </td>
+                                            <!-- <td>
                                                 <a href="#">
                                                     <button type="button" class="btn btn-warning">Edit</button>
                                                 </a>
                                                 <a href="#">
                                                     <button type="button" class="btn btn-danger">Hapus</button>
                                                 </a>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                         @endforeach
                                         
