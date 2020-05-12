@@ -37,6 +37,7 @@ class UserController extends Controller
             $user->user_image = $request->file('user_image')->getClientOriginalName();
         }
         $user->save();
+        
 
         $data_siswa = new Siswa([
             'NIS' => $request->input('NIS'),

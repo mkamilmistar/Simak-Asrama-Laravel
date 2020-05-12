@@ -80,7 +80,7 @@
                                                 <tr>
                                                     <th>Tanggal Kegiatan</th>
                                                     <td>
-                                                        <input name="tanggal" type='text' class='datepicker-here form-control' data-language='en' value="{{$catatan->tanggal}}"/>
+                                                        <input value="{{$catatan->tanggal}}" name="tanggal" type='text' class='datepicker-here form-control' data-language='en' />
                                                         @error('tanggal')
                                                                 <span class="invalid-feedback d-block"><strong>{{ $message }}</strong></span>
                                                         @enderror
