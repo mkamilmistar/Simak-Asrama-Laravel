@@ -47,8 +47,8 @@
                 <li class="{{ 'profile' == request()->path() ? 'nav-item active' : 'nav-item' }}">
                     <a href="/profile">Biodata</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#">Hafalan Al-Qur'an dan Hadits</a>
+                <li class="{{ '/hafalan-pembina' == request()->path() ? 'nav-item active' : 'nav-item' }}">
+                    <a href="/hafalan-pembina">Hafalan Al-Qur'an dan Hadits</a>
                 </li>
                 <li class="{{ 'catatan-yaumiyah-siswa' == request()->path() ? 'nav-item active' : 'nav-item' }}">
                     <a href="/catatan-yaumiyah-siswa">Catatan Amalan Yaumiah</a>

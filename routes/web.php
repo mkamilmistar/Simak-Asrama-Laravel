@@ -40,10 +40,8 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
 });
 
 //ROUTE HAFALAN AL-QUR'AN
-Route::get('/hafalan-siswa',function (){
-    return view('hafalanSiswa');
-});
-
+Route::get('/hafalan-siswa','HafalanController@indexSiswa' );
+Route::get('/hafalan-pembina','HafalanController@indexPembina' );
 
 
 Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
