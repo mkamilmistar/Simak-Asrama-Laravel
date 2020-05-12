@@ -23,6 +23,7 @@ class UserController extends Controller
 
     public function createProfile(Request $request)
     {
+
         $user = new User();
         $user->nama = $request->input('nama');
         $user->username = $request->input('username');
@@ -35,6 +36,7 @@ class UserController extends Controller
         if($request->hasFile('user_image')){
             $request->file('user_image')->move('images/user/',$request->file('user_image')->getClientOriginalName());
             $user->user_image = $request->file('user_image')->getClientOriginalName();
+            $user->save();
         }
         $user->save();
         
@@ -49,6 +51,7 @@ class UserController extends Controller
 
         $user->siswa()->save($data_siswa);
 
+        
         // $user = User::create(request()->all());
         // $user->siswa()->create(request()->all());
 
