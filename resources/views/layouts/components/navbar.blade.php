@@ -53,8 +53,8 @@
                 <li class="{{ 'catatan-yaumiyah-pembina' == request()->path() ? 'nav-item active' : 'nav-item' }}">
                     <a href="/catatan-yaumiyah-pembina">Catatan Amalan Yaumiah</a>
                 </li>
-                <li class="{{ 'poin-pembina' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                    <a href="/poin-pembina">Poin Pelanggaran dan Kebaikan</a>
+                <li class="nav-item">
+                    <a href="{{ Auth::user()->role === 'siswa' ? route('viewPoinSiswaPage', Auth::user()->siswa->id) :  route('viewPoinSearchPage') }}">Poin Pelanggaran dan Kebaikan</a>
                 </li>
                 <li class="nav-item">
                     <a href="#">Catatan Shalat</a>
