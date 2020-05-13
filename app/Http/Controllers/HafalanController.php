@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 use App\Siswa;
+use App\Hafalan;
+use App\HafalanDoaHadist;
 
 class HafalanController extends Controller
 {
@@ -16,7 +18,10 @@ class HafalanController extends Controller
      */
     public function indexSiswa()
     {
-        return view('indexHafalanSiswa');
+        $data_user = Auth::user();
+        $data_hafalan = Hafalan::where('siswa_id','=',$data_user->siswa->id)->get();
+        $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->get();
+        return view('Hafalan\indexHafalanSiswa', compact(['data_user','data_hafalan','data_hafalan2']));
     }
 
     public function indexPembina()
@@ -28,7 +33,7 @@ class HafalanController extends Controller
             return redirect()->back();
         }
         
-        return view('indexHafalanPembina', compact(['data_user']));
+        return view('Hafalan\indexHafalanPembina', compact(['data_user']));
     }
 
     /**
