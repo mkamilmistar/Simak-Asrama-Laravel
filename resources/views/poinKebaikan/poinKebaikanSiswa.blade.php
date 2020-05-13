@@ -36,7 +36,7 @@
                     <div class="card-header">
                         <strong class="card-title">Poin Pelanggaran dan Kebaikan</strong>
                         @if (Auth::user()->role !== "siswa")
-                        <a href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Catatan</a>
+                        <a href="{{ route('addPoinSiswaPage', $siswa->id) }}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Catatan</a>
                         @endif
                     </div>
                     <div class="card-body">

@@ -15,9 +15,13 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="/catatan-yaumiyah">Catatan Amalan Yaumiyah</a></li>
-                            <li><a href="/catatan-yaumiyah">Catatan Amalan Yaumiyah Siswa</a></li>
-                            <li class="active">Data table</li>
+                            @if (Auth::user()->role !== "siswa")
+                            <li><a href="{{route('viewPoinSearchPage')}}">Poin Pelanggaran dan Kebaikan</a></li>
+                            @else
+                            <li><a href="#">Poin Pelanggaran dan Kebaikan</a></li>
+                            @endif
+                            <li><a href="{{ route('viewPoinSiswaPage', $siswa->id) }}">{{ $siswa->user->nama }}</a></li>
+                            <li class="active">Tambah Baru</li>
                         </ol>
                     </div>
                 </div>

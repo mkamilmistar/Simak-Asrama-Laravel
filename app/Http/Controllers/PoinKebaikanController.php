@@ -95,7 +95,8 @@ class PoinKebaikanController extends Controller
 
     public function viewAddPoinSiswaPage($id)
     {
-        return view('poinKebaikan.tambahPoinKebaikanSiswa');
+        $siswa = Siswa::find($id);
+        return view('poinKebaikan.tambahPoinKebaikanSiswa', [ 'siswa' => $siswa ]);
     }
 
     public function addPoinSiswa(Request $request)
