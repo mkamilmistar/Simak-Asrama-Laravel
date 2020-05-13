@@ -47,32 +47,6 @@
                 @include('layouts.components.footer')
            
         </div>
-        <!-- /#right-panel -->
-
-        <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-        <script src="{{asset('sites/assets/js/main.js')}}"></script>
-        <script src="{{asset('sites/assets/air-datepicker/dist/js/datepicker.js')}}"></script>
-        <script src="{{asset('sites/assets/air-datepicker/dist/js/datepicker.min.js')}}"></script>
-        <script src="{{asset('sites/assets/air-datepicker/dist/js/i18n/datepicker.en.js')}}"></script>
-        <script src="{{asset('sites/assets/js/lib/data-table/datatables.min.js')}}"></script>
-        <script src="{{asset('sites/assets/js/lib/data-table/dataTables.bootstrap.min.js')}}"></script>
-        <script src="{{asset('sites/assets/js/lib/data-table/dataTables.buttons.min.js')}}"></script>
-        <script src="{{asset('sites/assets/js/lib/data-table/buttons.bootstrap.min.js')}}"></script>
-        <script src="{{asset('sites/assets/js/lib/data-table/jszip.min.js')}}"></script>
-        <script src="{{asset('sites/assets/js/lib/data-table/vfs_fonts.js')}}"></script>
-        <script src="{{asset('sites/assets/js/lib/data-table/buttons.html5.min.js')}}"></script>
-        <script src="{{asset('sites/assets/js/lib/data-table/buttons.print.min.js')}}"></script>
-        <script src="{{asset('sites/assets/js/lib/data-table/buttons.colVis.min.js')}}"></script>
-        <script src="{{asset('sites/assets/js/init/datatables-init.js')}}"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
-        <script type=text/javascript>
-            .datepicker{z-index:1151;}
-        </script>
 
         <script type=text/javascript>
             $('#my-element').datepicker([options])
