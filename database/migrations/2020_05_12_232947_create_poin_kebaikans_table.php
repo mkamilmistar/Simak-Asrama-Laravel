@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCatatanKebaikanTable extends Migration
+class CreatePoinKebaikansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateCatatanKebaikanTable extends Migration
      */
     public function up()
     {
-        Schema::create('catatanKebaikan', function (Blueprint $table) {
+        Schema::create('poinKebaikan', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
-            $table->string('jenis');
+            $table->integer('siswa_id')->unsigned();
+            $table->foreign('siswa_id')->references('id')->on('siswa')->onDelete('CASCADE');
             $table->date('tanggal');
-            $table->string('kegiatan');
             $table->string('keterangan');
+            $table->string('jenis');
+            $table->integer('poin');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateCatatanKebaikanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('catatanKebaikan');
+        Schema::dropIfExists('poinKebaikan');
     }
 }
