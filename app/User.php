@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use App\Siswa;
 use App\Guru;
 use App\CatatanKebaikan;
+use App\JenisAmalanYaumiyah;
 
 class User extends Authenticatable
 {
@@ -64,5 +65,10 @@ class User extends Authenticatable
 
     public function catatanHarian(){
         return $this->hasMany(CatatanHarian::class);
+    }
+
+    public function jenisAmalan()
+    {
+        return $this->hasMany(JenisAmalanYaumiyah::class);
     }
 }

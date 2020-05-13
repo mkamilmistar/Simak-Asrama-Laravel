@@ -51,15 +51,12 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach($jenisCatatan as $index => $jenis)
                                             <tr>
+                                                <td>{{$index + 1}}</td>
+                                                <td>{{$jenis->jenisAmalan}}</td>
                                                 <td>
-                                                    1
-                                                </td>
-                                                <td>
-                                                    Sholat Tahajud
-                                                </td>
-                                                <td>
-                                                    <select class="form-control" id="kondisi">
+                                                    <select name ="status"class="form-control" id="status">
                                                         <option value="0">Tidak</option>
                                                         <option value="1">Ya</option>
                                                     </select>
@@ -71,24 +68,7 @@
                                                     <textarea name="keterangan" class="form-control" placeholder="misal: sholat tahajud di minggu malan" type="text"></textarea>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>
-                                                    Sholat Dhuha
-                                                </td>
-                                                <td>
-                                                    <select class="form-control" id="kondisi">
-                                                        <option>Tidak</option>
-                                                        <option>Ya</option>
-                                                    </select>
-                                                </td>
-                                                <td>
-                                                    <input name="jumlah" class="form-control" placeholder="Jumlah kegiatan" type="number" min=0 value=0>
-                                                </td>
-                                                <td>
-                                                    <textarea name="keterangan" class="form-control" placeholder="misal: sholat tahajud di minggu malan" type="text"></textarea>
-                                                </td>
-                                            </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                     <div class="form-group">
