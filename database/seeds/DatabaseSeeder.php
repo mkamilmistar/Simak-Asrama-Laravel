@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             CatatanKebaikanSeeder::class,
             JenisAmalanSeeder::class,
             CatatanAmaliyahSeeder::class,
+            PoinKebaikanSeeder::class,
         ]);
     }
 }

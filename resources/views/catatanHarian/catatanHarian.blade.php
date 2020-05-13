@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@if(auth()->user()->role=='pembina')
     <div class="breadcrumbs">
                 <div class="breadcrumbs-inner">
                     <div class="row m-0">
@@ -117,9 +118,8 @@
                           </div>
                         <div class="form-group ">
                             <label for="exampleInputEmail1">Tanggal dan Waktu</label>
-                            <!-- <input name="waktu" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="YYYY-MM-DD Hours:Minute:Second"> -->
-                            <input name="waktu" type='text' class='datepicker-here form-control' data-language='en'/>
-
+                            <input name="waktu" type='text' class='datepicker-here form-control' data-language='en' />
+                            <!-- <input name="waktu" type='text' class="datepicker-here form-group" data-date-useseconds="true" data-timepicker="true" data-language='en' /> -->
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Kategori Catatan</label>
@@ -146,4 +146,5 @@
     <div class="clearfix">
         
     </div>
+@endif
 @endsection

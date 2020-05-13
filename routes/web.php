@@ -55,6 +55,11 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
 
 });
 
+Route::group(['middleware' => ['auth', 'checkRole:siswa']], function() {
+    //Catatan Harian
+    Route::get('/catatan-harian-siswa/{id}', 'CatatanHarianController@viewPageCatatanSiswa');
+});
+
 
 
 //ROUTE CATATAN KEBAIKAN DAN KEBURUKAN
@@ -83,6 +88,14 @@ Route::get('/catatan-yaumiyah-pembina', 'CatatanYaumiyahController@viewPagePembi
 
 //SISWA VER
 Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPageSiswa');
-Route::get('/catatan-yaumiyah/create', 'CatatanYaumiyahController@viewTambahCatatan');
 
 
+// Poin Kebaikan
+Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
+    //Catatan Harian
+    Route::get('/poin-pembina', 'PoinKebaikanController@viewPoinSearchPage')->name('viewPoinSearchPage');
+    //Route::get('/siswa/{id}/profile','SiswaController@profile');
+    
+});
+
+Route::get('/poin-siswa/{id}', 'PoinKebaikanController@viewPoinSiswaPage')->name('viewPoinSiswaPage');
