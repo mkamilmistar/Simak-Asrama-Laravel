@@ -86,6 +86,7 @@
     <script src="{{ asset('sites/assets/js/main.js') }}"></script>
     <script src="{{asset('sites/assets/air-datepicker/dist/js/datepicker.js')}}"></script>
     <script src="{{asset('sites/assets/air-datepicker/dist/js/datepicker.min.js')}}"></script>
+    <script src="{{asset('sites/assets/air-datepicker/dist/js/i18n/datepicker.en.js')}}"></script>
 
     <script src="{{ asset('sites/assets/js/lib/data-table/datatables.min.js') }}"></script>
     <script src="{{ asset('sites/assets/js/lib/data-table/dataTables.bootstrap.min.js') }}"></script>
