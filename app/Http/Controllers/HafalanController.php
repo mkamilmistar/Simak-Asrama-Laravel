@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Auth;
+use App\User;
+use App\Siswa;
 
 class HafalanController extends Controller
 {
@@ -19,8 +21,14 @@ class HafalanController extends Controller
 
     public function indexPembina()
     {
-        $siswa = DB::table('siswa')->get();
-        return view('indexHafalanPembina', ['siswa' => $siswa]);
+        if(Auth::user()->role=='pembina'){
+            $data_user = User::where('role','=','siswa')->with('siswa')->get();
+            // dd($data_user);
+        }else{
+            return redirect()->back();
+        }
+        
+        return view('indexHafalanPembina', compact(['data_user']));
     }
 
     /**

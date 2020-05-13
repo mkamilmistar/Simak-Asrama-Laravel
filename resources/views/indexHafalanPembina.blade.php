@@ -46,11 +46,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach( $siswa as $ssa)
+                                        @foreach($data_user as $user)
                                         <tr>
-                                        <td>{{$ssa -> NIS}}</td>
-                                        <td>{{$ssa -> nama}}</td>
-                                        <td>{{$ssa -> kelas}}</td>
+                                        <td>{{$user->siswa['NIS']}}</td>
+                                        <td>
+                                                <a href="/profile/{{$user->id}}/view">{{$user->nama}}</a> 
+                                        </td>
+                                        <td>{{$user->siswa['kelas']}}</td>
                                         <td>
                                             <a href="#">
                                                 <button type="button" class="btn btn-primary">View</button>

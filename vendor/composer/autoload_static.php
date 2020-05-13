@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd21ad158ae8aa8c9b8af41ca6a86d26b
+class ComposerStaticInit724ecddd214e309e4bb417740a452ac0
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -131,7 +131,6 @@ class ComposerStaticInitd21ad158ae8aa8c9b8af41ca6a86d26b
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Inflector\\' => 19,
             'Doctrine\\Common\\Lexer\\' => 22,
-            'Doctrine\\Common\\Inflector\\' => 26,
             'DeepCopy\\' => 9,
         ),
         'C' => 
@@ -372,10 +371,6 @@ class ComposerStaticInitd21ad158ae8aa8c9b8af41ca6a86d26b
         array (
             0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
         ),
-        'Doctrine\\Common\\Inflector\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
-        ),
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
@@ -538,7 +533,6 @@ class ComposerStaticInitd21ad158ae8aa8c9b8af41ca6a86d26b
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
-        'Doctrine\\Common\\Inflector\\Inflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php',
         'Doctrine\\Common\\Lexer\\AbstractLexer' => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer/AbstractLexer.php',
         'Doctrine\\Inflector\\CachedWordInflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/CachedWordInflector.php',
         'Doctrine\\Inflector\\GenericLanguageInflectorFactory' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/GenericLanguageInflectorFactory.php',
@@ -4568,10 +4562,10 @@ class ComposerStaticInitd21ad158ae8aa8c9b8af41ca6a86d26b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd21ad158ae8aa8c9b8af41ca6a86d26b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd21ad158ae8aa8c9b8af41ca6a86d26b::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitd21ad158ae8aa8c9b8af41ca6a86d26b::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitd21ad158ae8aa8c9b8af41ca6a86d26b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit724ecddd214e309e4bb417740a452ac0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit724ecddd214e309e4bb417740a452ac0::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit724ecddd214e309e4bb417740a452ac0::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit724ecddd214e309e4bb417740a452ac0::$classMap;
 
         }, null, ClassLoader::class);
     }
