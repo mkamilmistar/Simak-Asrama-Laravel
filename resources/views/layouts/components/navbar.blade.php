@@ -36,8 +36,8 @@
                 <li class="{{ 'catatan-kebaikan' == request()->path() ? 'nav-item active' : 'nav-item' }}">
                     <a href="/catatan-kebaikan/{{auth()->user()->id}}">Catatan Kebaikan & Keburukan</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/catatan-harian-siswa/{{auth()->user()->id}}">Catatan Harian</a>
+                <li class="{{ 'catatan-harian/{auth()->user()->id}' == request()->path() ? 'nav-item active' : 'nav-item' }}">
+                    <a href="/catatan-harian/{{auth()->user()->id}}">Catatan Harian</a>
                 </li>
 
                 @elseif(auth()->user()->role=='pembina')
