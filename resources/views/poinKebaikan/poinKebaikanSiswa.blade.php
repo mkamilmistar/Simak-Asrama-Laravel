@@ -36,7 +36,7 @@
                     <div class="card-header">
                         <strong class="card-title">Poin Pelanggaran dan Kebaikan</strong>
                         @if (Auth::user()->role !== "siswa")
-                        <a href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Catatan</a>
+                        <a href="{{ route('addPoinSiswaPage', $siswa->id) }}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Catatan</a>
                         @endif
                     </div>
                     <div class="card-body">
@@ -61,11 +61,10 @@
                             <tr>
                                 <th>Total Poin</th>
                                 <td>
-                                    @if ($siswa->jumlah_total_poin < 0)
-                                    <label class="badge badge-danger">{{ $siswa->jumlah_total_poin }}</label>
-                                    @else
-                                    <label class="badge badge-success">{{ $siswa->jumlah_total_poin }}</label>
-                                    @endif
+                                    @if ($siswa->jumlah_total_poin < 0) <label class="badge badge-danger">{{ $siswa->jumlah_total_poin }}</label>
+                                        @else
+                                        <label class="badge badge-success">{{ $siswa->jumlah_total_poin }}</label>
+                                        @endif
                                 </td>
                             </tr>
                         </table>
@@ -94,12 +93,11 @@
                                         </label>
                                     </td>
                                     <td>
-                                        <a href="#">
-                                            <button type="button" class="btn btn-warning">Edit</button>
-                                        </a>
-                                        <a href="#">
-                                            <button type="button" class="btn btn-danger">Hapus</button>
-                                        </a>
+                                        <form method="POST" action="{{ route('removePoinSiswa', $poin->id) }}" id="hapusPoin{{ $poin->id }}">
+                                            @csrf
+                                            <input type="text" hidden name="siswa_id" value={{ $siswa->id }}/>
+                                            <input type="submit" class="btn btn-danger" value="Hapus">
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -128,12 +126,11 @@
                                         </label>
                                     </td>
                                     <td>
-                                        <a href="#">
-                                            <button type="button" class="btn btn-warning">Edit</button>
-                                        </a>
-                                        <a href="#">
-                                            <button type="button" class="btn btn-danger">Hapus</button>
-                                        </a>
+                                        <form method="POST" action="{{ route('removePoinSiswa', $poin->id) }}" id="hapusPoin{{ $poin->id }}">
+                                            @csrf
+                                            <input type="text" hidden name="siswa_id" value={{ $siswa->id }}/>
+                                            <input type="submit" class="btn btn-danger" value="Hapus">
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

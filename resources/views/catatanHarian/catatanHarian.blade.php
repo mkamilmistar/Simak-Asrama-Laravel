@@ -118,8 +118,8 @@
                           </div>
                         <div class="form-group ">
                             <label for="exampleInputEmail1">Tanggal dan Waktu</label>
-                            <input name="waktu" type='text' class='datepicker-here form-control' data-language='en' />
-                            <!-- <input name="waktu" type='text' class="datepicker-here form-group" data-date-useseconds="true" data-timepicker="true" data-language='en' /> -->
+                            <input name="waktu" type='text' class="datepicker-here form-group" data-date-useseconds="true" data-timepicker="true" data-language='en' />
+                            <!-- <input name="waktu" type='text' class='datepicker-here form-control' data-language='en' /> -->
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Kategori Catatan</label>

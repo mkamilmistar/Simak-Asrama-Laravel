@@ -26,7 +26,13 @@ class PoinKebaikanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $poinKebaikan = new PoinKebaikan();
+        $poinKebaikan->jenis = $request->jenis;
+        $poinKebaikan->tanggal = $request->tanggal;
+        $poinKebaikan->keterangan = $request->keterangan;
+        $poinKebaikan->poin = $request->poin;
+        $poinKebaikan->siswa_id = $request->id;
+        $poinKebaikan->save();
     }
 
     /**
@@ -85,5 +91,30 @@ class PoinKebaikanController extends Controller
             'poin_keburukan' => $poin_keburukan,
             'poin_kebaikan' => $poin_kebaikan
         ]);
+    }
+
+    public function viewAddPoinSiswaPage($id)
+    {
+        $siswa = Siswa::find($id);
+        return view('poinKebaikan.tambahPoinKebaikanSiswa', [ 'siswa' => $siswa ]);
+    }
+
+    public function addPoinSiswa(Request $request)
+    {
+        $poinKebaikan = new PoinKebaikan();
+        $poinKebaikan->jenis = $request->jenis;
+        $poinKebaikan->tanggal = $request->tanggal;
+        $poinKebaikan->keterangan = $request->keterangan;
+        $poinKebaikan->poin = $request->poin;
+        $poinKebaikan->siswa_id = $request->route('id');
+        $poinKebaikan->save();
+        return redirect()->route('viewPoinSiswaPage', $request->route('id'));
+    }
+    
+    public function removePoinSiswa(Request $request)
+    {
+        $poinKebaikan = PoinKebaikan::find($request->route('id'));
+        $poinKebaikan->delete();
+        return redirect()->route('viewPoinSiswaPage', $request->siswa_id);
     }
 }

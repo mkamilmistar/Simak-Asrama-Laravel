@@ -72,7 +72,7 @@
                                                 <span class="badge badge-success">{{ $siswa->jumlah_total_poin }}</span>
                                                 @endif
                                         </td>
-                                        <td><a href="{{ route('viewPoinSiswaPage', $siswa->user_id) }}" class="btn-sm btn-primary">View</a></td>
+                                        <td><a href="{{ route('viewPoinSiswaPage', $siswa->id) }}" class="btn-sm btn-primary">View</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>
