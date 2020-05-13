@@ -40,10 +40,8 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
 });
 
 //ROUTE HAFALAN AL-QUR'AN
-Route::get('/hafalan-siswa',function (){
-    return view('hafalanSiswa');
-});
-
+Route::get('/hafalan-siswa','HafalanController@indexSiswa' );
+Route::get('/hafalan-pembina','HafalanController@indexPembina' );
 
 
 Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
@@ -78,7 +76,27 @@ Route::get('/catatan-kebaikan-siswa/{id}', 'CatatanKebaikanController@viewPageCa
 
 
 //Catatan Amalan Yaumiyah
+//PEMBINA VER
 Route::get('/jenis-amalan', 'JenisAmalanController@viewPageJenisAmalan');
+Route::get('/jenis-amalan/create', 'JenisAmalanController@createJenisAmalan');
+Route::post('/jenis-amalan/create', 'JenisAmalanController@postJenisAmalan');
+Route::get('/jenis-amalan/{id}/edit', 'JenisAmalanController@viewEditJenisAmalan');
+Route::post('/jenis-amalan/{id}/update', 'JenisAmalanController@updateJenisAmalan');
+Route::get('/jenis-amalan/{id}/delete', 'JenisAmalanController@deleteJenisAmalan');
 
-Route::get('/catatan-yaumiyah-siswa', 'CatatanYaumiyahController@viewPagePembina')->name('viewCatatanAmalanSiswa');
+Route::get('/catatan-yaumiyah-pembina', 'CatatanYaumiyahController@viewPagePembina')->name('viewCatatanAmalanSiswa');
 Route::get('/tambah-catatan-yaumiyah', 'CatatanYaumiyahController@viewPageTambahCatatanAmalanSiswa')->name('tambahCatatanAmalanSiswa');
+
+//SISWA VER
+Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPageSiswa');
+
+
+// Poin Kebaikan
+Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
+    //Catatan Harian
+    Route::get('/poin-pembina', 'PoinKebaikanController@viewPoinSearchPage')->name('viewPoinSearchPage');
+    //Route::get('/siswa/{id}/profile','SiswaController@profile');
+    
+});
+
+Route::get('/poin-siswa/{id}', 'PoinKebaikanController@viewPoinSiswaPage')->name('viewPoinSiswaPage');

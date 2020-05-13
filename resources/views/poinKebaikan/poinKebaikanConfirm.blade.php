@@ -16,27 +16,44 @@
                                 <div class="page-title">
                                     <ol class="breadcrumb text-right">
                                         <li><a href="/catatan-yaumiyah">Catatan Amalan Yaumiyah</a></li>
-                                        <li class="active">Catatan Amalan Yaumiyah</li>
+                                        <li><a href="/catatan-yaumiyah">Catatan Amalan Yaumiyah Siswa</a></li>
+                                        <li class="active">Data table</li>
                                     </ol>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-    </div>   
-    @include('layouts.allert') 
+    </div>    
     <div class="content">
             <div class="animated fadeIn">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Catatan Amalan Yaumiyah</strong>
-                                <a href="/jenis-amalan/create" class="btn btn-primary">+ Tambah Jenis Amalan</a>
+                                <strong class="card-title">Catatan Amalan Yaumiyah Siswa</strong>
+                                <a href="/tambah-catatan-yaumiyah" class="btn btn-primary">+ Tambah Catatan</a>
                             </div>
                             <div class="card-body">
                                 <!-- Data Siswa -->
-                              
+                                <table class="table-bio">
+                                    <tr >
+                                        <th style="width: 200px">Nomor Induk Siswa</th>
+                                        <td>000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nama</th>
+                                        <td>Budi Arianto Kucing</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Jenis Kelamin</th>
+                                        <td>Laki-laki</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Kelas</th>
+                                        <td>IX-B</td>
+                                    </tr>
+                                </table>
                                 <!-- END OF DATA SISWA -->
                                 <br>
                                 <!-- DATA AMALAN -->
@@ -44,34 +61,47 @@
                                     <thead>
                                         <tr class="table-tengah">
                                             <th>No</th>
+                                            <th>Tanggal</th>
                                             <th>Jenis Amalan</th>
+                                            <th>Jumlah</th>
                                             <th>Keterangan</th>
-                                            <th>Bobot</th>
-                                            <th>Action</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                        @foreach($jenisAmalan as $index => $jenis)
-                                            <td>{{$index + 1}}</td>
-                                            <td>{{$jenis->jenisAmalan}}</td>
-                                            <td>{{$jenis->keterangan}}</td>
-                                            <td>{{$jenis->bobotAmalan}}</td>
+                                            <td>1</td>
+                                            <td>Minggu, 12 Maret 2020</td>
+                                            <td>Sholat Tahajud</td>
+                                            <td>5</td>
+                                            <td>Hanya hari senin</td>
                                             <td>
-                                                <a href="/jenis-amalan/{{$jenis->id}}/edit">
-                                                
+                                                <a href="#">
                                                     <button type="button" class="btn btn-warning">Edit</button>
                                                 </a>
-                                                <a href="/jenis-amalan/{{$jenis->id}}/delete" onClick="return confirm('Yakin untuk menghapus?')">
+                                                <a href="#">
                                                     <button type="button" class="btn btn-danger">Hapus</button>
                                                 </a>
                                             </td>
                                         </tr>
-                                        @endforeach
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Minggu, 12 Maret 2020</td>
+                                            <td>Sholat Dhuha</td>
+                                            <td>3</td>
+                                            <td>Hanyar sabtu</td>
+                                            <td>
+                                                <a href="#">
+                                                    <button type="button" class="btn btn-warning">Edit</button>
+                                                </a>
+                                                <a href="#">
+                                                    <button type="button" class="btn btn-danger">Hapus</button>
+                                                </a>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                                 <!-- END OF DATA SISWA -->
-                                
                             </div>
                         </div>
                     </div>

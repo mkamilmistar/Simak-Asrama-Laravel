@@ -186,7 +186,7 @@
             </div>
             <div class="form-group">
                 <label for="user_image">Avatar</label>
-                <input type="file" name="user_image" class="form-control">
+                <input type="file" name="user_image" id="user_image" class="form-control">
             </div>
             </div>
             <div class="modal-footer">

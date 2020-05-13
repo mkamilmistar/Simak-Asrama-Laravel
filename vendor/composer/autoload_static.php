@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit2d935d232ad6acb630d2b30cbe40bbac
+class ComposerStaticInitd21ad158ae8aa8c9b8af41ca6a86d26b
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -437,6 +437,7 @@ class ComposerStaticInit2d935d232ad6acb630d2b30cbe40bbac
         'App\\Http\\Controllers\\CatatanKebaikanController' => __DIR__ . '/../..' . '/app/Http/Controllers/CatatanKebaikanController.php',
         'App\\Http\\Controllers\\CatatanYaumiyahController' => __DIR__ . '/../..' . '/app/Http/Controllers/CatatanYaumiyahController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\HafalanController' => __DIR__ . '/../..' . '/app/Http/Controllers/HafalanController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\JenisAmalanController' => __DIR__ . '/../..' . '/app/Http/Controllers/JenisAmalanController.php',
         'App\\Http\\Controllers\\LandingPageController' => __DIR__ . '/../..' . '/app/Http/Controllers/LandingPageController.php',
@@ -452,6 +453,7 @@ class ComposerStaticInit2d935d232ad6acb630d2b30cbe40bbac
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\JenisAmalanYaumiyah' => __DIR__ . '/../..' . '/app/JenisAmalanYaumiyah.php',
         'App\\Notifications\\AdminResetPasswordNotification' => __DIR__ . '/../..' . '/app/Notifications/AdminResetPasswordNotification.php',
+        'App\\PoinKebaikan' => __DIR__ . '/../..' . '/app/PoinKebaikan.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -3320,6 +3322,7 @@ class ComposerStaticInit2d935d232ad6acb630d2b30cbe40bbac
         'PhpParser\\Parser\\Tokens' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Parser/Tokens.php',
         'PhpParser\\PrettyPrinterAbstract' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php',
         'PhpParser\\PrettyPrinter\\Standard' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php',
+        'PoinKebaikanSeeder' => __DIR__ . '/../..' . '/database/seeds/PoinKebaikanSeeder.php',
         'Prophecy\\Argument' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument.php',
         'Prophecy\\Argument\\ArgumentsWildcard' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php',
         'Prophecy\\Argument\\Token\\AnyValueToken' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValueToken.php',
@@ -4565,10 +4568,10 @@ class ComposerStaticInit2d935d232ad6acb630d2b30cbe40bbac
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit2d935d232ad6acb630d2b30cbe40bbac::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit2d935d232ad6acb630d2b30cbe40bbac::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit2d935d232ad6acb630d2b30cbe40bbac::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit2d935d232ad6acb630d2b30cbe40bbac::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd21ad158ae8aa8c9b8af41ca6a86d26b::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd21ad158ae8aa8c9b8af41ca6a86d26b::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitd21ad158ae8aa8c9b8af41ca6a86d26b::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitd21ad158ae8aa8c9b8af41ca6a86d26b::$classMap;
 
         }, null, ClassLoader::class);
     }

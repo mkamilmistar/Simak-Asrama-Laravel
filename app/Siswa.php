@@ -23,5 +23,13 @@ class Siswa extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function poinKebaikan(){
+        return $this->hasMany(PoinKebaikan::class);
+    }
+
+    public function getJumlahTotalPoinAttribute(){
+        $tmp = $this->poinKebaikan;
+        return $tmp->where('jenis', 'kebaikan')->sum('poin') - $tmp->where('jenis', 'keburukan')->sum('poin');
+    }
     
 }

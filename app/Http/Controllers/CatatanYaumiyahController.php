@@ -20,30 +20,37 @@ class CatatanYaumiyahController extends Controller
         
         return view('catatanAmalanYaumiyah.catatanAmalanPembina', compact(['data_user']));
     }
-    
-    public function viewPageTambahCatatanAmalanSiswa()
-    {
-        return view('tambahCatatanAmalanSiswa');
-    }
-
+ 
     public function viewPageSiswa()
     {
-        // $dataAmalanSiswa = 
-        return view('catatanAmalanPembina');
+        
+        return view('catatanAmalanYaumiyah.catatanAmalanSiswa');
     }
 
-    public function viewPageTambahJenisAmalan()
-    {
-        return view('tambahJenisAmalan');
-    }
 
-    public function viewPageCatatanAmalanSiswa()
-    {
-        return view('catatanAmalanSiswa');
-    }
+    // public function viewPageTambahCatatanAmalanSiswa()
+    // {
+    //     return view('tambahCatatanAmalanSiswa');
+    // }
 
-    public function viewPageJenisAmalan()
-    {
-        return view('jenisAmalanSiswa');
-    }
+    // public function viewPageSiswa()
+    // {
+    //     // $dataAmalanSiswa = 
+    //     return view('catatanAmalanPembina');
+    // }
+
+    // public function viewPageTambahJenisAmalan()
+    // {
+    //     return view('tambahJenisAmalan');
+    // }
+
+    // public function viewPageCatatanAmalanSiswa()
+    // {
+    //     return view('catatanAmalanSiswa');
+    // }
+
+    // public function viewPageJenisAmalan()
+    // {
+    //     return view('jenisAmalanSiswa');
+    // }
 }
