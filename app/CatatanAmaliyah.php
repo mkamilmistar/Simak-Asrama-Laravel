@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\JenisAmalanYaumiyah;
 
 class CatatanAmaliyah extends Model
 {
@@ -15,4 +16,12 @@ class CatatanAmaliyah extends Model
         'tanggal',
         'totalPoin'
     ];
+
+    public function jenisAmalanYaumiyah()
+    {
+        return $this->belongsTo(JenisAmalanYaumiyah::class, 'jenisAmalan_id');
+        
+    }
 }
+
+

@@ -30,10 +30,11 @@ class CatatanHarianController extends Controller
         $catatanHarian = CatatanHarian::where('siswa_id', $id)->get();
         //$catatanHarian = $catatanHarian->where(['siswa_id', $id])->first();
         $data_siswa = User::find($id);
+        $siswa = Siswa::where('user_id', $id)->first();
         $guru = Guru::all();
         $data_guru = User::where([['role', '=', 'pembina']])->orderBy('nama')->get();
-        //dd($catatanHarian);
-        return view('catatanHarian.catatanHarianSiswa', ['catatanHarian' => $catatanHarian, 'data_guru' => $data_guru, 'guru'=>$guru]);
+        //dd($siswa);
+        return view('catatanHarian.catatanHarianSiswa', ['catatanHarian' => $catatanHarian, 'data_siswa' => $data_siswa, 'siswa' => $siswa, 'data_guru' => $data_guru, 'guru'=>$guru]);
     }
 
     public function create(Request $request)

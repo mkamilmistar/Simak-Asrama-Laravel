@@ -36,6 +36,24 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-body">
+                                <table class="table-bio">
+                                    <tr >
+                                        <th style="width: 200px">Nomor Induk Siswa</th>
+                                        <td>{{$siswa->NIS}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nama</th>
+                                        <td>{{$data_siswa->nama}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Jenis Kelamin</th>
+                                        <td>{{$data_siswa->jenis_kelamin}}</td>                                        
+                                    </tr>
+                                    <tr>
+                                        <th>Kelas</th>
+                                        <td>{{$siswa->kelas}}</td>
+                                    </tr>
+                                </table>
                                 <div class="table-wrapper-scroll-y my-custom-scrollbar">
                                 <br>
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">

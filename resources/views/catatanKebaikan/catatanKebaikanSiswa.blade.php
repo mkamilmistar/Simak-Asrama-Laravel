@@ -108,10 +108,10 @@
                                             <td>{{$buruk->kegiatan}}</td>
                                             <td>{{$buruk->keterangan}}</td>
                                             <td>
-                                                <a href="/catatan-kebaikan/{{$user->id}}/{{$baik->id}}/edit">
+                                                <a href="/catatan-kebaikan/{{$user->id}}/{{$buruk->id}}/edit">
                                                     <button type="button" class="btn btn-warning">Edit</button>
                                                 </a>
-                                                <a href="/catatan-kebaikan/{{$user->id}}/{{$baik->id}}/delete">
+                                                <a href="/catatan-kebaikan/{{$user->id}}/{{$buruk->id}}/delete">
                                                     <button type="button" class="btn btn-danger">Hapus</button>
                                                 </a>
                                             </td>
