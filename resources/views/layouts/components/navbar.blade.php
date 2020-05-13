@@ -10,7 +10,7 @@
                     </div>
                     <div class="profile-item">
                         <p>{{auth()->user()->nama}}</p>
-                        <p>000000000</p>
+                        <p>{{000000000}}</p>
                     </div>
                 </li>
                 @auth
