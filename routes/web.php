@@ -57,6 +57,11 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
 
 });
 
+Route::group(['middleware' => ['auth', 'checkRole:siswa']], function() {
+    //Catatan Harian
+    Route::get('/catatan-harian-siswa/{id}', 'CatatanHarianController@viewPageCatatanSiswa');
+});
+
 
 
 //ROUTE CATATAN KEBAIKAN DAN KEBURUKAN
