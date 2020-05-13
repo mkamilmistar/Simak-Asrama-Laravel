@@ -27,8 +27,8 @@
                 <li class="{{ 'catatan-yaumiyah' == request()->path() ? 'nav-item active' : 'nav-item' }}">
                     <a href="/catatan-yaumiyah">Catatan Amalan Yaumiah</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#">Poin Pelanggaran dan Kebaikan</a>
+                <li class="{{ 'poin-siswa' == request()->path() ? 'nav-item active' : 'nav-item' }}">
+                    <a href="/poin-siswa/{{Auth()->user()->id}}">Poin Pelanggaran dan Kebaikan</a>
                 </li>
                 <li class="nav-item">
                     <a href="#">Catatan Shalat</a>
@@ -37,7 +37,7 @@
                     <a href="/catatan-kebaikan/{{auth()->user()->id}}">Catatan Kebaikan & Keburukan</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#">Catatan Harian</a>
+                    <a href="/catatan-harian-siswa/{{auth()->user()->id}}">Catatan Harian</a>
                 </li>
 
                 @elseif(auth()->user()->role=='pembina')

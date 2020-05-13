@@ -7,7 +7,7 @@
                         <div class="col-sm-4">
                             <div class="page-header float-left">
                                 <div class="page-title">
-                                    <h1>Catatan Kebaikan & Keburukan</h1>
+                                    <h1>Catatan Amalan Yaumiyah</h1>
                                 </div>
                             </div>
                         </div>
@@ -15,108 +15,90 @@
                             <div class="page-header float-right">
                                 <div class="page-title">
                                     <ol class="breadcrumb text-right">
-                                        <li><a href="/catatan-yaumiyah">Catatan Kebaikan & Keburukan</a></li>
-                                        <li class="active">Catatan Kebaikan & Keburukan Siswa</li>
+                                        <li><a href="/catatan-yaumiyah">Catatan Amalan Yaumiyah</a></li>
+                                        <li><a href="/catatan-yaumiyah">Catatan Amalan Yaumiyah Siswa</a></li>
+                                        <li class="active">Data table</li>
                                     </ol>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-    </div>   
-    @include('layouts.allert') 
+    </div>    
     <div class="content">
             <div class="animated fadeIn">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Catatan Kebaikan & Keburukan Siswa</strong>
-                                <a href="/catatan-kebaikan/{{auth()->user()->id}}/create" class="btn btn-primary">+ Tambah Catatan</a>
+                                <strong class="card-title">Catatan Amalan Yaumiyah Siswa</strong>
+                                <a href="/tambah-catatan-yaumiyah" class="btn btn-primary">+ Tambah Catatan</a>
                             </div>
                             <div class="card-body">
                                 <!-- Data Siswa -->
                                 <table class="table-bio">
                                     <tr >
                                         <th style="width: 200px">Nomor Induk Siswa</th>
-                                        <td>{{$siswa->NIS}}</td>
+                                        <td>000000</td>
                                     </tr>
                                     <tr>
                                         <th>Nama</th>
-                                        <td>{{$user->nama}}</td>
+                                        <td>Budi Arianto Kucing</td>
                                     </tr>
                                     <tr>
                                         <th>Jenis Kelamin</th>
-                                        <td>{{$user->jenis_kelamin}}</td>
+                                        <td>Laki-laki</td>
                                     </tr>
                                     <tr>
                                         <th>Kelas</th>
-                                        <td>{{$siswa->kelas}}</td>
+                                        <td>IX-B</td>
                                     </tr>
                                 </table>
                                 <!-- END OF DATA SISWA -->
                                 <br>
                                 <!-- DATA AMALAN -->
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                <h4><strong>Catatan Kebaikan</strong> </h4>
                                     <thead>
                                         <tr class="table-tengah">
                                             <th>No</th>
                                             <th>Tanggal</th>
-                                            <th>Jenis Kebaikan</th>
-                                            <th style="width: 200px">Keterangan</th>
+                                            <th>Jenis Amalan</th>
+                                            <th>Jumlah</th>
+                                            <th>Keterangan</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($catatanKebaikan as $index => $baik)
                                         <tr>
-                                            <td>{{$index + 1}}</td>
-                                            <td>{{$baik->tanggal}}</td>
-                                            <td>{{$baik->kegiatan}}</td>
-                                            <td>{{$baik->keterangan}}</td>
+                                            <td>1</td>
+                                            <td>Minggu, 12 Maret 2020</td>
+                                            <td>Sholat Tahajud</td>
+                                            <td>5</td>
+                                            <td>Hanya hari senin</td>
                                             <td>
-                                                <a href="/catatan-kebaikan/{{$user->id}}/{{$baik->id}}/edit">
+                                                <a href="#">
                                                     <button type="button" class="btn btn-warning">Edit</button>
                                                 </a>
-                                                <a href="/catatan-kebaikan/{{$user->id}}/{{$baik->id}}/delete" onClick="return confirm('Yakin untuk menghapus?')">
+                                                <a href="#">
                                                     <button type="button" class="btn btn-danger">Hapus</button>
                                                 </a>
                                             </td>
                                         </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                                <!-- END OF DATA SISWA -->
-                                <br>
-                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                <h4><strong>Catatan Keburukan</strong> </h4>
-                                    <thead>
-                                        <tr class="table-tengah">
-                                            <th>No</th>
-                                            <th>Tanggal</th>
-                                            <th>Jenis Kebaikan</th>
-                                            <th style="width: 200px">Keterangan</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($catatanKeburukan as $index => $buruk)
                                         <tr>
-                                            <td>{{$index + 1}}</td>
-                                            <td>{{$buruk->tanggal}}</td>
-                                            <td>{{$buruk->kegiatan}}</td>
-                                            <td>{{$buruk->keterangan}}</td>
+                                            <td>2</td>
+                                            <td>Minggu, 12 Maret 2020</td>
+                                            <td>Sholat Dhuha</td>
+                                            <td>3</td>
+                                            <td>Hanyar sabtu</td>
                                             <td>
-                                                <a href="/catatan-kebaikan/{{$user->id}}/{{$buruk->id}}/edit">
+                                                <a href="#">
                                                     <button type="button" class="btn btn-warning">Edit</button>
                                                 </a>
-                                                <a href="/catatan-kebaikan/{{$user->id}}/{{$buruk->id}}/delete">
+                                                <a href="#">
                                                     <button type="button" class="btn btn-danger">Hapus</button>
                                                 </a>
                                             </td>
                                         </tr>
-                                        @endforeach
                                     </tbody>
                                 </table>
                                 <!-- END OF DATA SISWA -->

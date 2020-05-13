@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 use App\Siswa;
+use App\CatatanAmaliyah;
+use App\JenisAmalanYaumiyah;
 
 class CatatanYaumiyahController extends Controller
 {
@@ -21,36 +23,25 @@ class CatatanYaumiyahController extends Controller
         return view('catatanAmalanYaumiyah.catatanAmalanPembina', compact(['data_user']));
     }
  
-    public function viewPageSiswa()
+    public function viewPageSiswa(Request $request)
     {
-        
-        return view('catatanAmalanYaumiyah.catatanAmalanSiswa');
+        $data_user = Auth::user();
+
+        $catatanAmaliyah = CatatanAmaliyah::where('user_id', Auth::user()->id)->with('jenisAmalanYaumiyah')->get();
+        // dd($catatanAmaliyah);
+
+        return view('catatanAmalanYaumiyah.catatanAmalanSiswa', compact(['catatanAmaliyah','data_user']));
     }
 
+    public function viewTambahCatatan()
+    {
+        $jenisCatatan = JenisAmalanYaumiyah::all();;
+        return view('catatanAmalanYaumiyah.tambahCatatanAmalanSiswa', compact(['jenisCatatan']));
+    }
 
-    // public function viewPageTambahCatatanAmalanSiswa()
-    // {
-    //     return view('tambahCatatanAmalanSiswa');
-    // }
+    public function postCatatan()
+    {
+        # code...
+    }
 
-    // public function viewPageSiswa()
-    // {
-    //     // $dataAmalanSiswa = 
-    //     return view('catatanAmalanPembina');
-    // }
-
-    // public function viewPageTambahJenisAmalan()
-    // {
-    //     return view('tambahJenisAmalan');
-    // }
-
-    // public function viewPageCatatanAmalanSiswa()
-    // {
-    //     return view('catatanAmalanSiswa');
-    // }
-
-    // public function viewPageJenisAmalan()
-    // {
-    //     return view('jenisAmalanSiswa');
-    // }
 }

@@ -32,26 +32,26 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Catatan Amalan Yaumiyah Siswa</strong>
-                                <a href="/tambah-catatan-yaumiyah" class="btn btn-primary">+ Tambah Catatan</a>
+                                <a href="/catatan-yaumiyah/create" class="btn btn-primary">+ Tambah Catatan</a>
                             </div>
                             <div class="card-body">
                                 <!-- Data Siswa -->
                                 <table class="table-bio">
                                     <tr >
                                         <th style="width: 200px">Nomor Induk Siswa</th>
-                                        <td>000000</td>
+                                        <td>{{$data_user->siswa->NIS}}</td>
                                     </tr>
                                     <tr>
                                         <th>Nama</th>
-                                        <td>Budi Arianto Kucing</td>
+                                        <td>{{$data_user->nama}}</td>
                                     </tr>
                                     <tr>
                                         <th>Jenis Kelamin</th>
-                                        <td>Laki-laki</td>
+                                        <td>{{$data_user->jenis_kelamin}}</td>
                                     </tr>
                                     <tr>
                                         <th>Kelas</th>
-                                        <td>IX-B</td>
+                                        <td>{{$data_user->siswa->kelas}}</td>
                                     </tr>
                                 </table>
                                 <!-- END OF DATA SISWA -->
@@ -63,18 +63,21 @@
                                             <th>No</th>
                                             <th>Tanggal</th>
                                             <th>Jenis Amalan</th>
-                                            <th>Jumlah</th>
+                                            <!-- <th>Jumlah</th> -->
                                             <th>Keterangan</th>
+                                            <th>Jumlah</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($catatanAmaliyah as $index => $catatan)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Minggu, 12 Maret 2020</td>
-                                            <td>Sholat Tahajud</td>
-                                            <td>5</td>
-                                            <td>Hanya hari senin</td>
+                                            <td>{{$index + 1}}</td>
+                                            <td>{{$catatan->tanggal}}</td>
+                                            <td>{{$catatan->jenisAmalanYaumiyah->jenisAmalan}}</td>
+                                            <!-- <td>5</td> -->
+                                            <td>{{$catatan->keterangan}}</td>
+                                            <td>{{$catatan->jumlah}} kali</td>
                                             <td>
                                                 <a href="#">
                                                     <button type="button" class="btn btn-warning">Edit</button>
@@ -84,21 +87,7 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Minggu, 12 Maret 2020</td>
-                                            <td>Sholat Dhuha</td>
-                                            <td>3</td>
-                                            <td>Hanyar sabtu</td>
-                                            <td>
-                                                <a href="#">
-                                                    <button type="button" class="btn btn-warning">Edit</button>
-                                                </a>
-                                                <a href="#">
-                                                    <button type="button" class="btn btn-danger">Hapus</button>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                                 <!-- END OF DATA SISWA -->

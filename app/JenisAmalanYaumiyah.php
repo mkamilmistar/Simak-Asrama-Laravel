@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\CatatanAmaliyah;
 
 class JenisAmalanYaumiyah extends Model
 {
@@ -10,4 +11,9 @@ class JenisAmalanYaumiyah extends Model
     protected $fillable = [
         'jenisAmalan', 'bobotAmalan', 'keterangan',
     ];
+
+    public function catatanAmaliyah()
+    {
+        return $this->hasOne(CatatanAmaliyah::class);
+    }
 }
