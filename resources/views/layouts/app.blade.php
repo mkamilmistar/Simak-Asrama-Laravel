@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
         <link rel="stylesheet" href="{{asset('sites/assets/css/cs-skin-elastic.css')}}">
         <link rel="stylesheet" href="{{asset('sites/assets/css/style.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/lib/datatable/dataTables.bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('sites/assets/css/lib/datatable/dataTables.bootstrap.min.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
 
         <style>
