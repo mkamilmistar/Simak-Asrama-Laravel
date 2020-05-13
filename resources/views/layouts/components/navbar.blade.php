@@ -37,7 +37,7 @@
                     <a href="/catatan-kebaikan/{{auth()->user()->id}}">Catatan Kebaikan & Keburukan</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#">Catatan Harian</a>
+                    <a href="/catatan-harian-siswa/{{auth()->user()->id}}">Catatan Harian</a>
                 </li>
 
                 @elseif(auth()->user()->role=='pembina')

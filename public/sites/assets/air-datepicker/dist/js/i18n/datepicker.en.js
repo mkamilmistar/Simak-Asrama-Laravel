@@ -9,7 +9,7 @@
         today: 'Hari Ini',
         clear: 'Clear',
         dateFormat: 'dd/mm/yyyy',
-        timeFormat: 'hh:ii aa',
+        timeFormat: 'hh:ii',
         firstDay: 0
     };
 })(jQuery);
