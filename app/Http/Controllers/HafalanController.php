@@ -21,6 +21,9 @@ class HafalanController extends Controller
         $data_user = Auth::user();
         $data_hafalan = Hafalan::where('siswa_id','=',$data_user->siswa->id)->get();
         $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->get();
+
+        $title='Hafalan | Sistem Informasi Asrama SCB';
+
         return view('Hafalan.indexHafalanSiswa', compact(['data_user','data_hafalan','data_hafalan2']));
     }
 
@@ -32,8 +35,10 @@ class HafalanController extends Controller
         }else{
             return redirect()->back();
         }
+
+        $title= 'Hafalan | Sistem Informasi Asrama SCB';
         
-        return view('Hafalan.indexHafalanPembina', compact(['data_user']));
+        return view('Hafalan.indexHafalanPembina', compact(['title','data_user']));
     }
 
     /**

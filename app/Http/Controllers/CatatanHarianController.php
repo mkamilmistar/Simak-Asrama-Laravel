@@ -22,7 +22,7 @@ class CatatanHarianController extends Controller
         //$data_siswa = collect([$data_siswa])->sortBy('nama', SORT_REGULAR, false);
         $data_guru = User::where([['role', '=', 'pembina']])->orderBy('nama')->get();
         //dd($catatanHarian);
-        return view('catatanHarian.catatanHarian', ['catatanHarian' => $catatanHarian, 'data_siswa' => $data_siswa, 'data_guru' => $data_guru, 'siswa'=>$siswa, 'guru'=>$guru]);
+        return view('catatanHarian.catatanHarian', ['title' => 'Catatan Harian Siswa | Sistem Informasi Asrama', 'catatanHarian' => $catatanHarian, 'data_siswa' => $data_siswa, 'data_guru' => $data_guru, 'siswa'=>$siswa, 'guru'=>$guru]);
     }
 
     public function viewPageCatatanSiswa(Request $request, $id)
@@ -34,27 +34,11 @@ class CatatanHarianController extends Controller
         $guru = Guru::all();
         $data_guru = User::where([['role', '=', 'pembina']])->orderBy('nama')->get();
         //dd($siswa);
-        return view('catatanHarian.catatanHarianSiswa', ['catatanHarian' => $catatanHarian, 'data_siswa' => $data_siswa, 'siswa' => $siswa, 'data_guru' => $data_guru, 'guru'=>$guru]);
+        return view('catatanHarian.catatanHarianSiswa', ['title' => 'Catatan Harian Siswa | Sistem Informasi Asrama', 'catatanHarian' => $catatanHarian, 'data_siswa' => $data_siswa, 'siswa' => $siswa, 'data_guru' => $data_guru, 'guru'=>$guru]);
     }
 
     public function create(Request $request)
     {
-
-        //Insert Table User
-        //$user = new User;
-        //$user->role = 'siswa';
-        //$user->name = $request->nama_depan;
-        //$user->email = $request->email;
-        //$user->password = bcrypt('rahasia');
-        //$user->remember_token = Str::random(60);
-        //$user->save();
-     
-        //$siswa = Siswa::find($request->siswa_id);
-        //$guru = Guru::find($request->guru_id);
-        //Insert Table Siswa
-        //$request->request->add(['siswa_id'=>$siswa->id]);
-        //$request->request->add(['guru_id'=>$guru->id]);
-        //$catatanHarian = CatatanHarian::create($request->all());
 
         $catatan = new CatatanHarian();
         $catatan->pembina_id = $request->input('pembina_id');
@@ -72,7 +56,7 @@ class CatatanHarianController extends Controller
         $catatanHarian = CatatanHarian::find($id);
         $data_guru = User::where([['role', '=', 'pembina']])->orderBy('nama')->get();
         $data_siswa = User::where([['role', '=', 'siswa']])->orderBy('nama')->get();
-        return view('catatanHarian.editCatatanHarian', ['catatanHarian' => $catatanHarian, 'data_siswa' => $data_siswa, 'data_guru' => $data_guru]);
+        return view('catatanHarian.editCatatanHarian', ['title' => 'Edit Catatan Harian | Sistem Informasi Asrama', 'catatanHarian' => $catatanHarian, 'data_siswa' => $data_siswa, 'data_guru' => $data_guru]);
     }
 
     public function update(Request $request, $id)
@@ -80,13 +64,13 @@ class CatatanHarianController extends Controller
         //dd($request->all());
         $catatanHarian = CatatanHarian::find($id);
         $catatanHarian->update($request->all());
-        return redirect('/catatan-harian')->with('sukses', 'Data berhasil diubah!');
+        return redirect('/catatan-harian')->with('primary', 'Data berhasil diubah!');
     }
 
     public function delete($id)
     {
         $catatanHarian = CatatanHarian::find($id);
         $catatanHarian->delete($catatanHarian);
-        return redirect('/catatan-harian')->with('sukses', 'Data berhasil dihapus!');
+        return redirect('/catatan-harian')->with('danger', 'Data berhasil dihapus!');
     }
 }

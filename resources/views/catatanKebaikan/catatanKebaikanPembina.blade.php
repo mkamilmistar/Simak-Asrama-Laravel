@@ -24,8 +24,8 @@
         </div>
     </div>
 </div>
-@include('layouts.allert')
 <div class="content">
+    @include('layouts.allert')
     <div class="animated fadeIn">
         <div class="row">
             <div class="col-md-12">
@@ -91,6 +91,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <br>
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             <h4><strong>Catatan Keburukan</strong> </h4>
                             <thead>
@@ -115,7 +116,8 @@
                                             </a>
                                             <a
                                                 href="/catatan-kebaikan/{{ $data_user->id }}/{{ $buruk->id }}/delete">
-                                                <button type="button" class="btn btn-danger">Hapus</button>
+                                                <button type="button" class="btn btn-danger"
+                                                    onClick="return confirm('Yakin untuk menghapus?')">Hapus</button>
                                             </a>
                                         </td>
                                     </tr>

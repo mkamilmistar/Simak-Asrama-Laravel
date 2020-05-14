@@ -19,8 +19,9 @@ class CatatanYaumiyahController extends Controller
         }else{
             return redirect()->back();
         }
+        $title= 'Catatan Amaliyah | Sistem Informasi Asrama SCB';
         
-        return view('catatanAmalanYaumiyah.catatanAmalanPembina', compact(['data_user']));
+        return view('catatanAmalanYaumiyah.catatanAmalanPembina', compact(['title','data_user']));
     }
  
     public function viewPageSiswa(Request $request)
@@ -30,13 +31,17 @@ class CatatanYaumiyahController extends Controller
         $catatanAmaliyah = CatatanAmaliyah::where('user_id', Auth::user()->id)->with('jenisAmalanYaumiyah')->get();
         // dd($catatanAmaliyah);
 
-        return view('catatanAmalanYaumiyah.catatanAmalanSiswa', compact(['catatanAmaliyah','data_user']));
+        $title= 'Catatan Amaliyah | Sistem Informasi Asrama SCB';
+
+        return view('catatanAmalanYaumiyah.catatanAmalanSiswa', compact(['title','catatanAmaliyah','data_user']));
     }
 
     public function viewTambahCatatan()
     {
         $jenisCatatan = JenisAmalanYaumiyah::all();;
-        return view('catatanAmalanYaumiyah.tambahCatatanAmalanSiswa', compact(['jenisCatatan']));
+
+        $title = 'Tambah Catatan Amaliyah | Sistem Informasi Asrama SCB'; 
+        return view('catatanAmalanYaumiyah.tambahCatatanAmalanSiswa', compact(['jenisCatatan', 'title']));
     }
 
     public function postCatatan()

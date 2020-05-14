@@ -18,7 +18,9 @@ class UserController extends Controller
             $data_siswa = Auth::user();
             return redirect()->back();
         }
-        return view('Profile.indexProfile', compact(['data_siswa', 'data_guru']));
+        
+        $title='Profile Siswa | Sistem Informasi Asrama SCB';
+        return view('Profile.indexProfile', compact(['title','data_siswa', 'data_guru']));
     }
 
     public function createProfile(Request $request)
@@ -62,7 +64,8 @@ class UserController extends Controller
     public function editProfile($id)
     {
         $user = User::find($id);
-        return view('Profile.editProfile', compact('user'));
+        $title='Edit Profile | Sistem Informasi Asrama SCB';
+        return view('Profile.editProfile', compact(['title','user']));
     }
 
     public function updateProfile(Request $request, $id)
@@ -99,8 +102,8 @@ class UserController extends Controller
         else{
             return redirect()->back();
         }
-        
-        return view('Profile.profile', compact('user'));
+        $title='Profile | Sistem Informasi Asrama SCB';
+        return view('Profile.profile', compact(['title' ,'user']));
     }
 
 

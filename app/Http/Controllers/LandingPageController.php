@@ -8,6 +8,6 @@ class LandingPageController extends Controller
 {
     public function home()
     {
-        return view('landings.home');
+        return view('landings.home', ['title' => 'Beranda | Sistem Informasi Asrama SCB',]);
     }
 }

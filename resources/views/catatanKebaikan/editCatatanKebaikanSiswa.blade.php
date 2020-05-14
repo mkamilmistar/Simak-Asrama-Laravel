@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-@include('layouts.allert')
 <div class="breadcrumbs">
     <div class="breadcrumbs-inner">
         <div class="row m-0">
@@ -26,6 +25,7 @@
     </div>
 </div>
 <div class="content">
+    @include('layouts.allert')
     <div class="animated fadeIn">
         <div class="row">
             <div class="col-md-12">
@@ -39,20 +39,12 @@
                                 <h4>Edit Catatan Kebaikan/Kuburukan </h4>
                                 <div class="garis2"></div>
                             </div>
-                            @include('layouts.allert')
+
                             <div class="isitambah">
                                 <form action="/catatan-kebaikan/{auth()->user()->id}}/{{ $catatan->id }}/update"
                                     method="POST">
                                     @csrf
                                     <table class="table-bio">
-                                        <!-- <tr >
-                                                    <th style="width: 200px">Hari/Tanggal</th>
-                                                    <td><input name="jenis_amalan"class="form-control" type="text"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Jam</th>
-                                                    <td> <input name="jenis_amalan"class="form-control" type="text"></td>
-                                                </tr> -->
                                         <tr>
                                             <th>Jenis Amalan</th>
                                             <td>

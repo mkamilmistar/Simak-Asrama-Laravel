@@ -75,7 +75,7 @@ class PoinKebaikanController extends Controller
     public function viewPoinSearchPage()
     {
         $siswas = Siswa::all();
-        return view('poinKebaikan.poinKebaikanSearch', [ 'siswas' => $siswas ]);
+        return view('poinKebaikan.poinKebaikanSearch', ['title' => 'Poin Pelanggaran dan Kebaikan | Sistem Informasi Asrama SCB', 'siswas' => $siswas ]);
     }
 
     /**
@@ -89,14 +89,15 @@ class PoinKebaikanController extends Controller
         return view('poinKebaikan.poinKebaikanSiswa', [ 
             'siswa' => $siswa,
             'poin_keburukan' => $poin_keburukan,
-            'poin_kebaikan' => $poin_kebaikan
+            'poin_kebaikan' => $poin_kebaikan,
+            'title' => 'Poin Pelanggaran dan Kebaikan | Sistem Informasi Asrama SCB'
         ]);
     }
 
     public function viewAddPoinSiswaPage($id)
     {
         $siswa = Siswa::find($id);
-        return view('poinKebaikan.tambahPoinKebaikanSiswa', [ 'siswa' => $siswa ]);
+        return view('poinKebaikan.tambahPoinKebaikanSiswa', [ 'title' => 'Poin Pelanggaran dan Kebaikan| Sistem Informasi Asrama SCB','siswa' => $siswa ]);
     }
 
     public function addPoinSiswa(Request $request)
