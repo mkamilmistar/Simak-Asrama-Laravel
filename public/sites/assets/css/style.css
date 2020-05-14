@@ -3651,11 +3651,13 @@ footer.site-footer .footer-inner a {
 .profile-item {
   color: #000;
   align-items: center;
+
 }
 
 .profile-item p {
   position: relative;
-  top: 7px;
+  top: 10px;
+  left: 4px;
   line-height: 0px;
   color: #000;
 }
