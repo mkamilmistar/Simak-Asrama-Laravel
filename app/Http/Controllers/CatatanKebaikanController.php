@@ -64,7 +64,7 @@ class CatatanKebaikanController extends Controller
         $catatan->save();
         
         $user = User::find($id);
-
+            
         return redirect()->route('viewCatatanKebaikanSiswa', [Auth::user()->id])->with('sukses', 'Catatan Kebaikan Berhasil ditambahkan!');
     }
 
@@ -92,8 +92,11 @@ class CatatanKebaikanController extends Controller
             'keterangan'     => request('keterangan'),
             'tanggal'       => request('tanggal'),
         ]);
-        
-        return redirect()->route('viewCatatanKebaikan')->with('sukses', 'Catatan Kebaikan Berhasil diupdate!');
+        if(Auth::user()->role=='siswa'){
+            return redirect()->route('viewCatatanKebaikanSiswa', [Auth::user()->id])->with('sukses', 'Catatan Kebaikan Berhasil diupdate!');
+        }else{
+            return redirect()->route('viewCatatanKebaikan')->with('sukses', 'Catatan Kebaikan Berhasil diupdate!');
+        }
     }
 
     public function hapusCatatan($userId, $id)
@@ -101,7 +104,11 @@ class CatatanKebaikanController extends Controller
         $user = User::find($userId);
         $catatan = CatatanKebaikan::find($id);
         $catatan->delete();
-        return redirect()->route('viewCatatanKebaikanSiswa', [Auth::user()->id])->with('sukses', 'Data Berhasil Dihapus!');
+        if(Auth::user()->role=='siswa'){
+            return redirect()->route('viewCatatanKebaikanSiswa', [Auth::user()->id])->with('sukses', 'Data Berhasil Dihapus!');
+        }else{
+            return redirect()->route('viewCatatanKebaikan')->with('sukses', 'Catatan Kebaikan Berhasil Dihapus!');
+        }
     }
 
 
