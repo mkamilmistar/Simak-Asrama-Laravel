@@ -90,19 +90,20 @@ class UserController extends Controller
 
     public function viewProfile($id)
     {
+        $title='Profile | Sistem Informasi Asrama SCB';
+
         if(Auth::user()->role=='pembina'){
             $user = User::find($id);
         }
         
         elseif(Auth::id() == $id){
             $user = Auth::user();
-            return view('Profile.profile', compact('user'));
+            return view('Profile.profile', compact('title', 'user'));
         }
         
         else{
             return redirect()->back();
         }
-        $title='Profile | Sistem Informasi Asrama SCB';
         return view('Profile.profile', compact(['title' ,'user']));
     }
 
