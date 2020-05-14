@@ -12,8 +12,8 @@ class Guru extends Model
         'NIP', 'role', 'alamat', 'noHP'
     ];
 
-    public function User()
+    public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

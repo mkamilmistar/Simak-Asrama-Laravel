@@ -53,16 +53,14 @@
                                             <th>Nama Pencatat</th>
                                             <th>Kategori</th>
                                             <th>Keterangan</th>
-
                                             <th>Tanggal</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <?php $no = 1; ?>
-                                            @foreach($catatanHarian as $cat)
-                                                <td>{{ $no }}</td>
+                                        @foreach($catatanHarian as $index => $cat)
+                                            <tr>
+                                                <td>{{ $index +1 }}</td>
                                                 <td><a href="/profile/{{ $cat->siswa_id }}/view">{{ App\User::find($cat->siswa_id)->nama }}
                                                 </td>
                                                 <td><a href="/profile/{{ $cat->pembina_id }}/view">{{ App\User::find($cat->pembina_id)->nama }}
@@ -79,9 +77,8 @@
                                                         class="btn btn-danger btn-sm"
                                                         onclick="return confirm('Yakin mau dihapus?')">Delete</a>
                                                 </td>
-                                                <?php $no++; ?>
-                                            @endforeach
-                                        </tr>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -124,7 +121,7 @@
                         </div>
                         <div class="form-group ">
                             <label for="exampleInputEmail1">Tanggal dan Waktu</label>
-                            <input name="waktu" type='text' class="datepicker-here form-group"
+                            <input name="waktu" type='text' class="datepicker-here form-control"
                                 data-date-useseconds="true" data-timepicker="true" data-language='en' />
                             <!-- <input name="waktu" type='text' class='datepicker-here form-control' data-language='en' /> -->
                         </div>

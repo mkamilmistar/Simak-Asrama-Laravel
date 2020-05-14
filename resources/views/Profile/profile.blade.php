@@ -51,9 +51,7 @@
                                 </div>
                                 <div class="contact--info inner ">
                                     <div class="row justify-content-center">
-                                        <img src="{{ $user->getAvatar() }}" class="img-circle"
-                                            style="width:150px;height:200px;object-fit: cover;border-radius:8px"
-                                            alt="Avatar">
+                                        <img src="{{ $user->getAvatar() }}" class="img-circle" alt="Avatar">
                                     </div>
 
                                     <div class="profile-stat">
@@ -62,11 +60,7 @@
 
                                             </div>
                                         </div>
-                                        <div class="row justify-content-center">
 
-                                            <a href="#" class="main-btn">Tes</a>
-
-                                        </div>
                                         <br>
                                     </div>
 

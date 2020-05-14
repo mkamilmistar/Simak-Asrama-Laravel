@@ -10,7 +10,11 @@
                     </div>
                     <div class="profile-item">
                         <p>{{ auth()->user()->nama }}</p>
-                        <p>{{ 000000000 }}</p>
+                        @if(auth()->user()->role=='siswa')
+                            <p>{{ auth()->user()->siswa->NIS }}</p>
+                        @elseif(auth()->user()->role=='pembina')
+                            <p>{{ auth()->user()->guru->NIP }}</p>
+                        @endif
                     </div>
                 </li>
                 @auth

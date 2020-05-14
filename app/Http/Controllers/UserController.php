@@ -103,4 +103,6 @@ class UserController extends Controller
         return view('Profile.profile', compact('user'));
     }
 
+
+
 }

@@ -511,6 +511,13 @@ img {
   max-width: 100%;
 }
 
+.img-circle {
+  width: 30%;
+  height: 20%;
+  object-fit: cover;
+  border-radius: 8px
+}
+
 .modal-header {
   display: block;
 }
@@ -781,8 +788,12 @@ aside.left-panel:hover {
   border: none;
   display: inline-block;
   margin: 0;
-  padding: 0;
+  padding: 0px;
   vertical-align: top;
+}
+
+.navbar-custom {
+  padding: 0;
 }
 
 .navbar .main-menu {
@@ -3549,6 +3560,11 @@ footer.site-footer .footer-inner a {
     max-width: 100%;
     width: 100%;
   }
+
+  #left-panel .navbar .navbar-expand {
+    padding: 0;
+  }
+
 
   #left-panel .navbar .navbar-nav li>a {
     max-width: inherit;
