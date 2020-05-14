@@ -1295,6 +1295,14 @@ header.fixed-top {
 
 }
 
+.h-divider {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 1px;
+  width: 100%;
+  border-top: 3px solid #057650;
+}
+
 .icon-navbar div {
   display: block;
   margin-right: 25px;

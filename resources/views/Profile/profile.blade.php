@@ -74,17 +74,6 @@
                                     <div id="main" class="col-md-12">
                                         <div class="col-12 col-lg-12">
                                             <h4>Data Diri</h4>
-
-                                            <style type="text/css">
-                                                .h-divider {
-                                                    margin-top: 10px;
-                                                    margin-bottom: 10px;
-                                                    height: 1px;
-                                                    width: 100%;
-                                                    border-top: 3px solid #057650;
-                                                }
-                                            </style>
-
                                             <div class="h-divider"></div>
 
                                             <dl class="row">
