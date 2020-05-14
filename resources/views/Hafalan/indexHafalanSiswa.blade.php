@@ -80,11 +80,11 @@
                                             <td>{{$haf->tanggal}}</td>
                                             <td>{{$haf->pm}}</td>
                                             <td>{{$haf->tm}}</td>
-                                            <td>{{$haf->surat}}</td>
+                                            <td>{{$haf->surat->surat_id}}</td>
                                             <td>{{$haf->ayat0}}</td>
                                             <td>{{$haf->ayat1}}</td>
                                             <td>{{$haf->nilai}}</td>
-                                            <td>{{$haf->pembina_id}}</td>
+                                            <td>{{$haf->guru->user->nama}}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -140,7 +140,7 @@
                                             <td>{{$haf2->doa}}</td>
                                             <td>{{$haf2->hadist}}</td>
                                             <td>{{$haf2->nilai}}</td>
-                                            <td>{{$haf2->pembina_id}}</td>
+                                            <td>{{$haf2->guru->user->nama}}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>

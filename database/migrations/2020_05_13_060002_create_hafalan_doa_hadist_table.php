@@ -23,9 +23,9 @@ class CreateHafalanDoaHadistTable extends Migration
             $table->integer('nilai');
 
             $table->integer('siswa_id')->unsigned();
-            $table->foreign('siswa_id')->references('id')->on('users')->onDelete('CASCADE');
+            $table->foreign('siswa_id')->references('id')->on('siswa')->onDelete('CASCADE');
             $table->integer('pembina_id')->unsigned();
-            $table->foreign('pembina_id')->references('id')->on('users')->onDelete('CASCADE');
+            $table->foreign('pembina_id')->references('id')->on('guru')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

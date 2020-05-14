@@ -57,10 +57,6 @@
                                             <a href="#">
                                                 <button type="button" class="btn btn-primary">View</button>
                                             </a>
-                                            
-                                            <a href="#">
-                                                <button type="button" class="btn btn-warning">Tambah</button>
-                                            </a>
                                         </td>
                                         </tr>
                                         @endforeach

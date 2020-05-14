@@ -8,6 +8,7 @@ use App\User;
 use App\Siswa;
 use App\Hafalan;
 use App\HafalanDoaHadist;
+use App\Surat;
 
 class HafalanController extends Controller
 {
@@ -19,12 +20,11 @@ class HafalanController extends Controller
     public function indexSiswa()
     {
         $data_user = Auth::user();
-        $data_hafalan = Hafalan::where('siswa_id','=',$data_user->siswa->id)->get();
-        $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->get();
+        $data_hafalan = Hafalan::where('siswa_id','=',$data_user->siswa->id)->with('surat')->with('guru')->get();
+        $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->with('guru')->get();
 
-        $title='Hafalan | Sistem Informasi Asrama SCB';
-
-        return view('Hafalan.indexHafalanSiswa', compact(['data_user','data_hafalan','data_hafalan2']));
+        $title= 'Hafalan | Sistem Informasi Asrama SCB';
+        return view('Hafalan.indexHafalanSiswa', compact(['title','data_user','data_hafalan','data_hafalan2']));
     }
 
     public function indexPembina()
