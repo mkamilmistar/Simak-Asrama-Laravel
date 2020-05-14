@@ -8,9 +8,9 @@ use App\User;
 
 class Hafalan extends Model
 {
-    protected $table = 'Hafalan';
+    protected $table = 'hafalan';
 
-    protected $fillable = ['tanggal', 'P/M', 'suratT','ayatT','suratM','ayatM','nilai','pembina_id','siswa_id'];
+    protected $fillable = ['tanggal', 'pm','tm','surat','ayat0','ayat1','nilai','pembina_id','siswa_id'];
 
     public function user(){
         $this->belongsTo(User::class);
@@ -18,6 +18,11 @@ class Hafalan extends Model
 
     public function siswa(){
         return $this->belongsTo(Siswa::class);
+    }
+
+    public function namaSurat()
+    {
+        return $this->belongsTo(Surat::class, 'surat');      
     }
 
 }

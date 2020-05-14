@@ -10,4 +10,9 @@ class Surat extends Model
 
     protected $fillable = ['surat_id', 'ayat'];
 
+    public function hafalan()
+    {
+        return $this->hasOne(Hafalan::class);
+    }
+
 }

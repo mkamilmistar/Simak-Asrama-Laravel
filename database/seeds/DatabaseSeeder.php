@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             CatatanAmaliyahSeeder::class,
             PoinKebaikanSeeder::class,
             SuratSeeder::class,
+            HafalanSeeder::class,
+            HafalanDoaHadistSeeder::class,
         ]);
     }
 }
