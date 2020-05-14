@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use App\Hafalan;
 
 use Illuminate\Database\Eloquent\Model;
 

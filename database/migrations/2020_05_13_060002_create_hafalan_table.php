@@ -19,15 +19,16 @@ class CreateHafalanTable extends Migration
             $table->date('tanggal');
             $table->string('pm');
             $table->string('tm')->nullable();
-            $table->string('surat')->onDelete('CASCADE')->nullable();
+            $table->integer('surat_id')->unsigned();
+            $table->foreign('surat_id')->references('id')->on('surat')->onDelete('CASCADE');
             $table->integer('ayat0')->onDelete('CASCADE')->nullable();
             $table->integer('ayat1')->onDelete('CASCADE')->nullable();
             $table->integer('nilai');
 
             $table->integer('siswa_id')->unsigned();
-            $table->foreign('siswa_id')->references('id')->on('users')->onDelete('CASCADE');
+            $table->foreign('siswa_id')->references('id')->on('siswa')->onDelete('CASCADE');
             $table->integer('pembina_id')->unsigned();
-            $table->foreign('pembina_id')->references('id')->on('users')->onDelete('CASCADE');
+            $table->foreign('pembina_id')->references('id')->on('guru')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

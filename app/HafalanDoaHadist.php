@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use App\User;
+use App\Guru;
 
 class HafalanDoaHadist extends Model
 {
@@ -18,5 +19,10 @@ class HafalanDoaHadist extends Model
 
     public function siswa(){
         return $this->belongsTo(Siswa::class);
+    }
+
+    public function guru()
+    {
+        return $this->belongsTo(Guru::class, 'pembina_id');      
     }
 }
