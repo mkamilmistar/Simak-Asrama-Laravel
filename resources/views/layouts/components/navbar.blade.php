@@ -29,7 +29,7 @@
                         </li>
                         <li
                             class="{{ 'hafalan-siswa' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                            <a href="/hafalan-siswa">Hafalan Al-Qur'an dan Hadits</a>
+                            <a href="/hafalan-siswa/{{ Auth()->user()->id }}">Hafalan Al-Qur'an dan Hadits</a>
                         </li>
                         <li
                             class="{{ 'catatan-yaumiyah' == request()->path() ? 'nav-item active' : 'nav-item' }}">

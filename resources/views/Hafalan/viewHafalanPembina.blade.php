@@ -31,7 +31,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Record Hafalan Quran Siswa</strong>
-                                <a href="#" class="btn btn-primary">Cetak</a>
+                                <a href="#" class="btn btn-primary">+ Tambah Hafalan</a>
                             </div>
                             <div class="card-body">
                                 <!-- Data Siswa -->
@@ -67,6 +67,7 @@
                                             <th colspan = "2">Ayat</th>
                                             <th rowspan = "2">Nilai</th>
                                             <th rowspan = "2">Pemeriksa</th>
+                                            <th rowspan = "2">Aksi</th>
                                         </tr>
                                         <tr class="table-tengah">
                                             <th>Dari</th>
@@ -85,6 +86,14 @@
                                             <td>{{$haf->ayat1}}</td>
                                             <td>{{$haf->nilai}}</td>
                                             <td>{{$haf->guru->user->nama}}</td>
+                                            <td>
+                                            <a href="hafalan-pembina/{{$data_user->id}}/#">
+                                                <button type="button" class="btn btn-warning">Edit</button>
+                                            </a>
+                                            <a href="hafalan-pembina/{{$data_user->id}}/#">
+                                                <button type="button" class="btn btn-danger">Hapus</button>
+                                            </a>
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -109,7 +118,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Record Hafalan Doa dan Hadist</strong>
-                                <a href="#" class="btn btn-primary">Cetak</a>
+                                <a href="#" class="btn btn-primary">+ Tambah Hafalan</a>
                             </div>
                             <div class="card-body">
                                 <!-- Data Siswa -->
@@ -126,6 +135,7 @@
                                             <th rowspan = "2">Hadist</th>
                                             <th rowspan = "2">Nilai</th>
                                             <th rowspan = "2">Pemeriksa</th>
+                                            <th rowspan = "2">Aksi</th>
                                         </tr>
                                         <tr class="table-tengah">
                                             
@@ -141,6 +151,14 @@
                                             <td>{{$haf2->hadist}}</td>
                                             <td>{{$haf2->nilai}}</td>
                                             <td>{{$haf2->guru->user->nama}}</td>
+                                            <td>
+                                            <a href="hafalan-pembina/{{$data_user->id}}/#">
+                                                <button type="button" class="btn btn-warning">Edit</button>
+                                            </a>
+                                            <a href="hafalan-pembina/{{$data_user->id}}/#">
+                                                <button type="button" class="btn btn-danger">Hapus</button>
+                                            </a>
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

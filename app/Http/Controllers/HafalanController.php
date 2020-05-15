@@ -41,6 +41,23 @@ class HafalanController extends Controller
         return view('Hafalan.indexHafalanPembina', compact(['title','data_user']));
     }
 
+    public function viewHafalanPembina($id)
+    {
+        if(Auth::user()->role=='pembina'){
+            $data_user = User::where('id',$id)->get()->first();
+            $data_hafalan = Hafalan::where('siswa_id','=',$data_user->siswa->id)->with('surat')->with('guru')->get();
+            $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->with('guru')->get();
+            // dd($data_user);
+        }else{
+            return redirect()->back();
+        }
+
+        $title= 'Hafalan | Sistem Informasi Asrama SCB';
+        
+        return view('Hafalan.viewHafalanPembina', compact(['title','data_user','data_hafalan','data_hafalan2']));
+    }
+    
+
     /**
      * Show the form for creating a new resource.
      *
