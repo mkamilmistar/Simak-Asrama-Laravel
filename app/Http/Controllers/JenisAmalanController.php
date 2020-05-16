@@ -12,14 +12,17 @@ class JenisAmalanController extends Controller
         $jenisAmalan = JenisAmalanYaumiyah::all();
 
         // dd($jenisAmalan);
-        return view('catatanAmalanYaumiyah.jenisAmalan', compact('jenisAmalan'));
+        $title='Jenis Amalan | Sistem Informasi Asrama SCB';
+        return view('catatanAmalanYaumiyah.jenisAmalan', compact(['title','jenisAmalan']));
     }
     
     public function viewEditJenisAmalan($id)
     {
         $jenisAmalan = JenisAmalanYaumiyah::find($id);
         // dd($jenisAmalan);
-        return view('catatanAmalanYaumiyah.editJenisAmalan', compact(['jenisAmalan']));
+
+        $title='Edit Jenis Amalan | Sistem Informasi Asrama SCB';
+        return view('catatanAmalanYaumiyah.editJenisAmalan', compact(['title','jenisAmalan']));
     }
 
     public function updateJenisAmalan(Request $request, $id)
@@ -37,19 +40,21 @@ class JenisAmalanController extends Controller
             'bobotAmalan'     => request('bobotAmalan'),
         ]);
         
-        return redirect('/jenis-amalan')->with('sukses', 'Jenis Amalan Berhasil diupdate!');
+        return redirect('/jenis-amalan')->with('primary', 'Jenis Amalan Berhasil diupdate!');
     }
 
     public function deleteJenisAmalan($id)
     {
         $jenisAmalan = JenisAmalanYaumiyah::find($id);
         $jenisAmalan->delete();
-        return redirect('/jenis-amalan')->with('sukses', 'Jenis Amalan Berhasil dihapus!');
+        return redirect('/jenis-amalan')->with('danger', 'Jenis Amalan Berhasil dihapus!');
     }
 
     public function createJenisAmalan()
     {
-        return view('catatanAmalanYaumiyah.tambahJenisAmalan');
+
+        $title='Tambah Jenis Amalan | Sistem Informasi Asrama SCB';
+        return view('catatanAmalanYaumiyah.tambahJenisAmalan', compact(['title']));
     }
 
     public function postJenisAmalan(Request $request)

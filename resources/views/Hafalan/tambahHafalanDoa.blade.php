@@ -7,7 +7,7 @@
                         <div class="col-sm-4">
                             <div class="page-header float-left">
                                 <div class="page-title">
-                                    <h1>Hafalan Al-Qur'an</h1>
+                                    <h1>Tambah Hafalan Hadits atau Doa</h1>
                                 </div>
                             </div>
                         </div>
@@ -31,66 +31,57 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Record Hafalan Siswa</strong>
-                                <a href="#" class="btn btn-primary">Cetak</a>
+                                <strong class="card-title">Tambah Hafalan Hadits atau Doa</strong>
                             </div>
                             <div class="card-body">
                                 <!-- Data Siswa -->
                                 <table class="table-bio">
                                     <tr >
                                         <th style="width: 200px">Nomor Induk Siswa</th>
-                                        <td>000000</td>
+                                        <td>$data_user->siswa->NIS</td>
                                     </tr>
                                     <tr>
                                         <th>Nama</th>
-                                        <td>Budi Arianto Kucing</td>
+                                        <td>$data_user->nama}}</td>
                                     </tr>
                                     <tr>
                                         <th>Jenis Kelamin</th>
-                                        <td>Laki-laki</td>
+                                        <td>{$data_user->jenis_kelamin}}</td>
                                     </tr>
                                     <tr>
                                         <th>Kelas</th>
-                                        <td>IX-B</td>
+                                        <td>{$data_user->siswa->kelas}}</td>
                                     </tr>
                                 </table>
                                 <!-- END OF DATA SISWA -->
                                 <br>
                                 <!-- DATA AMALAN -->
-                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                    <thead>
-                                        <tr class="table-tengah">
-                                            <th rowspan = "2">No</th>
-                                            <th rowspan = "2">Tanggal</th>
-                                            <th rowspan = "2">P/M</th>
-                                            <th rowspan = "2">Q/H</th>
-                                            <th colspan = "2">Tahfidz</th>
-                                            <th colspan = "2">Muroja'ah</th>
-                                            <th rowspan = "2">Nilai</th>
-                                            <th rowspan = "2">Pemeriksa</th>
-                                        </tr>
-                                        <tr class="table-tengah">
-                                            <th>Surat</th>
-                                            <th>Ayat</th>
-                                            <th>Surat</th>
-                                            <th>Ayat</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Minggu, 12 Maret 2020</td>
-                                            <td>P</td>
-                                            <td>Q</td>
-                                            <td>Contoh</td>
-                                            <td>Contoh</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>9</td>
-                                            <td>Alif Hanif P</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="inputJenisPoin">Jenis Hafalan</label>
+                                        <select class="custom-select" id="inputJenisPoin" name="jenis">
+                                            <option selected disabled hidden>Pilih Jenis Hafalan</option>
+                                            <option value="kebaikan">Doa</option>
+                                            <option value="keburukan">Hadits</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="namaHafalan">Nama Hafalan</label>
+                                        <input type="text" class="form-control" id="inputNamaHafalan" placeholder="Doa Setelah Makan">
+                                    </div>
+                                   <div>
+                                   <label for="nilai">Nilai</label>
+                                    <select class="form-control input-lg dynamic" id="inputNilai" name="nilai">
+                                            <option selected disabled hidden>Beri Nilai</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                    </select>
+                                    </div>
+                                    <input class="btn btn-primary" type="submit" value="Submit">
+                                </form>
                                 <!-- END OF DATA SISWA -->
                             </div>
                         </div>

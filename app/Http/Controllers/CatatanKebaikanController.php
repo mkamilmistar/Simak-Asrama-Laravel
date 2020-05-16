@@ -37,14 +37,16 @@ class CatatanKebaikanController extends Controller
            //back 
             return redirect()->back();
         }
+        $title='Catatan Kebaikan | Sistem Informasi Asrama SCB';
 
-        return view('catatanKebaikan.catatanKebaikanSiswa', compact(['catatanKebaikan', 'catatanKeburukan', 'user', 'siswa']));
+        return view('catatanKebaikan.catatanKebaikanSiswa', compact(['title' ,'catatanKebaikan', 'catatanKeburukan', 'user', 'siswa']));
     }
 
     public function viewPageTambahCatatanKebaikanSiswa($userId)
     {
         $user = User::find($userId);
-        return view('catatanKebaikan.tambahCatatanKebaikanSiswa');
+        $title = 'Catatan Kebaikan | Sistem Informasi Asrama SCB';
+        return view('catatanKebaikan.tambahCatatanKebaikanSiswa', compact(['title']));
     }
 
     public function postCatatanKebaikanSiswa($id, Request $request)
@@ -64,7 +66,7 @@ class CatatanKebaikanController extends Controller
         $catatan->save();
         
         $user = User::find($id);
-
+            
         return redirect()->route('viewCatatanKebaikanSiswa', [Auth::user()->id])->with('sukses', 'Catatan Kebaikan Berhasil ditambahkan!');
     }
 
@@ -72,7 +74,9 @@ class CatatanKebaikanController extends Controller
     {
        $user = User::find($userId);
        $catatan = CatatanKebaikan::find($id);
-       return view('catatanKebaikan.editCatatanKebaikanSiswa', compact('catatan'));
+
+       $title='Update Catatan Kebaikan | Sistem Informasi Asrama SCB';
+       return view('catatanKebaikan.editCatatanKebaikanSiswa', compact(['title','catatan']));
     }
 
     public function updateCatatan(Request $request, $userId, $id)
@@ -92,8 +96,11 @@ class CatatanKebaikanController extends Controller
             'keterangan'     => request('keterangan'),
             'tanggal'       => request('tanggal'),
         ]);
-        
-        return redirect()->route('viewCatatanKebaikan')->with('sukses', 'Catatan Kebaikan Berhasil diupdate!');
+        if(Auth::user()->role=='siswa'){
+            return redirect()->route('viewCatatanKebaikanSiswa', [Auth::user()->id])->with('sukses', 'Catatan Kebaikan Berhasil diupdate!');
+        }else{
+            return redirect()->route('viewCatatanKebaikan')->with('primary', 'Catatan Kebaikan Berhasil diupdate!');
+        }
     }
 
     public function hapusCatatan($userId, $id)
@@ -101,7 +108,11 @@ class CatatanKebaikanController extends Controller
         $user = User::find($userId);
         $catatan = CatatanKebaikan::find($id);
         $catatan->delete();
-        return redirect()->route('viewCatatanKebaikanSiswa', [Auth::user()->id])->with('sukses', 'Data Berhasil Dihapus!');
+        if(Auth::user()->role=='siswa'){
+            return redirect()->route('viewCatatanKebaikanSiswa', [Auth::user()->id])->with('sukses', 'Data Berhasil Dihapus!');
+        }else{
+            return redirect()->route('viewCatatanKebaikan')->with('danger', 'Catatan Kebaikan Berhasil Dihapus!');
+        }
     }
 
 
@@ -129,8 +140,9 @@ class CatatanKebaikanController extends Controller
         
      
         // dd($catatanKebaikan);
+        $title=  'Catatan Kebaikan | Sistem Informasi Asrama SCB';
 
-    return view('catatanKebaikan.catatanKebaikanPembina', compact(['data_user','siswa','catatanKebaikan', 'catatanKeburukan']));
+    return view('catatanKebaikan.catatanKebaikanPembina', compact(['title','data_user','siswa','catatanKebaikan', 'catatanKeburukan']));
     
     }   
 
@@ -152,8 +164,9 @@ class CatatanKebaikanController extends Controller
             $data_user = Auth::user();
             return redirect()->back();
         }
+        $title = 'Catatan Kebaikan | Sistem Informasi Asrama SCB';
         
-        return view('catatanKebaikan.catatanKebaikan', compact(['data_user','catatanKebaikan','catatanKeburukan']));
+        return view('catatanKebaikan.catatanKebaikan', compact(['title','data_user','catatanKebaikan','catatanKeburukan']));
     }
 
 }

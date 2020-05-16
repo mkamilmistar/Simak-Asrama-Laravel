@@ -511,6 +511,13 @@ img {
   max-width: 100%;
 }
 
+.img-circle {
+  width: 30%;
+  height: 20%;
+  object-fit: cover;
+  border-radius: 8px
+}
+
 .modal-header {
   display: block;
 }
@@ -781,8 +788,12 @@ aside.left-panel:hover {
   border: none;
   display: inline-block;
   margin: 0;
-  padding: 0;
+  padding: 0px;
   vertical-align: top;
+}
+
+.navbar-custom {
+  padding: 0;
 }
 
 .navbar .main-menu {
@@ -1293,6 +1304,14 @@ header.fixed-top {
 .form-group button {
   float: right;
 
+}
+
+.h-divider {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 1px;
+  width: 100%;
+  border-top: 3px solid #057650;
 }
 
 .icon-navbar div {
@@ -3542,6 +3561,11 @@ footer.site-footer .footer-inner a {
     width: 100%;
   }
 
+  #left-panel .navbar .navbar-expand {
+    padding: 0;
+  }
+
+
   #left-panel .navbar .navbar-nav li>a {
     max-width: inherit;
     font-size: 14px;
@@ -3627,11 +3651,13 @@ footer.site-footer .footer-inner a {
 .profile-item {
   color: #000;
   align-items: center;
+
 }
 
 .profile-item p {
   position: relative;
-  top: 7px;
+  top: 10px;
+  left: 4px;
   line-height: 0px;
   color: #000;
 }

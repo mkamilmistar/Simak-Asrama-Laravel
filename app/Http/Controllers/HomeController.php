@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $title= 'Beranda | Sistem Informasi Asrama SCB';
+        return view('dashboard', compact(['title',]));
     }
 }

@@ -15,8 +15,8 @@
                             <div class="page-header float-right">
                                 <div class="page-title">
                                     <ol class="breadcrumb text-right">
-                                        <li><a href="/catatan-yaumiyah">Hafalan Al-Qur'an</a></li>
-                                        <li><a href="/catatan-yaumiyah">Record Hafalan Siswa</a></li>
+                                        <li><a>Hafalan Al-Qur'an dan Hadist</a></li>
+                                        <li><a>Record Hafalan Siswa</a></li>
                                         <li class="active">Data table</li>
                                     </ol>
                                 </div>
@@ -54,12 +54,8 @@
                                         </td>
                                         <td>{{$user->siswa['kelas']}}</td>
                                         <td>
-                                            <a href="#">
+                                            <a href="hafalan-pembina/{{$user->id}}">
                                                 <button type="button" class="btn btn-primary">View</button>
-                                            </a>
-                                            
-                                            <a href="#">
-                                                <button type="button" class="btn btn-warning">Tambah</button>
                                             </a>
                                         </td>
                                         </tr>

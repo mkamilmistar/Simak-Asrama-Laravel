@@ -40,8 +40,11 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
 });
 
 //ROUTE HAFALAN AL-QUR'AN
-Route::get('/hafalan-siswa','HafalanController@indexSiswa' );
+Route::get('/hafalan-siswa/{id}','HafalanController@indexSiswa' );
 Route::get('/hafalan-pembina','HafalanController@indexPembina' );
+Route::get('/hafalan-pembina/{id}','HafalanController@viewHafalanPembina' );
+Route::get('/tambah-doa','HafalanController@tambahDoa' );
+Route::get('/tambah-hafalan','HafalanController@tambahHafalan' );
 
 
 Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
@@ -63,26 +66,33 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa']], function() {
 
 
 //ROUTE CATATAN KEBAIKAN DAN KEBURUKAN
-Route::get('/catatan-kebaikan/{id}', 'CatatanKebaikanController@viewPageCatatanKebaikanSiswa')->name('viewCatatanKebaikanSiswa');
-Route::get('/catatan-kebaikan/{id}/create', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('tambahCatatanKebaikanSiswa');
-Route::post('/catatan-kebaikan/{id}/create', 'CatatanKebaikanController@postCatatanKebaikanSiswa')->name('postCatatanKebaikanSiswa');
-Route::get('/catatan-kebaikan/{userId}/{id}/edit', 'CatatanKebaikanController@viewUpdateCatatan')->name('viewEditCatatanKebaikanSiswa');
-Route::post('/catatan-kebaikan/{userId}/{id}/update', 'CatatanKebaikanController@updateCatatan')->name('updateCatatanKebaikanSiswa');
-Route::get('/catatan-kebaikan/{userId}/{id}/delete', 'CatatanKebaikanController@hapusCatatan')->name('hapusCatatanKebaikanSiswa');
+Route::group(['middleware' => ['auth', 'checkRole:pembina,siswa']], function() {
+    Route::get('/catatan-kebaikan/{id}', 'CatatanKebaikanController@viewPageCatatanKebaikanSiswa')->name('viewCatatanKebaikanSiswa');
+    Route::get('/catatan-kebaikan/{id}/create', 'CatatanKebaikanController@viewPageTambahCatatanKebaikanSiswa')->name('tambahCatatanKebaikanSiswa');
+    Route::post('/catatan-kebaikan/{id}/create', 'CatatanKebaikanController@postCatatanKebaikanSiswa')->name('postCatatanKebaikanSiswa');
+    Route::get('/catatan-kebaikan/{userId}/{id}/edit', 'CatatanKebaikanController@viewUpdateCatatan')->name('viewEditCatatanKebaikanSiswa');
+    Route::post('/catatan-kebaikan/{userId}/{id}/update', 'CatatanKebaikanController@updateCatatan')->name('updateCatatanKebaikanSiswa');
+    Route::get('/catatan-kebaikan/{userId}/{id}/delete', 'CatatanKebaikanController@hapusCatatan')->name('hapusCatatanKebaikanSiswa');
 
-//Catatan Kebaikan Pembina
-Route::get('/catatan-kebaikan-siswa', 'CatatanKebaikanController@viewPageCatatanKebaikan')->name('viewCatatanKebaikan');
-Route::get('/catatan-kebaikan-siswa/{id}', 'CatatanKebaikanController@viewPageCatatanKebaikanPembina')->name('viewCatatanKebaikanPembina');
+});
 
+Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
+    //Catatan Kebaikan Pembina
+    Route::get('/catatan-kebaikan-siswa', 'CatatanKebaikanController@viewPageCatatanKebaikan')->name('viewCatatanKebaikan');
+    Route::get('/catatan-kebaikan-siswa/{id}', 'CatatanKebaikanController@viewPageCatatanKebaikanPembina')->name('viewCatatanKebaikanPembina');
+});
 
-//Catatan Amalan Yaumiyah
-//PEMBINA VER
-Route::get('/jenis-amalan', 'JenisAmalanController@viewPageJenisAmalan');
-Route::get('/jenis-amalan/create', 'JenisAmalanController@createJenisAmalan');
-Route::post('/jenis-amalan/create', 'JenisAmalanController@postJenisAmalan');
-Route::get('/jenis-amalan/{id}/edit', 'JenisAmalanController@viewEditJenisAmalan');
-Route::post('/jenis-amalan/{id}/update', 'JenisAmalanController@updateJenisAmalan');
-Route::get('/jenis-amalan/{id}/delete', 'JenisAmalanController@deleteJenisAmalan');
+Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
+    //Catatan Amalan Yaumiyah
+    //PEMBINA VER
+    Route::get('/jenis-amalan', 'JenisAmalanController@viewPageJenisAmalan');
+    Route::get('/jenis-amalan/create', 'JenisAmalanController@createJenisAmalan');
+    Route::post('/jenis-amalan/create', 'JenisAmalanController@postJenisAmalan');
+    Route::get('/jenis-amalan/{id}/edit', 'JenisAmalanController@viewEditJenisAmalan');
+    Route::post('/jenis-amalan/{id}/update', 'JenisAmalanController@updateJenisAmalan');
+    Route::get('/jenis-amalan/{id}/delete', 'JenisAmalanController@deleteJenisAmalan');
+});
+
 
 Route::get('/catatan-yaumiyah-pembina', 'CatatanYaumiyahController@viewPagePembina')->name('viewCatatanAmalanSiswa');
 
