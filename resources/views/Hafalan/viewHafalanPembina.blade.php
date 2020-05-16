@@ -31,7 +31,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Record Hafalan Quran Siswa</strong>
-                                <a href="#" class="btn btn-primary">+ Tambah Hafalan</a>
+                                <a href="/tambah-hafalan" class="btn btn-primary">+ Tambah Hafalan</a>
                             </div>
                             <div class="card-body">
                                 <!-- Data Siswa -->
@@ -118,7 +118,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Record Hafalan Doa dan Hadist</strong>
-                                <a href="#" class="btn btn-primary">+ Tambah Hafalan</a>
+                                <a href="/tambah-doa" class="btn btn-primary">+ Tambah Hafalan</a>
                             </div>
                             <div class="card-body">
                                 <!-- Data Siswa -->

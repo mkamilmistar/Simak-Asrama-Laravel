@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use Auth;
 use App\User;
 use App\Siswa;
@@ -63,10 +64,16 @@ class HafalanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function tambahDoa()
     {
-        //
+
+        $title= 'Tambah Hafalan Hadits atau Doa | Sistem Informasi Asrama SCB';
+        
+        return view('Hafalan.tambahHafalanDoa');
     }
+    // {
+    //     return view('Hafalan.tambahHafalanDoa');
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -74,9 +81,10 @@ class HafalanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function tambahHafalan()
     {
-        //
+        $surat_list = DB::table('surat')->get();
+        return view ('Hafalan.tambahHafalanQuran')->with('surat_list', $surat_list);
     }
 
     /**
