@@ -100,14 +100,15 @@ Route::get('/catatan-yaumiyah-pembina', 'CatatanYaumiyahController@viewPagePembi
 Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPageSiswa');
 
 
-// Poin Kebaikan
+// Poin Siswa
 Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
-    //Catatan Harian
+    //Poin Pembina group
     Route::get('/poin-pembina', 'PoinKebaikanController@viewPoinSearchPage')->name('viewPoinSearchPage');
     Route::get('/poin-siswa/{id}/add', 'PoinKebaikanController@viewAddPoinSiswaPage')->name('addPoinSiswaPage');
     Route::post('/poin-siswa/{id}/add', 'PoinKebaikanController@addPoinSiswa');
     Route::post('/poin-siswa/{id}/delete', 'PoinKebaikanController@removePoinSiswa')->name('removePoinSiswa');
     Route::get('/poin-siswa/{id}/edit', 'PoinKebaikanController@viewUpdatePoinSiswaPage')->name('updatePoinSiswaPage');
+    Route::post('/poin-siswa/{id}/edit', 'PoinKebaikanController@updatePoinSiswa');
 });
 
 Route::get('/poin-siswa/{id}', 'PoinKebaikanController@viewPoinSiswaPage')->name('viewPoinSiswaPage');

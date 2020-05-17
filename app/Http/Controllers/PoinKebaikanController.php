@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\PoinKebaikan;
 use Illuminate\Http\Request;
 use App\Siswa;
+use Illuminate\Http\Response;
 
 class PoinKebaikanController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -21,8 +22,8 @@ class PoinKebaikanController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -38,8 +39,8 @@ class PoinKebaikanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\PoinKebaikan  $poinKebaikan
-     * @return \Illuminate\Http\Response
+     * @param PoinKebaikan $poinKebaikan
+     * @return Response
      */
     public function show(PoinKebaikan $poinKebaikan)
     {
@@ -49,9 +50,9 @@ class PoinKebaikanController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\PoinKebaikan  $poinKebaikan
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param PoinKebaikan $poinKebaikan
+     * @return Response
      */
     public function update(Request $request, PoinKebaikan $poinKebaikan)
     {
@@ -61,8 +62,8 @@ class PoinKebaikanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\PoinKebaikan  $poinKebaikan
-     * @return \Illuminate\Http\Response
+     * @param PoinKebaikan $poinKebaikan
+     * @return Response
      */
     public function destroy(PoinKebaikan $poinKebaikan)
     {
@@ -75,7 +76,10 @@ class PoinKebaikanController extends Controller
     public function viewPoinSearchPage()
     {
         $siswas = Siswa::all();
-        return view('poinKebaikan.poinKebaikanSearch', ['title' => 'Poin Pelanggaran dan Kebaikan | Sistem Informasi Asrama SCB', 'siswas' => $siswas ]);
+        return view('poinKebaikan.poinKebaikanSearch', [
+            'title' => 'Poin Pelanggaran dan Kebaikan | Sistem Informasi Asrama SCB',
+            'siswas' => $siswas
+        ]);
     }
 
     /**
@@ -86,7 +90,7 @@ class PoinKebaikanController extends Controller
         $siswa = Siswa::find($id);
         $poin_keburukan = $siswa->poinKebaikan->where('jenis', 'keburukan');
         $poin_kebaikan = $siswa->poinKebaikan->where('jenis', 'kebaikan');
-        return view('poinKebaikan.poinKebaikanSiswa', [ 
+        return view('poinKebaikan.poinKebaikanSiswa', [
             'siswa' => $siswa,
             'poin_keburukan' => $poin_keburukan,
             'poin_kebaikan' => $poin_kebaikan,
@@ -97,7 +101,10 @@ class PoinKebaikanController extends Controller
     public function viewAddPoinSiswaPage($id)
     {
         $siswa = Siswa::find($id);
-        return view('poinKebaikan.tambahPoinKebaikanSiswa', [ 'title' => 'Poin Pelanggaran dan Kebaikan| Sistem Informasi Asrama SCB','siswa' => $siswa ]);
+        return view('poinKebaikan.tambahPoinKebaikanSiswa', [
+            'title' => 'Poin Pelanggaran dan Kebaikan| Sistem Informasi Asrama SCB',
+            'siswa' => $siswa
+        ]);
     }
 
     public function addPoinSiswa(Request $request)
@@ -111,11 +118,33 @@ class PoinKebaikanController extends Controller
         $poinKebaikan->save();
         return redirect()->route('viewPoinSiswaPage', $request->route('id'));
     }
-    
+
     public function removePoinSiswa(Request $request)
     {
         $poinKebaikan = PoinKebaikan::find($request->route('id'));
         $poinKebaikan->delete();
         return redirect()->route('viewPoinSiswaPage', $request->siswa_id);
+    }
+
+    public function viewUpdatePoinSiswaPage(Request $request)
+    {
+        $poinKebaikan = PoinKebaikan::find($request->route('id'));
+        $siswa = $poinKebaikan->siswa;
+        return view('poinKebaikan.updatePoinKebaikanSiswa', [
+            'title' => 'Poin Pelanggaran dan Kebaikan | Sistem Informasi Asrama SCB',
+            'siswa' => $siswa,
+            'poinKebaikan' => $poinKebaikan
+        ]);
+    }
+
+    public function updatePoinSiswa(Request $request)
+    {
+        $poinKebaikan = PoinKebaikan::find($request->route('id'));
+        $poinKebaikan->jenis = $request->jenis;
+        $poinKebaikan->keterangan = $request->keterangan;
+        $poinKebaikan->poin = $request->poin;
+        $poinKebaikan->tanggal = $request->tanggal;
+        $poinKebaikan->save();
+        return redirect()->route('viewPoinSiswaPage', $poinKebaikan->siswa_id);
     }
 }

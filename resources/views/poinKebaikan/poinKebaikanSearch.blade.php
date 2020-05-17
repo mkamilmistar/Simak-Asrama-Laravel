@@ -34,6 +34,7 @@
                             <strong class="card-title">Input Poin Pelanggaran dan Kebaikan</strong>
                         </div>
                         <div class="card-body">
+                            <?php /*
                             <h5 class="card-title">Masukkan nama siswa</h5>
                             <form action="">
                                 <div class="form-group">
@@ -48,6 +49,7 @@
                             <div class="my-3">
                                 <hr />
                             </div>
+                            */ ?>
                             <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
