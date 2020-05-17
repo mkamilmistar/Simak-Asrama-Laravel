@@ -17,7 +17,7 @@
                                     <ol class="breadcrumb text-right">
                                         <li><a href="/catatan-yaumiyah">Hafalan Al-Qur'an</a></li>
                                         <li><a href="/catatan-yaumiyah">Record Hafalan Siswa</a></li>
-                                        <li class="active">Data table</li>
+                                        <li class="active">Tambah Hafalan Quran</li>
                                     </ol>
                                 </div>
                             </div>
@@ -38,47 +38,62 @@
                                 <table class="table-bio">
                                     <tr >
                                         <th style="width: 200px">Nomor Induk Siswa</th>
-                                        <td>$data_user->siswa->NIS</td>
+                                        <td>{{$data_user->siswa->NIS}}</td>
                                     </tr>
                                     <tr>
                                         <th>Nama</th>
-                                        <td>$data_user->nama}}</td>
+                                        <td>{{$data_user->nama}}</td>
                                     </tr>
                                     <tr>
                                         <th>Jenis Kelamin</th>
-                                        <td>{$data_user->jenis_kelamin}}</td>
+                                        <td>{{$data_user->jenis_kelamin}}</td>
                                     </tr>
                                     <tr>
                                         <th>Kelas</th>
-                                        <td>{$data_user->siswa->kelas}}</td>
+                                        <td>{{$data_user->siswa->kelas}}</td>
                                     </tr>
                                 </table>
                                 <!-- END OF DATA SISWA -->
                                 <br>
                                 <!-- DATA AMALAN -->
-                                <form>
+                                <form action="/hafalan-pembina/{{$data_user->id}}/create-hafalan" method="POST">
+                                @csrf
                                     <div class="form-group">
                                         <label for="inputSurat">Surat</label>
                                         <select class="form-control input-lg dynamic" id="inputSurat" name="surat">
                                             <option selected disabled hidden>Pilih Surat</option>
                                             @foreach($surat_list as $surat)
-                                            <option value="{{$surat -> surat_id}}">
+                                            <option value="{{$surat -> id}}">
                                             {{ $surat -> surat_id}}
                                             </option>
                                             @endforeach
                                         </select>
                                     </div>
+                                    <div>
+                                        <label for="inputPM">Pagi/Malam</label>
+                                            <select class="form-control input-lg dynamic" id="inputPM" name="PM">
+                                                <option>Pagi</option>
+                                                <option>Malam</option>
+                                            </select>
+                                    </div>
+                                    <div>
+                                        <label for="inputTM">Tahfidz/Murajaah</label>
+                                            <select class="form-control input-lg dynamic" id="inputTM" name="TM">
+                                                <option>Tahfidz</option>
+                                                <option>Murajaah</option>
+                                            </select>
+                                    </div>
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Dari Ayat</label>
-                                                <input type="number" class="form-control" id="ayat0" aria-describedby="emailHelp">
+                                                <label for="inputAyat0">Dari Ayat</label>
+                                                <input type="number" class="form-control" id="inputAyat0", name="ayat0">
                                             </div>
                                         </div>
                                         <div class="col">
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Sampai Ayat</label>
-                                                <input type="number" class="form-control" id="ayat0" aria-describedby="emailHelp">
+                                            <div class="inputAyat1">
+                                                <label for="inputAyat1">Sampai Ayat</label>
+                                                <input type="number" class="form-control" id="inputAyat1", name="ayat1">
                                             </div>
                                         </div>
                                     </div>
