@@ -111,3 +111,4 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
 });
 
 Route::get('/poin-siswa/{id}', 'PoinKebaikanController@viewPoinSiswaPage')->name('viewPoinSiswaPage');
+Route::get('/poin-siswa/{id}/cetak_pdf', 'PoinKebaikanController@cetak_pdf');

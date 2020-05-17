@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\PoinKebaikan;
 use Illuminate\Http\Request;
 use App\Siswa;
+use PDF;
 
 class PoinKebaikanController extends Controller
 {
@@ -117,5 +118,19 @@ class PoinKebaikanController extends Controller
         $poinKebaikan = PoinKebaikan::find($request->route('id'));
         $poinKebaikan->delete();
         return redirect()->route('viewPoinSiswaPage', $request->siswa_id);
+    }
+
+    public function cetak_pdf($id){
+        $siswa = Siswa::find($id);
+        $poin_keburukan = $siswa->poinKebaikan->where('jenis', 'keburukan');
+        $poin_kebaikan = $siswa->poinKebaikan->where('jenis', 'kebaikan');
+
+        $pdf = PDF::loadview('poinKebaikan.printPDF', [
+            'siswa' => $siswa,
+            'poin_keburukan' => $poin_keburukan,
+            'poin_kebaikan' => $poin_kebaikan
+        ]);
+
+        return $pdf->download('poinSiswa-pdf.pdf');
     }
 }

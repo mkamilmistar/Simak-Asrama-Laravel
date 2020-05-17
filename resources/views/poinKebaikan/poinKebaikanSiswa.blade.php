@@ -48,6 +48,11 @@
                         <!-- Data Siswa -->
                         <table class="table-bio">
                             <tr>
+                                <td>
+                                    <a href="/poin-siswa/{{ $siswa->id }}/cetak_pdf" class="btn-sm btn-primary"> <i class="fa fa-print"></i> Export PDF</a>
+                                </td>
+                            </tr>
+                            <tr>
                                 <th style="width: 200px">Nomor Induk Siswa</th>
                                 <td>{{ $siswa->NIS }}</td>
                             </tr>
