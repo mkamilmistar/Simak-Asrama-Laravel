@@ -37,7 +37,7 @@
                         </li>
                         <li
                             class="{{ 'poin-siswa' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                            <a href="/poin-siswa/{{ Auth()->user()->id }}">Poin Pelanggaran dan Kebaikan</a>
+                            <a href="/poin-siswa/{{ Auth()->user()->siswa->id }}">Poin Pelanggaran dan Kebaikan</a>
                         </li>
                         <li class="nav-item">
                             <a href="#">Catatan Shalat</a>

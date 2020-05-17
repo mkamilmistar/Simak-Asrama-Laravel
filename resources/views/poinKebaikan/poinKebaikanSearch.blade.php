@@ -59,10 +59,15 @@
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
+                                
+                                @php
+                                    $counter = 0;
+                                @endphp
+
                                 <tbody>
                                     @foreach ($siswas as $siswa)
                                     <tr>
-                                        <td>1</td>
+                                        <td>{{++$counter}}</td>
                                         <td>{{ $siswa->user->nama }}</td>
                                         <td>{{ $siswa->kelas }}</td>
                                         <td>{{ $siswa->NIS }}</td>
