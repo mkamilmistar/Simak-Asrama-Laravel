@@ -9,7 +9,6 @@ use App\User;
 use App\Siswa;
 use App\Hafalan;
 use App\HafalanDoaHadist;
-use App\Surat;
 
 class HafalanController extends Controller
 {
@@ -64,13 +63,45 @@ class HafalanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function tambahDoa()
+    public function tambahDoa($id)
     {
-
-        $title= 'Tambah Hafalan Hadits atau Doa | Sistem Informasi Asrama SCB';
+        if(Auth::user()->role=='pembina'){
+            $data_user = User::where('id',$id)->get()->first();
+            // dd($data_user);
+        }else{
+            return redirect()->back();
+        }
         
-        return view('Hafalan.tambahHafalanDoa');
+        $title= 'Tambah Hafalan Hadits atau Doa | Sistem Informasi Asrama SCB';
+        return view('Hafalan.tambahHafalanDoa', compact(['title','data_user']));
     }
+
+    public function postDoa($id, Request $request)
+    {
+        if(Auth::user()->role=='pembina'){
+            $data_user = User::where('id',$id)->get()->first();
+            // dd($data_user);
+        }else{
+            return redirect()->back();
+        }
+
+        $hafalan = new HafalanDoaHadist();
+        $hafalan->pembina_id = Auth::user()->id;
+        $hafalan->siswa_id = $data_user->siswa->id;
+        $hafalan->nilai = $request->input('nilai');
+        if($request->input('jenis')=='Doa'){
+            $hafalan->doa = $request->input('hafalan');
+        }else{
+            $hafalan->hadist = $request->input('hafalan');
+        }
+        $hafalan->pm = $request->input('PM');
+        $hafalan->tanggal = now();
+        $hafalan->save();
+            
+        $title= 'Tambah Hafalan Doa/Hadist | Sistem Informasi Asrama SCB';
+        return redirect()->back();
+    }
+
     // {
     //     return view('Hafalan.tambahHafalanDoa');
     // }
@@ -81,10 +112,44 @@ class HafalanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function tambahHafalan()
+    public function tambahHafalan($id)
     {
+        if(Auth::user()->role=='pembina'){
+            $data_user = User::where('id',$id)->get()->first();
+            // dd($data_user);
+        }else{
+            return redirect()->back();
+        }
+
+        $title= 'Tambah Hafalan Quran | Sistem Informasi Asrama SCB';
         $surat_list = DB::table('surat')->get();
-        return view ('Hafalan.tambahHafalanQuran')->with('surat_list', $surat_list);
+        return view ('Hafalan.tambahHafalanQuran', compact(['title','data_user']))->with('surat_list', $surat_list);
+    }
+
+    public function postHafalan($id, Request $request)
+    {
+        if(Auth::user()->role=='pembina'){
+            $data_user = User::where('id',$id)->get()->first();
+            // dd($data_user);
+        }else{
+            return redirect()->back();
+        }
+
+        $hafalan = new Hafalan();
+        $hafalan->pembina_id = Auth::user()->id;
+        $hafalan->siswa_id = $data_user->siswa->id;
+        $hafalan->nilai = $request->input('nilai');
+        $hafalan->ayat1 = $request->input('ayat1');
+        $hafalan->ayat0 = $request->input('ayat0');
+        $hafalan->surat_id = $request->input('surat');
+        $hafalan->tm = $request->input('TM');
+        $hafalan->pm = $request->input('PM');
+        $hafalan->tanggal = now();
+        $hafalan->save();
+            
+        $title= 'Tambah Hafalan Quran | Sistem Informasi Asrama SCB';
+        $surat_list = DB::table('surat')->get();
+        return redirect()->back();
     }
 
     /**

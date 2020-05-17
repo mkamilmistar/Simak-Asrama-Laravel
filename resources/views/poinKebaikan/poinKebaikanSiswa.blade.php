@@ -112,9 +112,13 @@
                                         </td>
                                         @if(Auth::user()->role !== "siswa")
                                             <td>
+                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}"
+                                                   class="btn btn-primary">
+                                                    Update
+                                                </a>
                                                 <form method="POST"
-                                                    action="{{ route('removePoinSiswa', $poin->id) }}"
-                                                    id="hapusPoin{{ $poin->id }}">
+                                                      action="{{ route('removePoinSiswa', $poin->id) }}"
+                                                      id="hapusPoin{{ $poin->id }}">
                                                     @csrf
                                                     <input type="text" hidden name="siswa_id" value={{ $siswa->id }} />
                                                     <input type="submit" class="btn btn-danger" value="Hapus">
@@ -157,12 +161,17 @@
                                         </td>
                                         @if(Auth::user()->role !== "siswa")
                                             <td>
+                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}"
+                                                   class="btn btn-primary">
+                                                    Update
+                                                </a>
+                                                <a class="btn btn-danger"
+                                                   onclick="$('#hapusPoin{{$poin->id}}').submit()">Hapus</a>
                                                 <form method="POST"
-                                                    action="{{ route('removePoinSiswa', $poin->id) }}"
-                                                    id="hapusPoin{{ $poin->id }}">
+                                                      action="{{ route('removePoinSiswa', $poin->id) }}"
+                                                      id="hapusPoin{{ $poin->id }}">
                                                     @csrf
                                                     <input type="text" hidden name="siswa_id" value={{ $siswa->id }} />
-                                                    <input type="submit" class="btn btn-danger" value="Hapus">
                                                 </form>
                                             </td>
                                         @endif
