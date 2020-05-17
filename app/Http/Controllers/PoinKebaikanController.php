@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PoinSiswaResource;
 use App\PoinKebaikan;
 use Illuminate\Http\Request;
 use App\Siswa;
@@ -10,64 +11,32 @@ use Illuminate\Http\Response;
 class PoinKebaikanController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Daftar Poin Siswa berdarkan NIS
      *
+     * @param $nis
      * @return Response
      */
-    public function index()
+    public function show($nis)
     {
-        //
+        $siswa = Siswa::where(['NIS' => $nis])->firstOrFail();
+        $poinKebaikan = $siswa->poinKebaikan;
+        return PoinSiswaResource::collection($poinKebaikan);
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param Request $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        $poinKebaikan = new PoinKebaikan();
-        $poinKebaikan->jenis = $request->jenis;
-        $poinKebaikan->tanggal = $request->tanggal;
-        $poinKebaikan->keterangan = $request->keterangan;
-        $poinKebaikan->poin = $request->poin;
-        $poinKebaikan->siswa_id = $request->id;
-        $poinKebaikan->save();
-    }
-
-    /**
-     * Display the specified resource.
+     * Total Poin Siswa berdarkan NIS
      *
      * @param PoinKebaikan $poinKebaikan
      * @return Response
      */
-    public function show(PoinKebaikan $poinKebaikan)
+    public function total($nis)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param PoinKebaikan $poinKebaikan
-     * @return Response
-     */
-    public function update(Request $request, PoinKebaikan $poinKebaikan)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param PoinKebaikan $poinKebaikan
-     * @return Response
-     */
-    public function destroy(PoinKebaikan $poinKebaikan)
-    {
-        //
+        $siswa = Siswa::where(['NIS' => $nis])->firstOrFail();
+        return \response()
+            ->json([
+                'NIS' => $siswa->NIS,
+                'total' => $siswa->jumlah_total_poin,
+            ], 200);
     }
 
     /**
