@@ -43,8 +43,10 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
 Route::get('/hafalan-siswa/{id}','HafalanController@indexSiswa' );
 Route::get('/hafalan-pembina','HafalanController@indexPembina' );
 Route::get('/hafalan-pembina/{id}','HafalanController@viewHafalanPembina' );
-Route::get('/tambah-doa','HafalanController@tambahDoa' );
-Route::get('/tambah-hafalan','HafalanController@tambahHafalan' );
+Route::get('/hafalan-pembina/{id}/tambah-doa','HafalanController@tambahDoa' );
+Route::post('/hafalan-pembina/{id}/create-doa', 'HafalanController@postDoa');
+Route::get('/hafalan-pembina/{id}/tambah-hafalan','HafalanController@tambahHafalan' );
+Route::post('/hafalan-pembina/{id}/create-hafalan', 'HafalanController@postHafalan');
 
 
 Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
