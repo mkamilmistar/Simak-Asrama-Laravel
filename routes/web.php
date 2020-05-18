@@ -111,3 +111,15 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
 });
 
 Route::get('/poin-siswa/{id}', 'PoinKebaikanController@viewPoinSiswaPage')->name('viewPoinSiswaPage');
+
+// Catatan Sholat
+Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
+    //Catatan
+    Route::get('/catatan-sholat', ' CatatanSholatController@viewPoinSearchPage')->name('viewPoinSearchPage');
+    Route::get('/catatan-sholat/{id}/add', 'CatatanSholatController@viewAddPoinSiswaPage')->name('addPoinSiswaPage');
+    Route::post('/catatan-sholat/{id}/add', 'CatatanSholatController@addPoinSiswa');
+    Route::post('/catatan-sholat/{id}/delete', 'CatatanSholatController@removePoinSiswa')->name('removePoinSiswa');
+    Route::get('/catatan-sholat/{id}/edit', 'CatatanSholatController@viewUpdatePoinSiswaPage')->name('updatePoinSiswaPage');
+});
+
+Route::get('/poin-siswa/{id}', 'PoinKebaikanController@viewPoinSiswaPage')->name('viewPoinSiswaPage');
