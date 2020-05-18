@@ -61,7 +61,9 @@
                                         </td>
                                         <td>{{ $user->siswa['kelas'] }}</td>
                                         <td>{{ $user->siswa['NIS'] }}</td>
-                                        <td>{{ $poin }}</td>
+
+                                        <td>#</td>
+
                                         <td>
                                             <button type="button" class="btn btn-primary">Lihat Catatan</button>
                                         </td>
