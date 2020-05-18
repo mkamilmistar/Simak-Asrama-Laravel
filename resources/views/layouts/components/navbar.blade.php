@@ -4,11 +4,11 @@
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <!-- NAVBAR SIDE -->
             <ul class="nav navbar-nav">
-                <li class="profile-pic">
-                    <div class="profile-item">
-                        <i style="font-size: 80px;" class="fa fa-user fa-xs"></i>
+                <li id="profile-menu" class="profile-pic">
+                    <div class="profile-item menu-title">
+                        <i style="font-size: 80px;" class="fa fa-user"></i>
                     </div>
-                    <div class="profile-item">
+                    <div class="profile-item menu-title">
                         <p>{{ auth()->user()->nama }}</p>
                         @if(auth()->user()->role=='siswa')
                             <p>{{ auth()->user()->siswa->NIS }}</p>
@@ -19,76 +19,108 @@
                 </li>
                 @auth
                     @if(auth()->user()->role=='siswa')
-                        <li
-                            class="{{ 'home' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                            <a href="/home">Beranda </a>
+                        <li>
+                            <a href="/home">
+                                <i class="menu-icon m-2 fa fa-home"></i>
+                                Beranda
+                            </a>
                         </li>
-                        <li
-                            class="{{ '/profile' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                            <a href="/profile/{{ auth()->user()->id }}/view">Biodata</a>
+                        <li>
+                            <a href="/profile/{{ auth()->user()->id }}/view">
+                                <i class="menu-icon m-2 fa fa-user"></i>
+                                Biodata
+                            </a>
                         </li>
-                        <li
-                            class="{{ 'hafalan-siswa' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                            <a href="/hafalan-siswa/{{ Auth()->user()->id }}">Hafalan Al-Qur'an dan Hadits</a>
+                        <li>
+                            <a href="/hafalan-siswa/{{ Auth()->user()->id }}">
+                                <i class="menu-icon m-2 fa fa-book"></i>
+                                Hafalan Al-Qur'an dan Hadits
+                            </a>
                         </li>
-                        <li
-                            class="{{ 'catatan-yaumiyah' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                            <a href="/catatan-yaumiyah">Catatan Amalan Yaumiah</a>
+                        <li>
+                            <a href="/catatan-yaumiyah">
+                                <i class="menu-icon m-2 fa fa-star"></i>
+                                Catatan Amalan Yaumiah
+                            </a>
                         </li>
-                        <li
-                            class="{{ 'poin-siswa' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                            <a href="/poin-siswa/{{ Auth()->user()->siswa->id }}">Poin Pelanggaran dan Kebaikan</a>
+                        <li>
+                            <a href="{{ route('viewPoinSiswaPage', Auth::user()->siswa->id) }}">
+                                <i class="menu-icon m-2 fa fa-pencil"></i>
+                                Poin Pelanggaran dan Kebaikan
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#">Catatan Shalat</a>
+                        <li>
+                            <a href="#">
+                                <i class="menu-icon m-2 fa fa-pencil"></i>
+                                Catatan Shalat
+                            </a>
                         </li>
-                        <li
-                            class="{{ 'catatan-kebaikan' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                            <a href="/catatan-kebaikan/{{ auth()->user()->id }}">Catatan Kebaikan & Keburukan</a>
+                        <li>
+                            <a href="/catatan-kebaikan/{{ auth()->user()->id }}">
+                                <i class="menu-icon m-2 fa fa-pencil"></i>
+                                Catatan Kebaikan & Keburukan
+                            </a>
                         </li>
-                        <li
-                            class="{{ 'catatan-harian/{auth()->user()->id}' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                            <a href="/catatan-harian/{{ auth()->user()->id }}">Catatan Harian</a>
+                        <li>
+                            <a href="/catatan-harian/{{ auth()->user()->id }}">
+                                <i class="menu-icon m-2 fa fa-pencil"></i>
+                                Catatan Harian
+                            </a>
                         </li>
-
                     @elseif(auth()->user()->role=='pembina')
-                        <li
-                            class="{{ 'home' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                            <a href="/home"></i>Beranda </a>
+                        <li>
+                            <a href="/home">
+                                <i class="menu-icon m-2 fa fa-home"></i>
+                                Beranda
+                            </a>
                         </li>
-                        <li
-                            class="{{ 'profile' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                            <a href="/profile">Biodata</a>
+                        <li>
+                            <a href="/profile">
+                                <i class="menu-icon m-2 fa fa-user"></i>
+                                Biodata
+                            </a>
                         </li>
-                        <li
-                            class="{{ '/hafalan-pembina' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                            <a href="/hafalan-pembina">Hafalan Al-Qur'an dan Hadits</a>
+                        <li>
+                            <a href="/hafalan-pembina">
+                                <i class="menu-icon m-2 fa fa-book"></i>
+                                Hafalan Al-Qur'an dan Hadits
+                            </a>
                         </li>
-                        <li
-                            class="{{ 'catatan-yaumiyah-pembina' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                            <a href="/catatan-yaumiyah-pembina">Catatan Amalan Yaumiah</a>
+                        <li>
+                            <a href="{{ route('viewPoinSearchPage') }}">
+                                <i class="menu-icon m-2 fa fa-star"></i>
+                                Poin Pelanggaran dan Kebaikan
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a
-                                href="{{ Auth::user()->role === 'siswa' ? route('viewPoinSiswaPage', Auth::user()->siswa->id) :  route('viewPoinSearchPage') }}">Poin
-                                Pelanggaran dan Kebaikan</a>
+                        <li>
+                            <a href="/catatan-yaumiyah-pembina">
+                                <i class="menu-icon m-2 fa fa-pencil"></i>
+                                Catatan Amalan Yaumiah
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#">Catatan Shalat</a>
+                        <li>
+                            <a href="#">
+                                <i class="menu-icon m-2 fa fa-pencil"></i>
+                                Catatan Shalat
+                            </a>
                         </li>
-                        <li
-                            class="{{ 'catatan-kebaikan-siswa' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                            <a href="/catatan-kebaikan-siswa">Catatan Kebaikan & Keburukan</a>
+                        <li>
+                            <a href="/catatan-kebaikan-siswa">
+                                <i class="menu-icon m-2 fa fa-pencil"></i>
+                                Catatan Kebaikan & Keburukan
+                            </a>
                         </li>
-                        <li
-                            class="{{ 'catatan-harian' == request()->path() ? 'nav-item active' : 'nav-item' }}">
-                            <a href="/catatan-harian">Catatan Harian</a>
+                        <li>
+                            <a href="/catatan-harian">
+                                <i class="menu-icon m-2 fa fa-pencil"></i>
+                                Catatan Harian
+                            </a>
                         </li>
                     @endif
                 @endauth
                 @guest
                     <li
-                        class="{{ 'home' == request()->path() ? 'nav-item active' : 'nav-item' }}">
+                            class="{{ 'home' == request()->path() ? 'nav-item active' : 'nav-item' }}">
                         <a href="/home"></i>Beranda </a>
                     </li>
                     <li class="nav-item">
