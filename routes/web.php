@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
     Route::get('/home', 'HomeController@index')->name('home');
 
     //ROUTE CATATAN AMALAN YAUMIYAH
-    
+
 
     Route::get('/profile', 'UserController@index')->name('viewAllProfile');
     Route::post('/profile/create', 'UserController@createProfile');
