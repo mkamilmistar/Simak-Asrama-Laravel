@@ -39,19 +39,16 @@
                         <strong class="card-title">Poin Pelanggaran dan Kebaikan</strong>
                         @if(Auth::user()->role !== "siswa")
                             <a href="{{ route('addPoinSiswaPage', $siswa->user_id) }}"
-                                class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Catatan</a>
+                               class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Catatan</a>
                         @endif
+                        <a href="/poin-siswa/{{ $siswa->id }}/cetak_pdf" class="btn btn-primary"> <i
+                                    class="fa fa-print"></i> Export PDF</a>
                     </div>
                     <!-- End Pembina View-->
 
                     <div class="card-body">
                         <!-- Data Siswa -->
                         <table class="table-bio">
-                            <tr>
-                                <td>
-                                    <a href="/poin-siswa/{{ $siswa->id }}/cetak_pdf" class="btn-sm btn-primary"> <i class="fa fa-print"></i> Export PDF</a>
-                                </td>
-                            </tr>
                             <tr>
                                 <th style="width: 200px">Nomor Induk Siswa</th>
                                 <td>{{ $siswa->NIS }}</td>
