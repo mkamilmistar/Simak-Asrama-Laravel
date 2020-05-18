@@ -31,7 +31,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Record Hafalan Quran Siswa</strong>
-                                <a href="/tambah-hafalan" class="btn btn-primary">+ Tambah Hafalan</a>
+                                <a href="/hafalan-pembina/{{$data_user->id}}/tambah-hafalan" class="btn btn-primary">+ Tambah Hafalan</a>
                             </div>
                             <div class="card-body">
                                 <!-- Data Siswa -->
@@ -88,9 +88,6 @@
                                             <td>{{$haf->guru->user->nama}}</td>
                                             <td>
                                             <a href="hafalan-pembina/{{$data_user->id}}/#">
-                                                <button type="button" class="btn btn-warning">Edit</button>
-                                            </a>
-                                            <a href="hafalan-pembina/{{$data_user->id}}/#">
                                                 <button type="button" class="btn btn-danger">Hapus</button>
                                             </a>
                                             </td>
@@ -118,7 +115,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Record Hafalan Doa dan Hadist</strong>
-                                <a href="/tambah-doa" class="btn btn-primary">+ Tambah Hafalan</a>
+                                <a href="/hafalan-pembina/{{$data_user->id}}/tambah-doa" class="btn btn-primary">+ Tambah Hafalan</a>
                             </div>
                             <div class="card-body">
                                 <!-- Data Siswa -->

@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
+// Poin Siswa
+Route::get('/poinSiswa/{nis}', 'PoinKebaikanController@show');
+Route::get('/poinSiswa/{nis}/total', 'PoinKebaikanController@total');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

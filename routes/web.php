@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
     Route::get('/home', 'HomeController@index')->name('home');
 
     //ROUTE CATATAN AMALAN YAUMIYAH
-    
+
 
     Route::get('/profile', 'UserController@index')->name('viewAllProfile');
     Route::post('/profile/create', 'UserController@createProfile');
@@ -43,8 +43,10 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
 Route::get('/hafalan-siswa/{id}','HafalanController@indexSiswa' );
 Route::get('/hafalan-pembina','HafalanController@indexPembina' );
 Route::get('/hafalan-pembina/{id}','HafalanController@viewHafalanPembina' );
-Route::get('/tambah-doa','HafalanController@tambahDoa' );
-Route::get('/tambah-hafalan','HafalanController@tambahHafalan' );
+Route::get('/hafalan-pembina/{id}/tambah-doa','HafalanController@tambahDoa' );
+Route::post('/hafalan-pembina/{id}/create-doa', 'HafalanController@postDoa');
+Route::get('/hafalan-pembina/{id}/tambah-hafalan','HafalanController@tambahHafalan' );
+Route::post('/hafalan-pembina/{id}/create-hafalan', 'HafalanController@postHafalan');
 
 
 Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
@@ -100,26 +102,16 @@ Route::get('/catatan-yaumiyah-pembina', 'CatatanYaumiyahController@viewPagePembi
 Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPageSiswa');
 
 
-// Poin Kebaikan
+// Poin Siswa
 Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
-    //Catatan Harian
+    //Poin Pembina group
     Route::get('/poin-pembina', 'PoinKebaikanController@viewPoinSearchPage')->name('viewPoinSearchPage');
     Route::get('/poin-siswa/{id}/add', 'PoinKebaikanController@viewAddPoinSiswaPage')->name('addPoinSiswaPage');
     Route::post('/poin-siswa/{id}/add', 'PoinKebaikanController@addPoinSiswa');
     Route::post('/poin-siswa/{id}/delete', 'PoinKebaikanController@removePoinSiswa')->name('removePoinSiswa');
     Route::get('/poin-siswa/{id}/edit', 'PoinKebaikanController@viewUpdatePoinSiswaPage')->name('updatePoinSiswaPage');
+    Route::post('/poin-siswa/{id}/edit', 'PoinKebaikanController@updatePoinSiswa');
 });
 
 Route::get('/poin-siswa/{id}', 'PoinKebaikanController@viewPoinSiswaPage')->name('viewPoinSiswaPage');
-
-// Catatan Sholat
-Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
-    //Catatan
-    Route::get('/catatan-sholat', ' CatatanSholatController@viewPoinSearchPage')->name('viewPoinSearchPage');
-    Route::get('/catatan-sholat/{id}/add', 'CatatanSholatController@viewAddPoinSiswaPage')->name('addPoinSiswaPage');
-    Route::post('/catatan-sholat/{id}/add', 'CatatanSholatController@addPoinSiswa');
-    Route::post('/catatan-sholat/{id}/delete', 'CatatanSholatController@removePoinSiswa')->name('removePoinSiswa');
-    Route::get('/catatan-sholat/{id}/edit', 'CatatanSholatController@viewUpdatePoinSiswaPage')->name('updatePoinSiswaPage');
-});
-
-Route::get('/poin-siswa/{id}', 'PoinKebaikanController@viewPoinSiswaPage')->name('viewPoinSiswaPage');
+Route::get('/poin-siswa/{id}/cetak_pdf', 'PoinKebaikanController@cetak_pdf');
