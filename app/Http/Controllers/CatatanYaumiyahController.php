@@ -12,6 +12,34 @@ use Carbon\Carbon;
 
 class CatatanYaumiyahController extends Controller
 {
+    public function getPoin()
+    {
+        $data_user = User::where('role','=','siswa')->with('siswa')->get();
+        $catatanAmaliyah = CatatanAmaliyah::where('user_id', '=', $data_user)->get();
+        dd($data_user);
+        $jenisCatatan = JenisAmalanYaumiyah::all();
+        
+        // $count = (sizeof($jenisCatatan));
+
+        // $totalPoin[] = NULL;
+
+        // for($index=0; $index<$count; $index++){
+        //     $bobot = $jenisCatatan[$index]->bobotAmalan;
+        //     $jumlahCatatan = $catatanAmaliyah[$index]->jumlah;
+        //     $pushPoin = $bobot * $jumlahCatatan;
+        //     array_push($totalPoin, $pushPoin);
+        // }
+
+        // $isiTotal=0;
+
+        // for($i=1; $i<$count; $i++){
+        //     $isiTotal += $totalPoin[$i];
+        // };
+
+        // return $isiTotal;
+        
+    }
+
     public function viewPagePembina()
     {
         if(Auth::user()->role=='pembina'){
@@ -20,6 +48,10 @@ class CatatanYaumiyahController extends Controller
         }else{
             return redirect()->back();
         }
+        
+        $poin = $this->getPoin();
+        // dd($poin);
+
         $title= 'Catatan Amaliyah | Sistem Informasi Asrama SCB';
         
         return view('catatanAmalanYaumiyah.catatanAmalanPembina', compact(['title','data_user']));
@@ -30,22 +62,15 @@ class CatatanYaumiyahController extends Controller
         $data_user = Auth::user();
 
         $catatanAmaliyah = CatatanAmaliyah::where('user_id', Auth::user()->id)->with('jenisAmalanYaumiyah')->get();
-        // dd($catatanAmaliyah);
         $jenisCatatan = JenisAmalanYaumiyah::all();
-
-        // dd($jenisCatatan);
         $count = (sizeof($jenisCatatan));
-        // dd($count);
-        // $bobot[] = array();
-        // $jumlahCatatan[] = array();
+
         $totalPoin[] = NULL;
 
         for($index=0; $index<$count; $index++){
-            
             $bobot = $jenisCatatan[$index]->bobotAmalan;
             $jumlahCatatan = $catatanAmaliyah[$index]->jumlah;
             $pushPoin = $bobot * $jumlahCatatan;
-        
             array_push($totalPoin, $pushPoin);
         }
         $isiTotal=0;
@@ -55,8 +80,6 @@ class CatatanYaumiyahController extends Controller
 
         ($isiTotal);
         
-
-
         $title= 'Catatan Amaliyah | Sistem Informasi Asrama SCB';
 
         return view('catatanAmalanYaumiyah.catatanAmalanSiswa', compact(['title','catatanAmaliyah','data_user', 'isiTotal']));
