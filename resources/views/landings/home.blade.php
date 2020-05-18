@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <div class="card col-12" style="margin-top: -70px;">
+        <div class="card col-12" style="margin-top: -10%;">
             <div class="card-body">
                 <h1><i class="fa fa-rss"></i> Selamat Datang</h1>
                 <hr>

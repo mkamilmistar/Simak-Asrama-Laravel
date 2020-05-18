@@ -28,7 +28,7 @@
         <p class="lead">Silahkan Login untuk masuk ke dalam sistem.</p>
     </div>
 </div>
-<main role="main" class="flex-shrink-0">
+<main role="main" class="flex-shrink-0 my-3">
     <div class="container ">
         @yield('content')
     </div>
