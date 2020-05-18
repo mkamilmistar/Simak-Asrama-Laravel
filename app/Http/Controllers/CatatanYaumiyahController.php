@@ -47,17 +47,32 @@ class CatatanYaumiyahController extends Controller
 
     public function postCatatan(Request $request)
     {
-        $jenisAmalan = JenisAmalanYaumiyah::all();
+        $user_id = User::find(Auth::user()->id);
+        $data = $request->all();
+        $finalArray = array();
+        foreach($data as $key=>$value){
+           array_push($finalArray, array(
+                        'jenisAmalan_id'=>$value['jenisAmalan_id'],
+                        'keterangan'=>$value['keterangan'],
+                        'jumlah'=>$value['jumlah'],
+                        'user_id'=>$value[$user_id],)
+           );
+        };
+        
+        CatatanAmaliyah::insert($finalArray);
+
+
         // $jenisAmalan -> update($request->all());
 
-        $user_id = User::find(Auth::user()->id);
-        $catatan = new CatatanAmaliyah;
-        $catatan->jenisAmalan_id = $request->input('jenisAmalan_id');
-        $catatan->user_id = Auth::user()->id;
-        $catatan->keterangan = $request->input('keterangan');
-        $catatan->jumlah = $request->input('jumlah');
-        $catatan->save(); 
-
+        $catatans = new CatatanAmaliyah;
+        foreach($catatans as $catatan){
+            $catatan->jenisAmalan_id = $request->input('jenisAmalan_id');
+            $catatan->user_id = Auth::user()->id;
+            $catatan->keterangan = $request->input('keterangan');
+            $catatan->jumlah = $request->input('jumlah');
+        };
+        $catatans->save(); 
+        
         // $catatan = CatatanAmaliyah::find($id);
         // $jenisAmalan->update([
         //     'jenisAmalan'      => request('jenisAmalan'),

@@ -479,6 +479,7 @@ class ComposerStaticInitd3bf88c99021d8ac68fe39a27421e353
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Resources\\PoinSiswaResource' => __DIR__ . '/../..' . '/app/Http/Resources/PoinSiswaResource.php',
         'App\\JenisAmalanYaumiyah' => __DIR__ . '/../..' . '/app/JenisAmalanYaumiyah.php',
         'App\\Notifications\\AdminResetPasswordNotification' => __DIR__ . '/../..' . '/app/Notifications/AdminResetPasswordNotification.php',
         'App\\PoinKebaikan' => __DIR__ . '/../..' . '/app/PoinKebaikan.php',
