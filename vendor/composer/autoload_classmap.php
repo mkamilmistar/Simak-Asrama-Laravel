@@ -29,6 +29,7 @@ return array(
     'App\\Http\\Controllers\\CatatanKebaikanController' => $baseDir . '/app/Http/Controllers/CatatanKebaikanController.php',
     'App\\Http\\Controllers\\CatatanYaumiyahController' => $baseDir . '/app/Http/Controllers/CatatanYaumiyahController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\Dumdum' => $baseDir . '/app/Http/Controllers/Dumdum.php',
     'App\\Http\\Controllers\\HafalanController' => $baseDir . '/app/Http/Controllers/HafalanController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\JenisAmalanController' => $baseDir . '/app/Http/Controllers/JenisAmalanController.php',
