@@ -51,6 +51,7 @@ jQuery(document).ready(function($) {
 	 
 	// Menu Trigger
 	$('#menuToggle').on('click', function(event) {
+		$('#profile-menu').toggle();
 		var windowWidth = $(window).width();
 		if (windowWidth < 1010) {
 			$('body').removeClass('open');

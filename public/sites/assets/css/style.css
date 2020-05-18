@@ -3646,23 +3646,6 @@ footer.site-footer .footer-inner a {
     }
 }
 
-.profile-pic {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-color: #FFDE59;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    align-items: center;
-}
-
-.profile-item p {
-    position: relative;
-    top: 10px;
-    left: 4px;
-    line-height: 0px;
-    color: #000;
-}
-
 .textprofile a {
     color: #000000;
 }
