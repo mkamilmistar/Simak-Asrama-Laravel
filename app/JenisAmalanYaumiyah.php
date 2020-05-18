@@ -14,6 +14,6 @@ class JenisAmalanYaumiyah extends Model
 
     public function catatanAmaliyah()
     {
-        return $this->hasOne(CatatanAmaliyah::class);
+        return $this->belongsTo(CatatanAmaliyah::class);
     }
 }

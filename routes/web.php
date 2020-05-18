@@ -99,7 +99,9 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
 Route::get('/catatan-yaumiyah-pembina', 'CatatanYaumiyahController@viewPagePembina')->name('viewCatatanAmalanSiswa');
 
 //SISWA VER
-Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPageSiswa');
+Route::get('/catatan-yaumiyah', 'CatatanYaumiyahController@viewPageSiswa')->name('viewPageSiswa');
+Route::get('/catatan-yaumiyah/create', 'CatatanYaumiyahController@viewTambahCatatan');
+Route::post('/catatan-yaumiyah/create', 'CatatanYaumiyahController@postCatatan');
 
 
 // Poin Siswa

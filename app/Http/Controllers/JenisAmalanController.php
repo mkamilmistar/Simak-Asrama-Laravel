@@ -52,7 +52,6 @@ class JenisAmalanController extends Controller
 
     public function createJenisAmalan()
     {
-
         $title='Tambah Jenis Amalan | Sistem Informasi Asrama SCB';
         return view('catatanAmalanYaumiyah.tambahJenisAmalan', compact(['title']));
     }
