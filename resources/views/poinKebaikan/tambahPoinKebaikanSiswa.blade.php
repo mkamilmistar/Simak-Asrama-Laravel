@@ -54,7 +54,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="01/20/2020" name="tanggal">
+                                    <input type="text" class="form-control" placeholder="yyyy/mm/dd" name="tanggal">
                                 </div>
                             </div>
                             <div class="form-group">

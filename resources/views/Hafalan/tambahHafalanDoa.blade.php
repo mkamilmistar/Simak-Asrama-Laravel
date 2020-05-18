@@ -17,7 +17,7 @@
                                     <ol class="breadcrumb text-right">
                                         <li><a href="/catatan-yaumiyah">Hafalan Al-Qur'an</a></li>
                                         <li><a href="/catatan-yaumiyah">Record Hafalan Siswa</a></li>
-                                        <li class="active">Data table</li>
+                                        <li class="active">Tambah Hafalan Doa</li>
                                     </ol>
                                 </div>
                             </div>
@@ -38,36 +38,44 @@
                                 <table class="table-bio">
                                     <tr >
                                         <th style="width: 200px">Nomor Induk Siswa</th>
-                                        <td>$data_user->siswa->NIS</td>
+                                        <td>{{$data_user->siswa->NIS}}</td>
                                     </tr>
                                     <tr>
                                         <th>Nama</th>
-                                        <td>$data_user->nama}}</td>
+                                        <td>{{$data_user->nama}}</td>
                                     </tr>
                                     <tr>
                                         <th>Jenis Kelamin</th>
-                                        <td>{$data_user->jenis_kelamin}}</td>
+                                        <td>{{$data_user->jenis_kelamin}}</td>
                                     </tr>
                                     <tr>
                                         <th>Kelas</th>
-                                        <td>{$data_user->siswa->kelas}}</td>
+                                        <td>{{$data_user->siswa->kelas}}</td>
                                     </tr>
                                 </table>
                                 <!-- END OF DATA SISWA -->
                                 <br>
                                 <!-- DATA AMALAN -->
-                                <form>
+                                <form action="/hafalan-pembina/{{$data_user->id}}/create-doa" method="POST">
+                                @csrf
                                     <div class="form-group">
-                                        <label for="inputJenisPoin">Jenis Hafalan</label>
-                                        <select class="custom-select" id="inputJenisPoin" name="jenis">
+                                        <label for="inputJenisHafalan">Jenis Hafalan</label>
+                                        <select class="custom-select" id="inputJenisHafalan" name="jenis">
                                             <option selected disabled hidden>Pilih Jenis Hafalan</option>
-                                            <option value="kebaikan">Doa</option>
-                                            <option value="keburukan">Hadits</option>
+                                            <option value="Doa">Doa</option>
+                                            <option value="Hadist">Hadits</option>
                                         </select>
+                                    </div>
+                                    <div>
+                                        <label for="inputPM">Pagi/Malam</label>
+                                            <select class="form-control input-lg dynamic" id="inputPM" name="PM">
+                                                <option>Pagi</option>
+                                                <option>Malam</option>
+                                            </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="namaHafalan">Nama Hafalan</label>
-                                        <input type="text" class="form-control" id="inputNamaHafalan" placeholder="Doa Setelah Makan">
+                                        <input type="text" class="form-control" id="inputNamaHafalan" name="hafalan">
                                     </div>
                                    <div>
                                    <label for="nilai">Nilai</label>
