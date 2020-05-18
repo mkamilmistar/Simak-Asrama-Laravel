@@ -54,18 +54,18 @@
                                 <tbody>
                                     @foreach($jenisCatatan as $index => $jenis)
                                         <tr>
-                                            <td>{{ $index + 1 }} </td>
-                                            <td>{{ $jenis->jenisAmalan }} </td>
+                                            <td>{{ $index + 1 }}</td>
+                                            <td>{{ $jenis->jenisAmalan }}</td>
                                             <td>
-                                                <input name="jumlah[]" id="yes" class="form-control"
+                                                <input name="jumlah_{{ $index }}" id="yes" class="form-control"
                                                     placeholder="Jumlah kegiatan" type="number" min=0 value=0>
                                             </td>
                                             <td>
-                                                <textarea name="keterangan[]" class="form-control"
-                                                    placeholder="misal: sholat tahajud di minggu malan"
+                                                <textarea name="keterangan_{{ $index }}" class="form-control"
+                                                    placeholder="misal: sholat tahajud di minggu malam"
                                                     type="text"></textarea>
                                             </td>
-                                            <td> <input name="jenisAmalan_id[]" value="{{ $jenis->id }}"></td>
+                                            <td> <input name="jenisAmalan_{{ $index }}" value="{{ $index }}"> </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

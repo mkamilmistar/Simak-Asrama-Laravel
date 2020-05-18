@@ -31,10 +31,35 @@ class CatatanYaumiyahController extends Controller
 
         $catatanAmaliyah = CatatanAmaliyah::where('user_id', Auth::user()->id)->with('jenisAmalanYaumiyah')->get();
         // dd($catatanAmaliyah);
+        $jenisCatatan = JenisAmalanYaumiyah::all();
+
+        // dd($jenisCatatan);
+        $count = (sizeof($jenisCatatan));
+        // dd($count);
+        // $bobot[] = array();
+        // $jumlahCatatan[] = array();
+        $totalPoin[] = NULL;
+
+        for($index=0; $index<$count; $index++){
+            
+            $bobot = $jenisCatatan[$index]->bobotAmalan;
+            $jumlahCatatan = $catatanAmaliyah[$index]->jumlah;
+            $pushPoin = $bobot * $jumlahCatatan;
+        
+            array_push($totalPoin, $pushPoin);
+        }
+        $isiTotal=0;
+        for($i=1; $i<$count; $i++){
+            $isiTotal += $totalPoin[$i];
+        };
+
+        ($isiTotal);
+        
+
 
         $title= 'Catatan Amaliyah | Sistem Informasi Asrama SCB';
 
-        return view('catatanAmalanYaumiyah.catatanAmalanSiswa', compact(['title','catatanAmaliyah','data_user']));
+        return view('catatanAmalanYaumiyah.catatanAmalanSiswa', compact(['title','catatanAmaliyah','data_user', 'isiTotal']));
     }
 
     public function viewTambahCatatan()
@@ -47,41 +72,34 @@ class CatatanYaumiyahController extends Controller
 
     public function postCatatan(Request $request)
     {
-        $user_id = User::find(Auth::user()->id);
-        $data = $request->all();
-        $finalArray = array();
-        foreach($data as $key=>$value){
-           array_push($finalArray, array(
-                        'jenisAmalan_id'=>$value['jenisAmalan_id'],
-                        'keterangan'=>$value['keterangan'],
-                        'jumlah'=>$value['jumlah'],
-                        'user_id'=>$value[$user_id],)
-           );
-        };
-        
-        CatatanAmaliyah::insert($finalArray);
+        $user_id = Auth::user()->id;
 
+        $catatan = CatatanAmaliyah::where('user_id','=', $user_id)->get();
+        // dd($catatan);
 
-        // $jenisAmalan -> update($request->all());
-
-        $catatans = new CatatanAmaliyah;
-        foreach($catatans as $catatan){
-            $catatan->jenisAmalan_id = $request->input('jenisAmalan_id');
-            $catatan->user_id = Auth::user()->id;
-            $catatan->keterangan = $request->input('keterangan');
-            $catatan->jumlah = $request->input('jumlah');
-        };
-        $catatans->save(); 
-        
-        // $catatan = CatatanAmaliyah::find($id);
-        // $jenisAmalan->update([
-        //     'jenisAmalan'      => request('jenisAmalan'),
-        //     'keterangan'        => request('keterangan'),
-        //     'jumlah'           => request('jumlah'),
-        // ]);
-        
-        dd($request->all());
-        return redirect()->route('viewPageSiswa');
+        $count = (sizeof($request->all())-1)/3;
+        // dd($user_id);
+        for($index=0; $index<$count; $index++){
+            if($catatan != NULL){
+                $jumlah_sebelum = $catatan[$index]->jumlah;
+            }else{
+                $jumlah_sebelum = 0;
+            }
+            
+                $counter = $index + 1;
+                CatatanAmaliyah::updateOrCreate(
+                    [
+                        'jenisAmalan_id' =>  $counter, 
+                        'user_id' => $user_id
+                    ],
+                    [
+                        'keterangan' => $request->input('keterangan_'. $index), 
+                        'jumlah' => ($request->input('jumlah_'. $index))+$jumlah_sebelum, 
+                        ]);   
+                    };
+    
+                    
+    return redirect()->route('viewPageSiswa');
 
     }
 

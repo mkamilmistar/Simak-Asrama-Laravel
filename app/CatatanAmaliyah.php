@@ -13,8 +13,8 @@ class CatatanAmaliyah extends Model
         'jenisAmalan_id',
         'user_id',
         'keterangan',
-        'tanggal',
-        'totalPoin'
+        'totalPoin',
+        'jumlah'
     ];
 
     public function jenisAmalanYaumiyah()
