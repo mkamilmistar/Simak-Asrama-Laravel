@@ -8,6 +8,7 @@ use App\User;
 use App\Siswa;
 use App\CatatanAmaliyah;
 use App\JenisAmalanYaumiyah;
+use Carbon\Carbon;
 
 class CatatanYaumiyahController extends Controller
 {
@@ -44,9 +45,29 @@ class CatatanYaumiyahController extends Controller
         return view('catatanAmalanYaumiyah.tambahCatatanAmalanSiswa', compact(['jenisCatatan', 'title']));
     }
 
-    public function postCatatan()
+    public function postCatatan(Request $request)
     {
-        # code...
+        $jenisAmalan = JenisAmalanYaumiyah::all();
+        // $jenisAmalan -> update($request->all());
+
+        $user_id = User::find(Auth::user()->id);
+        $catatan = new CatatanAmaliyah;
+        $catatan->jenisAmalan_id = $request->input('jenisAmalan_id');
+        $catatan->user_id = Auth::user()->id;
+        $catatan->keterangan = $request->input('keterangan');
+        $catatan->jumlah = $request->input('jumlah');
+        $catatan->save(); 
+
+        // $catatan = CatatanAmaliyah::find($id);
+        // $jenisAmalan->update([
+        //     'jenisAmalan'      => request('jenisAmalan'),
+        //     'keterangan'        => request('keterangan'),
+        //     'jumlah'           => request('jumlah'),
+        // ]);
+        
+        dd($request->all());
+        return redirect()->route('viewPageSiswa');
+
     }
 
 }

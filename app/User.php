@@ -67,8 +67,10 @@ class User extends Authenticatable
         return $this->hasMany(CatatanHarian::class);
     }
 
-    public function jenisAmalan()
+    public function catatanAmaliyah()
     {
-        return $this->hasMany(JenisAmalanYaumiyah::class);
+        return $this->belongsTo(JenisAmalanYaumiyah::class)->withPivot(['jumlah', 'totalPoin', 'keterangan']);
     }
+
+
 }

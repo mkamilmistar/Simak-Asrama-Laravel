@@ -39,38 +39,38 @@
                         <br>
 
                         <!--TAMBAH DATA AMALAN -->
-                        <form method="GET" id="my_form">
+                        <form method="POST" action="/catatan-yaumiyah/create">
                             <table class="table table-striped table-bordered">
                                 @csrf
                                 <thead>
                                     <tr class="table-tengah">
                                         <th>No</th>
                                         <th>Jenis Amalan</th>
-                                        <th style="width: 13%">Kondisi</th>
                                         <th style="width: 15%">Jumlah (kali)</th>
                                         <th>Keterangan</th>
+                                        <th>none</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($jenisCatatan as $index => $jenis)
                                         <tr>
-                                            <td>{{ $index + 1 }}</td>
-                                            <td>{{ $jenis->jenisAmalan }}</td>
-                                            <td>
-                                                <select name="status" class="form-control" id="status">
-                                                    <option value="0">Tidak</option>
-                                                    <option value="1">Ya</option>
-                                                </select>
+                                            <td>{{ $index + 1 }}
+
                                             </td>
                                             <td>
-                                                <input name="jumlah" class="form-control" placeholder="Jumlah kegiatan"
-                                                    type="number" min=0 value=0>
+                                                {{ $jenis->jenisAmalan }}
                                             </td>
+                                            <td>
+                                                <input name="jumlah" id="yes" class="form-control"
+                                                    placeholder=" Jumlah kegiatan" type="number" min=0 value=0>
+                                            </td>
+
                                             <td>
                                                 <textarea name="keterangan" class="form-control"
                                                     placeholder="misal: sholat tahajud di minggu malan"
                                                     type="text"></textarea>
                                             </td>
+                                            <td> <input name="jenisAmalan_id" value="{{ $jenis->id }}"></td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -95,4 +95,5 @@
 <div class="clearfix">
 
 </div>
+
 @endsection
