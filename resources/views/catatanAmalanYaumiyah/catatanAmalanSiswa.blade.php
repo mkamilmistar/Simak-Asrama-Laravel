@@ -32,7 +32,8 @@
                 <div class="card">
                     <div class="card-header">
                         <strong class="card-title">Catatan Amalan Yaumiyah Siswa</strong>
-                        <a href="/catatan-yaumiyah/create" class="btn btn-primary">+ Tambah Catatan</a>
+                        <a href="/catatan-yaumiyah/{{ auth()->user()->id }}/create" class="btn btn-primary">+ Tambah
+                            Catatan</a>
                     </div>
                     <div class="card-body">
                         <!-- Data Siswa -->

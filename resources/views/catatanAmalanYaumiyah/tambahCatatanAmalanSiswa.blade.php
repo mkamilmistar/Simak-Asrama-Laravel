@@ -39,7 +39,7 @@
                         <br>
 
                         <!--TAMBAH DATA AMALAN -->
-                        <form method="POST" action="/catatan-yaumiyah/create">
+                        <form method="POST" action="/catatan-yaumiyah/{{ auth()->user()->id }}/create">
                             <table class="table table-striped table-bordered">
                                 @csrf
                                 <thead>
@@ -71,7 +71,7 @@
                                 </tbody>
                             </table>
                             <div class="form-group">
-                                <a href="/catatan-yaumiyah" class="btn btn-danger">Batal</a>
+                                <a href="/catatan-yaumiyah/{{ auth()->user()->id }}" class="btn btn-danger">Batal</a>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                             </div> <!-- form-group// -->
                         </form>
