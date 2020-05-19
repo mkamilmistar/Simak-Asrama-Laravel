@@ -28,7 +28,7 @@ class Siswa extends Model
     }
 
     public function catatanSholat(){
-        return $this->hasMany(catatanSholat::class);
+        return $this->hasMany(Sholat::class);
     }
 
     public function getJumlahTotalPoinAttribute(){

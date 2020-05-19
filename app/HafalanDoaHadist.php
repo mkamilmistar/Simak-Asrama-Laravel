@@ -9,7 +9,7 @@ use App\Guru;
 
 class HafalanDoaHadist extends Model
 {
-    protected $table = 'hafalandoahadist';
+    protected $table = 'hafalanDoaHadist';
 
     protected $fillable = ['tanggal','pm','doa','hadist','nilai','pembina_id','siswa_id'];
 

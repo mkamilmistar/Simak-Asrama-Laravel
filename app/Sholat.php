@@ -9,7 +9,7 @@ class Sholat extends Model
     protected $table = 'sholats';
 
     protected $fillable = [
-        'siswa_id', 'tanggal', 'jenis_sholat', 'created_at', 'update_at', 'waktu_adzan2', 'waktu_sholat2' 
+        'siswa_id', 'tanggal', 'jenis_sholat', 'created_at', 'update_at', 'waktu_adzan2', 'waktu_masuk2'
     ];
 
     public function siswa()

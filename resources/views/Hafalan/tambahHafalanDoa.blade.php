@@ -60,32 +60,49 @@
                                 @csrf
                                     <div class="form-group">
                                         <label for="inputJenisHafalan">Jenis Hafalan</label>
-                                        <select class="custom-select" id="inputJenisHafalan" name="jenis">
+                                        <select class="form-control @error('jenis') is-invalid @enderror"  id="inputJenisHafalan" name="jenis">
                                             <option selected disabled hidden>Pilih Jenis Hafalan</option>
                                             <option value="Doa">Doa</option>
                                             <option value="Hadist">Hadits</option>
+                                            @error('jenis')
+                                            <span
+                                                class="invalid-feedback d-block"><strong>this field is required</strong></span>
+                                            @enderror
                                         </select>
                                     </div>
                                     <div>
                                         <label for="inputPM">Pagi/Malam</label>
-                                            <select class="form-control input-lg dynamic" id="inputPM" name="PM">
+                                            <select class="form-control @error('PM') is-invalid @enderror" id="inputPM" name="PM">
+                                                <option selected disabled hidden></option>
                                                 <option>Pagi</option>
                                                 <option>Malam</option>
+                                        @error('PM')
+                                            <span
+                                                class="invalid-feedback d-block"><strong>this field is required</strong></span>
+                                        @enderror
                                             </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="namaHafalan">Nama Hafalan</label>
-                                        <input type="text" class="form-control" id="inputNamaHafalan" name="hafalan">
+                                        <input type="text" class="form-control @error('hafalan') is-invalid @enderror"  id="inputNamaHafalan" name="hafalan">
+                                        @error('hafalan')
+                                            <span
+                                                class="invalid-feedback d-block"><strong></strong></span>
+                                        @enderror
                                     </div>
                                    <div>
                                    <label for="nilai">Nilai</label>
-                                    <select class="form-control input-lg dynamic" id="inputNilai" name="nilai">
+                                    <select class="form-control @error('nilai') is-invalid @enderror"  id="inputNilai" name="nilai">
                                             <option selected disabled hidden>Beri Nilai</option>
                                             <option>5</option>
                                             <option>6</option>
                                             <option>7</option>
                                             <option>8</option>
                                             <option>9</option>
+                                        @error('nilai')
+                                            <span
+                                                class="invalid-feedback d-block"><strong>this field is required</strong></span>
+                                        @enderror
                                     </select>
                                     </div>
                                     <input class="btn btn-primary" type="submit" value="Submit">

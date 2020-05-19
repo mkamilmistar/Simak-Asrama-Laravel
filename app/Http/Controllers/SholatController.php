@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\PoinSiswaResource;
+use App\Http\Resources\CatatanSholatResource;
 use App\Sholat;
 use Illuminate\Http\Request;
 use App\Siswa;
@@ -19,8 +19,8 @@ class SholatController extends Controller
     public function show($nis)
     {
         $siswa = Siswa::where(['NIS' => $nis])->firstOrFail();
-        $poinKebaikan = $siswa->poinKebaikan;
-        return PoinSiswaResource::collection($poinKebaikan);
+        $catatanSholat = $siswa->catatanSholat;
+        return CatatanSholatResource::collection($catatanSholat);
     }
 
     /**

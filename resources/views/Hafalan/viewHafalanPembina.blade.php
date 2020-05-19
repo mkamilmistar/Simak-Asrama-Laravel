@@ -23,7 +23,8 @@
                         </div>
                     </div>
                 </div>
-    </div>    
+    </div>
+    @include('layouts.allert')    
     <div class="content">
             <div class="animated fadeIn">
                 <div class="row">
