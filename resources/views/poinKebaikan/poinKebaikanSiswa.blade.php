@@ -37,12 +37,13 @@
                     <!-- Pembina View-->
                     <div class="card-header">
                         <strong class="card-title">Poin Pelanggaran dan Kebaikan</strong>
+                        <br>
                         @if(Auth::user()->role !== "siswa")
-                            <a href="{{ route('addPoinSiswaPage', $siswa->user_id) }}"
+                            <a href="{{ route('addPoinSiswaPage', $siswa->id) }}"
                                class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Catatan</a>
                         @endif
                         <a href="/poin-siswa/{{ $siswa->id }}/cetak_pdf" class="btn btn-primary"> <i
-                                    class="fa fa-print"></i> Export PDF</a>
+                            class="fa fa-print"></i> Export PDF</a>
                     </div>
                     <!-- End Pembina View-->
 
@@ -159,7 +160,7 @@
                                         </td>
                                         @if(Auth::user()->role !== "siswa")
                                             <td>
-                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}"
+                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}" 
                                                    class="btn btn-primary">
                                                     Update
                                                 </a>
