@@ -64,6 +64,7 @@
         <!--  /Traffic -->
         
 </div>
+@if(Auth::user()->role=='pembina')
 <div class="content">
         <!-- Animated -->
         <div class="animated fadeIn">
@@ -123,7 +124,7 @@
                                             </td>
                                             <td>
                                                 <a href="#"
-                                                    class="btn btn-primary btn-sm">Lihat</a>
+                                                    class="btn btn-primary btn-sm">View</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -138,6 +139,8 @@
             <!--  /Traffic -->
             
 </div>
+@endif
+
 
     <!-- ./animated -->
     <!-- ./content -->

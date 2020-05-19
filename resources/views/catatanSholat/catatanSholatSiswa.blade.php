@@ -48,7 +48,7 @@
                         <table class="table-bio">
                             <tr>
                                 <td>
-                                    <a href="/catatan-sholat/{{ $siswa->id }}/cetak_pdf" class="btn-sm btn-primary"> <i class="fa fa-print"></i> Export PDF</a>
+                                    <a href="/catatan-sholat/{{ $siswa->id }}/cetak_pdf" class="btn-sm btn-primary"> <i class="fa fa-print"></i> Export to PDF</a>
                                 </td>
                             </tr>
                             <tr>
