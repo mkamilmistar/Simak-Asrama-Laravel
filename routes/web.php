@@ -55,7 +55,8 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
     Route::get('/catatan-harian/{id}/edit','CatatanHarianController@edit');
     Route::post('/catatan-harian/{id}/update','CatatanHarianController@update');
     Route::get('/catatan-harian/{id}/delete','CatatanHarianController@delete');
-    Route::get('/catatan-harian/pdf','CatatanHarianController@generate');
+    // Route::get('/catatan-harian/pdf','CatatanHarianController@generate');
+    Route::get('/catatan-harian/cetak_pdf','CatatanHarianController@cetak_pdf');
     //Route::get('/siswa/{id}/profile','SiswaController@profile');
 
 });
@@ -101,7 +102,7 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
     Route::get('/catatan-yaumiyah-siswa/{id}', 'CatatanYaumiyahController@viewPageCatatanSiswa')->name('viewCatatanAmalanSiswa');
     Route::get('/catatan-yaumiyah-siswa/{id}/cetak_pdf', 'CatatanYaumiyahController@cetak_pdf')->name('cetakPdfYaumiyah');
 });
-Route::group(['middleware' => ['auth', 'checkRole:pembina, siswa']], function() {
+Route::group(['middleware' => ['auth', 'checkRole:siswa, pembina']], function() {
     //SISWA VER
     Route::get('/catatan-yaumiyah/{id}', 'CatatanYaumiyahController@viewPageSiswa')->name('viewPageSiswa');
     Route::get('/catatan-yaumiyah/{id}/create', 'CatatanYaumiyahController@viewTambahCatatan');

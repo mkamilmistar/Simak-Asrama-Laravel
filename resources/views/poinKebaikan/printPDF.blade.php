@@ -14,21 +14,23 @@
 
 <body>
     <!-- kop surat -->
-<body>
     <table width="100%">
         <tr>
-            <td class="text-center"><img class="img-responsive" src="sites/images/favicon.png" width="85" height="80"></td>
+            <td class="text-center"><img class="img-responsive" src="sites/images/favicon.png" width="85" height="80">
+            </td>
             <td class="text-center">
                 <h3>Sekolah Cendekia Baznas</h3>
-                <p style="font-size:14px">Jl. KH. Umar Cirangkong, Cemplang, Jawa Barat, Indonesia 10220 <br>email:baznas@baznas.go.id </p>
+                <p style="font-size:14px">Jl. KH. Umar Cirangkong, Cemplang, Jawa Barat, Indonesia 10220
+                    <br>email:baznas@baznas.go.id </p>
             </td>
-            <td class="text-center"><img class="img-responsive" src="sites/images/baznas.png" width="85" height="80"><br></td>
-         <hr style="height:3px;border-width:0;color:black;background-color:black">
+            <td class="text-center"><img class="img-responsive" src="sites/images/baznas.png" width="85"
+                    height="80"><br></td>
+            <hr style="height:3px;border-width:0;color:black;background-color:black">
     </table>
 
     <div class="text-center">
-    <h5>Rekapitulasi Poin</h5>
-    <p style="font-size:14px">Poin Kebaikan dan Pelanggaran</p>
+        <h5>Rekapitulasi Poin</h5>
+        <p style="font-size:14px">Poin Kebaikan dan Pelanggaran</p>
     </div>
     <div class="card-body">
         <!-- Data Siswa -->
@@ -52,11 +54,11 @@
             <tr>
                 <th>Total Poin</th>
                 <td>
-                    @if($siswa->jumlah_total_poin < 0) 
-                    <label class="badge badge-danger">{{ $siswa->jumlah_total_poin }}</label>
-                        @else
+                    @if($siswa->jumlah_total_poin < 0)
+                        <label class="badge badge-danger">{{ $siswa->jumlah_total_poin }}</label>
+                    @else
                         <label class="badge badge-success">{{ $siswa->jumlah_total_poin }}</label>
-                        @endif
+                    @endif
                 </td>
             </tr>
         </table>
@@ -66,7 +68,7 @@
         <h5><strong>Poin Kebaikan</strong> </h5>
         <table id="bootstrap-data-table" class="table table-striped table-bordered">
             @php
-            $counter = 0;
+                $counter = 0;
             @endphp
 
             <thead>
@@ -79,16 +81,16 @@
             </thead>
             <tbody>
                 @foreach($poin_kebaikan as $poin)
-                <tr>
-                    <td>{{++$counter}}</td>
-                    <td>{{ $poin->tanggal }}</td>
-                    <td>{{ $poin->keterangan }}</td>
-                    <td>
-                        <label class="badge badge-success">
-                            {{ $poin->poin }}
-                        </label>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>{{ ++$counter }}</td>
+                        <td>{{ $poin->tanggal }}</td>
+                        <td>{{ $poin->keterangan }}</td>
+                        <td>
+                            <label class="badge badge-success">
+                                {{ $poin->poin }}
+                            </label>
+                        </td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
@@ -97,7 +99,7 @@
         <!-- DATA POIN KEBURUKAN -->
         <table id="bootstrap-data-table" class="table table-striped table-bordered">
             @php
-            $counter = 0;
+                $counter = 0;
             @endphp
 
             <thead>
@@ -110,16 +112,16 @@
             </thead>
             <tbody>
                 @foreach($poin_keburukan as $poin)
-                <tr>
-                    <td>{{++$counter}}</td>
-                    <td>{{ $poin->tanggal }}</td>
-                    <td>{{ $poin->keterangan }}</td>
-                    <td>
-                        <label class="badge badge-danger">
-                            {{ $poin->poin }}
-                        </label>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>{{ ++$counter }}</td>
+                        <td>{{ $poin->tanggal }}</td>
+                        <td>{{ $poin->keterangan }}</td>
+                        <td>
+                            <label class="badge badge-danger">
+                                {{ $poin->poin }}
+                            </label>
+                        </td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
@@ -130,7 +132,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-    <script src="{{ asset('sites/assets/js/lib/data-table/datatables.min.js') }}"></script>
+    <script src="{{ asset('sites/assets/js/lib/data-table/datatables.min.js') }}">
+    </script>
     <script src="{{ asset('sites/assets/js/lib/data-table/dataTables.bootstrap.min.js') }}">
     </script>
     <script src="{{ asset('sites/assets/js/lib/data-table/dataTables.buttons.min.js') }}">

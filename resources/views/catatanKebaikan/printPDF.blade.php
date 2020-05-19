@@ -13,6 +13,24 @@
 </head>
 
 <body>
+    <table width="100%">
+        <tr>
+            <td class="text-center"><img class="img-responsive" src="sites/images/favicon.png" width="85" height="80">
+            </td>
+            <td class="text-center">
+                <h3>Sekolah Cendekia Baznas</h3>
+                <p style="font-size:14px">Jl. KH. Umar Cirangkong, Cemplang, Jawa Barat, Indonesia 10220
+                    <br>email:baznas@baznas.go.id </p>
+            </td>
+            <td class="text-center"><img class="img-responsive" src="sites/images/baznas.png" width="85"
+                    height="80"><br></td>
+            <hr style="height:3px;border-width:0;color:black;background-color:black">
+    </table>
+
+    <div class="text-center">
+        <h5>Rekapitulasi Catatan Kebaikan & Keburukan Siswa</h5>
+        <p style="font-size:14px">Catatan Kebaikan & Keburukan Siswa</p>
+    </div>
     <div class="card-body">
         <!-- Data Siswa -->
         <table class="table-bio">
