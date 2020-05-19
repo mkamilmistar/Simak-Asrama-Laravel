@@ -45,8 +45,10 @@ Route::get('/hafalan-pembina','HafalanController@indexPembina' );
 Route::get('/hafalan-pembina/{id}','HafalanController@viewHafalanPembina' );
 Route::get('/hafalan-pembina/{id}/tambah-doa','HafalanController@tambahDoa' );
 Route::post('/hafalan-pembina/{id}/create-doa', 'HafalanController@postDoa');
+Route::get('/hafalan-pembina/{userId}/{id}/delete-doa', 'HafalanController@hapusDoa');
 Route::get('/hafalan-pembina/{id}/tambah-hafalan','HafalanController@tambahHafalan' );
 Route::post('/hafalan-pembina/{id}/create-hafalan', 'HafalanController@postHafalan');
+Route::get('/hafalan-pembina/{userId}/{id}/delete-hafalan', 'HafalanController@hapusHafalan');
 
 
 Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
