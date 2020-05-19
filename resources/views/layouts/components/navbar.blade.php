@@ -38,16 +38,16 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/catatan-yaumiyah/{{ Auth()->user()->id }}">
-                                <i class="menu-icon mb-2 fa fa-star"></i>
-                                Catatan Amalan Yaumiah
-                            </a>
-                        </li>
-                        <li>
                             <a
                                 href="{{ route('viewPoinSiswaPage', Auth::user()->siswa->id) }}">
                                 <i class="menu-icon mb-2 fa fa-pencil"></i>
                                 Poin Pelanggaran dan Kebaikan
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/catatan-yaumiyah/{{ Auth()->user()->id }}">
+                                <i class="menu-icon mb-2 fa fa-star"></i>
+                                Catatan Amalan Yaumiah
                             </a>
                         </li>
                         <li>

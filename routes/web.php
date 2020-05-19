@@ -11,19 +11,14 @@
 |
 */
 
-Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
-    //LANDING PAGE VIEW
-    Route::get('/', 'LandingPageController@home');
-});
+//LANDING PAGE VIEW
+Route::get('/', 'LandingPageController@home')->name('landingPageView');
 
 //AUTH
 Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
 //DASHBOARD PAGE
 Auth::routes();
-
-//LANDING PAGE VIEW
-Route::get('/', 'LandingPageController@home');
 
 Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
     Route::get('/home', 'HomeController@index')->name('home');
