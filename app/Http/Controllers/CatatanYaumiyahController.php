@@ -55,7 +55,7 @@ class CatatanYaumiyahController extends Controller
         $title = 'Catatan Amaliyah | Sistem Informasi Asrama SCB';
         
         if(Auth::id() == $id){
-            $userId = Auth::user()->id;  
+            
     
             $data_user = Auth::user();
             

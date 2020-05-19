@@ -102,7 +102,7 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
     Route::get('/catatan-yaumiyah-siswa/{id}', 'CatatanYaumiyahController@viewPageCatatanSiswa')->name('viewCatatanAmalanSiswa');
     Route::get('/catatan-yaumiyah-siswa/{id}/cetak_pdf', 'CatatanYaumiyahController@cetak_pdf')->name('cetakPdfYaumiyah');
 });
-Route::group(['middleware' => ['auth', 'checkRole:pembina, siswa']], function() {
+Route::group(['middleware' => ['auth', 'checkRole:siswa, pembina']], function() {
     //SISWA VER
     Route::get('/catatan-yaumiyah/{id}', 'CatatanYaumiyahController@viewPageSiswa')->name('viewPageSiswa');
     Route::get('/catatan-yaumiyah/{id}/create', 'CatatanYaumiyahController@viewTambahCatatan');
