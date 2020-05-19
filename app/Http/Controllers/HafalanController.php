@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
+use PDF;
 use App\User;
 use App\Siswa;
 use App\Hafalan;
@@ -196,6 +197,25 @@ class HafalanController extends Controller
         $title= 'Tambah Hafalan Quran | Sistem Informasi Asrama SCB';
         return redirect()->route('viewHafalanPembina',$data_user->id)->with('danger', 'Hafalan Quran Berhasil Dihapus!');
     }
+
+    public function cetak_pdf($id)
+    {
+        $data_user = User::where('id',$id)->get()->first();
+        // dd($data_user);
+            
+        $data_hafalan = Hafalan::where('siswa_id','=',$data_user->siswa->id)->with('surat')->with('guru')->get();
+        $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->with('guru')->get();
+
+
+        $pdf = PDF::loadview('Hafalan.printPDF', [
+            'data_hafalan' => $data_hafalan,
+            'data_hafalan2' => $data_hafalan2,
+            'data_user' => $data_user
+        ]);
+        return $pdf->download('dataHafalan-'.$data_user->nama.'.pdf');
+    }
+
+
 
     /**
      * Display the specified resource.
