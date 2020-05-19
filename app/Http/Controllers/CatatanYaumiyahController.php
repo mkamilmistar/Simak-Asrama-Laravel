@@ -9,10 +9,11 @@ use App\Siswa;
 use App\CatatanAmaliyah;
 use App\JenisAmalanYaumiyah;
 use Carbon\Carbon;
+use DB;
 
 class CatatanYaumiyahController extends Controller
 {
-    public function viewPagePembina()
+    public function viewPageCatatan()
     {
         if(Auth::user()->role=='pembina'){
             $data_user = User::where('role','=','siswa')->with('siswa')->get();
@@ -26,43 +27,41 @@ class CatatanYaumiyahController extends Controller
         
         return view('catatanAmalanYaumiyah.catatanAmalanPembina', compact(['title','data_user']));
     }
+
+    public function viewPageCatatanSiswa($id)
+    {
+        $title= 'Catatan Amaliyah | Sistem Informasi Asrama SCB';
+
+        $data_user = User::find($id);
+        $siswa = Siswa::where('user_id', $id)->get()->first();
+        // dd($siswa);
+        // dd($data_user);
+        
+        if($data_user->role==="siswa"){
+            $catatanAmaliyah = CatatanAmaliyah::where('user_id', $id)->with('jenisAmalanYaumiyah')->get();
+            // dd($catatanAmaliyah);
+        }else{
+            return redirect()->route('viewCatatanKebaikan');
+        }
+
+        // dd($siswa);
+        return view('catatanAmalanYaumiyah.catatanAmalanPembinaAll', compact(['title','data_user', 'siswa', 'catatanAmaliyah']));
+
+    }
  
     public function viewPageSiswa(Request $request, $id)
     {
         $title= 'Catatan Amaliyah | Sistem Informasi Asrama SCB';
         
         if(Auth::id() == $id){
-            $userId = Auth::user()->id;
-            
+            $userId = Auth::user()->id;  
     
             $data_user = Auth::user();
+            
             $catatanAmaliyah = CatatanAmaliyah::where('user_id', Auth::user()->id)->with('jenisAmalanYaumiyah')->get();
             $jenisCatatan = JenisAmalanYaumiyah::all();
     
-            $count = (sizeof($jenisCatatan));
-    
-            $totalPoin[] = NULL;
-    
-            if($catatanAmaliyah->isEmpty()){
-                $isiTotal = 0;
-    
-                return view('catatanAmalanYaumiyah.catatanAmalanSiswa', compact(['title','catatanAmaliyah','data_user', 'isiTotal']));
-            }else{
-    
-                for($index=0; $index<$count; $index++){
-                    $bobot = $jenisCatatan[$index]->bobotAmalan;
-                    $jumlahCatatan = $catatanAmaliyah[$index]->jumlah;
-                    $pushPoin = $bobot * $jumlahCatatan;
-                    array_push($totalPoin, $pushPoin);
-                }
-    
-                $isiTotal=0;
-                for($i=1; $i<=$count; $i++){
-                    $isiTotal += $totalPoin[$i];
-                };
-            };
-
-            return view('catatanAmalanYaumiyah.catatanAmalanSiswa', compact(['title','catatanAmaliyah','data_user', 'isiTotal']));
+            return view('catatanAmalanYaumiyah.catatanAmalanSiswa', compact(['title','catatanAmaliyah','data_user']));
         }else{
             return redirect()->back();
         }
@@ -106,9 +105,39 @@ class CatatanYaumiyahController extends Controller
                         ]);   
                     };
                 
-                    
+            $catatanAmaliyah = CatatanAmaliyah::where('user_id', Auth::user()->id)->with('jenisAmalanYaumiyah')->get();
+            $jenisCatatan = JenisAmalanYaumiyah::all();
+    
+            $count = (sizeof($jenisCatatan));
+    
+            $totalPoin[] = NULL;
+    
+            if($catatanAmaliyah->isEmpty()){
+                $isiTotal = 0;
+    
+                return view('catatanAmalanYaumiyah.catatanAmalanSiswa', compact(['title','catatanAmaliyah','data_user', 'isiTotal']));
+            }else{
+    
+                for($index=0; $index<$count; $index++){
+                    $bobot = $jenisCatatan[$index]->bobotAmalan;
+                    $jumlahCatatan = $catatanAmaliyah[$index]->jumlah;
+                    $pushPoin = $bobot * $jumlahCatatan;
+                    array_push($totalPoin, $pushPoin);
+                }
+    
+                $isiTotal=0;
+                for($i=1; $i<=$count; $i++){
+                    $isiTotal += $totalPoin[$i];
+                }; 
+                
+            //input to database
+            DB::table('siswa')->where('user_id', Auth::user()->id)
+            ->update(['poinAmaliyah' => $isiTotal]);
+            
     return redirect()->route('viewPageSiswa', $user_id);
 
     }
+    }
+    
 
 }

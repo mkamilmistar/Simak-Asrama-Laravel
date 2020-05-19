@@ -47,7 +47,7 @@
                                     <th>Nama</th>
                                     <th>Kelas</th>
                                     <th>NIM</th>
-                                    <th>Jumlah Bobot</th>
+                                    <th>Total Poin</th>
                                     <th>Aksi</th>
                                     <!-- <th>Aksi</th> -->
                                 </tr>
@@ -62,10 +62,11 @@
                                         <td>{{ $user->siswa['kelas'] }}</td>
                                         <td>{{ $user->siswa['NIS'] }}</td>
 
-                                        <td>#</td>
+                                        <td>{{ $user->siswa['poinAmaliyah'] }}</td>
 
                                         <td>
-                                            <button type="button" class="btn btn-primary">Lihat Catatan</button>
+                                            <a href="/catatan-yaumiyah-siswa/{{ $user->id }}"
+                                                class="btn btn-primary btn-sm">View</a>
                                         </td>
                                         <!-- <td>
                                                 <a href="#">

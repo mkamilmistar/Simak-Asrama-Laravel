@@ -72,5 +72,7 @@ class User extends Authenticatable
         return $this->belongsTo(JenisAmalanYaumiyah::class)->withPivot(['jumlah', 'totalPoin', 'keterangan']);
     }
 
+    protected $primaryKey = 'id';
+
 
 }
