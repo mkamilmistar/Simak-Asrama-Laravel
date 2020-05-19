@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="breadcrumbs">
     <div class="breadcrumbs-inner">
@@ -22,6 +21,7 @@
                             @endif
                             <li><a href="{{ route('viewSholatSiswaPage', $siswa->id) }}">{{ $siswa->user->nama }}</a></li>
                             <li class="active">Tambah Baru</li>
+                        
                         </ol>
                     </div>
                 </div>

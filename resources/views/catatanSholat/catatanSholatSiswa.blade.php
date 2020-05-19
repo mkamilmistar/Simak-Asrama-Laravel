@@ -37,7 +37,7 @@
                     <div class="card-header">
                         <strong class="card-title">Catatan Sholat</strong>
                         @if(Auth::user()->role !== "siswa")
-                            <a href="{{ route('addSholatSiswaPage', $siswa->user_id) }}"
+                            <a href="{{ route('addSholatSiswaPage', $siswa->id) }}"
                                 class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Catatan</a>
                         @endif
                     </div>
