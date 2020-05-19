@@ -74,33 +74,6 @@ class CatatanHarianController extends Controller
         return redirect('/catatan-harian')->with('danger', 'Data berhasil dihapus!');
     }
 
-    public function generate()
-    {
-        $catatanHarian = CatatanHarian::get();
-        $siswa = Siswa::all();
-        $guru = Guru::all();
-        $data_siswa = User::where([['role', '=', 'siswa']])->orderBy('nama')->get();
-        $data_guru = User::where([['role', '=', 'pembina']])->orderBy('nama')->get();
-        $fileName = "Catatan_Harian.pdf";
-        $mpdf = new \Mpdf\Mpdf([
-            'margin_left' => 10,
-            'margin_right' => 10,
-            'margin_top' => 15,
-            'margin_bottom' => 20,
-            'margin_header' => 10,
-            'margin_footer' => 10
-        ]);
-        $html = \View::make('catatanHarian.viewPDF')->with('catatanHarian', $catatanHarian);
-        $html = $html->render();
-
-        $mpdf->SetHeader('Chapter1|Catatan Harian|{PAGENO}');
-        $mpdf->SetFooter('This is Footer');
-        //$stylesheet = file_get_contents(url("/css/mpdf.css"));
-        //$mpdf->WriteHTML($stylesheet, 1);
-        $mpdf->WriteHTML($html);
-        $mpdf->Output($fileName, 'I');
-    }
-
     public function cetak_pdf()
     {
         $catatanHarian = CatatanHarian::get();
@@ -108,7 +81,21 @@ class CatatanHarianController extends Controller
             'catatanHarian' => $catatanHarian,
         ]);
 
+        //return view("catatanHarian.viewPDF", ["pdf" => $pdf, "catatanHarian" => $catatanHarian]);
         return $pdf->download('Catatan_Harian.pdf');    
     }
 
+    public function cetak_pdf_siswa($id)
+    {
+        $catatanHarian = CatatanHarian::where('siswa_id', $id)->get();
+        $data_siswa = User::find($id);
+        $siswa = Siswa::where('user_id', $id)->first();
+        $guru = Guru::all();
+        $data_guru = User::where([['role', '=', 'pembina']])->orderBy('nama')->get();
+        $pdf = PDF::loadview('catatanHarian.viewPDFsiswa', [
+            'catatanHarian' => $catatanHarian, 'data_siswa' => $data_siswa, 'siswa' => $siswa
+        ]);
+        //return view('catatanHarian.viewPDFsiswa', ['title' => 'Catatan Harian Siswa | Sistem Informasi Asrama', 'catatanHarian' => $catatanHarian, 'data_siswa' => $data_siswa, 'siswa' => $siswa, 'data_guru' => $data_guru, 'guru'=>$guru]);
+        return $pdf->download('Catatan_Harian_'.$data_siswa->nama.'-'.$siswa->NIS.'.pdf');    
+    }
 }

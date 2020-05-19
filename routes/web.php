@@ -64,6 +64,7 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
 Route::group(['middleware' => ['auth', 'checkRole:siswa']], function() {
     //Catatan Harian
     Route::get('/catatan-harian/{id}', 'CatatanHarianController@viewPageCatatanSiswa');
+    Route::get('/catatan-harian/cetak_pdf/{id}','CatatanHarianController@cetak_pdf_siswa');
 });
 
 
