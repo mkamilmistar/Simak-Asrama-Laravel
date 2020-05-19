@@ -51,7 +51,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/catatan-sholat/{{ Auth()->user()->id }}">
+                            <a href="/catatan-sholat/{{ Auth::user()->siswa->id }}">
                                 <i class="menu-icon mb-2 fa fa-pencil"></i>
                                 Catatan Shalat
                             </a>

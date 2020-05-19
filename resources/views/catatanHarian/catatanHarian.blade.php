@@ -44,7 +44,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                                <a href="/catatan-harian/cetak_pdf" class="btn btn-primary btn-sm">Export to PDF</a>
+                                <a href="/catatan-harian/cetak_pdf" class="btn btn-primary btn-sm"><i class="fa fa-print"></i> Export to PDF</a>
                                 <br><br>
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>

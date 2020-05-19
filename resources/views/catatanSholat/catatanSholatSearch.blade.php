@@ -72,7 +72,7 @@
                                         <td>{{ $siswa->user->nama }}</td>
                                         <td>{{ $siswa->kelas }}</td>
                                         <td>{{ $siswa->NIS }}</td>
-                                        <td><a href="{{ route('viewSholatSiswaPage', $siswa->id) }}" class="btn-sm btn-primary">Lihat</a></td>
+                                        <td><a href="{{ route('viewSholatSiswaPage', $siswa->id) }}" class="btn-sm btn-primary">View</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

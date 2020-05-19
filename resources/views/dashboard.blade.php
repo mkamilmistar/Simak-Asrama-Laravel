@@ -64,7 +64,8 @@
         <!--  /Traffic -->
         
 </div>
-{{-- <div class="content">
+@if(Auth::user()->role=='pembina')
+<div class="content">
         <!-- Animated -->
         <div class="animated fadeIn">
             <div class="row">
@@ -123,7 +124,7 @@
                                             </td>
                                             <td>
                                                 <a href="#"
-                                                    class="btn btn-primary btn-sm">Lihat</a>
+                                                    class="btn btn-primary btn-sm">View</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -137,7 +138,9 @@
             </div>
             <!--  /Traffic -->
             
-</div> --}}
+</div>
+@endif
+
 
     <!-- ./animated -->
     <!-- ./content -->
