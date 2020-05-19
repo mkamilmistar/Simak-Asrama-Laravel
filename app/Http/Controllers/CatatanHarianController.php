@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Siswa;
 use App\Guru;
-use Auth;
 use App\User;
 use App\CatatanHarian;
 
@@ -73,4 +72,32 @@ class CatatanHarianController extends Controller
         $catatanHarian->delete($catatanHarian);
         return redirect('/catatan-harian')->with('danger', 'Data berhasil dihapus!');
     }
+
+    public function generate()
+    {
+        $catatanHarian = CatatanHarian::get();
+        $siswa = Siswa::all();
+        $guru = Guru::all();
+        $data_siswa = User::where([['role', '=', 'siswa']])->orderBy('nama')->get();
+        $data_guru = User::where([['role', '=', 'pembina']])->orderBy('nama')->get();
+        $fileName = "Catatan_Harian.pdf";
+        $mpdf = new \Mpdf\Mpdf([
+            'margin_left' => 10,
+            'margin_right' => 10,
+            'margin_top' => 15,
+            'margin_bottom' => 20,
+            'margin_header' => 10,
+            'margin_footer' => 10
+        ]);
+        $html = \View::make('catatanHarian.viewPDF')->with('catatanHarian', $catatanHarian);
+        $html = $html->render();
+
+        $mpdf->SetHeader('Chapter1|Catatan Harian|{PAGENO}');
+        $mpdf->SetFooter('This is Footer');
+        //$stylesheet = file_get_contents(url("/css/mpdf.css"));
+        //$mpdf->WriteHTML($stylesheet, 1);
+        $mpdf->WriteHTML($html);
+        $mpdf->Output($fileName, 'I');
+    }
+
 }

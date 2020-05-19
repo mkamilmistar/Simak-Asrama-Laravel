@@ -56,6 +56,7 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
     Route::get('/catatan-harian/{id}/edit','CatatanHarianController@edit');
     Route::post('/catatan-harian/{id}/update','CatatanHarianController@update');
     Route::get('/catatan-harian/{id}/delete','CatatanHarianController@delete');
+    Route::get('/catatan-harian/pdf','CatatanHarianController@generate');
     //Route::get('/siswa/{id}/profile','SiswaController@profile');
 
 });
