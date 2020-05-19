@@ -7,6 +7,7 @@ use App\PoinKebaikan;
 use Illuminate\Http\Request;
 use App\Siswa;
 use PDF;
+use Auth;
 
 class PoinKebaikanController extends Controller
 {
@@ -56,6 +57,8 @@ class PoinKebaikanController extends Controller
      */
     public function viewPoinSiswaPage($id)
     {
+        if (Auth::user()->role === "siswa" && $id != Auth::user()->siswa->id)
+            abort(404);
         $siswa = Siswa::find($id);
         $poin_keburukan = $siswa->poinKebaikan->where('jenis', 'keburukan');
         $poin_kebaikan = $siswa->poinKebaikan->where('jenis', 'kebaikan');
