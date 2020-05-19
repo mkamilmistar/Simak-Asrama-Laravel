@@ -65,26 +65,21 @@
                             <thead>
                                 <tr class="table-tengah">
                                     <th>No</th>
-                                    <!-- <th>Tanggal</th> -->
                                     <th>Jenis Amalan</th>
-                                    <!-- <th>Jumlah</th> -->
-                                    <!-- <th>Keterangan</th> -->
+                                    <th>Keterangan</th>
                                     <th>Jumlah</th>
-                                    <!-- <th>Aksi</th> -->
                                 </tr>
                             </thead>
-                            <!-- <tbody>
-@foreach($catatanAmaliyah as $index => $catatan)
+                            <tbody>
+                                @foreach($catatanAmaliyah as $index => $catatan)
                                     <tr>
                                         <td>{{ $index + 1 }}</td>
-
                                         <td>{{ $catatan->jenisAmalanYaumiyah->jenisAmalan }}</td>
-
+                                        <td>{{ $catatan->keterangan }}</td>
                                         <td>{{ $catatan->jumlah }} kali</td>
-
                                     </tr>
-@endforeach
-                            </tbody> -->
+                                @endforeach
+                            </tbody>
                         </table>
                         <!-- END OF DATA SISWA -->
                     </div>

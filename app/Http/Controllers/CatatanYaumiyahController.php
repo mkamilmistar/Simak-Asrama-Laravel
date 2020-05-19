@@ -35,10 +35,11 @@ class CatatanYaumiyahController extends Controller
         $data_user = User::find($id);
         $siswa = Siswa::where('user_id', $id)->get()->first();
         // dd($siswa);
-
+        // dd($data_user);
+        
         if($data_user->role==="siswa"){
-            $catatanAmaliyah = CatatanAmaliyah::where(['user_id', $data_user])->get()->first();
-            dd($catatanAmaliyah);
+            $catatanAmaliyah = CatatanAmaliyah::where('user_id', $id)->with('jenisAmalanYaumiyah')->get();
+            // dd($catatanAmaliyah);
         }else{
             return redirect()->route('viewCatatanKebaikan');
         }
