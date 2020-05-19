@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\CatatanKebaikan;
 use Auth;
+use PDF;
 use App\User;
 use App\Siswa;
 
@@ -167,6 +168,35 @@ class CatatanKebaikanController extends Controller
         $title = 'Catatan Kebaikan | Sistem Informasi Asrama SCB';
         
         return view('catatanKebaikan.catatanKebaikan', compact(['title','data_user','catatanKebaikan','catatanKeburukan']));
+    }
+
+    public function cetak_pdf($id)
+    {
+        $siswa = Siswa::where('user_id', $id)->get()->first();
+
+        $data_user = user::find($id);
+        // dd($data_user);
+            
+        $catatanKebaikan = CatatanKebaikan::where([
+            ['user_id',$id],
+            ['jenis', '=', 'Baik']
+        ])->get();
+
+        // dd($catatanKebaikan);
+        
+        $catatanKeburukan = CatatanKebaikan::where([
+            ['user_id',$id],
+            ['jenis', '=', 'Buruk']
+        ])->get();
+
+
+        $pdf = PDF::loadview('catatanKebaikan.printPDF', [
+            'siswa' => $siswa,
+            'catatanKebaikan' => $catatanKebaikan,
+            'catatanKeburukan' => $catatanKeburukan,
+            'data_user' => $data_user
+        ]);
+        return $pdf->download('catatanKebaikan-'.$data_user->nama.'.pdf');
     }
 
 }

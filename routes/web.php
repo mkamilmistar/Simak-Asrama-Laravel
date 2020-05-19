@@ -84,6 +84,7 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
     //Catatan Kebaikan Pembina
     Route::get('/catatan-kebaikan-siswa', 'CatatanKebaikanController@viewPageCatatanKebaikan')->name('viewCatatanKebaikan');
     Route::get('/catatan-kebaikan-siswa/{id}', 'CatatanKebaikanController@viewPageCatatanKebaikanPembina')->name('viewCatatanKebaikanPembina');
+    Route::get('/catatan-kebaikan-siswa/{id}/cetak_pdf', 'CatatanKebaikanController@cetak_pdf')->name('cetakPdfKebiakan');
 });
 
 Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
@@ -100,7 +101,7 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
 
 Route::get('/catatan-yaumiyah-siswa', 'CatatanYaumiyahController@viewPageCatatan')->name('viewCatatanAmalan');
 Route::get('/catatan-yaumiyah-siswa/{id}', 'CatatanYaumiyahController@viewPageCatatanSiswa')->name('viewCatatanAmalanSiswa');
-Route::get('/catatan-yaumiyah-siswa/{id}/cetak_pdf', 'CatatanYaumiyahController@cetak_pdf');
+Route::get('/catatan-yaumiyah-siswa/{id}/cetak_pdf', 'CatatanYaumiyahController@cetak_pdf')->name('cetakPdfYaumiyah');
 
 //SISWA VER
 Route::get('/catatan-yaumiyah/{id}', 'CatatanYaumiyahController@viewPageSiswa')->name('viewPageSiswa');

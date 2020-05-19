@@ -32,7 +32,7 @@
                 <div class="card">
                     <div class="card-header">
                         <strong class="card-title">Catatan Kebaikan & Keburukan Siswa</strong>
-                        <!-- <a href="/catatan-kebaikan/{{ auth()->user()->id }}/create" class="btn btn-primary">+ Tambah Catatan</a> -->
+
                     </div>
                     <div class="card-body">
                         <!-- Data Siswa -->
