@@ -85,6 +85,13 @@ class HafalanController extends Controller
             return redirect()->back();
         }
 
+        $this->validate($request, [
+            'nilai' => 'required',
+            'jenis' => 'required',
+            'hafalan' => 'required',
+            'PM' =>'required'
+        ]);
+
         $hafalan = new HafalanDoaHadist();
         $hafalan->pembina_id = Auth::user()->id;
         $hafalan->siswa_id = $data_user->siswa->id;
@@ -97,12 +104,9 @@ class HafalanController extends Controller
         $hafalan->pm = $request->input('PM');
         $hafalan->tanggal = now();
         $hafalan->save();
-
-        $data_hafalan = Hafalan::where('siswa_id','=',$data_user->siswa->id)->with('surat')->with('guru')->get();
-        $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->with('guru')->get();
             
         $title= 'Tambah Hafalan Doa/Hadist | Sistem Informasi Asrama SCB';
-        return redirect()->route('viewHafalanPembina',$data_user->id);
+        return redirect()->route('viewHafalanPembina',$data_user->id)->with('sukses', 'Hafalan Doa/Hadist Berhasil Ditambahkan!');
     }
 
     public function hapusDoa($userId, $id)
@@ -115,12 +119,9 @@ class HafalanController extends Controller
         }
         $catatan = HafalanDoaHadist::find($id);
         $catatan->delete();
-
-        $data_hafalan = Hafalan::where('siswa_id','=',$data_user->siswa->id)->with('surat')->with('guru')->get();
-        $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->with('guru')->get();
             
         $title= 'Tambah Hafalan Quran | Sistem Informasi Asrama SCB';
-        return redirect()->route('viewHafalanPembina',$data_user->id);
+        return redirect()->route('viewHafalanPembina',$data_user->id)->with('danger', 'Hafalan Doa/Hadist Berhasil Dihapus!');
     }
 
     // {
@@ -156,6 +157,15 @@ class HafalanController extends Controller
             return redirect()->back();
         }
 
+        $this->validate($request, [
+            'nilai' => 'required',
+            'ayat1' => 'required',
+            'ayat0' => 'required',
+            'surat' => 'required',
+            'TM' =>'required',
+            'PM' =>'required'
+        ]);
+
         $hafalan = new Hafalan();
         $hafalan->pembina_id = Auth::user()->id;
         $hafalan->siswa_id = $data_user->siswa->id;
@@ -167,12 +177,9 @@ class HafalanController extends Controller
         $hafalan->pm = $request->input('PM');
         $hafalan->tanggal = now();
         $hafalan->save();
-
-        $data_hafalan = Hafalan::where('siswa_id','=',$data_user->siswa->id)->with('surat')->with('guru')->get();
-        $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->with('guru')->get();
             
         $title= 'Tambah Hafalan Quran | Sistem Informasi Asrama SCB';
-        return redirect()->route('viewHafalanPembina',$data_user->id);
+        return redirect()->route('viewHafalanPembina',$data_user->id)->with('sukses', 'Hafalan Quran Berhasil Ditambahkan!');
     }
 
     public function hapusHafalan($userId, $id)
@@ -185,12 +192,9 @@ class HafalanController extends Controller
         }
         $catatan = Hafalan::find($id);
         $catatan->delete();
-
-        $data_hafalan = Hafalan::where('siswa_id','=',$data_user->siswa->id)->with('surat')->with('guru')->get();
-        $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->with('guru')->get();
             
         $title= 'Tambah Hafalan Quran | Sistem Informasi Asrama SCB';
-        return redirect()->route('viewHafalanPembina',$data_user->id);
+        return redirect()->route('viewHafalanPembina',$data_user->id)->with('danger', 'Hafalan Quran Berhasil Dihapus!');
     }
 
     /**
