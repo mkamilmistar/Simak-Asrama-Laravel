@@ -27,10 +27,6 @@ Route::get('/', 'LandingPageController@home');
 
 Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
     Route::get('/home', 'HomeController@index')->name('home');
-
-    //ROUTE CATATAN AMALAN YAUMIYAH
-
-
     Route::get('/profile', 'UserController@index')->name('viewAllProfile');
     Route::post('/profile/create', 'UserController@createProfile');
     Route::get('/profile/{id}/edit', 'UserController@editProfile');
@@ -84,6 +80,7 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
     //Catatan Kebaikan Pembina
     Route::get('/catatan-kebaikan-siswa', 'CatatanKebaikanController@viewPageCatatanKebaikan')->name('viewCatatanKebaikan');
     Route::get('/catatan-kebaikan-siswa/{id}', 'CatatanKebaikanController@viewPageCatatanKebaikanPembina')->name('viewCatatanKebaikanPembina');
+    Route::get('/catatan-kebaikan-siswa/{id}/cetak_pdf', 'CatatanKebaikanController@cetak_pdf')->name('cetakPdfKebiakan');
 });
 
 Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
@@ -97,15 +94,17 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
     Route::get('/jenis-amalan/{id}/delete', 'JenisAmalanController@deleteJenisAmalan');
 });
 
-
-Route::get('/catatan-yaumiyah-siswa', 'CatatanYaumiyahController@viewPageCatatan')->name('viewCatatanAmalan');
-Route::get('/catatan-yaumiyah-siswa/{id}', 'CatatanYaumiyahController@viewPageCatatanSiswa')->name('viewCatatanAmalanSiswa');
-Route::get('/catatan-yaumiyah-siswa/{id}/cetak_pdf', 'CatatanYaumiyahController@cetak_pdf');
-
-//SISWA VER
-Route::get('/catatan-yaumiyah/{id}', 'CatatanYaumiyahController@viewPageSiswa')->name('viewPageSiswa');
-Route::get('/catatan-yaumiyah/{id}/create', 'CatatanYaumiyahController@viewTambahCatatan');
-Route::post('/catatan-yaumiyah/{id}/create', 'CatatanYaumiyahController@postCatatan');
+Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
+    Route::get('/catatan-yaumiyah-siswa', 'CatatanYaumiyahController@viewPageCatatan')->name('viewCatatanAmalan');
+    Route::get('/catatan-yaumiyah-siswa/{id}', 'CatatanYaumiyahController@viewPageCatatanSiswa')->name('viewCatatanAmalanSiswa');
+    Route::get('/catatan-yaumiyah-siswa/{id}/cetak_pdf', 'CatatanYaumiyahController@cetak_pdf')->name('cetakPdfYaumiyah');
+});
+Route::group(['middleware' => ['auth', 'checkRole:pembina, siswa']], function() {
+    //SISWA VER
+    Route::get('/catatan-yaumiyah/{id}', 'CatatanYaumiyahController@viewPageSiswa')->name('viewPageSiswa');
+    Route::get('/catatan-yaumiyah/{id}/create', 'CatatanYaumiyahController@viewTambahCatatan');
+    Route::post('/catatan-yaumiyah/{id}/create', 'CatatanYaumiyahController@postCatatan');
+});
 
 
 // Poin Siswa
