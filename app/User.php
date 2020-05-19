@@ -67,8 +67,12 @@ class User extends Authenticatable
         return $this->hasMany(CatatanKebaikan::class, 'user_id')->where('jenis','buruk');
     }
 
-    public function catatanHarian(){
-        return $this->hasMany(CatatanHarian::class);
+    public function catatanHarianP(){
+        return $this->hasMany(CatatanHarian::class, 'siswa_id')->where('kategori','Prestasi');
+    }
+
+    public function catatanHarianI(){
+        return $this->hasMany(CatatanHarian::class, 'siswa_id')->where('kategori','Indisipliner');
     }
 
     public function catatanAmaliyah()

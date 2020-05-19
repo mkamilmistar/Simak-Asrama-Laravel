@@ -106,7 +106,7 @@ class PoinKebaikanController extends Controller
             'poin_kebaikan' => $poin_kebaikan
         ]);
 
-        return $pdf->download('PoinSiswa-'.$siswa->user->nama.'.pdf');
+        return $pdf->download('PoinPelanggaranKebaikan_'.$siswa->user->nama.$siswa->NIS.'.pdf');
     }
     
     public function viewUpdatePoinSiswaPage(Request $request)
