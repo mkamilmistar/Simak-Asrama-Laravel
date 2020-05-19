@@ -130,6 +130,6 @@ class PoinKebaikanController extends Controller
         $poinKebaikan->poin = $request->poin;
         $poinKebaikan->tanggal = $request->tanggal;
         $poinKebaikan->save();
-        return redirect()->route('viewPoinSiswaPage', $poinKebaikan->siswa_id)->with('success', 'Poin Terupdate');
+        return redirect()->route('viewPoinSiswaPage', $poinKebaikan->siswa_id)->with('success', 'Catatan Terupdate');
     }
 }

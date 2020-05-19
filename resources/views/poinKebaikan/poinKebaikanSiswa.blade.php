@@ -115,7 +115,7 @@
                                         </td>
                                         @if(Auth::user()->role !== "siswa")
                                             <td>
-                                                <button href="{{ route('updatePoinSiswaPage', $poin->id) }}" class="btn btn-warning"> Edit </button>
+                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}" class="btn btn-warning"> Edit </a>
                                                 <button class="btn btn-danger" data-toggle="modal" data-target="#hapusPoin" onclick="{{$poin_id = $poin->id}}">Hapus</button>
                                             </td>
                                         @endif
@@ -155,7 +155,7 @@
                                         </td>
                                         @if(Auth::user()->role !== "siswa")
                                             <td>
-                                                <button href="{{ route('updatePoinSiswaPage', $poin->id) }}" class="btn btn-warning"> Edit </button>
+                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}" class="btn btn-warning"> Edit </a>
                                                 <button class="btn btn-danger" data-toggle="modal" data-target="#hapusPoin" onclick="{{$poin_id = $poin->id}}">Hapus</button>
                                             </td>
                                         @endif
