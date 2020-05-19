@@ -19,8 +19,10 @@ class CreateSholatsTable extends Migration
             $table->foreign('siswa_id')->references('id')->on('siswa')->onDelete('CASCADE');
             $table->date('tanggal');
             $table->string('jenis_sholat');
-            $table->integer('waktu_adzan');
-            $table->integer('waktu_masuk');
+            // $table->integer('waktu_adzan');
+            // $table->integer('waktu_masuk');
+            $table->time('waktu_adzan2');
+            $table->time('waktu_masuk2');
             $table->timestamps();
             
         });

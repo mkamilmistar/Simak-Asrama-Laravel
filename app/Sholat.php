@@ -9,7 +9,7 @@ class Sholat extends Model
     protected $table = 'sholats';
 
     protected $fillable = [
-        'siswa_id', 'tanggal', 'jenis_sholat', 'waktu_adzan', 'waktu_masuk', 'created_at', 'update_at' 
+        'siswa_id', 'tanggal', 'jenis_sholat', 'created_at', 'update_at', 'waktu_adzan2', 'waktu_sholat2' 
     ];
 
     public function siswa()
@@ -17,3 +17,5 @@ class Sholat extends Model
         return $this->belongsTo(Siswa::class);
     }
 }
+
+//'waktu_adzan', 'waktu_masuk',

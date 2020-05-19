@@ -57,12 +57,12 @@
 
                             <div class="form-group">
                                 <label for="inputFormTextarea">Waktu Absen</label>
-                                <textarea class="form-control" id="inputFormTextarea" rows="1" name="waktu_masuk"></textarea>
+                                <input type="text" class="form-control" placeholder="HH:MM" name="waktu_masuk2">
                             </div>
 
                             <div class="form-group">
                                 <label for="inputFormTextarea">Waktu Sholat</label>
-                                <textarea class="form-control" id="inputFormTextarea" rows="1" name="waktu_adzan"></textarea>
+                                <input type="text" class="form-control" placeholder="HH:MM" name="waktu_adzan2">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
