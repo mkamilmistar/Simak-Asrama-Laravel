@@ -31,8 +31,8 @@
     </table>
 
     <div class="text-center">
-        <h5>Rekapitulasi Poin</h5>
-        <p style="font-size:14px">Poin Kebaikan dan Pelanggaran</p>
+        <h5>Rekapitulasi Catatan Harian</h5>
+        <p style="font-size:14px">Catatan Harian</p>
     </div>
     <div class="table-wrapper-scroll-y my-custom-scrollbar">
         <table id="bootstrap-data-table" class="table table-striped table-bordered">

@@ -28,8 +28,8 @@
     </table>
 
     <div class="text-center">
-        <h5>Rekapitulasi Poin</h5>
-        <p style="font-size:14px">Poin Kebaikan dan Pelanggaran</p>
+        <h5>Rekapitulasi Catatan Kebaikan & Keburukan Siswa</h5>
+        <p style="font-size:14px">Catatan Kebaikan & Keburukan Siswa</p>
     </div>
     <div class="card-body">
         <!-- Data Siswa -->
