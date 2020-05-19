@@ -32,7 +32,8 @@
                 <div class="card">
                     <div class="card-header">
                         <strong class="card-title">Catatan Amalan Yaumiyah Siswa</strong>
-
+                        <a href="/catatan-yaumiyah-siswa/{{ $data_user->id }}/cetak_pdf" class="btn btn-primary"> <i
+                                class="fa fa-print"></i> Export PDF</a>
                     </div>
                     <div class="card-body">
                         <!-- Data Siswa -->

@@ -10,6 +10,7 @@ use App\CatatanAmaliyah;
 use App\JenisAmalanYaumiyah;
 use Carbon\Carbon;
 use DB;
+use PDF;
 
 class CatatanYaumiyahController extends Controller
 {
@@ -51,7 +52,7 @@ class CatatanYaumiyahController extends Controller
  
     public function viewPageSiswa(Request $request, $id)
     {
-        $title= 'Catatan Amaliyah | Sistem Informasi Asrama SCB';
+        $title = 'Catatan Amaliyah | Sistem Informasi Asrama SCB';
         
         if(Auth::id() == $id){
             $userId = Auth::user()->id;  
@@ -87,9 +88,12 @@ class CatatanYaumiyahController extends Controller
 
         $count = (sizeof($request->all())-1)/3;
         // dd($count);
+        
         for($index=0; $index<$count; $index++){
             if(!$catatan->isEmpty()){
+                
                 $jumlah_sebelum = $catatan[$index]->jumlah;
+              
             }else{
                 $jumlah_sebelum = 0;
             }
@@ -103,11 +107,10 @@ class CatatanYaumiyahController extends Controller
                         'keterangan' => $request->input('keterangan_'. $index), 
                         'jumlah' => ($request->input('jumlah_'. $index)+$jumlah_sebelum), 
                         ]);   
-                    };
-                
+         };
+
             $catatanAmaliyah = CatatanAmaliyah::where('user_id', Auth::user()->id)->with('jenisAmalanYaumiyah')->get();
             $jenisCatatan = JenisAmalanYaumiyah::all();
-    
             $count = (sizeof($jenisCatatan));
     
             $totalPoin[] = NULL;
@@ -134,10 +137,29 @@ class CatatanYaumiyahController extends Controller
             DB::table('siswa')->where('user_id', Auth::user()->id)
             ->update(['poinAmaliyah' => $isiTotal]);
             
-    return redirect()->route('viewPageSiswa', $user_id);
-
-    }
+            return redirect()->route('viewPageSiswa', $user_id);
+        }
     }
     
+    public function cetak_pdf($id)
+    {
+        $data_user = User::find($id);
+        $siswa = Siswa::where('user_id', $id)->get()->first();
+
+        $data_user = user::find($id);
+        // dd($data_user);
+            
+        $catatanAmaliyah = CatatanAmaliyah::where('user_id', $id)->with('jenisAmalanYaumiyah')->get();
+        // dd($catatanAmaliyah);
+        $jenisCatatan = JenisAmalanYaumiyah::all();
+        // dd($jenisCatatan);
+
+        $pdf = PDF::loadview('catatanAmalanYaumiyah.printPDF', [
+            'siswa' => $siswa,
+            'catatanAmaliyah' => $catatanAmaliyah,
+            'data_user' => $data_user
+        ]);
+        return $pdf->download('catatanAmalanYaumiyah-'.$data_user->nama.'.pdf');
+    }
 
 }

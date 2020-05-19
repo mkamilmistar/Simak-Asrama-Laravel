@@ -78,19 +78,11 @@
                                 @foreach($catatanAmaliyah as $index => $catatan)
                                     <tr>
                                         <td>{{ $index + 1 }}</td>
-                                        <!-- <td>{{ $catatan->tanggal }}</td> -->
+
                                         <td>{{ $catatan->jenisAmalanYaumiyah->jenisAmalan }}</td>
-                                        <!-- <td>5</td> -->
-                                        <!-- <td>{{ $catatan->keterangan }}</td> -->
+
                                         <td>{{ $catatan->jumlah }} kali</td>
-                                        <!-- <td>
-                                            <a href="#">
-                                                <button type="button" class="btn btn-warning">Edit</button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="btn btn-danger">Hapus</button>
-                                            </a>
-                                        </td> -->
+
                                     </tr>
                                 @endforeach
                             </tbody>
