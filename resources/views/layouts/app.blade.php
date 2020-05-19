@@ -42,6 +42,8 @@
 
 
 <body onload="startTime()">
+
+
     @include('layouts.components.navbar')
 
     <!-- Right Panel -->
@@ -49,6 +51,7 @@
         @include('layouts.components.header')
         <!-- Content -->
 
+        @include('layouts.components.message')
         @yield('content')
 
         @include('layouts.components.footer')
@@ -151,7 +154,12 @@
         });
     </script>
 
-
+    <!-- fadeout message -->
+    <script>
+        $(".alert").fadeTo(1000, 300).slideUp(300, function(){
+            $(".alert").slideUp(300);
+        });
+    </script>
 </body>
 
 </html>
