@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitdc5824e7f3988412ffb591b9440602b1
+class ComposerStaticInit8499d2f56c2083f60ba8e79e1ad40542
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -464,11 +464,13 @@ class ComposerStaticInitdc5824e7f3988412ffb591b9440602b1
         'App\\Http\\Controllers\\CatatanKebaikanController' => __DIR__ . '/../..' . '/app/Http/Controllers/CatatanKebaikanController.php',
         'App\\Http\\Controllers\\CatatanYaumiyahController' => __DIR__ . '/../..' . '/app/Http/Controllers/CatatanYaumiyahController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Dumdum' => __DIR__ . '/../..' . '/app/Http/Controllers/Dumdum.php',
         'App\\Http\\Controllers\\HafalanController' => __DIR__ . '/../..' . '/app/Http/Controllers/HafalanController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\JenisAmalanController' => __DIR__ . '/../..' . '/app/Http/Controllers/JenisAmalanController.php',
         'App\\Http\\Controllers\\LandingPageController' => __DIR__ . '/../..' . '/app/Http/Controllers/LandingPageController.php',
         'App\\Http\\Controllers\\PoinKebaikanController' => __DIR__ . '/../..' . '/app/Http/Controllers/PoinKebaikanController.php',
+        'App\\Http\\Controllers\\SholatController' => __DIR__ . '/../..' . '/app/Http/Controllers/SholatController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -479,6 +481,7 @@ class ComposerStaticInitdc5824e7f3988412ffb591b9440602b1
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Resources\\PoinSiswaResource' => __DIR__ . '/../..' . '/app/Http/Resources/PoinSiswaResource.php',
         'App\\JenisAmalanYaumiyah' => __DIR__ . '/../..' . '/app/JenisAmalanYaumiyah.php',
         'App\\Notifications\\AdminResetPasswordNotification' => __DIR__ . '/../..' . '/app/Notifications/AdminResetPasswordNotification.php',
         'App\\PoinKebaikan' => __DIR__ . '/../..' . '/app/PoinKebaikan.php',
@@ -487,6 +490,7 @@ class ComposerStaticInitdc5824e7f3988412ffb591b9440602b1
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Sholat' => __DIR__ . '/../..' . '/app/Sholat.php',
         'App\\Siswa' => __DIR__ . '/../..' . '/app/Siswa.php',
         'App\\Surat' => __DIR__ . '/../..' . '/app/Surat.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
@@ -3938,6 +3942,7 @@ class ComposerStaticInitdc5824e7f3988412ffb591b9440602b1
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'SholatSeeder' => __DIR__ . '/../..' . '/database/seeds/SholatSeeder.php',
         'SuratSeeder' => __DIR__ . '/../..' . '/database/seeds/SuratSeeder.php',
         'Svg\\DefaultStyle' => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg/DefaultStyle.php',
         'Svg\\Document' => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg/Document.php',
@@ -4807,10 +4812,10 @@ class ComposerStaticInitdc5824e7f3988412ffb591b9440602b1
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitdc5824e7f3988412ffb591b9440602b1::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitdc5824e7f3988412ffb591b9440602b1::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitdc5824e7f3988412ffb591b9440602b1::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitdc5824e7f3988412ffb591b9440602b1::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit8499d2f56c2083f60ba8e79e1ad40542::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit8499d2f56c2083f60ba8e79e1ad40542::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit8499d2f56c2083f60ba8e79e1ad40542::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit8499d2f56c2083f60ba8e79e1ad40542::$classMap;
 
         }, null, ClassLoader::class);
     }
