@@ -5080,17 +5080,10 @@ class ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1da5b750a2ef2e925ee9617c6fc8882c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1da5b750a2ef2e925ee9617c6fc8882c::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit1da5b750a2ef2e925ee9617c6fc8882c::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit1da5b750a2ef2e925ee9617c6fc8882c::$classMap;
->>>>>>> 482481f78684ff244ddbc8f4db590495169588fa
 
         }, null, ClassLoader::class);
     }
