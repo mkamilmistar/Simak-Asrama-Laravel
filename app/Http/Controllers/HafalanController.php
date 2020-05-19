@@ -102,13 +102,13 @@ class HafalanController extends Controller
         $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->with('guru')->get();
             
         $title= 'Tambah Hafalan Doa/Hadist | Sistem Informasi Asrama SCB';
-        return view('Hafalan.viewHafalanPembina', compact(['title','data_user','data_hafalan','data_hafalan2']));
+        return redirect()->route('viewHafalanPembina',$data_user->id);
     }
 
     public function hapusDoa($userId, $id)
     {
         if(Auth::user()->role=='pembina'){
-            $data_user = User::where('id',$UserId)->get()->first();
+            $data_user = User::where('id',$userId)->get()->first();
             // dd($data_user);
         }else{
             return redirect()->back();
@@ -120,7 +120,7 @@ class HafalanController extends Controller
         $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->with('guru')->get();
             
         $title= 'Tambah Hafalan Quran | Sistem Informasi Asrama SCB';
-        return view('Hafalan.viewHafalanPembina', compact(['title','data_user','data_hafalan','data_hafalan2']));
+        return redirect()->route('viewHafalanPembina',$data_user->id);
     }
 
     // {
@@ -172,7 +172,7 @@ class HafalanController extends Controller
         $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->with('guru')->get();
             
         $title= 'Tambah Hafalan Quran | Sistem Informasi Asrama SCB';
-        return view('Hafalan.viewHafalanPembina', compact(['title','data_user','data_hafalan','data_hafalan2']));
+        return redirect()->route('viewHafalanPembina',$data_user->id);
     }
 
     public function hapusHafalan($userId, $id)
@@ -190,7 +190,7 @@ class HafalanController extends Controller
         $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->with('guru')->get();
             
         $title= 'Tambah Hafalan Quran | Sistem Informasi Asrama SCB';
-        return view('Hafalan.viewHafalanPembina', compact(['title','data_user','data_hafalan','data_hafalan2']));
+        return redirect()->route('viewHafalanPembina',$data_user->id);
     }
 
     /**
