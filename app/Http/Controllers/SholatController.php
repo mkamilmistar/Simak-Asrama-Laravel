@@ -80,8 +80,10 @@ class SholatController extends Controller
         $sholatSiswa->siswa_id = $request->route('id');
         $sholatSiswa->tanggal = $request->tanggal;
         $sholatSiswa->jenis_sholat = $request->jenis_sholat;
-        $sholatSiswa->waktu_masuk = $request->waktu_masuk;
-        $sholatSiswa->waktu_adzan = $request->waktu_adzan;
+        // $sholatSiswa->waktu_masuk = $request->waktu_masuk;
+        // $sholatSiswa->waktu_adzan = $request->waktu_adzan;
+        $sholatSiswa->waktu_masuk2 = $request->waktu_masuk2;
+        $sholatSiswa->waktu_adzan2 = $request->waktu_adzan2;
         
         $sholatSiswa->save();
         return redirect()->route('viewSholatSiswaPage', $request->route('id'));
@@ -122,8 +124,8 @@ class SholatController extends Controller
         $sholatSiswa = Sholat::find($request->route('id'));
         $sholatSiswa->siswa_id = $request->route('id');
         $sholatSiswa->tanggal = $request->tanggal;
-        $sholatSiswa->waktu_masuk = $request->waktu_masuk;
-        $sholatSiswa->waktu_adzan = $request->waktu_adzan;
+        $sholatSiswa->waktu_masuk2 = $request->waktu_masuk2;
+        $sholatSiswa->waktu_adzan2 = $request->waktu_adzan2;
  
         $sholatSiswa->save();
         return redirect()->route('viewSholatSiswaPage', $sholatSiswa->siswa_id);

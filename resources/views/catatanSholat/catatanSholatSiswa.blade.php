@@ -106,8 +106,8 @@
                                         <td>{{++$counter}}</td>
                                         <td>{{$sholat -> tanggal}}</td>
                                         <td>{{$sholat -> jenis_sholat}}</td>
-                                        <td>{{$sholat -> waktu_masuk}}</td>
-                                        <td>{{$sholat -> waktu_adzan}}</td>
+                                        <td>{{$sholat -> waktu_masuk2}}</td>
+                                        <td>{{$sholat -> waktu_adzan2}}</td>
                                     </tr>
                                         {{-- <td>
                                             <label class="badge badge-success">
