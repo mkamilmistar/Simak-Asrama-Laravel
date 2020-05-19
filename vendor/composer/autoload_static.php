@@ -4,11 +4,7 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< HEAD
-class ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1
-=======
-class ComposerStaticInit7f74f90e19da1affb28c9080bdd43acf
->>>>>>> 6a9a6dc04f48b549b393b7c02c0c008e60fdb913
+class ComposerStaticInit88d0947bba1acd3c5acb77808852c31d
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -19,25 +15,14 @@ class ComposerStaticInit7f74f90e19da1affb28c9080bdd43acf
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-<<<<<<< HEAD
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
+        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
-        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
-        '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
-=======
-        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
-        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
->>>>>>> 6a9a6dc04f48b549b393b7c02c0c008e60fdb913
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'b6ec61354e97f32c0ae683041c78392a' => __DIR__ . '/..' . '/scrivo/highlight.php/HighlightUtilities/functions.php',
-<<<<<<< HEAD
-        'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
-=======
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
->>>>>>> 6a9a6dc04f48b549b393b7c02c0c008e60fdb913
         '17d016dc52a631c1e74d2eb8fdd57342' => __DIR__ . '/..' . '/laravel/helpers/src/helpers.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
     );
@@ -492,7 +477,6 @@ class ComposerStaticInit7f74f90e19da1affb28c9080bdd43acf
         'App\\Http\\Controllers\\CatatanKebaikanController' => __DIR__ . '/../..' . '/app/Http/Controllers/CatatanKebaikanController.php',
         'App\\Http\\Controllers\\CatatanYaumiyahController' => __DIR__ . '/../..' . '/app/Http/Controllers/CatatanYaumiyahController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\Dumdum' => __DIR__ . '/../..' . '/app/Http/Controllers/Dumdum.php',
         'App\\Http\\Controllers\\HafalanController' => __DIR__ . '/../..' . '/app/Http/Controllers/HafalanController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\JenisAmalanController' => __DIR__ . '/../..' . '/app/Http/Controllers/JenisAmalanController.php',
@@ -5095,17 +5079,10 @@ class ComposerStaticInit7f74f90e19da1affb28c9080bdd43acf
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD
-            $loader->prefixLengthsPsr4 = ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInit7f74f90e19da1affb28c9080bdd43acf::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit7f74f90e19da1affb28c9080bdd43acf::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit7f74f90e19da1affb28c9080bdd43acf::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit7f74f90e19da1affb28c9080bdd43acf::$classMap;
->>>>>>> 6a9a6dc04f48b549b393b7c02c0c008e60fdb913
+            $loader->prefixLengthsPsr4 = ComposerStaticInit88d0947bba1acd3c5acb77808852c31d::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit88d0947bba1acd3c5acb77808852c31d::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit88d0947bba1acd3c5acb77808852c31d::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit88d0947bba1acd3c5acb77808852c31d::$classMap;
 
         }, null, ClassLoader::class);
     }
