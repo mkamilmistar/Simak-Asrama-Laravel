@@ -51,7 +51,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/catatan-sholat">
                                 <i class="menu-icon mb-2 fa fa-pencil"></i>
                                 Catatan Shalat
                             </a>
@@ -100,7 +100,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/catatan-sholat">
                                 <i class="menu-icon mb-2 fa fa-pencil"></i>
                                 Catatan Shalat
                             </a>
