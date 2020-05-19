@@ -94,7 +94,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/catatan-yaumiyah-pembina">
+                            <a href="/catatan-yaumiyah-siswa">
                                 <i class="menu-icon mb-2 fa fa-pencil"></i>
                                 Catatan Amalan Yaumiah
                             </a>

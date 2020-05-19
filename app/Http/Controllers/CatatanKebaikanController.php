@@ -134,7 +134,7 @@ class CatatanKebaikanController extends Controller
 
             
         }else{
-            return redirect()->route('viewCatatanKebaikan');
+            return redirect()->route('viewCatatanAmalan');
         }
         // $userId = User::find($id);
         
