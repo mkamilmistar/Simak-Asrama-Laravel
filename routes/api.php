@@ -18,7 +18,9 @@ Route::get('/poinSiswa/{nis}', 'PoinKebaikanController@show');
 Route::get('/poinSiswa/{nis}/total', 'PoinKebaikanController@total');
 
 // Catatan Sholat
+Route::get('/catatanSholat', 'SholatController@all');
 Route::get('/catatanSholat/{nis}', 'SholatController@show');
+Route::post('/catatanSholat', 'SholatController@store');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

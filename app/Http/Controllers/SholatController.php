@@ -10,6 +10,37 @@ use PDF;
 
 class SholatController extends Controller
 {
+    public function store(Request $request)
+    {
+        $param = $request->json()->all();
+        $siswa = Siswa::where(['NIS' => $param['NIS']])->firstOrFail();
+        $catatanSholat = new Sholat();
+        $catatanSholat->siswa_id = $siswa->id;
+        $catatanSholat->jenis_sholat = $param['jenis_sholat'];
+        $catatanSholat->waktu_masuk2 = $param['waktu_masuk'];
+        $catatanSholat->waktu_adzan2 = $param['waktu_adzan'];
+        $catatanSholat->tanggal = $param['tanggal'];
+        $catatanSholat->save();
+        return response()->json($catatanSholat, 200);
+    }
+
+    public function all()
+    {
+        $catatanSholat = Sholat::all()->groupBy('siswa_id');
+        $final = [];
+        foreach ($catatanSholat as $key => $catatanSholatSiswa) {
+            // TODO: this is too pricey
+            $siswa = Siswa::findOrFail($key);
+            $final[] = [
+                'name' => $siswa->user->nama,
+                'NIS' => $siswa->NIS,
+                'data' => CatatanSholatResource::collection($catatanSholatSiswa)
+            ];
+        }
+
+        return response()->json($final, 200);
+    }
+
     /**
      * Daftar Catatan Sholat Siswa berdarkan NIS
      *
@@ -21,22 +52,6 @@ class SholatController extends Controller
         $siswa = Siswa::where(['NIS' => $nis])->firstOrFail();
         $catatanSholat = $siswa->catatanSholat;
         return CatatanSholatResource::collection($catatanSholat);
-    }
-
-    /**
-     * Total Poin Siswa berdarkan NIS
-     *
-     * @param PoinKebaikan $poinKebaikan
-     * @return Response
-     */
-    public function total($nis)
-    {
-        $siswa = Siswa::where(['NIS' => $nis])->firstOrFail();
-        return \response()
-            ->json([
-                'NIS' => $siswa->NIS,
-                'total' => $siswa->jumlah_total_poin,
-            ], 200);
     }
 
     /**
