@@ -54,6 +54,8 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
                                     </div>
+                                    {{-- <input name="waktu" type='text' class="datepicker-here form-control"
+                                        data-date-useseconds="true" data-timepicker="true" data-language='en' /> --}}
                                     <input type="text" class="form-control" placeholder="yyyy/mm/dd" name="tanggal">
                                 </div>
                             </div>

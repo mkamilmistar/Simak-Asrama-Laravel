@@ -90,6 +90,7 @@ class PoinKebaikanController extends Controller
 
     public function removePoinSiswa(Request $request)
     {
+        // dd($request->route('id'));
         $poinKebaikan = PoinKebaikan::find($request->route('id'));
         $poinKebaikan->delete();
         return redirect()->route('viewPoinSiswaPage', $request->siswa_id)->with('error', 'Catatan Dihapus');

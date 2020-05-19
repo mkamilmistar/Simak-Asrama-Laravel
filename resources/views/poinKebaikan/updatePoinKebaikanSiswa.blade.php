@@ -22,7 +22,7 @@
                                 @endif
                                 <li><a href="{{ route('viewPoinSiswaPage', $siswa->id) }}">{{ $siswa->user->nama }}</a>
                                 </li>
-                                <li class="active">Tambah Baru</li>
+                                <li class="active">Update Catatan</li>
                             </ol>
                         </div>
                     </div>

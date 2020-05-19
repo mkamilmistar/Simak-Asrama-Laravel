@@ -64,7 +64,7 @@
         <!--  /Traffic -->
         
 </div>
-<div class="content">
+{{-- <div class="content">
         <!-- Animated -->
         <div class="animated fadeIn">
             <div class="row">
@@ -137,7 +137,7 @@
             </div>
             <!--  /Traffic -->
             
-</div>
+</div> --}}
 
     <!-- ./animated -->
     <!-- ./content -->

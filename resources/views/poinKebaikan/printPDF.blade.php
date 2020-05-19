@@ -95,7 +95,7 @@
             </tbody>
         </table>
         <br>
-        <h5><strong>Poin Keburukan</strong> </h5>
+        <h5><strong>Poin Pelanggaran</strong> </h5>
         <!-- DATA POIN KEBURUKAN -->
         <table id="bootstrap-data-table" class="table table-striped table-bordered">
             @php

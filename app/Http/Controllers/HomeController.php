@@ -36,7 +36,7 @@ class HomeController extends Controller
             $data_user = User::where('role', 'siswa')->get();
         }else{
             $data_user = Auth::user();
-            return redirect()->back();
+            //return redirect()->back();
         }
         $siswa = Siswa::all();
         $catatanKebaikan = CatatanKebaikan::where([
