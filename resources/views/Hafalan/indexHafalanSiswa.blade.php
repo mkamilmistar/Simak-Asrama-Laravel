@@ -31,7 +31,8 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Record Hafalan Quran Siswa</strong>
-                                <a href="#" class="btn btn-primary">Cetak</a>
+                                <a href="/hafalan-siswa/{{$data_user->id}}/cetak-pdf" class="btn btn-primary"><i
+                                    class="fa fa-print"></i> Export PDF</a>
                             </div>
                             <div class="card-body">
                                 <!-- Data Siswa -->
@@ -108,8 +109,6 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Record Hafalan Doa dan Hadist</strong>
-                                <a href="#" class="btn btn-primary">Cetak</a>
                             </div>
                             <div class="card-body">
                                 <!-- Data Siswa -->

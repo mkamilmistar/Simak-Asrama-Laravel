@@ -17,6 +17,9 @@ use Illuminate\Http\Request;
 Route::get('/poinSiswa/{nis}', 'PoinKebaikanController@show');
 Route::get('/poinSiswa/{nis}/total', 'PoinKebaikanController@total');
 
+// Catatan Sholat
+Route::get('/catatanSholat/{nis}', 'SholatController@show');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

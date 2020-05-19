@@ -44,8 +44,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                                <a href="/catatan-harian/pdf"
-                                    class="btn btn-primary btn-sm">Export to PDF</a>
+                                <a href="/catatan-harian/cetak_pdf" class="btn btn-primary btn-sm">Export to PDF</a>
                                 <br><br>
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
@@ -63,11 +62,14 @@
                                         @foreach($catatanHarian as $index => $cat)
                                             <tr>
                                                 <td>{{ $index +1 }}</td>
-                                                <td><a href="/profile/{{ $cat->siswa_id }}/view">{{ App\User::find($cat->siswa_id)->nama }}</td>
-                                                <td><a href="/profile/{{ $cat->pembina_id }}/view">{{ App\User::find($cat->pembina_id)->nama }}</td>
+                                                <td><a href="/profile/{{ $cat->siswa_id }}/view">{{ App\User::find($cat->siswa_id)->nama }}
+                                                </td>
+                                                <td><a href="/profile/{{ $cat->pembina_id }}/view">{{ App\User::find($cat->pembina_id)->nama }}
+                                                </td>
                                                 <td>{{ $cat->kategori }}</td>
                                                 <td>{{ $cat->deskripsi }}</td>
-                                                <td>{{ Str::limit($cat->waktu, 10, "") }}</td>
+                                                <td>{{ Str::limit($cat->waktu, 10, "") }}
+                                                </td>
                                                 <td>
                                                     <a href="/catatan-harian/{{ $cat->id }}/edit"
                                                         class="btn btn-warning btn-sm">Edit</a>

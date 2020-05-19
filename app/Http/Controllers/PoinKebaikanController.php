@@ -85,14 +85,14 @@ class PoinKebaikanController extends Controller
         $poinKebaikan->poin = $request->poin;
         $poinKebaikan->siswa_id = $request->route('id');
         $poinKebaikan->save();
-        return redirect()->route('viewPoinSiswaPage', $request->route('id'));
+        return redirect()->route('viewPoinSiswaPage', $request->route('id'))->with('success', 'Catatan Ditambah');
     }
 
     public function removePoinSiswa(Request $request)
     {
         $poinKebaikan = PoinKebaikan::find($request->route('id'));
         $poinKebaikan->delete();
-        return redirect()->route('viewPoinSiswaPage', $request->siswa_id);
+        return redirect()->route('viewPoinSiswaPage', $request->siswa_id)->with('error', 'Catatan Dihapus');
     }
 
     public function cetak_pdf($id){
@@ -106,13 +106,14 @@ class PoinKebaikanController extends Controller
             'poin_kebaikan' => $poin_kebaikan
         ]);
 
-        return $pdf->download('poinSiswa-pdf.pdf');
+        return $pdf->download('PoinSiswa-'.$siswa->user->nama.'.pdf');
     }
     
     public function viewUpdatePoinSiswaPage(Request $request)
     {
         $poinKebaikan = PoinKebaikan::find($request->route('id'));
         $siswa = $poinKebaikan->siswa;
+        //dd($poinKebaikan->keterangan);
         return view('poinKebaikan.updatePoinKebaikanSiswa', [
             'title' => 'Poin Pelanggaran dan Kebaikan | Sistem Informasi Asrama SCB',
             'siswa' => $siswa,
@@ -128,6 +129,6 @@ class PoinKebaikanController extends Controller
         $poinKebaikan->poin = $request->poin;
         $poinKebaikan->tanggal = $request->tanggal;
         $poinKebaikan->save();
-        return redirect()->route('viewPoinSiswaPage', $poinKebaikan->siswa_id);
+        return redirect()->route('viewPoinSiswaPage', $poinKebaikan->siswa_id)->with('success', 'Poin Terupdate');
     }
 }

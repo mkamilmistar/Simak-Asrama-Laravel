@@ -111,19 +111,8 @@
                                         </td>
                                         @if(Auth::user()->role !== "siswa")
                                             <td>
-                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}"
-                                                    class="btn btn-warning">
-                                                    Update
-                                                </a>
-                                                <a class="btn btn-danger"
-                                                    onclick="$('#hapusPoin{{ $poin->id }}').submit()">Hapus</a>
-                                                <form method="POST"
-                                                    action="{{ route('removePoinSiswa', $poin->id) }}"
-                                                    id="hapusPoin{{ $poin->id }}">
-                                                    @csrf
-                                                    <input type="text" hidden name="siswa_id"
-                                                        value={{ $siswa->id }} />
-                                                </form>
+                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}" class="btn btn-warning"> Edit </a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#hapusPoin">Hapus</a>
                                             </td>
                                         @endif
                                     </tr>
@@ -162,12 +151,8 @@
                                         </td>
                                         @if(Auth::user()->role !== "siswa")
                                             <td>
-                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}" class="btn btn-warning"> Update </a>
-                                                <a class="btn btn-danger" onclick="$('#hapusPoin{{ $poin->id }}').submit()">Hapus</a>
-                                                <form method="POST" action="{{ route('removePoinSiswa', $poin->id) }}" id="hapusPoin{{ $poin->id }}">
-                                                    @csrf
-                                                    <input type="text" hidden name="siswa_id" value={{ $siswa->id }} />
-                                                </form>
+                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}" class="btn btn-warning"> Edit </a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#hapusPoin">Hapus</a>
                                             </td>
                                         @endif
                                     </tr>
@@ -184,9 +169,31 @@
     </div><!-- .animated -->
 </div><!-- .content -->
 
+<!-- Modal -->
+<div class="modal modal-info fade" id="hapusPoin" tabindex="-1" role="dialog" aria-labelledby="modalLabelKu">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center" id="modalLabelKu"> Konfirmasi Hapus Catatan </h4>
+            </div>
+            <form action=" {{route('removePoinSiswa', $poin->id) }}" method="POST">
+                @csrf
+                <div class="modal-body">
+                    <p class="text-center">Apakah anda yakin untuk menghapus catatan ini?</p>
+                    <input type="text" hidden name="siswa_id" value={{ $siswa->id }} />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Batalkan</button>
+                    <button type="submit" class="btn btn-danger">Ya, Hapus</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <!-- ./animated -->
 <!-- ./content -->
 <div class="clearfix">
-
 </div>
 @endsection

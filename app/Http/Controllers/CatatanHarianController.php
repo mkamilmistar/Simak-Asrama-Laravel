@@ -9,6 +9,7 @@ use App\Siswa;
 use App\Guru;
 use App\User;
 use App\CatatanHarian;
+use PDF;
 
 class CatatanHarianController extends Controller
 {
@@ -98,6 +99,16 @@ class CatatanHarianController extends Controller
         //$mpdf->WriteHTML($stylesheet, 1);
         $mpdf->WriteHTML($html);
         $mpdf->Output($fileName, 'I');
+    }
+
+    public function cetak_pdf()
+    {
+        $catatanHarian = CatatanHarian::get();
+        $pdf = PDF::loadview('catatanHarian.viewPDF', [
+            'catatanHarian' => $catatanHarian,
+        ]);
+
+        return $pdf->download('Catatan_Harian.pdf');    
     }
 
 }

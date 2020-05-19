@@ -7,7 +7,7 @@
                 <div class="col-sm-4">
                     <div class="page-header float-left">
                         <div class="page-title">
-                            <h1>Catatan Amalan Yaumiyah</h1>
+                            <h1>Poin Pelanggaran dan Kebaikan</h1>
                         </div>
                     </div>
                 </div>
@@ -45,8 +45,12 @@
                                     <label for="inputJenisPoin">Jenis Poin</label>
                                     <select class="custom-select" id="inputJenisPoin" name="jenis">
                                         <option selected disabled hidden>Pilih Jenis Poin</option>
-                                        <option value="kebaikan">Poin Kebaikan</option>
-                                        <option value="keburukan">Poin Keburukan</option>
+                                        <option value="kebaikan" 
+                                            {{ ($poinKebaikan->jenis == "kebaikan") ? 'selected' : '' }}>
+                                            Poin Kebaikan </option>
+                                        <option value="keburukan" 
+                                            {{ ($poinKebaikan->jenis == "keburukan") ? 'selected' : '' }}>
+                                            Poin Keburukan</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -66,9 +70,12 @@
                                         <option selected disabled hidden>
                                             Pilih Jumlah Poin
                                         </option>
-                                        <option value="5">5</option>
-                                        <option value="15">15</option>
-                                        <option value="25">25</option>
+                                        <option value="5"
+                                            {{ ($poinKebaikan->poin == 5) ? 'selected' : '' }}>5</option>
+                                        <option value="15"
+                                            {{ ($poinKebaikan->poin == 15) ? 'selected' : '' }}>15</option>
+                                        <option value="25"
+                                            {{ ($poinKebaikan->poin == 25) ? 'selected' : '' }}>25</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
