@@ -40,7 +40,7 @@
                             <a href="/poin-siswa/{{ Auth()->user()->siswa->id }}">Poin Pelanggaran dan Kebaikan</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#">Catatan Shalat</a>
+                            <a href="/catatan-sholat/{{ Auth()->user()->siswa->id }}">Catatan Shalat</a>
                         </li>
                         <li
                             class="{{ 'catatan-kebaikan' == request()->path() ? 'nav-item active' : 'nav-item' }}">
@@ -74,7 +74,7 @@
                                 Pelanggaran dan Kebaikan</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#">Catatan Shalat</a>
+                            <a href="{{ Auth::user()->role === 'siswa' ? route('viewSholatSiswaPage', Auth::user()->siswa->id) :  route('viewSholatSearchPage') }}">Catatan Shalat</a>
                         </li>
                         <li
                             class="{{ 'catatan-kebaikan-siswa' == request()->path() ? 'nav-item active' : 'nav-item' }}">

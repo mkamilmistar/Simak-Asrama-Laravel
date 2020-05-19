@@ -27,6 +27,10 @@ class Siswa extends Model
         return $this->hasMany(PoinKebaikan::class);
     }
 
+    public function catatanSholat(){
+        return $this->hasMany(catatanSholat::class);
+    }
+
     public function getJumlahTotalPoinAttribute(){
         $tmp = $this->poinKebaikan;
         return $tmp->where('jenis', 'kebaikan')->sum('poin') - $tmp->where('jenis', 'keburukan')->sum('poin');
