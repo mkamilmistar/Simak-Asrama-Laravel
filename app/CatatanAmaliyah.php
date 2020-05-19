@@ -13,8 +13,8 @@ class CatatanAmaliyah extends Model
         'jenisAmalan_id',
         'user_id',
         'keterangan',
-        'tanggal',
-        'totalPoin'
+        'totalPoin',
+        'jumlah'
     ];
 
     public function jenisAmalanYaumiyah()
@@ -22,6 +22,9 @@ class CatatanAmaliyah extends Model
         return $this->belongsTo(JenisAmalanYaumiyah::class, 'jenisAmalan_id');
         
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class)->withPivot(['jumlah', 'totalPoin', 'keterangan']);
+    }
 }
-
-

@@ -97,9 +97,30 @@ class HafalanController extends Controller
         $hafalan->pm = $request->input('PM');
         $hafalan->tanggal = now();
         $hafalan->save();
+
+        $data_hafalan = Hafalan::where('siswa_id','=',$data_user->siswa->id)->with('surat')->with('guru')->get();
+        $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->with('guru')->get();
             
         $title= 'Tambah Hafalan Doa/Hadist | Sistem Informasi Asrama SCB';
-        return redirect()->back();
+        return redirect()->route('viewHafalanPembina',$data_user->id);
+    }
+
+    public function hapusDoa($userId, $id)
+    {
+        if(Auth::user()->role=='pembina'){
+            $data_user = User::where('id',$userId)->get()->first();
+            // dd($data_user);
+        }else{
+            return redirect()->back();
+        }
+        $catatan = HafalanDoaHadist::find($id);
+        $catatan->delete();
+
+        $data_hafalan = Hafalan::where('siswa_id','=',$data_user->siswa->id)->with('surat')->with('guru')->get();
+        $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->with('guru')->get();
+            
+        $title= 'Tambah Hafalan Quran | Sistem Informasi Asrama SCB';
+        return redirect()->route('viewHafalanPembina',$data_user->id);
     }
 
     // {
@@ -146,10 +167,30 @@ class HafalanController extends Controller
         $hafalan->pm = $request->input('PM');
         $hafalan->tanggal = now();
         $hafalan->save();
+
+        $data_hafalan = Hafalan::where('siswa_id','=',$data_user->siswa->id)->with('surat')->with('guru')->get();
+        $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->with('guru')->get();
             
         $title= 'Tambah Hafalan Quran | Sistem Informasi Asrama SCB';
-        $surat_list = DB::table('surat')->get();
-        return redirect()->back();
+        return redirect()->route('viewHafalanPembina',$data_user->id);
+    }
+
+    public function hapusHafalan($userId, $id)
+    {
+        if(Auth::user()->role=='pembina'){
+            $data_user = User::where('id',$userId)->get()->first();
+            // dd($data_user);
+        }else{
+            return redirect()->back();
+        }
+        $catatan = Hafalan::find($id);
+        $catatan->delete();
+
+        $data_hafalan = Hafalan::where('siswa_id','=',$data_user->siswa->id)->with('surat')->with('guru')->get();
+        $data_hafalan2 = HafalanDoaHadist::where('siswa_id','=',$data_user->siswa->id)->with('guru')->get();
+            
+        $title= 'Tambah Hafalan Quran | Sistem Informasi Asrama SCB';
+        return redirect()->route('viewHafalanPembina',$data_user->id);
     }
 
     /**

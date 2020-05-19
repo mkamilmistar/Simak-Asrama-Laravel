@@ -15,11 +15,12 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CatatanKebaikanSeeder::class,
             JenisAmalanSeeder::class,
-            CatatanAmaliyahSeeder::class,
+            // CatatanAmaliyahSeeder::class,
             PoinKebaikanSeeder::class,
             SuratSeeder::class,
             HafalanSeeder::class,
             HafalanDoaHadistSeeder::class,
+            SholatSeeder::class,
         ]);
     }
 }

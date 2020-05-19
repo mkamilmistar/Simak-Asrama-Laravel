@@ -11,7 +11,7 @@ class Siswa extends Model
     protected $table = 'siswa';
 
     protected $fillable = [
-        'nama_depan', 'NIS', 'user_id', 'gedung_asrama', 'kamar_id', 'kelas'
+        'nama_depan', 'NIS', 'user_id', 'gedung_asrama', 'kamar_id', 'kelas', 'poinAmaliyah'
     ];
     
     public function catatanHarian(){
@@ -25,6 +25,10 @@ class Siswa extends Model
 
     public function poinKebaikan(){
         return $this->hasMany(PoinKebaikan::class);
+    }
+
+    public function catatanSholat(){
+        return $this->hasMany(catatanSholat::class);
     }
 
     public function getJumlahTotalPoinAttribute(){
