@@ -50,9 +50,21 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="inputFormTextarea">Jenis Sholat</label>
                                 <textarea class="form-control" id="inputFormTextarea" rows="1" name="jenis_sholat"></textarea>
+                            </div> --}}
+
+                            <div class="form-group">
+                                <label for="inputFormPoin">Jenis Sholat</label>
+                                <select class="custom-select" id="jenis_sholat" name="jenis_sholat">
+                                    <option selected disabled hidden>Pilih Jenis Sholat</option>
+                                    <option value="Shubuh">Shubuh</option>
+                                    <option value="Dzuhur">Dzuhur</option>
+                                    <option value="Ashar">Ashar</option>
+                                    <option value="Maghrib">Maghrib</option>
+                                    <option value="Isya">Isya</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
