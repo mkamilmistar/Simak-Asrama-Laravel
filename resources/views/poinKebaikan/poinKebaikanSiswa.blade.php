@@ -39,7 +39,7 @@
                         <strong class="card-title">Poin Pelanggaran dan Kebaikan</strong>
                         <div class="isiCardHeader">
                             @if(Auth::user()->role !== "siswa")
-                                <a href="{{ route('addPoinSiswaPage', $siswa->user_id) }}"
+                                <a href="{{ route('addPoinSiswaPage', $siswa->id) }}"
                                     class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Catatan</a>
                             @endif
                             <a href="/poin-siswa/{{ $siswa->id }}/cetak_pdf" class="btn btn-primary"> <i
