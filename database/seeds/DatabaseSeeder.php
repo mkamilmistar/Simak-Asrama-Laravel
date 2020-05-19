@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             SuratSeeder::class,
             HafalanSeeder::class,
             HafalanDoaHadistSeeder::class,
+            SholatSeeder::class,
         ]);
     }
 }

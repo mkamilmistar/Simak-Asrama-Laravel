@@ -4,27 +4,42 @@
 
 namespace Composer\Autoload;
 
+<<<<<<< HEAD
 class ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1
+=======
+class ComposerStaticInit7f74f90e19da1affb28c9080bdd43acf
+>>>>>>> 6a9a6dc04f48b549b393b7c02c0c008e60fdb913
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+<<<<<<< HEAD
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
+=======
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
+        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
+>>>>>>> 6a9a6dc04f48b549b393b7c02c0c008e60fdb913
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'b6ec61354e97f32c0ae683041c78392a' => __DIR__ . '/..' . '/scrivo/highlight.php/HighlightUtilities/functions.php',
+<<<<<<< HEAD
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
+=======
+        '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+>>>>>>> 6a9a6dc04f48b549b393b7c02c0c008e60fdb913
         '17d016dc52a631c1e74d2eb8fdd57342' => __DIR__ . '/..' . '/laravel/helpers/src/helpers.php',
+        'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -164,8 +179,8 @@ class ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -483,6 +498,7 @@ class ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1
         'App\\Http\\Controllers\\JenisAmalanController' => __DIR__ . '/../..' . '/app/Http/Controllers/JenisAmalanController.php',
         'App\\Http\\Controllers\\LandingPageController' => __DIR__ . '/../..' . '/app/Http/Controllers/LandingPageController.php',
         'App\\Http\\Controllers\\PoinKebaikanController' => __DIR__ . '/../..' . '/app/Http/Controllers/PoinKebaikanController.php',
+        'App\\Http\\Controllers\\SholatController' => __DIR__ . '/../..' . '/app/Http/Controllers/SholatController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -502,6 +518,7 @@ class ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Sholat' => __DIR__ . '/../..' . '/app/Sholat.php',
         'App\\Siswa' => __DIR__ . '/../..' . '/app/Siswa.php',
         'App\\Surat' => __DIR__ . '/../..' . '/app/Surat.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
@@ -4161,6 +4178,7 @@ class ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'SholatSeeder' => __DIR__ . '/../..' . '/database/seeds/SholatSeeder.php',
         'SuratSeeder' => __DIR__ . '/../..' . '/database/seeds/SuratSeeder.php',
         'Svg\\DefaultStyle' => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg/DefaultStyle.php',
         'Svg\\Document' => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg/Document.php',
@@ -5077,10 +5095,17 @@ class ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit4227baa732c0c2fd4e7058b79b7f4fe1::$classMap;
+=======
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7f74f90e19da1affb28c9080bdd43acf::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7f74f90e19da1affb28c9080bdd43acf::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit7f74f90e19da1affb28c9080bdd43acf::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit7f74f90e19da1affb28c9080bdd43acf::$classMap;
+>>>>>>> 6a9a6dc04f48b549b393b7c02c0c008e60fdb913
 
         }, null, ClassLoader::class);
     }

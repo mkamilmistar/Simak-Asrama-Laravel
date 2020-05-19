@@ -23,7 +23,8 @@
                         </div>
                     </div>
                 </div>
-    </div>    
+    </div>
+    @include('layouts.allert')    
     <div class="content">
             <div class="animated fadeIn">
                 <div class="row">
@@ -87,7 +88,8 @@
                                             <td>{{$haf->nilai}}</td>
                                             <td>{{$haf->guru->user->nama}}</td>
                                             <td>
-                                            <a href="hafalan-pembina/{{$data_user->id}}/#">
+                                            <a href="/hafalan-pembina/{{$data_user->id}}/{{$haf->id}}/delete-hafalan"
+                                                onClick="return confirm('Yakin untuk menghapus?')">
                                                 <button type="button" class="btn btn-danger">Hapus</button>
                                             </a>
                                             </td>
@@ -149,10 +151,8 @@
                                             <td>{{$haf2->nilai}}</td>
                                             <td>{{$haf2->guru->user->nama}}</td>
                                             <td>
-                                            <a href="hafalan-pembina/{{$data_user->id}}/#">
-                                                <button type="button" class="btn btn-warning">Edit</button>
-                                            </a>
-                                            <a href="hafalan-pembina/{{$data_user->id}}/#">
+                                            <a href="/hafalan-pembina/{{$data_user->id}}/{{$haf2->id}}/delete-doa"
+                                                onClick="return confirm('Yakin untuk menghapus?')">
                                                 <button type="button" class="btn btn-danger">Hapus</button>
                                             </a>
                                             </td>

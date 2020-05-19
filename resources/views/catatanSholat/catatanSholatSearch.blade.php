@@ -7,7 +7,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Poin Pelanggaran dan Kebaikan</h1>
+                        <h1>Catatan Sholat</h1>
                     </div>
                 </div>
             </div>
@@ -15,7 +15,7 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="{{route('viewPoinSearchPage')}}">Poin Pelanggaran dan Kebaikan</a></li>
+                            <li><a href="{{route('viewSholatSearchPage')}}">Catatan Sholat</a></li>
                             <li class="active">Cari Siswa</li>
                         </ol>
                     </div>
@@ -31,9 +31,10 @@
                 <div class="card-group">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Input Poin Pelanggaran dan Kebaikan</strong>
+                            <strong class="card-title">Input Catatan Sholat</strong>
                         </div>
                         <div class="card-body">
+                            <?php /*
                             <h5 class="card-title">Masukkan nama siswa</h5>
                             <form action="">
                                 <div class="form-group">
@@ -48,6 +49,7 @@
                             <div class="my-3">
                                 <hr />
                             </div>
+                            */ ?>
                             <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
@@ -55,24 +57,22 @@
                                         <th>Nama</th>
                                         <th>Kelas</th>
                                         <th>NIS</th>
-                                        <th>Poin</th>
-                                        <th>Aksi</th>
+                                        <th>Lihat Performa</th>
                                     </tr>
                                 </thead>
+                                
+                                @php
+                                    $counter = 0;
+                                @endphp
+
                                 <tbody>
                                     @foreach ($siswas as $siswa)
                                     <tr>
-                                        <td>1</td>
+                                        <td>{{++$counter}}</td>
                                         <td>{{ $siswa->user->nama }}</td>
                                         <td>{{ $siswa->kelas }}</td>
                                         <td>{{ $siswa->NIS }}</td>
-                                        <td>
-                                            @if ($siswa->jumlah_total_poin < 0) <span class="badge badge-danger">{{ $siswa->jumlah_total_poin }}</span>
-                                                @else
-                                                <span class="badge badge-success">{{ $siswa->jumlah_total_poin }}</span>
-                                                @endif
-                                        </td>
-                                        <td><a href="{{ route('viewPoinSiswaPage', $siswa->id) }}" class="btn-sm btn-primary">View</a></td>
+                                        <td><a href="{{ route('viewSholatSiswaPage', $siswa->id) }}" class="btn-sm btn-primary">Lihat</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

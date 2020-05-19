@@ -37,12 +37,14 @@
                     <!-- Pembina View-->
                     <div class="card-header">
                         <strong class="card-title">Poin Pelanggaran dan Kebaikan</strong>
-                        @if(Auth::user()->role !== "siswa")
-                            <a href="{{ route('addPoinSiswaPage', $siswa->user_id) }}"
-                               class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Catatan</a>
-                        @endif
-                        <a href="/poin-siswa/{{ $siswa->id }}/cetak_pdf" class="btn btn-primary"> <i
+                        <div class="isiCardHeader">
+                            @if(Auth::user()->role !== "siswa")
+                                <a href="{{ route('addPoinSiswaPage', $siswa->id) }}"
+                                    class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Catatan</a>
+                            @endif
+                            <a href="/poin-siswa/{{ $siswa->id }}/cetak_pdf" class="btn btn-primary"> <i
                                     class="fa fa-print"></i> Export PDF</a>
+                        </div>
                     </div>
                     <!-- End Pembina View-->
 
@@ -99,7 +101,7 @@
                             <tbody>
                                 @foreach($poin_kebaikan as $poin)
                                     <tr>
-                                        <td>{{++$counter}}</td>
+                                        <td>{{ ++$counter }}</td>
                                         <td>{{ $poin->tanggal }}</td>
                                         <td>{{ $poin->keterangan }}</td>
                                         <td>
@@ -110,16 +112,17 @@
                                         @if(Auth::user()->role !== "siswa")
                                             <td>
                                                 <a href="{{ route('updatePoinSiswaPage', $poin->id) }}"
-                                                   class="btn btn-primary">
+                                                    class="btn btn-warning">
                                                     Update
                                                 </a>
                                                 <a class="btn btn-danger"
-                                                   onclick="$('#hapusPoin{{$poin->id}}').submit()">Hapus</a>
+                                                    onclick="$('#hapusPoin{{ $poin->id }}').submit()">Hapus</a>
                                                 <form method="POST"
-                                                      action="{{ route('removePoinSiswa', $poin->id) }}"
-                                                      id="hapusPoin{{ $poin->id }}">
+                                                    action="{{ route('removePoinSiswa', $poin->id) }}"
+                                                    id="hapusPoin{{ $poin->id }}">
                                                     @csrf
-                                                    <input type="text" hidden name="siswa_id" value={{ $siswa->id }} />
+                                                    <input type="text" hidden name="siswa_id"
+                                                        value={{ $siswa->id }} />
                                                 </form>
                                             </td>
                                         @endif
@@ -149,7 +152,7 @@
                             <tbody>
                                 @foreach($poin_keburukan as $poin)
                                     <tr>
-                                        <td>{{++$counter}}</td>
+                                        <td>{{ ++$counter }}</td>
                                         <td>{{ $poin->tanggal }}</td>
                                         <td>{{ $poin->keterangan }}</td>
                                         <td>
@@ -159,15 +162,9 @@
                                         </td>
                                         @if(Auth::user()->role !== "siswa")
                                             <td>
-                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}"
-                                                   class="btn btn-primary">
-                                                    Update
-                                                </a>
-                                                <a class="btn btn-danger"
-                                                   onclick="$('#hapusPoin{{$poin->id}}').submit()">Hapus</a>
-                                                <form method="POST"
-                                                      action="{{ route('removePoinSiswa', $poin->id) }}"
-                                                      id="hapusPoin{{ $poin->id }}">
+                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}" class="btn btn-warning"> Update </a>
+                                                <a class="btn btn-danger" onclick="$('#hapusPoin{{ $poin->id }}').submit()">Hapus</a>
+                                                <form method="POST" action="{{ route('removePoinSiswa', $poin->id) }}" id="hapusPoin{{ $poin->id }}">
                                                     @csrf
                                                     <input type="text" hidden name="siswa_id" value={{ $siswa->id }} />
                                                 </form>

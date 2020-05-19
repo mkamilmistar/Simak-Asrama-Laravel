@@ -59,8 +59,12 @@ class User extends Authenticatable
     }
 
 
-    public function CatatanKebaikan(){
-        return $this->hasMany(CatatanKebaikan::class);
+    public function catatanKebaikan(){
+        return $this->hasMany(CatatanKebaikan::class, 'user_id')->where('jenis','baik');
+    }
+
+    public function catatanKeburukan(){
+        return $this->hasMany(CatatanKebaikan::class, 'user_id')->where('jenis','buruk');
     }
 
     public function catatanHarian(){
@@ -71,6 +75,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo(JenisAmalanYaumiyah::class)->withPivot(['jumlah', 'totalPoin', 'keterangan']);
     }
+
+    protected $primaryKey = 'id';
 
 
 }

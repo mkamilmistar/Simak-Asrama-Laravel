@@ -85,6 +85,13 @@ class HafalanController extends Controller
             return redirect()->back();
         }
 
+        $this->validate($request, [
+            'nilai' => 'required',
+            'jenis' => 'required',
+            'hafalan' => 'required',
+            'PM' =>'required'
+        ]);
+
         $hafalan = new HafalanDoaHadist();
         $hafalan->pembina_id = Auth::user()->id;
         $hafalan->siswa_id = $data_user->siswa->id;
@@ -99,7 +106,22 @@ class HafalanController extends Controller
         $hafalan->save();
             
         $title= 'Tambah Hafalan Doa/Hadist | Sistem Informasi Asrama SCB';
-        return redirect()->back();
+        return redirect()->route('viewHafalanPembina',$data_user->id)->with('sukses', 'Hafalan Doa/Hadist Berhasil Ditambahkan!');
+    }
+
+    public function hapusDoa($userId, $id)
+    {
+        if(Auth::user()->role=='pembina'){
+            $data_user = User::where('id',$userId)->get()->first();
+            // dd($data_user);
+        }else{
+            return redirect()->back();
+        }
+        $catatan = HafalanDoaHadist::find($id);
+        $catatan->delete();
+            
+        $title= 'Tambah Hafalan Quran | Sistem Informasi Asrama SCB';
+        return redirect()->route('viewHafalanPembina',$data_user->id)->with('danger', 'Hafalan Doa/Hadist Berhasil Dihapus!');
     }
 
     // {
@@ -135,6 +157,15 @@ class HafalanController extends Controller
             return redirect()->back();
         }
 
+        $this->validate($request, [
+            'nilai' => 'required',
+            'ayat1' => 'required',
+            'ayat0' => 'required',
+            'surat' => 'required',
+            'TM' =>'required',
+            'PM' =>'required'
+        ]);
+
         $hafalan = new Hafalan();
         $hafalan->pembina_id = Auth::user()->id;
         $hafalan->siswa_id = $data_user->siswa->id;
@@ -148,8 +179,22 @@ class HafalanController extends Controller
         $hafalan->save();
             
         $title= 'Tambah Hafalan Quran | Sistem Informasi Asrama SCB';
-        $surat_list = DB::table('surat')->get();
-        return redirect()->back();
+        return redirect()->route('viewHafalanPembina',$data_user->id)->with('sukses', 'Hafalan Quran Berhasil Ditambahkan!');
+    }
+
+    public function hapusHafalan($userId, $id)
+    {
+        if(Auth::user()->role=='pembina'){
+            $data_user = User::where('id',$userId)->get()->first();
+            // dd($data_user);
+        }else{
+            return redirect()->back();
+        }
+        $catatan = Hafalan::find($id);
+        $catatan->delete();
+            
+        $title= 'Tambah Hafalan Quran | Sistem Informasi Asrama SCB';
+        return redirect()->route('viewHafalanPembina',$data_user->id)->with('danger', 'Hafalan Quran Berhasil Dihapus!');
     }
 
     /**

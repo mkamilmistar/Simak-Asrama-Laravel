@@ -38,12 +38,6 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/catatan-yaumiyah/{{ Auth()->user()->id }}">
-                                <i class="menu-icon mb-2 fa fa-star"></i>
-                                Catatan Amalan Yaumiah
-                            </a>
-                        </li>
-                        <li>
                             <a
                                 href="{{ route('viewPoinSiswaPage', Auth::user()->siswa->id) }}">
                                 <i class="menu-icon mb-2 fa fa-pencil"></i>
@@ -51,7 +45,13 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/catatan-yaumiyah/{{ Auth()->user()->id }}">
+                                <i class="menu-icon mb-2 fa fa-star"></i>
+                                Catatan Amalan Yaumiah
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/catatan-sholat">
                                 <i class="menu-icon mb-2 fa fa-pencil"></i>
                                 Catatan Shalat
                             </a>
@@ -94,13 +94,13 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/catatan-yaumiyah-pembina">
+                            <a href="/catatan-yaumiyah-siswa">
                                 <i class="menu-icon mb-2 fa fa-pencil"></i>
                                 Catatan Amalan Yaumiah
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/catatan-sholat">
                                 <i class="menu-icon mb-2 fa fa-pencil"></i>
                                 Catatan Shalat
                             </a>
