@@ -128,6 +128,30 @@
             return days[d.getDay()] + ', ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
         }
     </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--THIS LOADS JQUERY FROM GOOGLE CDN-->
+    <script>
+        //this is your javascript function
+        $(document).ready(function () {
+            $('#status').change(function () {
+                var $toggle = $(this);
+
+                // build the target form id
+                var id = "#yes-" + $toggle.data('id');
+
+                if ($(this).val() == '0') {
+                    $(id).css('display', 'block');
+                    $(id).css('display', 'none');
+                } else {
+                    $(id).css('display', 'block');
+                    $(id).css('display', 'none');
+                }
+            });
+        });
+    </script>
+
+
 </body>
 
 </html>

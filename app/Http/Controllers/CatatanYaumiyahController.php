@@ -8,6 +8,7 @@ use App\User;
 use App\Siswa;
 use App\CatatanAmaliyah;
 use App\JenisAmalanYaumiyah;
+use Carbon\Carbon;
 
 class CatatanYaumiyahController extends Controller
 {
@@ -19,34 +20,95 @@ class CatatanYaumiyahController extends Controller
         }else{
             return redirect()->back();
         }
+        
+
         $title= 'Catatan Amaliyah | Sistem Informasi Asrama SCB';
         
         return view('catatanAmalanYaumiyah.catatanAmalanPembina', compact(['title','data_user']));
     }
  
-    public function viewPageSiswa(Request $request)
+    public function viewPageSiswa(Request $request, $id)
     {
-        $data_user = Auth::user();
-
-        $catatanAmaliyah = CatatanAmaliyah::where('user_id', Auth::user()->id)->with('jenisAmalanYaumiyah')->get();
-        // dd($catatanAmaliyah);
-
         $title= 'Catatan Amaliyah | Sistem Informasi Asrama SCB';
+        
+        if(Auth::id() == $id){
+            $userId = Auth::user()->id;
+            
+    
+            $data_user = Auth::user();
+            $catatanAmaliyah = CatatanAmaliyah::where('user_id', Auth::user()->id)->with('jenisAmalanYaumiyah')->get();
+            $jenisCatatan = JenisAmalanYaumiyah::all();
+    
+            $count = (sizeof($jenisCatatan));
+    
+            $totalPoin[] = NULL;
+    
+            if($catatanAmaliyah->isEmpty()){
+                $isiTotal = 0;
+    
+                return view('catatanAmalanYaumiyah.catatanAmalanSiswa', compact(['title','catatanAmaliyah','data_user', 'isiTotal']));
+            }else{
+    
+                for($index=0; $index<$count; $index++){
+                    $bobot = $jenisCatatan[$index]->bobotAmalan;
+                    $jumlahCatatan = $catatanAmaliyah[$index]->jumlah;
+                    $pushPoin = $bobot * $jumlahCatatan;
+                    array_push($totalPoin, $pushPoin);
+                }
+    
+                $isiTotal=0;
+                for($i=1; $i<=$count; $i++){
+                    $isiTotal += $totalPoin[$i];
+                };
+            };
+
+            return view('catatanAmalanYaumiyah.catatanAmalanSiswa', compact(['title','catatanAmaliyah','data_user', 'isiTotal']));
+        }else{
+            return redirect()->back();
+        }
 
         return view('catatanAmalanYaumiyah.catatanAmalanSiswa', compact(['title','catatanAmaliyah','data_user']));
     }
 
-    public function viewTambahCatatan()
+    public function viewTambahCatatan($id)
     {
         $jenisCatatan = JenisAmalanYaumiyah::all();;
-
+        $user = User::find($id);
         $title = 'Tambah Catatan Amaliyah | Sistem Informasi Asrama SCB'; 
-        return view('catatanAmalanYaumiyah.tambahCatatanAmalanSiswa', compact(['jenisCatatan', 'title']));
+        return view('catatanAmalanYaumiyah.tambahCatatanAmalanSiswa', compact(['jenisCatatan', 'title', 'user']));
     }
 
-    public function postCatatan()
+    public function postCatatan($id, Request $request)
     {
-        # code...
+        
+        $user_id = Auth::user()->id;
+
+        $catatan = CatatanAmaliyah::where('user_id','=', $user_id)->get();
+        // dd($catatan);
+
+        $count = (sizeof($request->all())-1)/3;
+        // dd($count);
+        for($index=0; $index<$count; $index++){
+            if(!$catatan->isEmpty()){
+                $jumlah_sebelum = $catatan[$index]->jumlah;
+            }else{
+                $jumlah_sebelum = 0;
+            }
+                $counter = $index + 1;
+                CatatanAmaliyah::updateOrCreate(
+                    [
+                        'jenisAmalan_id' =>  $counter, 
+                        'user_id' => $user_id
+                    ],
+                    [
+                        'keterangan' => $request->input('keterangan_'. $index), 
+                        'jumlah' => ($request->input('jumlah_'. $index)+$jumlah_sebelum), 
+                        ]);   
+                    };
+                
+                    
+    return redirect()->route('viewPageSiswa', $user_id);
+
     }
 
 }

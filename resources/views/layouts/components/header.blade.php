@@ -4,7 +4,7 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="./"><img src="{{asset('sites/images/logo.png')}}" alt="Logo"></a>
             <a class="navbar-brand hidden" href="./"><img src="{{asset('sites/images/logo2.png')}}" alt="Logo"></a>
-            <!-- <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a> -->
+            <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
         </div>
     </div>
     <div class="top-right">

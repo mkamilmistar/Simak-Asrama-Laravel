@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\CatatanAmaliyah;
-
+use Carbon\Carbon;
 
 class CatatanAmaliyahSeeder extends Seeder
 {
@@ -17,34 +17,34 @@ class CatatanAmaliyahSeeder extends Seeder
             [
                 'jenisAmalan_id'        => 1,
                 'user_id'               => 2,
-                'tanggal'               => '10/10/2020',
                 'keterangan'            => 'tiap malan',
-                'status'                => 1,
-                'jumlah'                => 2
+                'jumlah'                => 2,
+                'created_at'            => \Carbon\Carbon::now(),
+                'updated_at'            => \Carbon\Carbon::now()
             ],
             [
                 'jenisAmalan_id'        => 2,
                 'user_id'               => 2,
-                'tanggal'               => '10/10/2020',
                 'keterangan'            => 'tiap malan',
-                'status'                => 1,
-                'jumlah'                => 4
+                'jumlah'                => 4,
+                'created_at'            => \Carbon\Carbon::now(),
+                'updated_at'            => \Carbon\Carbon::now()
             ],
             [
                 'jenisAmalan_id'        => 2,
                 'user_id'               => 3,
-                'tanggal'               => '10/10/2020',
                 'keterangan'            => 'tiap malan',
-                'status'                => 0,
-                'jumlah'                => 0
+                'jumlah'                => 0,
+                'created_at'            => \Carbon\Carbon::now(),
+                'updated_at'            => \Carbon\Carbon::now()
             ],
             [
                 'jenisAmalan_id'        => 1,
                 'user_id'               => 3,
-                'tanggal'               => '10/10/2020',
                 'keterangan'            => 'tiap malan',
-                'status'                => 1,
-                'jumlah'                => 1
+                'jumlah'                => 1,
+                'created_at'            => \Carbon\Carbon::now(),
+                'updated_at'            => \Carbon\Carbon::now()
             ],
             
         ]);

@@ -21,6 +21,7 @@ class CreateSiswaTable extends Migration
             $table->string('kelas')->nullable();
             $table->string('gedung_asrama')->nullable();
             $table->integer('kamar_id');
+            $table->integer('poinAmaliyah')->default(0);
             $table->timestamps();
         });
 

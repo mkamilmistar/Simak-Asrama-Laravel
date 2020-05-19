@@ -32,7 +32,8 @@
                 <div class="card">
                     <div class="card-header">
                         <strong class="card-title">Catatan Amalan Yaumiyah Siswa</strong>
-                        <a href="/catatan-yaumiyah/create" class="btn btn-primary">+ Tambah Catatan</a>
+                        <a href="/catatan-yaumiyah/{{ auth()->user()->id }}/create" class="btn btn-primary">+ Tambah
+                            Catatan</a>
                     </div>
                     <div class="card-body">
                         <!-- Data Siswa -->
@@ -53,6 +54,10 @@
                                 <th>Kelas</th>
                                 <td>{{ $data_user->siswa->kelas }}</td>
                             </tr>
+                            <tr>
+                                <th>Total Poin Amaliyah</th>
+                                <td>{{ $isiTotal }}</td>
+                            </tr>
                         </table>
                         <!-- END OF DATA SISWA -->
                         <br>
@@ -61,31 +66,31 @@
                             <thead>
                                 <tr class="table-tengah">
                                     <th>No</th>
-                                    <th>Tanggal</th>
+                                    <!-- <th>Tanggal</th> -->
                                     <th>Jenis Amalan</th>
                                     <!-- <th>Jumlah</th> -->
-                                    <th>Keterangan</th>
+                                    <!-- <th>Keterangan</th> -->
                                     <th>Jumlah</th>
-                                    <th>Aksi</th>
+                                    <!-- <th>Aksi</th> -->
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($catatanAmaliyah as $index => $catatan)
                                     <tr>
                                         <td>{{ $index + 1 }}</td>
-                                        <td>{{ $catatan->tanggal }}</td>
+                                        <!-- <td>{{ $catatan->tanggal }}</td> -->
                                         <td>{{ $catatan->jenisAmalanYaumiyah->jenisAmalan }}</td>
                                         <!-- <td>5</td> -->
-                                        <td>{{ $catatan->keterangan }}</td>
+                                        <!-- <td>{{ $catatan->keterangan }}</td> -->
                                         <td>{{ $catatan->jumlah }} kali</td>
-                                        <td>
+                                        <!-- <td>
                                             <a href="#">
                                                 <button type="button" class="btn btn-warning">Edit</button>
                                             </a>
                                             <a href="#">
                                                 <button type="button" class="btn btn-danger">Hapus</button>
                                             </a>
-                                        </td>
+                                        </td> -->
                                     </tr>
                                 @endforeach
                             </tbody>
