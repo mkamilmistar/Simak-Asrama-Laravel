@@ -64,9 +64,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Tanggal dan Waktu</label>
-                                        <input name="waktu" type='text' class="datepicker-here form-control"
-                                            placeholder="dd/mm/yy" data-date-useseconds="true" data-timepicker="true"
-                                            data-language='en' value="{{ $catatanHarian->waktu }}" />
+                                        <input name="waktu" type='text' class="form-control"
+                                            placeholder="dd/mm/yy" value="{{ $catatanHarian->waktu }}" />
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlSelect1">Kategori Catatan</label>

@@ -11,19 +11,14 @@
 |
 */
 
-Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
-    //LANDING PAGE VIEW
-    Route::get('/', 'LandingPageController@home');
-});
+//LANDING PAGE VIEW
+Route::get('/', 'LandingPageController@home')->name('landingPageView');
 
 //AUTH
 Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
 //DASHBOARD PAGE
 Auth::routes();
-
-//LANDING PAGE VIEW
-Route::get('/', 'LandingPageController@home');
 
 Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
     Route::get('/home', 'HomeController@index')->name('home');
@@ -36,15 +31,21 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa,pembina']], function(){
 });
 
 //ROUTE HAFALAN AL-QUR'AN
-Route::get('/hafalan-siswa/{id}','HafalanController@indexSiswa' );
-Route::get('/hafalan-pembina','HafalanController@indexPembina' );
-Route::get('/hafalan-pembina/{id}','HafalanController@viewHafalanPembina' )->name('viewHafalanPembina');
-Route::get('/hafalan-pembina/{id}/tambah-doa','HafalanController@tambahDoa' );
-Route::post('/hafalan-pembina/{id}/create-doa', 'HafalanController@postDoa');
-Route::get('/hafalan-pembina/{userId}/{id}/delete-doa', 'HafalanController@hapusDoa');
-Route::get('/hafalan-pembina/{id}/tambah-hafalan','HafalanController@tambahHafalan' );
-Route::post('/hafalan-pembina/{id}/create-hafalan', 'HafalanController@postHafalan');
-Route::get('/hafalan-pembina/{userId}/{id}/delete-hafalan', 'HafalanController@hapusHafalan');
+Route::group(['middleware' => ['auth', 'checkRole:siswa']], function() {
+    Route::get('/hafalan-siswa/{id}','HafalanController@indexSiswa' );
+    Route::get('/hafalan-siswa/{id}/cetak-pdf', 'HafalanController@cetak_pdf');
+});
+
+Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
+    Route::get('/hafalan-pembina','HafalanController@indexPembina' );
+    Route::get('/hafalan-pembina/{id}','HafalanController@viewHafalanPembina' )->name('viewHafalanPembina');
+    Route::get('/hafalan-pembina/{id}/tambah-doa','HafalanController@tambahDoa' );
+    Route::post('/hafalan-pembina/{id}/create-doa', 'HafalanController@postDoa');
+    Route::get('/hafalan-pembina/{userId}/{id}/delete-doa', 'HafalanController@hapusDoa');
+    Route::get('/hafalan-pembina/{id}/tambah-hafalan','HafalanController@tambahHafalan' );
+    Route::post('/hafalan-pembina/{id}/create-hafalan', 'HafalanController@postHafalan');
+    Route::get('/hafalan-pembina/{userId}/{id}/delete-hafalan', 'HafalanController@hapusHafalan');
+});
 
 
 Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
@@ -54,6 +55,7 @@ Route::group(['middleware' => ['auth', 'checkRole:pembina']], function() {
     Route::get('/catatan-harian/{id}/edit','CatatanHarianController@edit');
     Route::post('/catatan-harian/{id}/update','CatatanHarianController@update');
     Route::get('/catatan-harian/{id}/delete','CatatanHarianController@delete');
+    Route::get('/catatan-harian/pdf','CatatanHarianController@generate');
     //Route::get('/siswa/{id}/profile','SiswaController@profile');
 
 });

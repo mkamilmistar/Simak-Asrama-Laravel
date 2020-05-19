@@ -60,7 +60,7 @@
                                 @csrf
                                     <div class="form-group">
                                         <label for="inputSurat">Surat</label>
-                                        <select class="form-control input-lg dynamic" id="inputSurat" name="surat">
+                                        <select class="form-control @error('surat') is-invalid @enderror" id="inputSurat" name="surat">
                                             <option selected disabled hidden>Pilih Surat</option>
                                             @foreach($surat_list as $surat)
                                             <option value="{{$surat -> id}}">
@@ -68,20 +68,34 @@
                                             </option>
                                             @endforeach
                                         </select>
+                                        @error('surat')
+                                                    <span
+                                                        class="invalid-feedback d-block"><strong>{{ $message }}</strong></span>
+                                        @enderror
                                     </div>
                                     <div>
                                         <label for="inputPM">Pagi/Malam</label>
-                                            <select class="form-control input-lg dynamic" id="inputPM" name="PM">
+                                            <select class="form-control @error('PM') is-invalid @enderror" id="inputPM" name="PM">
+                                                <option selected disabled hidden></option>
                                                 <option>Pagi</option>
                                                 <option>Malam</option>
                                             </select>
+                                            @error('PM')
+                                                    <span
+                                                        class="invalid-feedback d-block"><strong>this field is required</strong></span>
+                                            @enderror
                                     </div>
                                     <div>
                                         <label for="inputTM">Tahfidz/Murajaah</label>
-                                            <select class="form-control input-lg dynamic" id="inputTM" name="TM">
+                                            <select class="form-control @error('TM') is-invalid @enderror" id="inputTM" name="TM">
+                                                <option selected disabled hidden></option>
                                                 <option>Tahfidz</option>
                                                 <option>Murajaah</option>
                                             </select>
+                                            @error('TM')
+                                                    <span
+                                                        class="invalid-feedback d-block"><strong>this field is required</strong></span>
+                                            @enderror
                                     </div>
                                     <div class="row">
                                         <div class="col">
@@ -99,7 +113,7 @@
                                     </div>
                                     <div>
                                         <label for="inputNilai">Nilai</label>
-                                            <select class="form-control input-lg dynamic" id="inputNilai" name="nilai">
+                                            <select class="form-control @error('nilai') is-invalid @enderror" id="inputNilai" name="nilai">
                                                 <option selected disabled hidden>Beri Nilai</option>
                                                 <option>5</option>
                                                 <option>6</option>
@@ -107,6 +121,10 @@
                                                 <option>8</option>
                                                 <option>9</option>
                                             </select>
+                                            @error('nilai')
+                                                    <span
+                                                        class="invalid-feedback d-block"><strong>this field is required</strong></span>
+                                            @enderror
                                     </div>
                                     <input class="btn btn-primary" type="submit" value="Submit">
                                 </form>
