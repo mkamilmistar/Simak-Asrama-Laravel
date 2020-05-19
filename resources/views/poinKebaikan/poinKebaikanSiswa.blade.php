@@ -112,7 +112,7 @@
                                         @if(Auth::user()->role !== "siswa")
                                             <td>
                                                 <a href="{{ route('updatePoinSiswaPage', $poin->id) }}"
-                                                    class="btn btn-primary">
+                                                    class="btn btn-warning">
                                                     Update
                                                 </a>
                                                 <a class="btn btn-danger"
@@ -162,27 +162,12 @@
                                         </td>
                                         @if(Auth::user()->role !== "siswa")
                                             <td>
-                                                <<<<<<< HEAD <a
-                                                    href="{{ route('updatePoinSiswaPage', $poin->id) }}"
-                                                    class="btn btn-primary">
-                                                    ||||||| merged common ancestors
-                                                    <a href="{{ route('updatePoinSiswaPage', $poin->id) }}"
-                                                        class="btn btn-primary">
-                                                        =======
-                                                        <a href="{{ route('updatePoinSiswaPage', $poin->id) }}"
-                                                            class="btn btn-primary">
-                                                            >>>>>>> 1c4f2d07f5573bd23f0f2515cb9a5a3513967bf2
-                                                            Update
-                                                        </a>
-                                                        <a class="btn btn-danger"
-                                                            onclick="$('#hapusPoin{{ $poin->id }}').submit()">Hapus</a>
-                                                        <form method="POST"
-                                                            action="{{ route('removePoinSiswa', $poin->id) }}"
-                                                            id="hapusPoin{{ $poin->id }}">
-                                                            @csrf
-                                                            <input type="text" hidden name="siswa_id"
-                                                                value={{ $siswa->id }} />
-                                                        </form>
+                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}" class="btn btn-warning"> Update </a>
+                                                <a class="btn btn-danger" onclick="$('#hapusPoin{{ $poin->id }}').submit()">Hapus</a>
+                                                <form method="POST" action="{{ route('removePoinSiswa', $poin->id) }}" id="hapusPoin{{ $poin->id }}">
+                                                    @csrf
+                                                    <input type="text" hidden name="siswa_id" value={{ $siswa->id }} />
+                                                </form>
                                             </td>
                                         @endif
                                     </tr>
