@@ -48,7 +48,7 @@ class CatatanHarianController extends Controller
         $catatan->waktu = $request->input('waktu');
         $catatan->save();
 
-        return redirect('/catatan-harian')->with('sukses','Berhasil ditambahkan!');
+        return redirect('/catatan-harian')->with('sukses','Data berhasil ditambahkan!');
     }
 
     public function edit($id)
@@ -64,14 +64,14 @@ class CatatanHarianController extends Controller
         //dd($request->all());
         $catatanHarian = CatatanHarian::find($id);
         $catatanHarian->update($request->all());
-        return redirect('/catatan-harian')->with('primary', 'Data berhasil diubah!');
+        return redirect('/catatan-harian')->with('sukses','Data berhasil diubah!');
     }
 
     public function delete($id)
     {
         $catatanHarian = CatatanHarian::find($id);
         $catatanHarian->delete($catatanHarian);
-        return redirect('/catatan-harian')->with('danger', 'Data berhasil dihapus!');
+        return redirect('/catatan-harian')->with('sukses','Data berhasil dihapus!');
     }
 
     public function cetak_pdf()
