@@ -1,5 +1,9 @@
 # Sekolah Cendekia Baznas
-**Sistem Informasi Akademik (Simak) Asrama** merupakan salah satu website dari Sekolah Cendekia BAZNAS yang memberikan informasi seputar akademik asrama siswa.
+**Sistem Informasi Akademik (Simak) Asrama** merupakan salah satu website dari Sekolah Cendekia BAZNAS yang memberikan informasi seputar akademik asrama siswa Sekolah Cendekia BAZNAS sehingga mempermudah guru dalam memantau perkembangan siswanya dan memberikan penilaian kepada siswa.
+
+# Ruang Lingkup Pengembangan
+
+Web SIMAK Asrama memiliki fitur pencatatan dan menampilkan riwayat pada dua pihak saja yaitu pembina dan siswa. Web SIMAK Asrama tidak memberikan laporan hasil untuk orang tua siswa secara langsung. Dan SIMAK Asrama belum menyediakan pembukuan persemester dan ip asrama. Kekurangan fitur diharapkan akan dikembangkan ke pengembang berikutnya.
 
 # Project Absen Sholat
 Project Flutter dapat dilihat disini -> https://github.com/mursyidalhadi123/absen-sholat
@@ -9,7 +13,7 @@ https://docs.google.com/document/d/1ioaFHkT3jHWM8aCyEAbxd7pg0SoyRpkRNNX1klvmIHs/
 
 # Use Case Diagram
 1. Hafalan Qur'an, Hadist
-![UseCase   Activity (8)](https://user-images.githubusercontent.com/39584996/82398685-a3ec8e00-9a7d-11ea-9a2d-65890c20b4bb.png)
+![UseCase   Activity (8)](https://user-images.githubusercontent.com/39584897/82401114-2592ea80-9a83-11ea-8552-22628e1abc09.png)
 
 2. Catatan Amalan Yaumiah 
 ![UseCase   Activity (9)](https://user-images.githubusercontent.com/39584996/82398709-ae0e8c80-9a7d-11ea-867d-f32063a04484.png)
@@ -82,7 +86,7 @@ https://docs.google.com/document/d/1ioaFHkT3jHWM8aCyEAbxd7pg0SoyRpkRNNX1klvmIHs/
 
 
 ## Poin Pelanggaran dan Kebaikan
-* Setiap siswa yang melanggar tata tertib akan dikenakan sanksi dan akan diberikan poin. Apabila sudah melebihi batas poin yang ditentukan maka akan diberikan Surat Peringatan.
+* Setiap siswa yang melanggar tata tertib akan dikenakan sanksi dan akan diberikan poin. Apabila sudah melebihi batas poin yang ditentukan maka akan diberikan sebuah Surat Peringatan.
 * Jenis pelanggaran dan sanksi diklasifikasikan menjadi 3 ( tiga) tingkatan yaitu tingkat 1(ringan). tingkat 2 (sedang), dan tingkat 3 (berat)
 * Setiap siswa yang melakukan kebaikan baik juga akan diberikan poin. Poin kebaikan berfungsi sebagai peringan dari pelanggaran tata tertib ketika akan dikeluarkannya Surat Peringatan.
 * Jenis kebaikan diklasifikasikan menjadi 3 bagian yaitu perunggu (kebaikan berdampak pada diri dan orang lain individu), perak (kebaikan itu berdampak pada diri sendiri khalayak dan lingkungan), dan emas (kebaikan berdampak pada diri sendiri,khalayak, lingkungan dan lembaga)
