@@ -84,6 +84,24 @@ https://docs.google.com/document/d/1ioaFHkT3jHWM8aCyEAbxd7pg0SoyRpkRNNX1klvmIHs/
 * Pembina dapat menambahkan catatan pada siswa yang bersangkutan, Ada dua kategori pencatatan, yaitu prestasi atau indisipliner. Serta pembina/guru dapat menambahkan keterangan, tanggal kejadian, maupun tindakan yang telah dilakukan pembina terhadap siswa binaan.
 
 # Konsep OOP yang digunakan
+1. Abstract Class
+- Kelas merupakan deskripsi abstrak informasi dan tingkah laku dari sekumpulan data.
+- Kelas dapat diilustrasikan sebagai suatu cetak biru(blueprint) atau prototipe yang digunakan untuk menciptakan objek.
+- Kelas merupakan tipe data bagi objek yang mengenkapsulasi data dan operasi pada data dalam suatu unit tunggal.
+- Kelas mendefinisikan suatu struktur yang terdiri atas data kelas (data field), prosedur atau fungsi (method), dan sifat - kelas (property).
+
+2. Encapsulation
+- Kombinasi data dan fungsionalitas dalam sebuah unit tunggal sebagai bentuk untuk menyembunyikan detail informasi.
+- Proses enkapsulasi memudahkan kita untuk menggunakan sebuah objek dari suatu kelas karena kita tidak perlu mengetahui segala hal secara rinci.
+- Enkapsulasi menekankan pada antarmuka suatu kelas, atau dengan kata lain bagaimana menggunakan objek kelas tertentu.
+
+3. Inheritance
+- Kita dapat mendefinisikan suatu kelas baru dengan mewarisi sifat dari kelas lain yang sudah ada.
+- Penurunan sifat ini bisa dilakukan secara bertingkat tingkat, sehingga semakin ke bawah kelas tersebut menjadi semakin spesifik.
+- Sub kelas memungkinkan kita untuk melakukan spesifikasi detail dan perilaku khusus dari kelas supernya.
+- Dengan konsep pewarisan, kita dapat menggunakan kode yang telah ditulisnya pada kelas super berulang kali pada kelas-kelas turunannya tanpa harus menulis ulang semua kode-kode itu.
+
+
 
 # Tipe desain pengembangan yang digunakan (pattern/anti pattern)
 Dalam mengembangkan sistem informasi asrama, kelompok kami menggunakan design pattern MVC (Model View Controller) yang dimana sistem pengembangan aplikasi tersebut akan dipecah menjadi tiga bagian, yaitu model (database), view (tampilan/ui) dan yang terakhir controller (interaksi model dan view). Sarana yang digunakan dalam design pattern tersebut adalah framework Laravel. 
