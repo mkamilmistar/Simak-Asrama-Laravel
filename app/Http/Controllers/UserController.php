@@ -35,6 +35,7 @@ class UserController extends Controller
         $user->tempat_lahir = $request->input('tempat_lahir');
         $user->tanggal_lahir = $request->input('tanggal_lahir');
         $user->alamat = $request->input('alamat');
+        $user->password = bcrypt('secret');
         if($request->hasFile('user_image')){
             $request->file('user_image')->move('images/user/',$request->file('user_image')->getClientOriginalName());
             $user->user_image = $request->file('user_image')->getClientOriginalName();

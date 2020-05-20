@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+@php
+    $poin_id = -1;
+@endphp
 <div class="breadcrumbs">
     <div class="breadcrumbs-inner">
         <div class="row m-0">
@@ -29,6 +32,7 @@
         </div>
     </div>
 </div>
+
 <div class="content">
     <div class="animated fadeIn">
         <div class="row">
@@ -112,7 +116,7 @@
                                         @if(Auth::user()->role !== "siswa")
                                             <td>
                                                 <a href="{{ route('updatePoinSiswaPage', $poin->id) }}" class="btn btn-warning"> Edit </a>
-                                                <a class="btn btn-danger" data-toggle="modal" data-target="#hapusPoin">Hapus</a>
+                                                <button class="btn btn-danger" data-toggle="modal" data-target="#hapusPoin" onclick="{{$poin_id = $poin->id}}">Hapus</button>
                                             </td>
                                         @endif
                                     </tr>
@@ -120,7 +124,7 @@
                             </tbody>
                         </table>
                         <br>
-                        <h4><strong>Poin Keburukan</strong> </h4>
+                        <h4><strong>Poin Pelanggaran</strong> </h4>
                         <!-- DATA POIN KEBURUKAN -->
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             @php
@@ -152,7 +156,7 @@
                                         @if(Auth::user()->role !== "siswa")
                                             <td>
                                                 <a href="{{ route('updatePoinSiswaPage', $poin->id) }}" class="btn btn-warning"> Edit </a>
-                                                <a class="btn btn-danger" data-toggle="modal" data-target="#hapusPoin">Hapus</a>
+                                                <button class="btn btn-danger" data-toggle="modal" data-target="#hapusPoin" onclick="{{$poin_id = $poin->id}}">Hapus</button>
                                             </td>
                                         @endif
                                     </tr>
@@ -177,17 +181,18 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title text-center" id="modalLabelKu"> Konfirmasi Hapus Catatan </h4>
             </div>
-            <form action=" {{route('removePoinSiswa', $poin->id) }}" method="POST">
-                @csrf
-                <div class="modal-body">
-                    <p class="text-center">Apakah anda yakin untuk menghapus catatan ini?</p>
-                    <input type="text" hidden name="siswa_id" value={{ $siswa->id }} />
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Batalkan</button>
-                    <button type="submit" class="btn btn-danger">Ya, Hapus</button>
-                </div>
-            </form>
+            <div class="modal-body">
+                <p class="text-center">Apakah anda yakin untuk menghapus catatan ini?</p>
+                {{-- <input type="text" hidden name="category_id" id="cat_id" value="{{$delete_id}}" /> --}}
+                <form method="POST"	 action="{{ route('removePoinSiswa', $poin_id) }}"	id="hapusPoin{{ $poin_id }}">	
+                    @csrf	
+                    <input type="text" hidden name="siswa_id" value={{ $siswa->id }} />	
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Batalkan</button>
+                <button type="submit" class="btn btn-danger" onclick="$('#hapusPoin{{ $poin_id }}').submit()">Ya, Hapus</button>
+            </div>
         </div>
     </div>
 </div>
@@ -196,4 +201,5 @@
 <!-- ./content -->
 <div class="clearfix">
 </div>
+
 @endsection

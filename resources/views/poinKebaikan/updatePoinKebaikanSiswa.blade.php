@@ -22,7 +22,7 @@
                                 @endif
                                 <li><a href="{{ route('viewPoinSiswaPage', $siswa->id) }}">{{ $siswa->user->nama }}</a>
                                 </li>
-                                <li class="active">Tambah Baru</li>
+                                <li class="active">Update Catatan</li>
                             </ol>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                             <strong class="card-title">Update Poin Kebaikan atau Pelanggaran</strong>
                         </div>
                         <div class="card-body">
-                            <form method="POST">
+                            <form method="POST" autocomplete="off">
                                 @csrf
                                 <div class="form-group">
                                     <label for="inputJenisPoin">Jenis Poin</label>
@@ -60,7 +60,7 @@
                                             <span class="input-group-text" id="basic-addon1"><i
                                                         class="fa fa-calendar"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="01/20/2020"
+                                        <input type="text" class="form-control"
                                                value={{ $poinKebaikan->tanggal }} name="tanggal">
                                     </div>
                                 </div>
