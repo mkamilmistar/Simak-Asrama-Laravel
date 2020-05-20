@@ -29,44 +29,53 @@
                     height="80"><br></td>
             <hr style="height:3px;border-width:0;color:black;background-color:black">
     </table>
-
     <div class="text-center">
         <h5>Rekapitulasi Catatan Harian</h5>
-        <p style="font-size:14px">Catatan Harian Seluruh Siswa</p>
+        <p style="font-size:14px">Catatan Harian {{$data_siswa->nama}}</p>
+    </div>
+    <div class="text-left">
+        <table class="table-bio">
+            <tr>
+                <th>Nama</th>
+                <td>{{ $data_siswa->nama }}</td>
+            </tr>
+            <tr>
+                <th style="width: 200px">Nomor Induk Siswa</th>
+                <td>{{ $siswa->NIS }}</td>
+            </tr>
+            <tr>
+                <th>Jenis Kelamin</th>
+                <td>{{ $data_siswa->jenis_kelamin }}</td>
+            </tr>
+            <tr>
+                <th>Kelas</th>
+                <td>{{ $siswa->kelas }}</td>
+            </tr>
+        </table>
     </div>
     <div class="table-wrapper-scroll-y my-custom-scrollbar">
         <table id="bootstrap-data-table" class="table table-striped table-bordered">
-            <thead class="table-tengah">
-                <tr>
+            <thead>
+                <tr class="table-tengah">
                     <th>No</th>
-                    <th>Nama Siswa</th>
                     <th>Nama Pencatat</th>
                     <th>Kategori</th>
                     <th>Keterangan</th>
-                    <th>Tanggal dan Waktu</th>
+                    <th>Tanggal</th>
                 </tr>
             </thead>
-            <tfoot>
-                <tr>
-                    <td colspan="6">
-                    </td>
-                </tr>
-            </tfoot>
             <tbody>
-                <?php $no = 1; ?>
-                @foreach($catatanHarian as $cat)
+                @foreach($catatanHarian as $index => $cat)
                     <tr>
-                        <td>{{ $no }}</td>
-                        <td>{{ App\User::find($cat->siswa_id)->nama }}</td>
+                        <td>{{ $index + 1 }}</td>
                         <td>{{ App\User::find($cat->pembina_id)->nama }}</td>
                         <td>{{ $cat->kategori }}</td>
                         <td>{{ $cat->deskripsi }}</td>
-                        <td>{{ $cat->waktu }}</td>
+                        <td>{{ $cat->waktu }}
+                        </td>
                     </tr>
-                    <?php $no++; ?>
                 @endforeach
             </tbody>
-        </table>
     </div>
 </body>
 

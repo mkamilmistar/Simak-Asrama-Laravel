@@ -39,12 +39,12 @@
                         <!-- Data Siswa -->
                         <table class="table-bio">
                             <tr>
-                                <th style="width: 200px">Nomor Induk Siswa</th>
-                                <td>{{ $siswa->NIS }}</td>
-                            </tr>
-                            <tr>
                                 <th>Nama</th>
                                 <td>{{ $user->nama }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 200px">Nomor Induk Siswa</th>
+                                <td>{{ $siswa->NIS }}</td>
                             </tr>
                             <tr>
                                 <th>Jenis Kelamin</th>

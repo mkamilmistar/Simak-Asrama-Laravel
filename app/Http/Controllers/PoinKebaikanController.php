@@ -7,6 +7,7 @@ use App\PoinKebaikan;
 use Illuminate\Http\Request;
 use App\Siswa;
 use PDF;
+use Auth;
 
 class PoinKebaikanController extends Controller
 {
@@ -56,6 +57,8 @@ class PoinKebaikanController extends Controller
      */
     public function viewPoinSiswaPage($id)
     {
+        if (Auth::user()->role === "siswa" && $id != Auth::user()->siswa->id)
+            abort(404);
         $siswa = Siswa::find($id);
         $poin_keburukan = $siswa->poinKebaikan->where('jenis', 'keburukan');
         $poin_kebaikan = $siswa->poinKebaikan->where('jenis', 'kebaikan');
@@ -90,6 +93,7 @@ class PoinKebaikanController extends Controller
 
     public function removePoinSiswa(Request $request)
     {
+        // dd($request->route('id'));
         $poinKebaikan = PoinKebaikan::find($request->route('id'));
         $poinKebaikan->delete();
         return redirect()->route('viewPoinSiswaPage', $request->siswa_id)->with('error', 'Catatan Dihapus');
@@ -129,6 +133,6 @@ class PoinKebaikanController extends Controller
         $poinKebaikan->poin = $request->poin;
         $poinKebaikan->tanggal = $request->tanggal;
         $poinKebaikan->save();
-        return redirect()->route('viewPoinSiswaPage', $poinKebaikan->siswa_id)->with('success', 'Poin Terupdate');
+        return redirect()->route('viewPoinSiswaPage', $poinKebaikan->siswa_id)->with('success', 'Catatan Terupdate');
     }
 }

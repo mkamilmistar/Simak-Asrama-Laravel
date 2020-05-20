@@ -36,14 +36,16 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
+                        <a href="/catatan-harian/cetak_pdf/{{$siswa->user_id}}" class="btn btn-primary btn-sm"><i class="fa fa-print"></i> Export to PDF</a>
+                            <br><br>
                             <table class="table-bio">
-                                <tr>
-                                    <th style="width: 200px">Nomor Induk Siswa</th>
-                                    <td>{{ $siswa->NIS }}</td>
-                                </tr>
                                 <tr>
                                     <th>Nama</th>
                                     <td>{{ $data_siswa->nama }}</td>
+                                </tr>
+                                <tr>
+                                    <th style="width: 200px">Nomor Induk Siswa</th>
+                                    <td>{{ $siswa->NIS }}</td>
                                 </tr>
                                 <tr>
                                     <th>Jenis Kelamin</th>
