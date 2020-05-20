@@ -3,7 +3,7 @@
 
 # Ruang Lingkup Pengembangan
 
-Web SIMAK Asrama memiliki fitur pencatatan dan menampilkan riwayat pada dua pihak saja yaitu pembina dan siswa. Web SIMAK Asrama tidak memberikan laporan hasil untuk orang tua siswa secara langsung. Dan SIMAK Asrama belum menyediakan pembukuan persemester dan ip asrama. Kekurangan fitur diharapkan akan dikembangkan ke pengembang berikutnya
+Web SIMAK Asrama memiliki fitur pencatatan dan menampilkan riwayat pada dua pihak saja yaitu pembina dan siswa. Web SIMAK Asrama tidak memberikan laporan hasil untuk orang tua siswa secara langsung. Dan SIMAK Asrama belum menyediakan pembukuan persemester dan ip asrama. Kekurangan fitur diharapkan akan dikembangkan ke pengembang berikutnya.
 
 # Project Absen Sholat
 Project Flutter dapat dilihat disini -> https://github.com/mursyidalhadi123/absen-sholat
