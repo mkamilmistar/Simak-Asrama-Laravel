@@ -35,6 +35,9 @@
 
                 <div class="col-md-12">
                     <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Catatan Harian Siswa</strong>
+                        </div>
                         <div class="card-body">
                         <a href="/catatan-harian/cetak_pdf/{{$siswa->user_id}}" class="btn btn-primary btn-sm"><i class="fa fa-print"></i> Export to PDF</a>
                             <br><br>

@@ -53,6 +53,7 @@
             </tr>
         </table>
     </div>
+    <br><br>
     <div class="table-wrapper-scroll-y my-custom-scrollbar">
         <table id="bootstrap-data-table" class="table table-striped table-bordered">
             <thead>
