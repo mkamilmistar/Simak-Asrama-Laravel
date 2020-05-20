@@ -85,7 +85,7 @@ class CatatanYaumiyahController extends Controller
 
         $catatan = CatatanAmaliyah::where('user_id','=', $user_id)->get();
         // dd($catatan);
-
+        
         $count = (sizeof($request->all())-1)/3;
         // dd($count);
         

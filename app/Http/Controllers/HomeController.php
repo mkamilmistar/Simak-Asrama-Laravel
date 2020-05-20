@@ -31,6 +31,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $title= 'Beranda | Sistem Informasi Asrama SCB';
         $userId = Auth::user()->id;
         if(Auth::user()->role=='pembina'){
             $data_user = User::where('role', 'siswa')->get();
@@ -55,11 +56,13 @@ class HomeController extends Controller
                 ['kategori', 'Indisipliner'],
             ])->get();
             
-            $title= 'Beranda | Sistem Informasi Asrama SCB';
+            
             return view('dashboard',  compact(['title','data_user','catatanKebaikan','catatanKeburukan', 'catatanHarianP', 'catatanHarianI']));
         }else{
             
-            return view("dashboard");
+            return view("dashboard", compact('title'));
         }
     }
+
+    
 }
