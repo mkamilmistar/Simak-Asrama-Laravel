@@ -115,8 +115,13 @@
                                         </td>
                                         @if(Auth::user()->role !== "siswa")
                                             <td>
-                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}" class="btn btn-warning"> Edit </a>
-                                                <button class="btn btn-danger" data-toggle="modal" data-target="#hapusPoin" onclick="{{$poin_id = $poin->id}}">Hapus</button>
+                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}"
+                                                   class="btn btn-warning"> Edit </a>
+                                                <button class="btn btn-danger" data-toggle="modal"
+                                                        data-target="#hapusPoin"
+                                                        onclick="$('#hapusPoinForm').attr('action', '{{ route('removePoinSiswa', $poin->id) }}');">
+                                                    Hapus
+                                                </button>
                                             </td>
                                         @endif
                                     </tr>
@@ -124,7 +129,7 @@
                             </tbody>
                         </table>
                         <br>
-                        <h4><strong>Poin Pelanggaran</strong> </h4>
+                        <h4><strong>Poin Pelanggaran</strong></h4>
                         <!-- DATA POIN KEBURUKAN -->
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             @php
@@ -155,8 +160,13 @@
                                         </td>
                                         @if(Auth::user()->role !== "siswa")
                                             <td>
-                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}" class="btn btn-warning"> Edit </a>
-                                                <button class="btn btn-danger" data-toggle="modal" data-target="#hapusPoin" onclick="{{$poin_id = $poin->id}}">Hapus</button>
+                                                <a href="{{ route('updatePoinSiswaPage', $poin->id) }}"
+                                                   class="btn btn-warning"> Edit </a>
+                                                <button class="btn btn-danger" data-toggle="modal"
+                                                        data-target="#hapusPoin"
+                                                        onclick="$('#hapusPoinForm').attr('action', '{{ route('removePoinSiswa', $poin->id) }}');">
+                                                    Hapus
+                                                </button>
                                             </td>
                                         @endif
                                     </tr>
@@ -184,14 +194,14 @@
             <div class="modal-body">
                 <p class="text-center">Apakah anda yakin untuk menghapus catatan ini?</p>
                 {{-- <input type="text" hidden name="category_id" id="cat_id" value="{{$delete_id}}" /> --}}
-                <form method="POST"	 action="{{ route('removePoinSiswa', $poin_id) }}"	id="hapusPoin{{ $poin_id }}">	
+                <form method="POST" action="" id="hapusPoinForm">
                     @csrf	
-                    <input type="text" hidden name="siswa_id" value={{ $siswa->id }} />	
+                    <input type="text" hidden name="siswa_id" value={{ $siswa->id }} />
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-dismiss="modal">Batalkan</button>
-                <button type="submit" class="btn btn-danger" onclick="$('#hapusPoin{{ $poin_id }}').submit()">Ya, Hapus</button>
+                <button type="submit" class="btn btn-danger" onclick="$('#hapusPoinForm').submit()">Ya, Hapus</button>
             </div>
         </div>
     </div>
