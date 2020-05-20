@@ -32,36 +32,36 @@ class HomeController extends Controller
     public function index()
     {
         $title= 'Beranda | Sistem Informasi Asrama SCB';
-        $userId = Auth::user()->id;
-        if(Auth::user()->role=='pembina'){
-            $data_user = User::where('role', 'siswa')->get();
-            $siswa = Siswa::all();
-            $catatanKebaikan = CatatanKebaikan::where([
-                ['user_id', Auth::user()->id],
-                ['jenis', 'Baik'],
-            ])->get();
+        // $userId = Auth::user()->id;
+        // if(Auth::user()->role=='pembina'){
+        //     $data_user = User::where('role', 'siswa')->get();
+        //     $siswa = Siswa::all();
+        //     $catatanKebaikan = CatatanKebaikan::where([
+        //         ['user_id', Auth::user()->id],
+        //         ['jenis', 'Baik'],
+        //     ])->get();
             
-            $catatanKeburukan = CatatanKebaikan::where([
-                ['user_id', $userId],
-                ['jenis', 'Buruk'],
-            ])->get();
+        //     $catatanKeburukan = CatatanKebaikan::where([
+        //         ['user_id', $userId],
+        //         ['jenis', 'Buruk'],
+        //     ])->get();
 
-            $catatanHarianP = CatatanHarian::where([
-                ['siswa_id', Auth::user()->id],
-                ['kategori', 'Prestasi'],
-            ])->get();
+        //     $catatanHarianP = CatatanHarian::where([
+        //         ['siswa_id', Auth::user()->id],
+        //         ['kategori', 'Prestasi'],
+        //     ])->get();
             
-            $catatanHarianI = CatatanHarian::where([
-                ['siswa_id', $userId],
-                ['kategori', 'Indisipliner'],
-            ])->get();
+        //     $catatanHarianI = CatatanHarian::where([
+        //         ['siswa_id', $userId],
+        //         ['kategori', 'Indisipliner'],
+        //     ])->get();
             
             
-            return view('dashboard',  compact(['title','data_user','catatanKebaikan','catatanKeburukan', 'catatanHarianP', 'catatanHarianI']));
-        }else{
+        //     return view('dashboard',  compact(['title','data_user','catatanKebaikan','catatanKeburukan', 'catatanHarianP', 'catatanHarianI']));
+        // }else{
             
             return view("dashboard", compact('title'));
-        }
+        
     }
 
     
