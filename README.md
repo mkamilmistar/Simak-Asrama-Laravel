@@ -82,7 +82,7 @@ https://docs.google.com/document/d/1ioaFHkT3jHWM8aCyEAbxd7pg0SoyRpkRNNX1klvmIHs/
 
 
 ## Poin Pelanggaran dan Kebaikan
-* Setiap siswa yang melanggar tata tertib akan dikenakan sanksi dan akan diberikan poin. Apabila sudah melebihi batas poin yang ditentukan maka akan diberikan Surat Peringatan.
+* Setiap siswa yang melanggar tata tertib akan dikenakan sanksi dan akan diberikan poin. Apabila sudah melebihi batas poin yang ditentukan maka akan diberikan sebuah Surat Peringatan.
 * Jenis pelanggaran dan sanksi diklasifikasikan menjadi 3 ( tiga) tingkatan yaitu tingkat 1(ringan). tingkat 2 (sedang), dan tingkat 3 (berat)
 * Setiap siswa yang melakukan kebaikan baik juga akan diberikan poin. Poin kebaikan berfungsi sebagai peringan dari pelanggaran tata tertib ketika akan dikeluarkannya Surat Peringatan.
 * Jenis kebaikan diklasifikasikan menjadi 3 bagian yaitu perunggu (kebaikan berdampak pada diri dan orang lain individu), perak (kebaikan itu berdampak pada diri sendiri khalayak dan lingkungan), dan emas (kebaikan berdampak pada diri sendiri,khalayak, lingkungan dan lembaga)
