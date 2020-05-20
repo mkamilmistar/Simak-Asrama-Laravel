@@ -1,5 +1,5 @@
 # Sekolah Cendekia Baznas
-**Sistem Informasi Akademik (Simak) Asrama** merupakan salah satu website dari Sekolah Cendekia BAZNAS yang memberikan informasi seputar akademik asrama siswa.
+**Sistem Informasi Akademik (Simak) Asrama** merupakan salah satu website dari Sekolah Cendekia BAZNAS yang memberikan informasi seputar akademik asrama siswa Sekolah Cendekia BAZNAS sehingga mempermudah guru dalam memantau perkembangan siswanya dan memberikan penilaian kepada siswa.
 
 # Project Absen Sholat
 Project Flutter dapat dilihat disini -> https://github.com/mursyidalhadi123/absen-sholat
