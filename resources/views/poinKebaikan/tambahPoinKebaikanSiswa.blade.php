@@ -38,7 +38,7 @@
                         <strong class="card-title">Input Poin Kebaikan atau Pelanggaran</strong>
                     </div>
                     <div class="card-body">
-                        <form method="POST">
+                        <form method="POST" autocomplete="off">
                             @csrf
                             <div class="form-group">
                                 <label for="inputJenisPoin">Jenis Poin</label>
@@ -54,9 +54,8 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
                                     </div>
-                                    {{-- <input name="waktu" type='text' class="datepicker-here form-control"
-                                        data-date-useseconds="true" data-timepicker="true" data-language='en' /> --}}
-                                    <input type="text" class="form-control" placeholder="yyyy/mm/dd" name="tanggal">
+                                    <input name="tanggal" type='text' class="datepicker-here form-control" 
+                                        data-language='en' data-auto-close="true" data-date-format="yyyy/mm/dd" placeholder="yyyy/mm/dd"/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -83,4 +82,5 @@
 
 <!-- ./animated -->
 <!-- ./content -->
+
 @endsection
