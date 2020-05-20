@@ -1,3 +1,17 @@
+<p align="center">
+  <a href="">
+    <img src="https://github.com/ervanoyy/PSBOPerpustakaan/blob/master/public/images/logo1.png" alt="Sistem Perpustakaan" width=72 height=80>
+  </a>
+
+  <h3 align="center">Sistem Informasi Akademik Asrama</h3>
+
+  <p align="center">
+    SMP Cendekia BAZNAS (SCB) merupakan sekolah tingkat SMP </br>
+    yang dikelola oleh Badan Amil Zakat Nasional (BAZNAS).
+    <br>
+  </p>
+</p>
+
 ## Sekolah Cendekia Baznas
 **Sistem Informasi Akademik (Simak) Asrama** merupakan salah satu website dari Sekolah Cendekia BAZNAS yang memberikan informasi seputar akademik asrama siswa Sekolah Cendekia BAZNAS sehingga mempermudah guru dalam memantau perkembangan siswanya dan memberikan penilaian kepada siswa.
 
@@ -10,6 +24,13 @@ Project Flutter dapat dilihat disini -> https://github.com/mursyidalhadi123/abse
 
 ## Link Docs
 https://docs.google.com/document/d/1ioaFHkT3jHWM8aCyEAbxd7pg0SoyRpkRNNX1klvmIHs/edit?usp=sharing
+
+## Entity Relationship Diagram
+<p align="center">
+<a>
+<img src="https://trello-attachments.s3.amazonaws.com/5e55f57a7218ca8a0ce73082/5ec485a09966513c2bd2e549/85f58279890c951bc31a408875daa8a2/ER_Diagram.png" alt="ER Diagram", width=700>
+</a>
+</p>
 
 ## Use Case Diagram
 1. Hafalan Qur'an, Hadist <br>
