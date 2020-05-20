@@ -46,8 +46,23 @@ https://docs.google.com/document/d/1ioaFHkT3jHWM8aCyEAbxd7pg0SoyRpkRNNX1klvmIHs/
 ![UseCase   Activity (18)](https://user-images.githubusercontent.com/39584996/82398986-56245580-9a7e-11ea-8c63-10a4825ceac0.png)
 
 # Class Diagram
+1. Hafalan Qur'an, Hadist
+![image](https://user-images.githubusercontent.com/39584996/82399899-4f96dd80-9a80-11ea-9b47-1ced89f4c146.png)
 
+2. Catatan Amalan Yaumiah 
+![image](https://user-images.githubusercontent.com/39584996/82400002-81a83f80-9a80-11ea-8032-9c08a37deb5b.png)
 
+3. Catatan Kebaikan dan Keburukan
+![image](https://user-images.githubusercontent.com/39584996/82400028-908ef200-9a80-11ea-8aa2-c5f76fe1644d.png)
+
+4. Poin Pelanggaran dan Kebaikan
+![image](https://user-images.githubusercontent.com/39584996/82400068-a3092b80-9a80-11ea-80e6-59c152eb87c6.png)
+
+5. Catatan Shalat 
+![image](https://user-images.githubusercontent.com/39584996/82400093-b4eace80-9a80-11ea-83f3-5b3ac41c39b3.png)
+
+6. Catatan Harian
+![image](https://user-images.githubusercontent.com/39584996/82400122-c633db00-9a80-11ea-8be8-1871f5672732.png)
 
 # Fitur Secara Umum
 ## Biodata
