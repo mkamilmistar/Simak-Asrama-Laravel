@@ -9,7 +9,7 @@ https://docs.google.com/document/d/1ioaFHkT3jHWM8aCyEAbxd7pg0SoyRpkRNNX1klvmIHs/
 
 # Use Case Diagram
 1. Hafalan Qur'an, Hadist
-![UseCase   Activity (8)](https://user-images.githubusercontent.com/39584996/82398685-a3ec8e00-9a7d-11ea-9a2d-65890c20b4bb.png)
+![UseCase   Activity (8)](https://user-images.githubusercontent.com/39584897/82400819-6c341500-9a82-11ea-8c29-6c0ec81e2a8f.png)
 
 2. Catatan Amalan Yaumiah 
 ![UseCase   Activity (9)](https://user-images.githubusercontent.com/39584996/82398709-ae0e8c80-9a7d-11ea-867d-f32063a04484.png)
